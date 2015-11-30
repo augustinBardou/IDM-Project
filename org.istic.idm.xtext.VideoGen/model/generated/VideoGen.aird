@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_K2h58JdgEeWN4twvpzg4Qw" selectedViews="_LLA8MJdgEeWN4twvpzg4Qw _LLLUQJdgEeWN4twvpzg4Qw _LLNJcJdgEeWN4twvpzg4Qw _LLSB8JdgEeWN4twvpzg4Qw" version="10.0.0.201505222000">
+  <semanticResources>VideoGen.ecore</semanticResources>
+  <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+  <semanticResources>VideoGen.genmodel</semanticResources>
+  <semanticResources>../../src/org/istic/idm/xtext/GenerateVideoGen.mwe2</semanticResources>
+  <semanticResources>../../src/org/istic/idm/xtext/formatting/VideoGenFormatter.xtend</semanticResources>
+  <semanticResources>../../src/org/istic/idm/xtext/generator/VideoGenGenerator.xtend</semanticResources>
+  <semanticResources>../../src/org/istic/idm/xtext/scoping/VideoGenScopeProvider.xtend</semanticResources>
+  <semanticResources>../../src/org/istic/idm/xtext/validation/VideoGenValidator.xtend</semanticResources>
+  <semanticResources>../../src-gen/org/istic/idm/xtext/VideoGen.xtextbin</semanticResources>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_LLA8MJdgEeWN4twvpzg4Qw">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_MfVDwJdgEeWN4twvpzg4Qw" name="videoGen class diagram">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_MfVDwZdgEeWN4twvpzg4Qw" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_MfVDwpdgEeWN4twvpzg4Qw"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_Mf6SkJdgEeWN4twvpzg4Qw" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_Mf6SkZdgEeWN4twvpzg4Qw" type="Sirius" element="_MfVDwJdgEeWN4twvpzg4Qw" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_MgUiQJdgEeWN4twvpzg4Qw" type="2001" element="_MfVDw5dgEeWN4twvpzg4Qw">
+            <children xmi:type="notation:Node" xmi:id="_MhBs4JdgEeWN4twvpzg4Qw" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_MhBs4ZdgEeWN4twvpzg4Qw" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_MpEOkJdgEeWN4twvpzg4Qw" type="3005" element="_MfVDxJdgEeWN4twvpzg4Qw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_MpEOkZdgEeWN4twvpzg4Qw" fontName="Ubuntu"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MpEOkpdgEeWN4twvpzg4Qw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_MgUiQZdgEeWN4twvpzg4Qw" fontName="Ubuntu" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MgUiQpdgEeWN4twvpzg4Qw" width="640" height="85"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_Mf6SkpdgEeWN4twvpzg4Qw"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_MfVDw5dgEeWN4twvpzg4Qw" width="-1" height="-1">
+        <target xmi:type="ecore:EPackage" href="VideoGen.ecore#/"/>
+        <semanticElements xmi:type="ecore:EPackage" href="VideoGen.ecore#/"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_MfVDxJdgEeWN4twvpzg4Qw" showIcon="false" labelPosition="node" workspacePath="/org.eclipse.emf.ecoretools.design/icons/full/back/empty.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_MfVq0JdgEeWN4twvpzg4Qw"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+      <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+      <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+      <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Archetype']/@ownedRepresentationExtensions[name='Entities%20With%20Archetypes']/@layers[name='Archetypes']"/>
+      <target xmi:type="ecore:EPackage" href="VideoGen.ecore#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_LLLUQJdgEeWN4twvpzg4Qw">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Review']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_LLNJcJdgEeWN4twvpzg4Qw">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Archetype']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_LLSB8JdgEeWN4twvpzg4Qw">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Generation']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

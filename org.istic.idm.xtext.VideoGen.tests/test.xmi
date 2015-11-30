@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<videoGen:VideoGen xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:videoGen="http://www.istic.org/idm/xtext/VideoGen">
+  <statements xsi:type="videoGen:MandatoryVideoSeq">
+    <videoseq name="v1_VideoGen" url="/videos/v1" desc="La vid&#xe9;o 1"/>
+  </statements>
+  <statements xsi:type="videoGen:OptionalVideoSeq">
+    <videoseq name="v2_VideoGen" url="/videos/v2" length="260" desc="La vid&#xe9;o 2" prob="40"/>
+  </statements>
+  <statements xsi:type="videoGen:Alternative" name="v3">
+    <videoseqs name="v31_VideoGen" url="/videos/v31" desc="La vid&#xe9;o alt 3 1" prob="15"/>
+    <videoseqs name="v32_VideoGen" url="/videos/v32" length="265" desc="La vid&#xe9;o alt 3 2" prob="30"/>
+    <videoseqs name="v33_VideoGen" url="/videos/v33" length="295" desc="La vid&#xe9;o alt 3 3" prob="55"/>
+  </statements>
+  <statements xsi:type="videoGen:Alternative" name="v4">
+    <videoseqs name="v41_VideoGen" url="/videos/v41" length="265" desc="La vid&#xe9;o alt 4 1" prob="85"/>
+    <videoseqs name="v42_VideoGen" url="/videos/v42" length="265" desc="La vid&#xe9;o alt 4 2" prob="15"/>
+  </statements>
+  <statements xsi:type="videoGen:MandatoryVideoSeq">
+    <videoseq name="v5_VideoGen" url="/videos/v5" length="250" desc="La vid&#xe9;o 5"/>
+  </statements>
+</videoGen:VideoGen>

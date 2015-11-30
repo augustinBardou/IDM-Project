@@ -1,0 +1,43 @@
+VideoGen {
+
+	mandatory videoseq v1_VideoGen "/videos/v1" {
+		desc="La vidéo 1"
+	}
+	optional videoseq v2_VideoGen "/videos/v2" {
+		length=260
+		desc="La vidéo 2"
+		prob=40
+	 }
+	alternatives v3 {
+		videoseq v31_VideoGen "/videos/v31" {
+			desc="La vidéo alt 3 1"
+		 	prob=15
+		}
+		videoseq v32_VideoGen "/videos/v32" {
+		 	length=265
+		 	desc="La vidéo alt 3 2"
+		 	prob=30
+		}
+		videoseq v33_VideoGen "/videos/v33" {
+		 	length=295
+			desc="La vidéo alt 3 3"
+			prob=55
+		}
+	}
+	alternatives v4 {
+		videoseq v41_VideoGen "/videos/v41" {
+		 	length=265
+			desc="La vidéo alt 4 1"
+			prob=85
+		}
+		videoseq v42_VideoGen "/videos/v42" {
+		 	length=265
+			desc="La vidéo alt 4 2"
+			prob=15
+		}
+	}
+	mandatory videoseq v5_VideoGen "/videos/v5" {
+		length=250
+		desc="La vidéo 5"
+	}
+}
