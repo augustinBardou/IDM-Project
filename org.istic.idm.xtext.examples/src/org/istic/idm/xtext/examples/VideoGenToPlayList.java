@@ -11,6 +11,7 @@ import org.istic.idm.xtext.videoGen.VideoGen;
 import PlayList.PlayList;
 import PlayList.util.PlayListTransform;
 
+
 public class VideoGenToPlayList {
 
 	static VideoGen videoGen;
@@ -23,6 +24,7 @@ public class VideoGenToPlayList {
 		writer.write(PlayListTransform.toM3U(playlist));
 		writer.flush();
 		writer.close();
+		System.out.println("M3U done.");
 	}
 	
 	public static void saveM3UEXT() throws IOException {
@@ -31,6 +33,7 @@ public class VideoGenToPlayList {
 		writer.write(PlayListTransform.toM3UEXT(playlist));
 		writer.flush();
 		writer.close();
+		System.out.println("M3UEXT done.");
 	}
 	
 	public static void saveFFMPEG() throws IOException {
@@ -39,6 +42,7 @@ public class VideoGenToPlayList {
 		writer.write(PlayListTransform.toFFMPEG(playlist));
 		writer.flush();
 		writer.close();
+		System.out.println("FFMPEG done.");
 	}
 	
 	public static void main(String[] args) throws IOException {
