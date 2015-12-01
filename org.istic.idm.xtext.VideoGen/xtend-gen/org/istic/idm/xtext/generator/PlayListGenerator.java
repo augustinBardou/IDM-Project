@@ -3,14 +3,15 @@
  */
 package org.istic.idm.xtext.generator;
 
-import PlayList.PlayList;
+import PlayList.impl.PlayListImpl;
+import PlayList.util.PlayListTransform;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
-import org.istic.idm.xtext.Transformation;
+import org.istic.idm.xtext.VideoGenTransform;
 import org.istic.idm.xtext.videoGen.VideoGen;
 
 /**
@@ -29,12 +30,12 @@ public class PlayListGenerator implements IGenerator {
   }
   
   protected void _compile(final VideoGen v, final IFileSystemAccess fsa) {
-    final PlayList playList = Transformation.toPlayList(v);
-    String _m3U = Transformation.toM3U(playList);
+    final PlayListImpl playList = VideoGenTransform.toPlayList(v);
+    String _m3U = PlayListTransform.toM3U(playList);
     fsa.generateFile("playlist/videos.m3u", _m3U);
-    String _m3UEXT = Transformation.toM3UEXT(playList);
+    String _m3UEXT = PlayListTransform.toM3UEXT(playList);
     fsa.generateFile("playlist/videos-extended.m3u", _m3UEXT);
-    String _fFMPEG = Transformation.toFFMPEG(playList);
+    String _fFMPEG = PlayListTransform.toFFMPEG(playList);
     fsa.generateFile("playlist/videos.ffmpeg", _fFMPEG);
   }
   

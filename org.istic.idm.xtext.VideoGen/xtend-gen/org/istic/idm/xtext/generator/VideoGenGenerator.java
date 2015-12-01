@@ -4,6 +4,7 @@
 package org.istic.idm.xtext.generator;
 
 import com.google.common.collect.Iterators;
+import com.google.inject.Inject;
 import java.util.Iterator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -12,6 +13,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.istic.idm.xtext.generator.PlayListGenerator;
 import org.istic.idm.xtext.videoGen.VideoSeq;
 
 /**
@@ -21,6 +23,9 @@ import org.istic.idm.xtext.videoGen.VideoSeq;
  */
 @SuppressWarnings("all")
 public class VideoGenGenerator implements IGenerator {
+  @Inject
+  private PlayListGenerator playListGenerator;
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
     TreeIterator<EObject> _allContents = resource.getAllContents();
@@ -32,5 +37,6 @@ public class VideoGenGenerator implements IGenerator {
     String _join = IteratorExtensions.join(_map, "\n");
     String _plus = ("Current videos list: \n" + _join);
     fsa.generateFile("controls/videos-control.txt", _plus);
+    this.playListGenerator.doGenerate(resource, fsa);
   }
 }

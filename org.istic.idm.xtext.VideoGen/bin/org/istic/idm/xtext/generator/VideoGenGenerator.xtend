@@ -16,7 +16,7 @@ import com.google.inject.Inject
  */
 class VideoGenGenerator implements IGenerator {
 
-	//@Inject PlayListGenerator playListGenerator
+	@Inject PlayListGenerator playListGenerator
 
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		// Videos list control
@@ -25,7 +25,7 @@ class VideoGenGenerator implements IGenerator {
 				.filter(typeof(VideoSeq))
 				.map[name]
 				.join('\n'))
-		//playListGenerator.doGenerate(resource, fsa)
+		playListGenerator.doGenerate(resource, fsa)
     } 
 
 }

@@ -19,10 +19,11 @@ import org.istic.idm.xtext.videoGen.VideoGenFactory;
 import org.istic.idm.xtext.videoGen.VideoSeq;
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl;
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl;
+import org.istic.idm.xtext.videoGen.impl.VideoSeqImpl;
 
 @SuppressWarnings("all")
-public class Transformation {
-  public Transformation() {
+public class VideoGenTransform {
+  public VideoGenTransform() {
   }
   
   private static void transferData(final Video p_video, final VideoSeq videoseq) {
@@ -57,7 +58,7 @@ public class Transformation {
     return false;
   }
   
-  private static VideoSeq getAlternativeVideoSeq(final Alternative alternative) {
+  private static VideoSeqImpl getAlternativeVideoSeq(final Alternative alternative) {
     final DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator();
     EList<VideoSeq> _videoseqs = alternative.getVideoseqs();
     final int nbAlternative = _videoseqs.size();
@@ -78,27 +79,29 @@ public class Transformation {
     _videoseqs_1.forEach(_function);
     int index = drng.getDistributedRandomNumber();
     EList<VideoSeq> _videoseqs_2 = alternative.getVideoseqs();
-    return _videoseqs_2.get(index);
+    VideoSeq _get = _videoseqs_2.get(index);
+    return ((VideoSeqImpl) _get);
   }
   
-  public static VideoGenImpl toVideoGen(final PlayList playList) {
+  public static VideoGen toVideoGen(final PlayList playList) {
     VideoGenFactory videoGenFactory = VideoGenFactoryImpl.init();
     VideoGen _createVideoGen = videoGenFactory.createVideoGen();
     final VideoGenImpl videoGen = ((VideoGenImpl) _createVideoGen);
-    return videoGen;
+    return ((VideoGen) videoGen);
   }
   
   public static PlayListImpl toPlayList(final VideoGen videogen) {
     PlayListImpl _xblockexpression = null;
     {
-      PlayListFactory playlistFactory = PlayListFactoryImpl.init();
+      PlayListFactory _init = PlayListFactoryImpl.init();
+      PlayListFactoryImpl playlistFactory = ((PlayListFactoryImpl) _init);
       PlayList _createPlayList = playlistFactory.createPlayList();
       final PlayListImpl playlist = ((PlayListImpl) _createPlayList);
       EList<Statement> _statements = videogen.getStatements();
       final Consumer<Statement> _function = (Statement statement) -> {
         VideoSeq videoSeq = null;
         if ((statement instanceof Alternative)) {
-          VideoSeq _alternativeVideoSeq = Transformation.getAlternativeVideoSeq(((Alternative)statement));
+          VideoSeqImpl _alternativeVideoSeq = VideoGenTransform.getAlternativeVideoSeq(((Alternative)statement));
           videoSeq = _alternativeVideoSeq;
         } else {
           if ((statement instanceof MandatoryVideoSeq)) {
@@ -106,7 +109,7 @@ public class Transformation {
             videoSeq = _videoseq;
           } else {
             if ((statement instanceof OptionalVideoSeq)) {
-              boolean _isOptionable = Transformation.isOptionable(((OptionalVideoSeq)statement));
+              boolean _isOptionable = VideoGenTransform.isOptionable(((OptionalVideoSeq)statement));
               if (_isOptionable) {
                 VideoSeq _videoseq_1 = ((OptionalVideoSeq)statement).getVideoseq();
                 videoSeq = _videoseq_1;
@@ -118,67 +121,14 @@ public class Transformation {
         if (_notEquals) {
           PlayListFactoryImpl _playListFactoryImpl = new PlayListFactoryImpl();
           Object obj = _playListFactoryImpl.createVideo();
-          VideoImpl p_video = ((VideoImpl) obj);
-          Transformation.transferData(p_video, videoSeq);
+          Video p_video = ((Video) obj);
+          VideoGenTransform.transferData(p_video, videoSeq);
           EList<Video> _video = playlist.getVideo();
-          _video.add(p_video);
+          _video.add(((VideoImpl) p_video));
         }
       };
       _statements.forEach(_function);
       _xblockexpression = playlist;
-    }
-    return _xblockexpression;
-  }
-  
-  public static String toM3U(final PlayList playlist) {
-    String _xblockexpression = null;
-    {
-      final StringBuffer content = new StringBuffer();
-      content.append("# Generated from videoGen\n");
-      EList<Video> _video = playlist.getVideo();
-      final Consumer<Video> _function = (Video video) -> {
-        String _path = video.getPath();
-        String _plus = (_path + "\n");
-        content.append(_plus);
-      };
-      _video.forEach(_function);
-      _xblockexpression = content.toString();
-    }
-    return _xblockexpression;
-  }
-  
-  public static String toM3UEXT(final PlayList playlist) {
-    String _xblockexpression = null;
-    {
-      final StringBuffer content = new StringBuffer();
-      content.append(("#EXTM3U" + "\n"));
-      content.append(("# Generated from videoGen" + "\n"));
-      EList<Video> _video = playlist.getVideo();
-      final Consumer<Video> _function = (Video video) -> {
-        content.append(("#EXT-X-DISCONTINUITY" + "\n"));
-        int _duration = video.getDuration();
-        String _plus = ("#EXTINF:" + Integer.valueOf(_duration));
-        String _plus_1 = (_plus + ",");
-        String _description = video.getDescription();
-        String _plus_2 = (_plus_1 + _description);
-        String _plus_3 = (_plus_2 + "\n");
-        content.append(_plus_3);
-        String _path = video.getPath();
-        String _plus_4 = (_path + "\n");
-        content.append(_plus_4);
-      };
-      _video.forEach(_function);
-      content.append(("#EXT-X-ENDLIST" + "\n"));
-      _xblockexpression = content.toString();
-    }
-    return _xblockexpression;
-  }
-  
-  public static String toFFMPEG(final PlayList playlist) {
-    String _xblockexpression = null;
-    {
-      final StringBuffer content = new StringBuffer();
-      _xblockexpression = content.toString();
     }
     return _xblockexpression;
   }

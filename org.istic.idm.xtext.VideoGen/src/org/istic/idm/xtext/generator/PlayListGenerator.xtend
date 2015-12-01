@@ -7,9 +7,9 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.istic.idm.xtext.videoGen.VideoGen
-import org.istic.idm.xtext.Transformation
 import org.eclipse.emf.ecore.EObject
-import PlayList.PlayList
+import PlayList.util.PlayListTransform
+import org.istic.idm.xtext.VideoGenTransform
 
 /**
  * Generates code from your model files on save.
@@ -27,10 +27,10 @@ class PlayListGenerator implements IGenerator {
 
     def dispatch void compile(VideoGen v, IFileSystemAccess fsa) {
 		// Create PlayList
-		val PlayList playList = Transformation.toPlayList(v)
-		fsa.generateFile("playlist/videos.m3u", Transformation.toM3U(playList))
-		fsa.generateFile("playlist/videos-extended.m3u", Transformation.toM3UEXT(playList))
-		fsa.generateFile("playlist/videos.ffmpeg", Transformation.toFFMPEG(playList))
+		val playList = VideoGenTransform.toPlayList(v)
+		fsa.generateFile("playlist/videos.m3u", PlayListTransform.toM3U(playList))
+		fsa.generateFile("playlist/videos-extended.m3u", PlayListTransform.toM3UEXT(playList))
+		fsa.generateFile("playlist/videos.ffmpeg", PlayListTransform.toFFMPEG(playList))
     } 
 
     def dispatch void compile(EObject m, IFileSystemAccess fsa) { }
