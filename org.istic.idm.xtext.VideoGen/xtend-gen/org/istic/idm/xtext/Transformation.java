@@ -155,6 +155,7 @@ public class Transformation {
       content.append(("# Generated from videoGen" + "\n"));
       EList<Video> _video = playlist.getVideo();
       final Consumer<Video> _function = (Video video) -> {
+        content.append(("#EXT-X-DISCONTINUITY" + "\n"));
         int _duration = video.getDuration();
         String _plus = ("#EXTINF:" + Integer.valueOf(_duration));
         String _plus_1 = (_plus + ",");
@@ -167,6 +168,7 @@ public class Transformation {
         content.append(_plus_4);
       };
       _video.forEach(_function);
+      content.append(("#EXT-X-ENDLIST" + "\n"));
       _xblockexpression = content.toString();
     }
     return _xblockexpression;

@@ -3,9 +3,16 @@
  */
 package org.istic.idm.xtext.generator;
 
+import com.google.common.collect.Iterators;
+import java.util.Iterator;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.istic.idm.xtext.videoGen.VideoSeq;
 
 /**
  * Generates code from your model files on save.
@@ -16,5 +23,14 @@ import org.eclipse.xtext.generator.IGenerator;
 public class VideoGenGenerator implements IGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
+    TreeIterator<EObject> _allContents = resource.getAllContents();
+    Iterator<VideoSeq> _filter = Iterators.<VideoSeq>filter(_allContents, VideoSeq.class);
+    final Function1<VideoSeq, String> _function = (VideoSeq it) -> {
+      return it.getName();
+    };
+    Iterator<String> _map = IteratorExtensions.<VideoSeq, String>map(_filter, _function);
+    String _join = IteratorExtensions.join(_map, "\n");
+    String _plus = ("Current videos list: \n" + _join);
+    fsa.generateFile("controls/videos-control.txt", _plus);
   }
 }

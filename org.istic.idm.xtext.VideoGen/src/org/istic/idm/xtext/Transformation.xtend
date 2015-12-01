@@ -115,9 +115,11 @@ class Transformation{
         content.append("#EXTM3U" + "\n")
         content.append("# Generated from videoGen" + "\n")
         playlist.video.forEach[video | 
+			 content.append("#EXT-X-DISCONTINUITY" + "\n")
         	 content.append("#EXTINF:" + video.duration + "," + video.description + "\n")
         	 content.append(video.path + "\n")
         ]
+        content.append("#EXT-X-ENDLIST" + "\n")
         content.toString
     }
     
