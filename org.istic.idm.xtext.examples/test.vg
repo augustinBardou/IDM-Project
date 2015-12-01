@@ -1,0 +1,37 @@
+VideoGen {
+
+	mandatory videoseq v1 "/home/blacknight/Vidéos/Clips musicaux/combustion-meshuggah_cover_D.mp4" {
+		desc="La vidéo 1"
+	}
+	optional videoseq v2 "/home/blacknight/Vidéos/Clips musicaux/Djragonball_original_-Sarah.mp4" {
+		desc="La vidéo 2"
+		prob=40
+	 }
+	alternatives v3 {
+		videoseq v31 "/home/blacknight/Vidéos/Clips musicaux/ENTER THE FREEMAN_ Half-Life Film.mp4" {
+			desc="La vidéo alt 3 1"
+		 	prob=15
+		}
+		videoseq v32 "/home/blacknight/Vidéos/Clips musicaux/H-Blockx_-_Fly.flv" {
+		 	desc="La vidéo alt 3 2"
+		 	prob=30
+		}
+		videoseq v33 "/home/blacknight/Vidéos/Clips musicaux/H-Blockx_-_Little_Girl.flv" {
+			desc="La vidéo alt 3 3"
+			prob=55
+		}
+	}
+	alternatives v4 {
+		videoseq v41 "/home/blacknight/Vidéos/Clips musicaux/Red Hot Chili Peppers - Coffee Shop.mp4" {
+			desc="La vidéo alt 4 1"
+			prob=85
+		}
+		videoseq v42 "/home/blacknight/Vidéos/Clips musicaux/Immortal - Live in Graspop [2008][DVD].mp4" {
+			desc="La vidéo alt 4 2"
+			prob=15
+		}
+	}
+	mandatory videoseq v5 "/home/blacknight/Vidéos/Clips musicaux/Korn_-_Blind.flv" {
+		desc="La vidéo 5"
+	}
+}
