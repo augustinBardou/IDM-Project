@@ -19,7 +19,7 @@ public class VideoGenStandaloneSetup extends VideoGenStandaloneSetupGenerated{
 	}
 
 	public static VideoGen loadVideoGen(String filename) {
-		VideoGenStandaloneSetup.doSetup();
+		doSetup();
 		URI uri = URI.createURI(filename);
 		Resource res = new ResourceSetImpl().getResource(uri, true);
 		return (VideoGen) res.getContents().get(0);
