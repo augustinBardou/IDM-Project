@@ -20,6 +20,22 @@ class PlayListTransform{
   
 	new() { }
    
+    def static toPLS(PlayList playlist){
+    	val content = new StringBuffer
+        content.append("[playlist]\n")
+       	var indice = 0
+       	for (video: playlist.video) {
+       		indice++
+			content.append("File" + indice + "=" + video.path + "\n")
+        	content.append("Title" + indice + "=" + video.description + "\n")
+        	content.append("Length" + indice + "=" + video.duration + "\n")
+		}
+		content.append("NumberOfEntries=" + indice + "\n")
+		content.append("Version=2\n")
+        content.toString
+    }
+    
+   
     def static toM3U(PlayList playlist){
     	val content = new StringBuffer
         content.append("# Generated from videoGen\n")

@@ -45,6 +45,15 @@ public class VideoGenToPlayList {
 		System.out.println("FFMPEG done.");
 	}
 	
+	public static void savePLS() throws IOException {
+		File ffmpeg = new File("test.pls");
+		FileWriter writer = new FileWriter(ffmpeg);
+		writer.write(PlayListTransform.toPLS(playlist));
+		writer.flush();
+		writer.close();
+		System.out.println("PLS done.");
+	}
+	
 	public static void main(String[] args) throws IOException {
 		if (args.length > 0) {
 			filename = args[0];
@@ -55,6 +64,7 @@ public class VideoGenToPlayList {
 		saveM3U();
 		saveM3UEXT();
 		saveFFMPEG();
+		savePLS();
 	}
 
 }
