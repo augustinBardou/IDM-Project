@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 
 import static org.junit.Assert.*
-import org.istic.idm.xtext.VideoGenStandaloneSetupGenerated
+import org.istic.idm.xtext.VideoGenStandaloneSetup
 import org.istic.idm.xtext.videoGen.VideoGen
 import org.istic.idm.xtext.videoGen.MandatoryVideoSeq
 import org.istic.idm.xtext.videoGen.Statement
@@ -20,7 +20,7 @@ class VideoGenTest {
 
 	
 	def loadVideoGen(URI uri) {
-		new VideoGenStandaloneSetupGenerated().createInjectorAndDoEMFRegistration()
+		VideoGenStandaloneSetup.doSetup
 		var res = new ResourceSetImpl().getResource(uri, true);
 		res.contents.get(0) as VideoGen
 	}

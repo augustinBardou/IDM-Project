@@ -4,7 +4,6 @@ package PlayList;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -125,31 +124,13 @@ public interface PlayListPackage extends EPackage {
 	int VIDEO__DESCRIPTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIDEO__NAME = 2;
-
-	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIDEO__PATH = 3;
-
-	/**
-	 * The feature id for the '<em><b>Video</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIDEO__VIDEO = 4;
+	int VIDEO__PATH = 2;
 
 	/**
 	 * The number of structural features of the '<em>Video</em>' class.
@@ -158,25 +139,7 @@ public interface PlayListPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIDEO_FEATURE_COUNT = 5;
-
-	/**
-	 * The operation id for the '<em>Get Full Path</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIDEO___GET_FULL_PATH = 0;
-
-	/**
-	 * The operation id for the '<em>Get Position</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIDEO___GET_POSITION = 1;
+	int VIDEO_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Video</em>' class.
@@ -185,7 +148,7 @@ public interface PlayListPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIDEO_OPERATION_COUNT = 2;
+	int VIDEO_OPERATION_COUNT = 0;
 
 
 	/**
@@ -242,17 +205,6 @@ public interface PlayListPackage extends EPackage {
 	EAttribute getVideo_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link PlayList.Video#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see PlayList.Video#getName()
-	 * @see #getVideo()
-	 * @generated
-	 */
-	EAttribute getVideo_Name();
-
-	/**
 	 * Returns the meta object for the attribute '{@link PlayList.Video#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -262,37 +214,6 @@ public interface PlayListPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getVideo_Path();
-
-	/**
-	 * Returns the meta object for the reference '{@link PlayList.Video#getVideo <em>Video</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Video</em>'.
-	 * @see PlayList.Video#getVideo()
-	 * @see #getVideo()
-	 * @generated
-	 */
-	EReference getVideo_Video();
-
-	/**
-	 * Returns the meta object for the '{@link PlayList.Video#getFullPath() <em>Get Full Path</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Full Path</em>' operation.
-	 * @see PlayList.Video#getFullPath()
-	 * @generated
-	 */
-	EOperation getVideo__GetFullPath();
-
-	/**
-	 * Returns the meta object for the '{@link PlayList.Video#GetPosition() <em>Get Position</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Position</em>' operation.
-	 * @see PlayList.Video#GetPosition()
-	 * @generated
-	 */
-	EOperation getVideo__GetPosition();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -362,44 +283,12 @@ public interface PlayListPackage extends EPackage {
 		EAttribute VIDEO__DESCRIPTION = eINSTANCE.getVideo_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VIDEO__NAME = eINSTANCE.getVideo_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute VIDEO__PATH = eINSTANCE.getVideo_Path();
-
-		/**
-		 * The meta object literal for the '<em><b>Video</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VIDEO__VIDEO = eINSTANCE.getVideo_Video();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Full Path</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation VIDEO___GET_FULL_PATH = eINSTANCE.getVideo__GetFullPath();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Position</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation VIDEO___GET_POSITION = eINSTANCE.getVideo__GetPosition();
 
 	}
 

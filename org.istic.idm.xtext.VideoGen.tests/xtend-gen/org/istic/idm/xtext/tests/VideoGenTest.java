@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.istic.idm.xtext.VideoGenStandaloneSetupGenerated;
+import org.istic.idm.xtext.VideoGenStandaloneSetup;
 import org.istic.idm.xtext.videoGen.Alternative;
 import org.istic.idm.xtext.videoGen.MandatoryVideoSeq;
 import org.istic.idm.xtext.videoGen.OptionalVideoSeq;
@@ -25,8 +25,7 @@ public class VideoGenTest {
   public VideoGen loadVideoGen(final URI uri) {
     VideoGen _xblockexpression = null;
     {
-      VideoGenStandaloneSetupGenerated _videoGenStandaloneSetupGenerated = new VideoGenStandaloneSetupGenerated();
-      _videoGenStandaloneSetupGenerated.createInjectorAndDoEMFRegistration();
+      VideoGenStandaloneSetup.doSetup();
       ResourceSetImpl _resourceSetImpl = new ResourceSetImpl();
       Resource res = _resourceSetImpl.getResource(uri, true);
       EList<EObject> _contents = res.getContents();

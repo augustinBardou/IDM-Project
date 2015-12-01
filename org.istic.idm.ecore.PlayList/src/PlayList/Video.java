@@ -15,9 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link PlayList.Video#getDuration <em>Duration</em>}</li>
  *   <li>{@link PlayList.Video#getDescription <em>Description</em>}</li>
- *   <li>{@link PlayList.Video#getName <em>Name</em>}</li>
  *   <li>{@link PlayList.Video#getPath <em>Path</em>}</li>
- *   <li>{@link PlayList.Video#getVideo <em>Video</em>}</li>
  * </ul>
  *
  * @see PlayList.PlayListPackage#getVideo()
@@ -78,32 +76,6 @@ public interface Video extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see PlayList.PlayListPackage#getVideo_Name()
-	 * @model unique="false" ordered="false"
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link PlayList.Video#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -128,47 +100,5 @@ public interface Video extends EObject {
 	 * @generated
 	 */
 	void setPath(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Video</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Video</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Video</em>' reference.
-	 * @see #setVideo(Video)
-	 * @see PlayList.PlayListPackage#getVideo_Video()
-	 * @model
-	 * @generated
-	 */
-	Video getVideo();
-
-	/**
-	 * Sets the value of the '{@link PlayList.Video#getVideo <em>Video</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Video</em>' reference.
-	 * @see #getVideo()
-	 * @generated
-	 */
-	void setVideo(Video value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	void getFullPath();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void GetPosition();
 
 } // Video

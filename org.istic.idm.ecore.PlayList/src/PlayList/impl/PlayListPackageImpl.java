@@ -9,7 +9,6 @@ import PlayList.Video;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -147,44 +146,8 @@ public class PlayListPackageImpl extends EPackageImpl implements PlayListPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVideo_Name() {
-		return (EAttribute)videoEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getVideo_Path() {
-		return (EAttribute)videoEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getVideo_Video() {
-		return (EReference)videoEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getVideo__GetFullPath() {
-		return videoEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getVideo__GetPosition() {
-		return videoEClass.getEOperations().get(1);
+		return (EAttribute)videoEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -221,11 +184,7 @@ public class PlayListPackageImpl extends EPackageImpl implements PlayListPackage
 		videoEClass = createEClass(VIDEO);
 		createEAttribute(videoEClass, VIDEO__DURATION);
 		createEAttribute(videoEClass, VIDEO__DESCRIPTION);
-		createEAttribute(videoEClass, VIDEO__NAME);
 		createEAttribute(videoEClass, VIDEO__PATH);
-		createEReference(videoEClass, VIDEO__VIDEO);
-		createEOperation(videoEClass, VIDEO___GET_FULL_PATH);
-		createEOperation(videoEClass, VIDEO___GET_POSITION);
 	}
 
 	/**
@@ -264,13 +223,7 @@ public class PlayListPackageImpl extends EPackageImpl implements PlayListPackage
 		initEClass(videoEClass, Video.class, "Video", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVideo_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, Video.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getVideo_Description(), ecorePackage.getEString(), "description", null, 0, 1, Video.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getVideo_Name(), ecorePackage.getEString(), "name", null, 0, 1, Video.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getVideo_Path(), ecorePackage.getEString(), "path", null, 0, 1, Video.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVideo_Video(), this.getVideo(), null, "video", null, 0, 1, Video.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getVideo__GetFullPath(), null, "getFullPath", 0, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getVideo__GetPosition(), null, "GetPosition", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

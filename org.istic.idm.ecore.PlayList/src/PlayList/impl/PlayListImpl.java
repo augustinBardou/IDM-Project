@@ -5,7 +5,6 @@ package PlayList.impl;
 import PlayList.PlayList;
 import PlayList.PlayListPackage;
 import PlayList.Video;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;

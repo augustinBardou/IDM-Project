@@ -12,11 +12,7 @@
     <genClasses ecoreClass="PlayList.ecore#//Video">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlayList.ecore#//Video/duration"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlayList.ecore#//Video/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlayList.ecore#//Video/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PlayList.ecore#//Video/path"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PlayList.ecore#//Video/video"/>
-      <genOperations ecoreOperation="PlayList.ecore#//Video/getFullPath"/>
-      <genOperations ecoreOperation="PlayList.ecore#//Video/GetPosition"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
