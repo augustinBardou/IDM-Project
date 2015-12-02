@@ -60,6 +60,7 @@ public class VideoGenToPlayList {
 		}
 		System.out.println("Converting '" + filename + "' to playlists.");
 		videoGen = VideoGenStandaloneSetup.loadVideoGen(filename);
+		VideoGenTransform.addMissingMetadata(videoGen);
 		playlist = VideoGenTransform.toPlayList(videoGen);
 		saveM3U();
 		saveM3UEXT();

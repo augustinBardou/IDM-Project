@@ -14,6 +14,12 @@ import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
 import org.istic.idm.xtext.videoGen.impl.VideoSeqImpl
 import PlayList.impl.PlayListImpl
+import net.sf.ffmpeg_java.FFMPEGLibrary
+import net.sf.ffmpeg_java.AVFormatLibrary.AVFormatContext
+import net.sf.ffmpeg_java.AVFormatLibrary
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.util.function.Consumer
 
 class VideoGenTransform {
   
@@ -71,6 +77,36 @@ class VideoGenTransform {
         val VideoGenImpl videoGen = videoGenFactory.createVideoGen() as VideoGenImpl
         
         return videoGen as VideoGen
+    }
+    
+    def static addMissingMetadata(VideoGen videogen){
+        
+        videogen.getStatements().forEach[statement |
+			var VideoSeq videoSeq = null
+			
+			if (statement instanceof Alternative) {
+				videoSeq = getAlternativeVideoSeq(statement)
+			} else if(statement instanceof MandatoryVideoSeq){
+				videoSeq = statement.videoseq
+			} else if(statement instanceof OptionalVideoSeq) {
+				if(isOptionable(statement)){
+					videoSeq = statement.videoseq
+				}
+			}
+			if (videoSeq != null) {
+				val cmd = "ffmpeg -i \"" + videoSeq.url +  "\" | grep \"Duration\"| cut -d ' ' -f 4 | sed s/,// | sed 's@\\..*@@g' | awk '{ split($1, A, \":\"); split(A[3], B, \".\"); print 3600*A[1] + 60*A[2] + B[1] }'";
+				println(cmd)
+				var p = Runtime.getRuntime().exec(cmd); 
+				p.waitFor();
+				val reader = new BufferedReader(new InputStreamReader(p.getInputStream())); 
+				//videoSeq.length = Integer.valueOf(reader.readLine);
+				var line = reader.readLine;
+				while(line != null) {
+					println(line);
+					line = reader.readLine();
+				}
+			}
+        ]
     }
     
     
