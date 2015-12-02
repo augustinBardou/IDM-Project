@@ -15,4 +15,7 @@ hs_err_pid*
 target/
 xtend-gen/
 bin/
-
+*.ts
+*.ffmpeg
+*.pls
+*.m3u

@@ -6,19 +6,21 @@ import java.io.IOException;
 
 import org.istic.idm.xtext.VideoGenStandaloneSetup;
 import org.istic.idm.xtext.VideoGenTransform;
+import org.istic.idm.xtext.VideoCodec;
 import org.istic.idm.xtext.videoGen.VideoGen;
 
 import PlayList.PlayList;
+import PlayList.impl.PlayListImpl;
 import PlayList.util.PlayListTransform;
 
 
 public class VideoGenToPlayList {
 
-	static VideoGen videoGen;
-	static PlayList playlist;
 	static String filename = "test.vg";
 	
 	public static void saveM3U() throws IOException {
+		VideoGen videoGen = VideoGenStandaloneSetup.loadVideoGen(filename);
+		PlayListImpl playlist = VideoGenTransform.toPlayList(videoGen);
 		File m3u = new File("test.m3u");
 		FileWriter writer = new FileWriter(m3u);
 		writer.write(PlayListTransform.toM3U(playlist));
@@ -28,6 +30,9 @@ public class VideoGenToPlayList {
 	}
 	
 	public static void saveM3UEXT() throws IOException {
+		VideoGen videoGen = VideoGenStandaloneSetup.loadVideoGen(filename);
+		VideoGenTransform.addMissingMetadata(videoGen);
+		PlayListImpl playlist = VideoGenTransform.toPlayList(videoGen);
 		File m3uext = new File("test-extended.m3u");
 		FileWriter writer = new FileWriter(m3uext);
 		writer.write(PlayListTransform.toM3UEXT(playlist));
@@ -37,6 +42,9 @@ public class VideoGenToPlayList {
 	}
 	
 	public static void saveFFMPEG() throws IOException {
+		VideoGen videoGen = VideoGenStandaloneSetup.loadVideoGen(filename);
+		VideoGenTransform.addMissingMetadata(videoGen);
+		PlayListImpl playlist = VideoGenTransform.toPlayList(videoGen);
 		File ffmpeg = new File("test.ffmpeg");
 		FileWriter writer = new FileWriter(ffmpeg);
 		writer.write(PlayListTransform.toFFMPEG(playlist));
@@ -46,6 +54,10 @@ public class VideoGenToPlayList {
 	}
 	
 	public static void savePLS() throws IOException {
+		VideoGen videoGen = VideoGenStandaloneSetup.loadVideoGen(filename);
+		VideoGenTransform.addMissingMetadata(videoGen);
+		VideoGenTransform.ConvertTo(VideoCodec.MPEGTS, videoGen);
+		PlayListImpl playlist = VideoGenTransform.toPlayList(videoGen);
 		File ffmpeg = new File("test.pls");
 		FileWriter writer = new FileWriter(ffmpeg);
 		writer.write(PlayListTransform.toPLS(playlist));
@@ -59,9 +71,6 @@ public class VideoGenToPlayList {
 			filename = args[0];
 		}
 		System.out.println("Converting '" + filename + "' to playlists.");
-		videoGen = VideoGenStandaloneSetup.loadVideoGen(filename);
-		VideoGenTransform.addMissingMetadata(videoGen);
-		playlist = VideoGenTransform.toPlayList(videoGen);
 		saveM3U();
 		saveM3UEXT();
 		saveFFMPEG();

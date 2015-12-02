@@ -5,8 +5,11 @@ import PlayList.Video
 import PlayList.impl.PlayListFactoryImpl
 import PlayList.impl.PlayListImpl
 import PlayList.impl.VideoImpl
+import com.xuggle.mediatool.ToolFactory
 import com.xuggle.xuggler.IContainer
 import java.io.File
+import java.util.ArrayList
+import java.util.List
 import org.istic.idm.xtext.videoGen.Alternative
 import org.istic.idm.xtext.videoGen.MandatoryVideoSeq
 import org.istic.idm.xtext.videoGen.OptionalVideoSeq
@@ -16,6 +19,8 @@ import org.istic.idm.xtext.videoGen.VideoSeq
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
 import org.istic.idm.xtext.videoGen.impl.VideoSeqImpl
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 class VideoGenTransform {
   
@@ -26,7 +31,7 @@ class VideoGenTransform {
 		p_video.path = videoseq.url   
 		p_video.description = videoseq.desc  
    	}
-    
+   
     def private static isOptionable(OptionalVideoSeq video) {
         
         var DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator()
@@ -59,9 +64,10 @@ class VideoGenTransform {
             if(videoseq.prob != 0){
                 proba = videoseq.prob
             } else {
-                proba = ((1 / nbAlternative) * 100)
+                proba = 100 / nbAlternative
             }
             drng.addNumber(count, proba)
+            count++
         ]
             
         var int index = drng.getDistributedRandomNumber()
@@ -75,30 +81,66 @@ class VideoGenTransform {
         return videoGen as VideoGen
     }
     
+    def static private List<VideoSeq> allVideos(VideoGen videoGen) {
+		val List<VideoSeq> videoSeqs = new ArrayList<VideoSeq>
+			
+        videoGen.getStatements().forEach[statement |
+			if (statement instanceof Alternative) {
+				statement.videoseqs.forEach[video |
+					videoSeqs += video
+				]
+			} else if(statement instanceof MandatoryVideoSeq){
+				videoSeqs += statement.videoseq
+			} else if(statement instanceof OptionalVideoSeq) {
+				videoSeqs += statement.videoseq
+			}
+		]
+		videoSeqs
+    }
+     
+    def private static String getFileExtension(String fileName) {
+        if(fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0) {
+			return fileName.substring(fileName.lastIndexOf(".")+1);
+        }
+        return "";
+    }
+    
+    def static ConvertTo(VideoCodec type, VideoGen videogen){
+
+        allVideos(videogen).forEach[video |
+			
+			val IContainer container = IContainer.make()
+			val fullPathName = new File(video.url).absolutePath
+			val extention = getFileExtension(fullPathName)
+			val newFullPathName = fullPathName.replaceAll("." + extention, "." + type.extention)
+			if (!new File(newFullPathName).exists) {
+				if (container.open(fullPathName, IContainer.Type.READ, null) <0) {
+					   throw new RuntimeException("failed to open")
+				}
+				val cmd = "avconv -i \"" + fullPathName + "\" -strict -2 -vcodec h264 -acodec aac -f mpegts \"" + newFullPathName + "\""
+				println(cmd)
+				val process = Runtime.getRuntime().exec(cmd)
+				process.waitFor
+				val BufferedReader in = new BufferedReader(
+									new InputStreamReader(process.getInputStream()));
+				var String line = null;
+				while ((line = in.readLine()) != null) {
+					println(line);
+				}	
+			}
+			video.url = newFullPathName
+        ]
+    }
+    
     def static addMissingMetadata(VideoGen videogen){
         
-        videogen.getStatements().forEach[statement |
-			var VideoSeq videoSeq = null
-			
-			if (statement instanceof Alternative) {
-				videoSeq = getAlternativeVideoSeq(statement)
-			} else if(statement instanceof MandatoryVideoSeq){
-				videoSeq = statement.videoseq
-			} else if(statement instanceof OptionalVideoSeq) {
-				if(isOptionable(statement)){
-					videoSeq = statement.videoseq
-				}
+        allVideos(videogen).forEach[video |
+
+			val IContainer container = IContainer.make()
+			if (container.open(new File(video.url).absolutePath, IContainer.Type.READ, null) <0) {
+				   throw new RuntimeException("failed to open");  
 			}
-			if (videoSeq != null) {
-				val IContainer container = IContainer.make()
-				if (container.open(new File(videoSeq.url).absolutePath, IContainer.Type.READ, null) <0) {
-					   throw new RuntimeException("failed to open");  
-				}
-				var numStreams = container.getNumStreams();  
-				for(var i = 0; i < numStreams; i++) {  
-					videoSeq.length = (container.duration / 1000000) as int;
-				}  
-			}
+			video.length = (container.duration / 1000000) as int;
         ]
     }
     
