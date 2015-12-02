@@ -3,7 +3,10 @@ package org.istic.idm.xtext
 import PlayList.PlayList
 import PlayList.Video
 import PlayList.impl.PlayListFactoryImpl
+import PlayList.impl.PlayListImpl
 import PlayList.impl.VideoImpl
+import com.xuggle.xuggler.IContainer
+import java.io.File
 import org.istic.idm.xtext.videoGen.Alternative
 import org.istic.idm.xtext.videoGen.MandatoryVideoSeq
 import org.istic.idm.xtext.videoGen.OptionalVideoSeq
@@ -13,13 +16,6 @@ import org.istic.idm.xtext.videoGen.VideoSeq
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
 import org.istic.idm.xtext.videoGen.impl.VideoSeqImpl
-import PlayList.impl.PlayListImpl
-import net.sf.ffmpeg_java.FFMPEGLibrary
-import net.sf.ffmpeg_java.AVFormatLibrary.AVFormatContext
-import net.sf.ffmpeg_java.AVFormatLibrary
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.util.function.Consumer
 
 class VideoGenTransform {
   
@@ -94,17 +90,14 @@ class VideoGenTransform {
 				}
 			}
 			if (videoSeq != null) {
-				val cmd = "ffmpeg -i \"" + videoSeq.url +  "\" | grep \"Duration\"| cut -d ' ' -f 4 | sed s/,// | sed 's@\\..*@@g' | awk '{ split($1, A, \":\"); split(A[3], B, \".\"); print 3600*A[1] + 60*A[2] + B[1] }'";
-				println(cmd)
-				var p = Runtime.getRuntime().exec(cmd); 
-				p.waitFor();
-				val reader = new BufferedReader(new InputStreamReader(p.getInputStream())); 
-				//videoSeq.length = Integer.valueOf(reader.readLine);
-				var line = reader.readLine;
-				while(line != null) {
-					println(line);
-					line = reader.readLine();
+				val IContainer container = IContainer.make()
+				if (container.open(new File(videoSeq.url).absolutePath, IContainer.Type.READ, null) <0) {
+					   throw new RuntimeException("failed to open");  
 				}
+				var numStreams = container.getNumStreams();  
+				for(var i = 0; i < numStreams; i++) {  
+					videoSeq.length = (container.duration / 1000000) as int;
+				}  
 			}
         ]
     }
