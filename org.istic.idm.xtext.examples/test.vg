@@ -4,7 +4,7 @@ VideoGen {
 		desc="Meshuggah Guitar Cover - Combustion"
 	}
 	optional videoseq v2 "/home/blacknight/tmp/Djragonball_original_-Sarah.mp4" {
-		desc="DragonBall by Sarah"
+		desc="Djragonball original by Sarah"
 		prob=65
 	 }
 	alternatives v3 {
@@ -21,12 +21,19 @@ VideoGen {
 			prob=45
 		}
 	}
-	alternatives v4 {
-		videoseq v41 "/home/blacknight/tmp/Red Hot Chili Peppers - Coffee Shop.mp4" {
+	optional videoseq v4 "/home/blacknight/tmp/primus_live_les_claypool_s_bass_solo.mp4" {
+		desc="Primus - Live Bass Solo"
+	 }
+	alternatives v5 {
+		videoseq v51 "/home/blacknight/tmp/Red Hot Chili Peppers - Coffee Shop.mp4" {
 			desc="Red Hot Chili Peppers - Coffee Shop"
 		}
-		videoseq v42 "/home/blacknight/tmp/Korn_-_Blind.flv" {
+		videoseq v52 "/home/blacknight/tmp/Korn_-_Blind.flv" {
 			desc="Korn - Blind"
 		}
 	}
+	mandatory videoseq v6 "/home/blacknight/tmp/Zach Hill _amp Carson McWhirter - Terror Eyes the Night (studio recordig).avi" {
+		desc="Zach Hill & Carson McWhirter - Terror Eyes the Night (studio recording)"
+	}
+	
 }

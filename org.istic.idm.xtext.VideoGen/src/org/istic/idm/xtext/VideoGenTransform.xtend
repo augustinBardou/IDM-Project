@@ -5,9 +5,10 @@ import PlayList.Video
 import PlayList.impl.PlayListFactoryImpl
 import PlayList.impl.PlayListImpl
 import PlayList.impl.VideoImpl
-import com.xuggle.mediatool.ToolFactory
 import com.xuggle.xuggler.IContainer
+import java.io.BufferedReader
 import java.io.File
+import java.io.InputStreamReader
 import java.util.ArrayList
 import java.util.List
 import org.istic.idm.xtext.videoGen.Alternative
@@ -19,8 +20,6 @@ import org.istic.idm.xtext.videoGen.VideoSeq
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
 import org.istic.idm.xtext.videoGen.impl.VideoSeqImpl
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 class VideoGenTransform {
   
@@ -104,19 +103,37 @@ class VideoGenTransform {
         }
         return "";
     }
-    
-    def static ConvertTo(VideoCodec type, VideoGen videogen){
+   
+    def static createThumbnails(VideoGen videogen){
 
         allVideos(videogen).forEach[video |
 			
-			val IContainer container = IContainer.make()
+			val pathName = new File(video.url).absolutePath
+			val extention = getFileExtension(pathName)
+			val thumbPathName = pathName.replaceAll("." + extention, ".png")
+			if (!new File(thumbPathName).exists) {
+				val cmd = "avconv -i \"" + pathName + "\" -r 1 -t 00:00:01 -ss 00:00:02 -f image2 \"" + thumbPathName + "\""
+				println(cmd)
+				val process = Runtime.getRuntime().exec(cmd)
+				process.waitFor
+				val BufferedReader in = new BufferedReader(
+									new InputStreamReader(process.getInputStream()));
+				var String line = null;
+				while ((line = in.readLine()) != null) {
+					println(line);
+				}	
+			}
+        ]
+    }
+    
+    def static ConvertTo(VideoCodec type, VideoGen videogen){
+		
+        allVideos(videogen).forEach[video |
+			
 			val fullPathName = new File(video.url).absolutePath
 			val extention = getFileExtension(fullPathName)
 			val newFullPathName = fullPathName.replaceAll("." + extention, "." + type.extention)
 			if (!new File(newFullPathName).exists) {
-				if (container.open(fullPathName, IContainer.Type.READ, null) <0) {
-					   throw new RuntimeException("failed to open")
-				}
 				val cmd = "avconv -i \"" + fullPathName + "\" -strict -2 -vcodec h264 -acodec aac -f mpegts \"" + newFullPathName + "\""
 				println(cmd)
 				val process = Runtime.getRuntime().exec(cmd)

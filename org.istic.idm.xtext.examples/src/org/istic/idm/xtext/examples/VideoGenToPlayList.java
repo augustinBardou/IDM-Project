@@ -55,6 +55,7 @@ public class VideoGenToPlayList {
 	
 	public static void savePLS() throws IOException {
 		VideoGen videoGen = VideoGenStandaloneSetup.loadVideoGen(filename);
+		VideoGenTransform.createThumbnails(videoGen);
 		VideoGenTransform.addMissingMetadata(videoGen);
 		VideoGenTransform.ConvertTo(VideoCodec.MPEGTS, videoGen);
 		PlayListImpl playlist = VideoGenTransform.toPlayList(videoGen);
