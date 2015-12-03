@@ -29,8 +29,7 @@ class PlayListGenerator implements IGenerator {
 		// Create PlayList
 		val playList = VideoGenTransform.toPlayList(v)
 		fsa.generateFile("playlist/videos.m3u", PlayListTransform.toM3U(playList))
-		fsa.generateFile("playlist/videos-extended.m3u", PlayListTransform.toM3UEXT(playList))
-		fsa.generateFile("playlist/videos.ffmpeg", PlayListTransform.toFFMPEG(playList))
+		fsa.generateFile("playlist/videos-extended.m3u", PlayListTransform.toM3U(playList, true, true))
     } 
 
     def dispatch void compile(EObject m, IFileSystemAccess fsa) { }

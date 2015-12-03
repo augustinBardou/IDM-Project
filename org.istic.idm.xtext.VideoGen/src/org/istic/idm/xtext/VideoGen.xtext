@@ -16,6 +16,7 @@ VideoSeq:
 		("length=" length=INT)?
 		("desc=" desc=STRING)?
 		("prob=" prob=INT)?
+		("mime=" mime=STRING)?
 	"}"
 ;
 

@@ -20,6 +20,9 @@ import org.istic.idm.xtext.videoGen.VideoSeq
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
 import org.istic.idm.xtext.videoGen.impl.VideoSeqImpl
+import org.apache.commons.exec.CommandLine
+import org.apache.commons.exec.DefaultExecutor
+import java.nio.file.Paths
 
 class VideoGenTransform {
   
@@ -29,6 +32,7 @@ class VideoGenTransform {
 		p_video.duration = videoseq.length
 		p_video.path = videoseq.url   
 		p_video.description = videoseq.desc  
+		p_video.mimetype = videoseq.mime  
    	}
    
     def private static isOptionable(OptionalVideoSeq video) {
@@ -108,20 +112,29 @@ class VideoGenTransform {
 
         allVideos(videogen).forEach[video |
 			
-			val pathName = new File(video.url).absolutePath
-			val extention = getFileExtension(pathName)
-			val thumbPathName = pathName.replaceAll("." + extention, ".png")
-			if (!new File(thumbPathName).exists) {
-				val cmd = "avconv -i \"" + pathName + "\" -r 1 -t 00:00:01 -ss 00:00:02 -f image2 \"" + thumbPathName + "\""
-				println(cmd)
-				val process = Runtime.getRuntime().exec(cmd)
-				process.waitFor
-				val BufferedReader in = new BufferedReader(
-									new InputStreamReader(process.getInputStream()));
-				var String line = null;
-				while ((line = in.readLine()) != null) {
-					println(line);
-				}	
+			val fullPath = Paths.get(video.url)
+			val wd = fullPath.parent
+			val extention = getFileExtension(fullPath.fileName.toString)
+			val thumbPathName = fullPath.fileName.toString.replaceAll("." + extention, ".png")
+			val cmd = "avconv -i \"" + fullPath.fileName + "\" -r 1 -t 00:00:01 -ss 00:00:02 -f image2 \"thumbnails/" + thumbPathName + "\""
+			println(cmd)
+			val commandLine = CommandLine.parse(cmd)
+			val mkdir = CommandLine.parse("mkdir thumbnails")
+			try {
+				val executor = new DefaultExecutor()
+				executor.setExitValue(1)
+				executor.workingDirectory = wd.toFile
+				executor.execute(mkdir)
+			} catch (Exception e) {
+				println(e.message)
+			}
+			try {
+				val executor = new DefaultExecutor()
+				executor.setExitValue(1)
+				executor.workingDirectory = wd.toFile
+				executor.execute(commandLine)
+			} catch (Exception e) {
+				println(e.message)
 			}
         ]
     }
@@ -130,34 +143,45 @@ class VideoGenTransform {
 		
         allVideos(videogen).forEach[video |
 			
-			val fullPathName = new File(video.url).absolutePath
-			val extention = getFileExtension(fullPathName)
-			val newFullPathName = fullPathName.replaceAll("." + extention, "." + type.extention)
-			if (!new File(newFullPathName).exists) {
-				val cmd = "avconv -i \"" + fullPathName + "\" -strict -2 -vcodec h264 -acodec aac -f mpegts \"" + newFullPathName + "\""
-				println(cmd)
-				val process = Runtime.getRuntime().exec(cmd)
-				process.waitFor
-				val BufferedReader in = new BufferedReader(
-									new InputStreamReader(process.getInputStream()));
-				var String line = null;
-				while ((line = in.readLine()) != null) {
-					println(line);
-				}	
+			val fullPath = Paths.get(video.url)
+			val wd = fullPath.parent
+			val extention = getFileExtension(fullPath.fileName.toString)
+			val newFullPathName =  "videogen_" + fullPath.fileName.toString.replaceAll("." + extention, "." + type.extention)
+			val cmd = "avconv -i \"" + fullPath.fileName + "\" -strict -2 -f " + type.format + " \"" + type.format + "/" + newFullPathName + "\""
+			println(cmd)
+			try {
+				val mkdir = CommandLine.parse("mkdir " + type.format)
+				val executor = new DefaultExecutor()
+				executor.setExitValue(1)
+				executor.workingDirectory = wd.toFile
+				executor.execute(mkdir)
+			} catch (Exception e) {
+				println(e.message)
 			}
-			video.url = newFullPathName
+			try {
+				val commandLine = CommandLine.parse(cmd)
+				val executor = new DefaultExecutor()
+				executor.setExitValue(1)
+				executor.workingDirectory = wd.toFile
+				executor.execute(commandLine)
+			} catch (Exception e) {
+				println(e.message)
+			}
+			video.url = wd + "/" + type.format + "/" + newFullPathName
+			video.mime = type.mimeType
         ]
     }
     
-    def static addMissingMetadata(VideoGen videogen){
+    def static addMetadata(VideoGen videogen){
         
         allVideos(videogen).forEach[video |
 
 			val IContainer container = IContainer.make()
 			if (container.open(new File(video.url).absolutePath, IContainer.Type.READ, null) <0) {
-				   throw new RuntimeException("failed to open");  
+				   throw new RuntimeException("failed to open");
 			}
 			video.length = (container.duration / 1000000) as int;
+			//video.mime = container.format.outputFormatMimeType;
         ]
     }
     

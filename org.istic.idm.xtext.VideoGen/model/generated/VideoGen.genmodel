@@ -21,6 +21,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//VideoSeq/length"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//VideoSeq/desc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//VideoSeq/prob"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//VideoSeq/mime"/>
     </genClasses>
     <genClasses ecoreClass="VideoGen.ecore#//MandatoryVideoSeq">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VideoGen.ecore#//MandatoryVideoSeq/videoseq"/>

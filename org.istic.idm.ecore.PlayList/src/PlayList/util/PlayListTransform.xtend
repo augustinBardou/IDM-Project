@@ -27,29 +27,39 @@ class PlayListTransform{
         content.toString
     }
     
-   
     def static toM3U(PlayList playlist){
-    	val content = new StringBuffer
-        playlist.video.forEach[video | 
-        	 content.append(video.path + "\n")
-        ]
-        content.toString
+    	return toM3U(playlist, false, false)
     }
-    
-    def static toM3UEXT(PlayList playlist){
+
+    def static toM3U(PlayList playlist, Boolean extended){
+    	return toM3U(playlist, extended, false)
+    }
+
+    def static toM3U(PlayList playlist, Boolean extended, Boolean discontinued){
     	val content = new StringBuffer
-        content.append("#EXTM3U" + "\n")
+        if (extended) {
+        	content.append("#EXTM3U" + "\n")
+		}
         playlist.video.forEach[video | 
-			 content.append("#EXT-X-DISCONTINUITY" + "\n")
-        	 content.append("#EXTINF:" + video.duration + "," + video.description + "\n")
-        	 content.append(video.path + "\n")
+			if (extended) {
+				if (discontinued) {
+					content.append("#EXT-X-DISCONTINUITY" + "\n")
+				}
+				content.append("#EXTINF:" + video.duration + "," + video.description + "\n")
+			}
+        	content.append(video.path + "\n")
         ]
-        content.append("#EXT-X-ENDLIST" + "\n")
+        if (extended) {
+			content.append("#EXT-X-ENDLIST" + "\n")
+		}
         content.toString
     }
     
     def static toFFMPEG(PlayList playlist){
     	val content = new StringBuffer
+        playlist.video.forEach[video | 
+        	content.append(video.path + "\n")
+		]
         content.toString
     }
     
