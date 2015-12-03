@@ -1,20 +1,12 @@
 package PlayList.util
 
 import PlayList.PlayList
-import PlayList.PlayListFactory
-import PlayList.Video
-import PlayList.impl.PlayListFactoryImpl
-import PlayList.impl.PlayListImpl
-import PlayList.impl.VideoImpl
-import org.istic.idm.xtext.DistributedRandomNumberGenerator
-import org.istic.idm.xtext.videoGen.Alternative
-import org.istic.idm.xtext.videoGen.MandatoryVideoSeq
-import org.istic.idm.xtext.videoGen.OptionalVideoSeq
-import org.istic.idm.xtext.videoGen.VideoGen
-import org.istic.idm.xtext.videoGen.VideoGenFactory
-import org.istic.idm.xtext.videoGen.VideoSeq
-import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
-import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
+import java.io.File
+import java.io.FileWriter
+import java.nio.file.Files
+import java.nio.file.Paths
+import org.apache.commons.exec.CommandLine
+import org.apache.commons.exec.DefaultExecutor
 
 class PlayListTransform{
   
@@ -38,7 +30,6 @@ class PlayListTransform{
    
     def static toM3U(PlayList playlist){
     	val content = new StringBuffer
-        content.append("# Generated from videoGen\n")
         playlist.video.forEach[video | 
         	 content.append(video.path + "\n")
         ]
@@ -48,7 +39,6 @@ class PlayListTransform{
     def static toM3UEXT(PlayList playlist){
     	val content = new StringBuffer
         content.append("#EXTM3U" + "\n")
-        content.append("# Generated from videoGen" + "\n")
         playlist.video.forEach[video | 
 			 content.append("#EXT-X-DISCONTINUITY" + "\n")
         	 content.append("#EXTINF:" + video.duration + "," + video.description + "\n")
@@ -61,6 +51,15 @@ class PlayListTransform{
     def static toFFMPEG(PlayList playlist){
     	val content = new StringBuffer
         content.toString
+    }
+    
+    def static toFlowPlayer(PlayList playList) {
+		val indexPath = Paths.get("/home/blacknight/workspace/org.istic.idm.ecore.PlayList/resources/site/index.html").toAbsolutePath
+		val cmd = "firefox " + indexPath;
+		val commandLine = CommandLine.parse(cmd);
+		val executor = new DefaultExecutor();
+		executor.setExitValue(1);
+		val exitValue = executor.execute(commandLine);
     }
     
 }

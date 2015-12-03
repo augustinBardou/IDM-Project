@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link PlayList.impl.VideoImpl#getDuration <em>Duration</em>}</li>
  *   <li>{@link PlayList.impl.VideoImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link PlayList.impl.VideoImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link PlayList.impl.VideoImpl#getMimetype <em>Mimetype</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,6 +85,26 @@ public class VideoImpl extends MinimalEObjectImpl.Container implements Video {
 	 * @ordered
 	 */
 	protected String path = PATH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMimetype() <em>Mimetype</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMimetype()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MIMETYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMimetype() <em>Mimetype</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMimetype()
+	 * @generated
+	 * @ordered
+	 */
+	protected String mimetype = MIMETYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,6 +193,27 @@ public class VideoImpl extends MinimalEObjectImpl.Container implements Video {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getMimetype() {
+		return mimetype;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMimetype(String newMimetype) {
+		String oldMimetype = mimetype;
+		mimetype = newMimetype;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PlayListPackage.VIDEO__MIMETYPE, oldMimetype, mimetype));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -181,6 +223,8 @@ public class VideoImpl extends MinimalEObjectImpl.Container implements Video {
 				return getDescription();
 			case PlayListPackage.VIDEO__PATH:
 				return getPath();
+			case PlayListPackage.VIDEO__MIMETYPE:
+				return getMimetype();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,6 +245,9 @@ public class VideoImpl extends MinimalEObjectImpl.Container implements Video {
 				return;
 			case PlayListPackage.VIDEO__PATH:
 				setPath((String)newValue);
+				return;
+			case PlayListPackage.VIDEO__MIMETYPE:
+				setMimetype((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -223,6 +270,9 @@ public class VideoImpl extends MinimalEObjectImpl.Container implements Video {
 			case PlayListPackage.VIDEO__PATH:
 				setPath(PATH_EDEFAULT);
 				return;
+			case PlayListPackage.VIDEO__MIMETYPE:
+				setMimetype(MIMETYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -241,6 +291,8 @@ public class VideoImpl extends MinimalEObjectImpl.Container implements Video {
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case PlayListPackage.VIDEO__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
+			case PlayListPackage.VIDEO__MIMETYPE:
+				return MIMETYPE_EDEFAULT == null ? mimetype != null : !MIMETYPE_EDEFAULT.equals(mimetype);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -261,6 +313,8 @@ public class VideoImpl extends MinimalEObjectImpl.Container implements Video {
 		result.append(description);
 		result.append(", path: ");
 		result.append(path);
+		result.append(", mimetype: ");
+		result.append(mimetype);
 		result.append(')');
 		return result.toString();
 	}

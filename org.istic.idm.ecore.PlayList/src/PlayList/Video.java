@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link PlayList.Video#getDuration <em>Duration</em>}</li>
  *   <li>{@link PlayList.Video#getDescription <em>Description</em>}</li>
  *   <li>{@link PlayList.Video#getPath <em>Path</em>}</li>
+ *   <li>{@link PlayList.Video#getMimetype <em>Mimetype</em>}</li>
  * </ul>
  *
  * @see PlayList.PlayListPackage#getVideo()
@@ -100,5 +101,31 @@ public interface Video extends EObject {
 	 * @generated
 	 */
 	void setPath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Mimetype</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mimetype</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mimetype</em>' attribute.
+	 * @see #setMimetype(String)
+	 * @see PlayList.PlayListPackage#getVideo_Mimetype()
+	 * @model
+	 * @generated
+	 */
+	String getMimetype();
+
+	/**
+	 * Sets the value of the '{@link PlayList.Video#getMimetype <em>Mimetype</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mimetype</em>' attribute.
+	 * @see #getMimetype()
+	 * @generated
+	 */
+	void setMimetype(String value);
 
 } // Video

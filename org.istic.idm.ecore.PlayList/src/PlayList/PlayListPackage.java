@@ -133,13 +133,22 @@ public interface PlayListPackage extends EPackage {
 	int VIDEO__PATH = 2;
 
 	/**
+	 * The feature id for the '<em><b>Mimetype</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO__MIMETYPE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Video</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIDEO_FEATURE_COUNT = 3;
+	int VIDEO_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Video</em>' class.
@@ -216,6 +225,17 @@ public interface PlayListPackage extends EPackage {
 	EAttribute getVideo_Path();
 
 	/**
+	 * Returns the meta object for the attribute '{@link PlayList.Video#getMimetype <em>Mimetype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mimetype</em>'.
+	 * @see PlayList.Video#getMimetype()
+	 * @see #getVideo()
+	 * @generated
+	 */
+	EAttribute getVideo_Mimetype();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -289,6 +309,14 @@ public interface PlayListPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VIDEO__PATH = eINSTANCE.getVideo_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>Mimetype</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VIDEO__MIMETYPE = eINSTANCE.getVideo_Mimetype();
 
 	}
 

@@ -1,38 +1,38 @@
 VideoGen {
 
-	mandatory videoseq v1 "/home/blacknight/tmp/combustion-meshuggah_cover_D.mp4" {
+	mandatory videoseq v1 "/home/blacknight/tmp/combustion.mp4" {
 		desc="Meshuggah Guitar Cover - Combustion"
 	}
-	optional videoseq v2 "/home/blacknight/tmp/Djragonball_original_-Sarah.mp4" {
+	optional videoseq v2 "/home/blacknight/tmp/djragonball.mp4" {
 		desc="Djragonball original by Sarah"
 		prob=65
 	 }
 	alternatives v3 {
-		videoseq v31 "/home/blacknight/tmp/H-Blockx_-_Step_Back.flv" {
+		videoseq v31 "/home/blacknight/tmp/step_back.flv" {
 			desc="H-Blockx - Step Back"
 		 	prob=25
 		}
-		videoseq v32 "/home/blacknight/tmp/H-Blockx_-_Fly.flv" {
+		videoseq v32 "/home/blacknight/tmp/fly.flv" {
 		 	desc="H-Blocks - Fly"
 		 	prob=30
 		}
-		videoseq v33 "/home/blacknight/tmp/H-Blockx_-_Little_Girl.flv" {
+		videoseq v33 "/home/blacknight/tmp/little_girl.flv" {
 			desc="H-Blocks - Little Girl"
 			prob=45
 		}
 	}
-	optional videoseq v4 "/home/blacknight/tmp/primus_live_les_claypool_s_bass_solo.mp4" {
+	optional videoseq v4 "/home/blacknight/tmp/les_claypool.mp4" {
 		desc="Primus - Live Bass Solo"
-	 }
+	}
 	alternatives v5 {
-		videoseq v51 "/home/blacknight/tmp/Red Hot Chili Peppers - Coffee Shop.mp4" {
+		videoseq v51 "/home/blacknight/tmp/coffee_shop.mp4" {
 			desc="Red Hot Chili Peppers - Coffee Shop"
 		}
-		videoseq v52 "/home/blacknight/tmp/Korn_-_Blind.flv" {
+		videoseq v52 "/home/blacknight/tmp/blind.flv" {
 			desc="Korn - Blind"
 		}
 	}
-	mandatory videoseq v6 "/home/blacknight/tmp/Zach Hill _amp Carson McWhirter - Terror Eyes the Night (studio recordig).avi" {
+	mandatory videoseq v6 "/home/blacknight/tmp/terror_eyes_the_night.avi" {
 		desc="Zach Hill & Carson McWhirter - Terror Eyes the Night (studio recording)"
 	}
 	

@@ -155,6 +155,15 @@ public class PlayListPackageImpl extends EPackageImpl implements PlayListPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getVideo_Mimetype() {
+		return (EAttribute)videoEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PlayListFactory getPlayListFactory() {
 		return (PlayListFactory)getEFactoryInstance();
 	}
@@ -185,6 +194,7 @@ public class PlayListPackageImpl extends EPackageImpl implements PlayListPackage
 		createEAttribute(videoEClass, VIDEO__DURATION);
 		createEAttribute(videoEClass, VIDEO__DESCRIPTION);
 		createEAttribute(videoEClass, VIDEO__PATH);
+		createEAttribute(videoEClass, VIDEO__MIMETYPE);
 	}
 
 	/**
@@ -224,6 +234,7 @@ public class PlayListPackageImpl extends EPackageImpl implements PlayListPackage
 		initEAttribute(getVideo_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, Video.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getVideo_Description(), ecorePackage.getEString(), "description", null, 0, 1, Video.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getVideo_Path(), ecorePackage.getEString(), "path", null, 0, 1, Video.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getVideo_Mimetype(), ecorePackage.getEString(), "mimetype", null, 0, 1, Video.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
