@@ -54,7 +54,7 @@ public class VideoGenSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (name=ID sequences+=Sequence+)
+	 *     (name=ID options+=Optional+)
 	 */
 	protected void sequence_Alternatives(EObject context, Alternatives semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -72,37 +72,23 @@ public class VideoGenSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getMandatoryAccess().getSequenceSequenceParserRuleCall_1_0(), semanticObject.getSequence());
+		feeder.accept(grammarAccess.getMandatoryAccess().getSequenceSequenceParserRuleCall_0(), semanticObject.getSequence());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     sequence=Sequence
+	 *     (sequence=Sequence probability=INT?)
 	 */
 	protected void sequence_Optional(EObject context, Optional semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, VideoGenPackage.Literals.OPTIONAL__SEQUENCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VideoGenPackage.Literals.OPTIONAL__SEQUENCE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getOptionalAccess().getSequenceSequenceParserRuleCall_1_0(), semanticObject.getSequence());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         url=STRING 
-	 *         description=STRING? 
-	 *         length=INT? 
-	 *         mimetype=STRING? 
-	 *         probability=INT?
-	 *     )
+	 *     (name=ID url=STRING description=STRING? length=INT? mimetype=STRING?)
 	 */
 	protected void sequence_Sequence(EObject context, Sequence semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

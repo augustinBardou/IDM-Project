@@ -20,12 +20,12 @@ import org.istic.idm.xtext.services.VideoGenGrammarAccess;
 public class VideoGenSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected VideoGenGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Sequence_ProbabilityKeyword_4_3_0_q;
+	protected AbstractElementAlias match_Optional_ProbabilityKeyword_1_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (VideoGenGrammarAccess) access;
-		match_Sequence_ProbabilityKeyword_4_3_0_q = new TokenAlias(false, true, grammarAccess.getSequenceAccess().getProbabilityKeyword_4_3_0());
+		match_Optional_ProbabilityKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getOptionalAccess().getProbabilityKeyword_1_0());
 	}
 	
 	@Override
@@ -55,8 +55,8 @@ public class VideoGenSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Sequence_ProbabilityKeyword_4_3_0_q.equals(syntax))
-				emit_Sequence_ProbabilityKeyword_4_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_Optional_ProbabilityKeyword_1_0_q.equals(syntax))
+				emit_Optional_ProbabilityKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -66,13 +66,9 @@ public class VideoGenSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'probability='?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     description=STRING (ambiguity) probability=INT
-	 *     length=INT (ambiguity) probability=INT
-	 *     mimetype=STRING (ambiguity) probability=INT
-	 *     probability=INT (ambiguity) probability=INT
-	 *     url=STRING BEGIN (ambiguity) probability=INT
+	 *     sequence=Sequence (ambiguity) probability=INT
 	 */
-	protected void emit_Sequence_ProbabilityKeyword_4_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Optional_ProbabilityKeyword_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -123,13 +123,13 @@ public interface VideoGenPackage extends EPackage
   int ALTERNATIVES__NAME = STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Sequences</b></em>' containment reference list.
+   * The feature id for the '<em><b>Options</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ALTERNATIVES__SEQUENCES = STATEMENT_FEATURE_COUNT + 1;
+  int ALTERNATIVES__OPTIONS = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Alternatives</em>' class.
@@ -188,13 +188,22 @@ public interface VideoGenPackage extends EPackage
   int OPTIONAL__SEQUENCE = STATEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Probability</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPTIONAL__PROBABILITY = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Optional</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPTIONAL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+  int OPTIONAL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.SequenceImpl <em>Sequence</em>}' class.
@@ -252,22 +261,13 @@ public interface VideoGenPackage extends EPackage
   int SEQUENCE__MIMETYPE = 4;
 
   /**
-   * The feature id for the '<em><b>Probability</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEQUENCE__PROBABILITY = 5;
-
-  /**
    * The number of structural features of the '<em>Sequence</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SEQUENCE_FEATURE_COUNT = 6;
+  int SEQUENCE_FEATURE_COUNT = 5;
 
 
   /**
@@ -323,15 +323,15 @@ public interface VideoGenPackage extends EPackage
   EAttribute getAlternatives_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.istic.idm.xtext.videoGen.Alternatives#getSequences <em>Sequences</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.istic.idm.xtext.videoGen.Alternatives#getOptions <em>Options</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Sequences</em>'.
-   * @see org.istic.idm.xtext.videoGen.Alternatives#getSequences()
+   * @return the meta object for the containment reference list '<em>Options</em>'.
+   * @see org.istic.idm.xtext.videoGen.Alternatives#getOptions()
    * @see #getAlternatives()
    * @generated
    */
-  EReference getAlternatives_Sequences();
+  EReference getAlternatives_Options();
 
   /**
    * Returns the meta object for class '{@link org.istic.idm.xtext.videoGen.Mandatory <em>Mandatory</em>}'.
@@ -374,6 +374,17 @@ public interface VideoGenPackage extends EPackage
    * @generated
    */
   EReference getOptional_Sequence();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.Optional#getProbability <em>Probability</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Probability</em>'.
+   * @see org.istic.idm.xtext.videoGen.Optional#getProbability()
+   * @see #getOptional()
+   * @generated
+   */
+  EAttribute getOptional_Probability();
 
   /**
    * Returns the meta object for class '{@link org.istic.idm.xtext.videoGen.Sequence <em>Sequence</em>}'.
@@ -439,17 +450,6 @@ public interface VideoGenPackage extends EPackage
    * @generated
    */
   EAttribute getSequence_Mimetype();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.Sequence#getProbability <em>Probability</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Probability</em>'.
-   * @see org.istic.idm.xtext.videoGen.Sequence#getProbability()
-   * @see #getSequence()
-   * @generated
-   */
-  EAttribute getSequence_Probability();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -521,12 +521,12 @@ public interface VideoGenPackage extends EPackage
     EAttribute ALTERNATIVES__NAME = eINSTANCE.getAlternatives_Name();
 
     /**
-     * The meta object literal for the '<em><b>Sequences</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Options</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ALTERNATIVES__SEQUENCES = eINSTANCE.getAlternatives_Sequences();
+    EReference ALTERNATIVES__OPTIONS = eINSTANCE.getAlternatives_Options();
 
     /**
      * The meta object literal for the '{@link org.istic.idm.xtext.videoGen.impl.MandatoryImpl <em>Mandatory</em>}' class.
@@ -563,6 +563,14 @@ public interface VideoGenPackage extends EPackage
      * @generated
      */
     EReference OPTIONAL__SEQUENCE = eINSTANCE.getOptional_Sequence();
+
+    /**
+     * The meta object literal for the '<em><b>Probability</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPTIONAL__PROBABILITY = eINSTANCE.getOptional_Probability();
 
     /**
      * The meta object literal for the '{@link org.istic.idm.xtext.videoGen.impl.SequenceImpl <em>Sequence</em>}' class.
@@ -613,14 +621,6 @@ public interface VideoGenPackage extends EPackage
      * @generated
      */
     EAttribute SEQUENCE__MIMETYPE = eINSTANCE.getSequence_Mimetype();
-
-    /**
-     * The meta object literal for the '<em><b>Probability</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SEQUENCE__PROBABILITY = eINSTANCE.getSequence_Probability();
 
   }
 

@@ -38,8 +38,8 @@ class VideoGenTransform {
         
         var float proba
         
-        if(video.sequence.probability != 0){
-            proba = video.sequence.probability
+        if(video.probability != 0){
+            proba = video.probability
         } else {
             proba = 50
         }
@@ -53,16 +53,16 @@ class VideoGenTransform {
         return false
     }
     
-    def private static getAlternativesSequence(Alternatives alternatives) {
+    def private static selectSequence(Alternatives alternatives) {
         
         val DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator()
-        val nbAlternatives = alternatives.sequences.length
+        val nbAlternatives = alternatives.options.length
        	
-        alternatives.sequences.forEach[sequence |
+        alternatives.options.forEach[option |
             var int count = 0
-            var float proba
-            if(sequence.probability != 0){
-                proba = sequence.probability
+            var double proba
+            if(option.probability != 0){
+                proba = option.probability
             } else {
                 proba = 100 / nbAlternatives
             }
@@ -71,7 +71,7 @@ class VideoGenTransform {
         ]
             
         var int index = drng.getDistributedRandomNumber()
-        return alternatives.sequences.get(index)
+        return alternatives.options.get(index).sequence
     }
     
     def static toVideoGen(PlayList playList){
@@ -81,13 +81,13 @@ class VideoGenTransform {
         return videoGen as VideoGen
     }
     
-    def static private List<Sequence> allVideos(VideoGen videoGen) {
+    def static private List<Sequence> allSequences(VideoGen videoGen) {
 		val List<Sequence> sequences = new ArrayList<Sequence>
 			
-        videoGen.getStatements().forEach[statement |
+        videoGen.statements.forEach[statement |
 			if (statement instanceof Alternatives) {
-				statement.sequences.forEach[sequence |
-					sequences += sequence
+				statement.options.forEach[option |
+					sequences += option.sequence
 				]
 			} else if(statement instanceof Mandatory) {
 				sequences += statement.sequence
@@ -107,9 +107,9 @@ class VideoGenTransform {
    
     def static createThumbnails(VideoGen videogen){
 
-        allVideos(videogen).forEach[video |
+        allSequences(videogen).forEach[sequence |
 			
-			val fullPath = Paths.get(video.url)
+			val fullPath = Paths.get(sequence.url)
 			val wd = fullPath.parent
 			val extention = getFileExtension(fullPath.fileName.toString)
 			val thumbPathName = fullPath.fileName.toString.replaceAll("." + extention, ".png")
@@ -138,9 +138,9 @@ class VideoGenTransform {
     
     def static ConvertTo(VideoCodec type, VideoGen videogen){
 		
-        allVideos(videogen).forEach[video |
+        allSequences(videogen).forEach[sequence |
 			
-			val fullPath = Paths.get(video.url)
+			val fullPath = Paths.get(sequence.url)
 			val wd = fullPath.parent
 			val extention = getFileExtension(fullPath.fileName.toString)
 			val newFullPathName =  "videogen_" + fullPath.fileName.toString.replaceAll("." + extention, "." + type.extention)
@@ -164,20 +164,20 @@ class VideoGenTransform {
 			} catch (Exception e) {
 				println(e.message)
 			}
-			video.url = wd + "/" + type.format + "/" + newFullPathName
-			video.mimetype = type.mimeType
+			sequence.url = wd + "/" + type.format + "/" + newFullPathName
+			sequence.mimetype = type.mimeType
         ]
     }
     
     def static addMetadata(VideoGen videogen){
         
-        allVideos(videogen).forEach[video |
+        allSequences(videogen).forEach[sequence |
 
 			val IContainer container = IContainer.make()
-			if (container.open(new File(video.url).absolutePath, IContainer.Type.READ, null) <0) {
+			if (container.open(new File(sequence.url).absolutePath, IContainer.Type.READ, null) <0) {
 				   throw new RuntimeException("failed to open");
 			}
-			video.length = (container.duration / 1000000) as int;
+			sequence.length = (container.duration / 1000000) as int;
 			//video.mime = container.format.outputFormatMimeType;
         ]
     }
@@ -186,7 +186,7 @@ class VideoGenTransform {
         var PlayListFactoryImpl playlistFactory = PlayListFactoryImpl.init() as PlayListFactoryImpl
         val PlayListImpl playlist = playlistFactory.createPlayList() as PlayListImpl
         
-        videogen.getStatements().forEach[statement |
+        videogen.statements.forEach[statement |
 			var Sequence sequence = null
 			
 			if(statement instanceof Mandatory) {
@@ -196,7 +196,7 @@ class VideoGenTransform {
 					sequence = statement.sequence
 				}
 			} else if (statement instanceof Alternatives) {
-				sequence = getAlternativesSequence(statement)
+				sequence = selectSequence(statement)
 			}
 			if (sequence != null) {
 				var Object obj = new PlayListFactoryImpl().createVideo()
@@ -216,8 +216,8 @@ class VideoGenTransform {
        		«FOR statement: videogen.statements»
        			<div class="videoseq">
        			«IF statement instanceof Alternatives»
-					«FOR sequence: statement.sequences»
-						<div>«sequence.name» - «sequence.description»</div>
+					«FOR option: statement.options»
+						<div>«option.sequence.name» - «option.sequence.description»</div>
 						<button type="radio">Activate ?</div>
 				   	«ENDFOR»
 				«ENDIF»
@@ -226,7 +226,7 @@ class VideoGenTransform {
 				«ENDIF»
 				«IF statement instanceof Optional»
 					<div>«statement.sequence.name» - «statement.sequence.description»</div>
-					«IF statement.sequence.probability == 0»
+					«IF statement.probability == 0»
 						<button type="radio">Activate ?</div>
 					«ENDIF»
 				«ENDIF»

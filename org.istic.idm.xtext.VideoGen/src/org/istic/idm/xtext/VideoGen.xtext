@@ -3,32 +3,38 @@ grammar org.istic.idm.xtext.VideoGen with org.eclipse.xtext.common.Terminals
 generate videoGen "http://www.istic.org/idm/xtext/VideoGen"
 
 VideoGen:
-	"VideoGen" BEGIN statements+=Statement+ END;
+	"VideoGen"
+		BEGIN
+			statements+=Statement+
+		END;
 
 Statement:
-	Optional | Mandatory | Alternatives
+	"Optional" Optional | "Mandatory" Mandatory | Alternatives
 	;
 
 Alternatives:
-	"Alternatives" name=ID BEGIN sequences+=Sequence+ END;
+	"Alternatives" name=ID
+		BEGIN
+			options+=Optional+
+		END;
 
 Mandatory:
-	"Mandatory" sequence=Sequence
+	sequence=Sequence
 ;
 
 Optional:
-	"Optional" sequence=Sequence
+	sequence=Sequence ("probability="? probability=INT)?
 ;
 
 Sequence:
-	"Sequence" name=ID url=STRING BEGIN
-		(
-			("description=" description=STRING)? &
-			("length=" length=INT)? &
-			("mimetype=" mimetype=STRING)? &
-			("probability="? probability=INT)?
-		)
-	END
+	"Sequence" name=ID url=STRING
+		BEGIN
+			(
+				("description=" description=STRING)? &
+				("length=" length=INT)? &
+				("mimetype=" mimetype=STRING)?
+			)
+		END
 ;
 
 terminal BEGIN: 'synthetic:BEGIN';

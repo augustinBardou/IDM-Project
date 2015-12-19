@@ -13,13 +13,14 @@
     <genClasses ecoreClass="VideoGen.ecore#//Statement"/>
     <genClasses ecoreClass="VideoGen.ecore#//Alternatives">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//Alternatives/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VideoGen.ecore#//Alternatives/sequences"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VideoGen.ecore#//Alternatives/options"/>
     </genClasses>
     <genClasses ecoreClass="VideoGen.ecore#//Mandatory">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VideoGen.ecore#//Mandatory/sequence"/>
     </genClasses>
     <genClasses ecoreClass="VideoGen.ecore#//Optional">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VideoGen.ecore#//Optional/sequence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//Optional/probability"/>
     </genClasses>
     <genClasses ecoreClass="VideoGen.ecore#//Sequence">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//Sequence/name"/>
@@ -27,7 +28,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//Sequence/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//Sequence/length"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//Sequence/mimetype"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//Sequence/probability"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

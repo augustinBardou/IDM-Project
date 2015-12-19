@@ -186,7 +186,7 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAlternatives_Sequences()
+  public EReference getAlternatives_Options()
   {
     return (EReference)alternativesEClass.getEStructuralFeatures().get(1);
   }
@@ -229,6 +229,16 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
   public EReference getOptional_Sequence()
   {
     return (EReference)optionalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOptional_Probability()
+  {
+    return (EAttribute)optionalEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -296,16 +306,6 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSequence_Probability()
-  {
-    return (EAttribute)sequenceEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public VideoGenFactory getVideoGenFactory()
   {
     return (VideoGenFactory)getEFactoryInstance();
@@ -338,13 +338,14 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
 
     alternativesEClass = createEClass(ALTERNATIVES);
     createEAttribute(alternativesEClass, ALTERNATIVES__NAME);
-    createEReference(alternativesEClass, ALTERNATIVES__SEQUENCES);
+    createEReference(alternativesEClass, ALTERNATIVES__OPTIONS);
 
     mandatoryEClass = createEClass(MANDATORY);
     createEReference(mandatoryEClass, MANDATORY__SEQUENCE);
 
     optionalEClass = createEClass(OPTIONAL);
     createEReference(optionalEClass, OPTIONAL__SEQUENCE);
+    createEAttribute(optionalEClass, OPTIONAL__PROBABILITY);
 
     sequenceEClass = createEClass(SEQUENCE);
     createEAttribute(sequenceEClass, SEQUENCE__NAME);
@@ -352,7 +353,6 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
     createEAttribute(sequenceEClass, SEQUENCE__DESCRIPTION);
     createEAttribute(sequenceEClass, SEQUENCE__LENGTH);
     createEAttribute(sequenceEClass, SEQUENCE__MIMETYPE);
-    createEAttribute(sequenceEClass, SEQUENCE__PROBABILITY);
   }
 
   /**
@@ -396,13 +396,14 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
 
     initEClass(alternativesEClass, Alternatives.class, "Alternatives", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAlternatives_Name(), ecorePackage.getEString(), "name", null, 0, 1, Alternatives.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAlternatives_Sequences(), this.getSequence(), null, "sequences", null, 0, -1, Alternatives.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAlternatives_Options(), this.getOptional(), null, "options", null, 0, -1, Alternatives.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mandatoryEClass, Mandatory.class, "Mandatory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMandatory_Sequence(), this.getSequence(), null, "sequence", null, 0, 1, Mandatory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(optionalEClass, Optional.class, "Optional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOptional_Sequence(), this.getSequence(), null, "sequence", null, 0, 1, Optional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOptional_Probability(), ecorePackage.getEInt(), "probability", null, 0, 1, Optional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sequenceEClass, Sequence.class, "Sequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSequence_Name(), ecorePackage.getEString(), "name", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -410,7 +411,6 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
     initEAttribute(getSequence_Description(), ecorePackage.getEString(), "description", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSequence_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSequence_Mimetype(), ecorePackage.getEString(), "mimetype", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSequence_Probability(), ecorePackage.getEInt(), "probability", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
