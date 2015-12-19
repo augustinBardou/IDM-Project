@@ -3,25 +3,33 @@ grammar org.istic.idm.xtext.VideoGen with org.eclipse.xtext.common.Terminals
 generate videoGen "http://www.istic.org/idm/xtext/VideoGen"
 
 VideoGen:
-	"VideoGen" "{" statements+=Statement+ "}";
+	"VideoGen" BEGIN statements+=Statement+ END;
 
 Statement:
-	MandatoryVideoSeq | OptionalVideoSeq | Alternative;
+	Optional | Mandatory | Alternatives
+	;
 
-Alternative:
-	"alternatives" name=ID "{" videoseqs+=VideoSeq+ "}";
+Alternatives:
+	"Alternatives" name=ID BEGIN sequences+=Sequence+ END;
 
-VideoSeq:
-	"videoseq" name=ID url=STRING "{"
-		("length=" length=INT)?
-		("desc=" desc=STRING)?
-		("prob=" prob=INT)?
-		("mime=" mime=STRING)?
-	"}"
+Mandatory:
+	"Mandatory" sequence=Sequence
 ;
 
-MandatoryVideoSeq:
-	"mandatory" videoseq=VideoSeq;
+Optional:
+	"Optional" sequence=Sequence
+;
 
-OptionalVideoSeq:
-	"optional" videoseq=VideoSeq;
+Sequence:
+	"Sequence" name=ID url=STRING BEGIN
+		(
+			("description=" description=STRING)? &
+			("length=" length=INT)? &
+			("mimetype=" mimetype=STRING)? &
+			("probability="? probability=INT)?
+		)
+	END
+;
+
+terminal BEGIN: 'synthetic:BEGIN';
+terminal END: 'synthetic:END';

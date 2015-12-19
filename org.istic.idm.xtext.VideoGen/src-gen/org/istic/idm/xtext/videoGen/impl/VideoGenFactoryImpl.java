@@ -66,10 +66,10 @@ public class VideoGenFactoryImpl extends EFactoryImpl implements VideoGenFactory
     {
       case VideoGenPackage.VIDEO_GEN: return createVideoGen();
       case VideoGenPackage.STATEMENT: return createStatement();
-      case VideoGenPackage.ALTERNATIVE: return createAlternative();
-      case VideoGenPackage.VIDEO_SEQ: return createVideoSeq();
-      case VideoGenPackage.MANDATORY_VIDEO_SEQ: return createMandatoryVideoSeq();
-      case VideoGenPackage.OPTIONAL_VIDEO_SEQ: return createOptionalVideoSeq();
+      case VideoGenPackage.ALTERNATIVES: return createAlternatives();
+      case VideoGenPackage.MANDATORY: return createMandatory();
+      case VideoGenPackage.OPTIONAL: return createOptional();
+      case VideoGenPackage.SEQUENCE: return createSequence();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -102,10 +102,10 @@ public class VideoGenFactoryImpl extends EFactoryImpl implements VideoGenFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Alternative createAlternative()
+  public Alternatives createAlternatives()
   {
-    AlternativeImpl alternative = new AlternativeImpl();
-    return alternative;
+    AlternativesImpl alternatives = new AlternativesImpl();
+    return alternatives;
   }
 
   /**
@@ -113,10 +113,10 @@ public class VideoGenFactoryImpl extends EFactoryImpl implements VideoGenFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VideoSeq createVideoSeq()
+  public Mandatory createMandatory()
   {
-    VideoSeqImpl videoSeq = new VideoSeqImpl();
-    return videoSeq;
+    MandatoryImpl mandatory = new MandatoryImpl();
+    return mandatory;
   }
 
   /**
@@ -124,10 +124,10 @@ public class VideoGenFactoryImpl extends EFactoryImpl implements VideoGenFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public MandatoryVideoSeq createMandatoryVideoSeq()
+  public Optional createOptional()
   {
-    MandatoryVideoSeqImpl mandatoryVideoSeq = new MandatoryVideoSeqImpl();
-    return mandatoryVideoSeq;
+    OptionalImpl optional = new OptionalImpl();
+    return optional;
   }
 
   /**
@@ -135,10 +135,10 @@ public class VideoGenFactoryImpl extends EFactoryImpl implements VideoGenFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OptionalVideoSeq createOptionalVideoSeq()
+  public Sequence createSequence()
   {
-    OptionalVideoSeqImpl optionalVideoSeq = new OptionalVideoSeqImpl();
-    return optionalVideoSeq;
+    SequenceImpl sequence = new SequenceImpl();
+    return sequence;
   }
 
   /**

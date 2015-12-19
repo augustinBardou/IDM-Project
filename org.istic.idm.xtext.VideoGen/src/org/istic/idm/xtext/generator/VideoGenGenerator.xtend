@@ -6,8 +6,8 @@ package org.istic.idm.xtext.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-import org.istic.idm.xtext.videoGen.VideoSeq
 import com.google.inject.Inject
+import org.istic.idm.xtext.videoGen.Sequence
 
 /**
  * Generates code from your model files on save.
@@ -16,16 +16,16 @@ import com.google.inject.Inject
  */
 class VideoGenGenerator implements IGenerator {
 
-	@Inject PlayListGenerator playListGenerator
+	//@Inject PlayListGenerator playListGenerator
 
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		// Videos list control
-		fsa.generateFile('controls/videos-control.txt', 'Current videos list: \n' + 
+		fsa.generateFile('controls/videos-list.txt', 
 			resource.allContents
-				.filter(typeof(VideoSeq))
-				.map[name]
+				.filter(typeof(Sequence))
+				.map[url]
 				.join('\n'))
-		playListGenerator.doGenerate(resource, fsa)
+		//playListGenerator.doGenerate(resource, fsa)
     } 
 
 }

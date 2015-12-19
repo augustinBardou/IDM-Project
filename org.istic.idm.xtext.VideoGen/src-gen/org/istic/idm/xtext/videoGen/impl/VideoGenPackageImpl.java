@@ -9,14 +9,14 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.istic.idm.xtext.videoGen.Alternative;
-import org.istic.idm.xtext.videoGen.MandatoryVideoSeq;
-import org.istic.idm.xtext.videoGen.OptionalVideoSeq;
+import org.istic.idm.xtext.videoGen.Alternatives;
+import org.istic.idm.xtext.videoGen.Mandatory;
+import org.istic.idm.xtext.videoGen.Optional;
+import org.istic.idm.xtext.videoGen.Sequence;
 import org.istic.idm.xtext.videoGen.Statement;
 import org.istic.idm.xtext.videoGen.VideoGen;
 import org.istic.idm.xtext.videoGen.VideoGenFactory;
 import org.istic.idm.xtext.videoGen.VideoGenPackage;
-import org.istic.idm.xtext.videoGen.VideoSeq;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,28 +45,28 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass alternativeEClass = null;
+  private EClass alternativesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass videoSeqEClass = null;
+  private EClass mandatoryEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass mandatoryVideoSeqEClass = null;
+  private EClass optionalEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass optionalVideoSeqEClass = null;
+  private EClass sequenceEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -166,9 +166,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAlternative()
+  public EClass getAlternatives()
   {
-    return alternativeEClass;
+    return alternativesEClass;
   }
 
   /**
@@ -176,9 +176,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAlternative_Name()
+  public EAttribute getAlternatives_Name()
   {
-    return (EAttribute)alternativeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)alternativesEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -186,9 +186,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAlternative_Videoseqs()
+  public EReference getAlternatives_Sequences()
   {
-    return (EReference)alternativeEClass.getEStructuralFeatures().get(1);
+    return (EReference)alternativesEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -196,9 +196,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVideoSeq()
+  public EClass getMandatory()
   {
-    return videoSeqEClass;
+    return mandatoryEClass;
   }
 
   /**
@@ -206,9 +206,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVideoSeq_Name()
+  public EReference getMandatory_Sequence()
   {
-    return (EAttribute)videoSeqEClass.getEStructuralFeatures().get(0);
+    return (EReference)mandatoryEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -216,9 +216,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVideoSeq_Url()
+  public EClass getOptional()
   {
-    return (EAttribute)videoSeqEClass.getEStructuralFeatures().get(1);
+    return optionalEClass;
   }
 
   /**
@@ -226,9 +226,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVideoSeq_Length()
+  public EReference getOptional_Sequence()
   {
-    return (EAttribute)videoSeqEClass.getEStructuralFeatures().get(2);
+    return (EReference)optionalEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -236,9 +236,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVideoSeq_Desc()
+  public EClass getSequence()
   {
-    return (EAttribute)videoSeqEClass.getEStructuralFeatures().get(3);
+    return sequenceEClass;
   }
 
   /**
@@ -246,9 +246,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVideoSeq_Prob()
+  public EAttribute getSequence_Name()
   {
-    return (EAttribute)videoSeqEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)sequenceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -256,9 +256,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMandatoryVideoSeq()
+  public EAttribute getSequence_Url()
   {
-    return mandatoryVideoSeqEClass;
+    return (EAttribute)sequenceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -266,9 +266,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMandatoryVideoSeq_Videoseq()
+  public EAttribute getSequence_Description()
   {
-    return (EReference)mandatoryVideoSeqEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)sequenceEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -276,9 +276,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOptionalVideoSeq()
+  public EAttribute getSequence_Length()
   {
-    return optionalVideoSeqEClass;
+    return (EAttribute)sequenceEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -286,9 +286,19 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOptionalVideoSeq_Videoseq()
+  public EAttribute getSequence_Mimetype()
   {
-    return (EReference)optionalVideoSeqEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)sequenceEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSequence_Probability()
+  {
+    return (EAttribute)sequenceEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -326,22 +336,23 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
 
     statementEClass = createEClass(STATEMENT);
 
-    alternativeEClass = createEClass(ALTERNATIVE);
-    createEAttribute(alternativeEClass, ALTERNATIVE__NAME);
-    createEReference(alternativeEClass, ALTERNATIVE__VIDEOSEQS);
+    alternativesEClass = createEClass(ALTERNATIVES);
+    createEAttribute(alternativesEClass, ALTERNATIVES__NAME);
+    createEReference(alternativesEClass, ALTERNATIVES__SEQUENCES);
 
-    videoSeqEClass = createEClass(VIDEO_SEQ);
-    createEAttribute(videoSeqEClass, VIDEO_SEQ__NAME);
-    createEAttribute(videoSeqEClass, VIDEO_SEQ__URL);
-    createEAttribute(videoSeqEClass, VIDEO_SEQ__LENGTH);
-    createEAttribute(videoSeqEClass, VIDEO_SEQ__DESC);
-    createEAttribute(videoSeqEClass, VIDEO_SEQ__PROB);
+    mandatoryEClass = createEClass(MANDATORY);
+    createEReference(mandatoryEClass, MANDATORY__SEQUENCE);
 
-    mandatoryVideoSeqEClass = createEClass(MANDATORY_VIDEO_SEQ);
-    createEReference(mandatoryVideoSeqEClass, MANDATORY_VIDEO_SEQ__VIDEOSEQ);
+    optionalEClass = createEClass(OPTIONAL);
+    createEReference(optionalEClass, OPTIONAL__SEQUENCE);
 
-    optionalVideoSeqEClass = createEClass(OPTIONAL_VIDEO_SEQ);
-    createEReference(optionalVideoSeqEClass, OPTIONAL_VIDEO_SEQ__VIDEOSEQ);
+    sequenceEClass = createEClass(SEQUENCE);
+    createEAttribute(sequenceEClass, SEQUENCE__NAME);
+    createEAttribute(sequenceEClass, SEQUENCE__URL);
+    createEAttribute(sequenceEClass, SEQUENCE__DESCRIPTION);
+    createEAttribute(sequenceEClass, SEQUENCE__LENGTH);
+    createEAttribute(sequenceEClass, SEQUENCE__MIMETYPE);
+    createEAttribute(sequenceEClass, SEQUENCE__PROBABILITY);
   }
 
   /**
@@ -373,9 +384,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    alternativeEClass.getESuperTypes().add(this.getStatement());
-    mandatoryVideoSeqEClass.getESuperTypes().add(this.getStatement());
-    optionalVideoSeqEClass.getESuperTypes().add(this.getStatement());
+    alternativesEClass.getESuperTypes().add(this.getStatement());
+    mandatoryEClass.getESuperTypes().add(this.getStatement());
+    optionalEClass.getESuperTypes().add(this.getStatement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(videoGenEClass, VideoGen.class, "VideoGen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -383,22 +394,23 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(alternativeEClass, Alternative.class, "Alternative", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAlternative_Name(), ecorePackage.getEString(), "name", null, 0, 1, Alternative.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAlternative_Videoseqs(), this.getVideoSeq(), null, "videoseqs", null, 0, -1, Alternative.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(alternativesEClass, Alternatives.class, "Alternatives", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAlternatives_Name(), ecorePackage.getEString(), "name", null, 0, 1, Alternatives.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAlternatives_Sequences(), this.getSequence(), null, "sequences", null, 0, -1, Alternatives.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(videoSeqEClass, VideoSeq.class, "VideoSeq", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVideoSeq_Name(), ecorePackage.getEString(), "name", null, 0, 1, VideoSeq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVideoSeq_Url(), ecorePackage.getEString(), "url", null, 0, 1, VideoSeq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVideoSeq_Length(), ecorePackage.getEInt(), "length", null, 0, 1, VideoSeq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVideoSeq_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, VideoSeq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVideoSeq_Prob(), ecorePackage.getEInt(), "prob", null, 0, 1, VideoSeq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(mandatoryEClass, Mandatory.class, "Mandatory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMandatory_Sequence(), this.getSequence(), null, "sequence", null, 0, 1, Mandatory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(mandatoryVideoSeqEClass, MandatoryVideoSeq.class, "MandatoryVideoSeq", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMandatoryVideoSeq_Videoseq(), this.getVideoSeq(), null, "videoseq", null, 0, 1, MandatoryVideoSeq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(optionalEClass, Optional.class, "Optional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOptional_Sequence(), this.getSequence(), null, "sequence", null, 0, 1, Optional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(optionalVideoSeqEClass, OptionalVideoSeq.class, "OptionalVideoSeq", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOptionalVideoSeq_Videoseq(), this.getVideoSeq(), null, "videoseq", null, 0, 1, OptionalVideoSeq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(sequenceEClass, Sequence.class, "Sequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSequence_Name(), ecorePackage.getEString(), "name", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSequence_Url(), ecorePackage.getEString(), "url", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSequence_Description(), ecorePackage.getEString(), "description", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSequence_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSequence_Mimetype(), ecorePackage.getEString(), "mimetype", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSequence_Probability(), ecorePackage.getEInt(), "probability", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

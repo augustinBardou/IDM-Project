@@ -6,43 +6,40 @@ import PlayList.impl.PlayListFactoryImpl
 import PlayList.impl.PlayListImpl
 import PlayList.impl.VideoImpl
 import com.xuggle.xuggler.IContainer
-import java.io.BufferedReader
 import java.io.File
-import java.io.InputStreamReader
+import java.nio.file.Paths
 import java.util.ArrayList
 import java.util.List
-import org.istic.idm.xtext.videoGen.Alternative
-import org.istic.idm.xtext.videoGen.MandatoryVideoSeq
-import org.istic.idm.xtext.videoGen.OptionalVideoSeq
-import org.istic.idm.xtext.videoGen.VideoGen
-import org.istic.idm.xtext.videoGen.VideoGenFactory
-import org.istic.idm.xtext.videoGen.VideoSeq
-import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
-import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
-import org.istic.idm.xtext.videoGen.impl.VideoSeqImpl
 import org.apache.commons.exec.CommandLine
 import org.apache.commons.exec.DefaultExecutor
-import java.nio.file.Paths
+import org.istic.idm.xtext.videoGen.Optional
+import org.istic.idm.xtext.videoGen.Sequence
+import org.istic.idm.xtext.videoGen.VideoGen
+import org.istic.idm.xtext.videoGen.VideoGenFactory
+import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
+import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
+import org.istic.idm.xtext.videoGen.Alternatives
+import org.istic.idm.xtext.videoGen.Mandatory
 
 class VideoGenTransform {
   
 	new() { }
    
-   	def private static transferData(Video p_video, VideoSeq videoseq) {
+   	def private static transferData(Video p_video, Sequence videoseq) {
 		p_video.duration = videoseq.length
 		p_video.path = videoseq.url   
-		p_video.description = videoseq.desc  
-		p_video.mimetype = videoseq.mime  
+		p_video.description = videoseq.description 
+		p_video.mimetype = videoseq.mimetype
    	}
    
-    def private static isOptionable(OptionalVideoSeq video) {
+    def private static isSelected(Optional video) {
         
         var DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator()
         
         var float proba
         
-        if(video.videoseq.prob != 0){
-            proba = video.videoseq.prob
+        if(video.sequence.probability != 0){
+            proba = video.sequence.probability
         } else {
             proba = 50
         }
@@ -56,25 +53,25 @@ class VideoGenTransform {
         return false
     }
     
-    def private static getAlternativeVideoSeq(Alternative alternative) {
+    def private static getAlternativesSequence(Alternatives alternatives) {
         
         val DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator()
-        val nbAlternative = alternative.getVideoseqs().size
+        val nbAlternatives = alternatives.sequences.length
        	
-        alternative.getVideoseqs().forEach[videoseq |
+        alternatives.sequences.forEach[sequence |
             var int count = 0
             var float proba
-            if(videoseq.prob != 0){
-                proba = videoseq.prob
+            if(sequence.probability != 0){
+                proba = sequence.probability
             } else {
-                proba = 100 / nbAlternative
+                proba = 100 / nbAlternatives
             }
             drng.addNumber(count, proba)
             count++
         ]
             
         var int index = drng.getDistributedRandomNumber()
-        return alternative.getVideoseqs().get(index) as VideoSeqImpl
+        return alternatives.sequences.get(index)
     }
     
     def static toVideoGen(PlayList playList){
@@ -84,21 +81,21 @@ class VideoGenTransform {
         return videoGen as VideoGen
     }
     
-    def static private List<VideoSeq> allVideos(VideoGen videoGen) {
-		val List<VideoSeq> videoSeqs = new ArrayList<VideoSeq>
+    def static private List<Sequence> allVideos(VideoGen videoGen) {
+		val List<Sequence> sequences = new ArrayList<Sequence>
 			
         videoGen.getStatements().forEach[statement |
-			if (statement instanceof Alternative) {
-				statement.videoseqs.forEach[video |
-					videoSeqs += video
+			if (statement instanceof Alternatives) {
+				statement.sequences.forEach[sequence |
+					sequences += sequence
 				]
-			} else if(statement instanceof MandatoryVideoSeq){
-				videoSeqs += statement.videoseq
-			} else if(statement instanceof OptionalVideoSeq) {
-				videoSeqs += statement.videoseq
+			} else if(statement instanceof Mandatory) {
+				sequences += statement.sequence
+			} else if(statement instanceof Optional) {
+				sequences += statement.sequence
 			}
 		]
-		videoSeqs
+		sequences
     }
      
     def private static String getFileExtension(String fileName) {
@@ -168,7 +165,7 @@ class VideoGenTransform {
 				println(e.message)
 			}
 			video.url = wd + "/" + type.format + "/" + newFullPathName
-			video.mime = type.mimeType
+			video.mimetype = type.mimeType
         ]
     }
     
@@ -185,31 +182,58 @@ class VideoGenTransform {
         ]
     }
     
-    
     def static toPlayList(VideoGen videogen){
         var PlayListFactoryImpl playlistFactory = PlayListFactoryImpl.init() as PlayListFactoryImpl
         val PlayListImpl playlist = playlistFactory.createPlayList() as PlayListImpl
         
         videogen.getStatements().forEach[statement |
-			var VideoSeq videoSeq = null
+			var Sequence sequence = null
 			
-			if (statement instanceof Alternative) {
-				videoSeq = getAlternativeVideoSeq(statement)
-			} else if(statement instanceof MandatoryVideoSeq){
-				videoSeq = statement.videoseq
-			} else if(statement instanceof OptionalVideoSeq) {
-				if(isOptionable(statement)){
-					videoSeq = statement.videoseq
+			if(statement instanceof Mandatory) {
+				sequence = statement.sequence
+			} else if(statement instanceof Optional) {
+				if(isSelected(statement)){
+					sequence = statement.sequence
 				}
+			} else if (statement instanceof Alternatives) {
+				sequence = getAlternativesSequence(statement)
 			}
-			if (videoSeq != null) {
+			if (sequence != null) {
 				var Object obj = new PlayListFactoryImpl().createVideo()
 				var p_video = obj as Video
-				transferData(p_video, videoSeq)
+				transferData(p_video, sequence)
 				playlist.video.add(p_video as VideoImpl)
 			}
         ]
         playlist
+    }
+    
+    
+    def static toConfigurator(VideoGen videogen){
+       	'''
+       	<div class="videogen">
+       		<button class="generate">Generate</button>
+       		«FOR statement: videogen.statements»
+       			<div class="videoseq">
+       			«IF statement instanceof Alternatives»
+					«FOR sequence: statement.sequences»
+						<div>«sequence.name» - «sequence.description»</div>
+						<button type="radio">Activate ?</div>
+				   	«ENDFOR»
+				«ENDIF»
+				«IF statement instanceof Mandatory»
+					<div>«statement.sequence.name» - «statement.sequence.description»</div>
+				«ENDIF»
+				«IF statement instanceof Optional»
+					<div>«statement.sequence.name» - «statement.sequence.description»</div>
+					«IF statement.sequence.probability == 0»
+						<button type="radio">Activate ?</div>
+					«ENDIF»
+				«ENDIF»
+       			</div>
+       		«ENDFOR»
+       	</div>
+       	''' 
     }
     
 }

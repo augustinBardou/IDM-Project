@@ -3,7 +3,10 @@
  */
 package org.istic.idm.xtext.validation
 
-//import org.eclipse.xtext.validation.Check
+import org.eclipse.xtext.validation.Check
+import org.istic.idm.xtext.videoGen.VideoGenPackage.Literals
+import org.istic.idm.xtext.videoGen.Alternatives
+import org.istic.idm.xtext.videoGen.Sequence
 
 /**
  * This class contains custom validation rules. 
@@ -12,14 +15,40 @@ package org.istic.idm.xtext.validation
  */
 class VideoGenValidator extends AbstractVideoGenValidator {
 
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					MyDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+  public static val INVALID_NAME = 'invalidName'
+
+	@Check
+	def checkStatementNameStartsWithAlphabet(Sequence sequence) {
+		if (!Character.isAlphabetic(sequence.name.charAt(0))) {
+			warning('Sequence name should start with a alphabet character followed by a number', 
+					Literals.SEQUENCE__NAME,
+					INVALID_NAME)
+		}
+	}
+	
+	@Check
+	def checkStatementNameEndsWithNumeral(Sequence sequence) {
+		if (!Character.isDigit(sequence.name.charAt(1))) {
+			warning('Sequence name should be followed by a number', 
+					Literals.SEQUENCE__NAME,
+					INVALID_NAME)
+		}
+	}
+	@Check
+	def checkVideoSeqNameStartsWithAlphabet(Alternatives alternatives) {
+		if (!Character.isAlphabetic(alternatives.name.charAt(0))) {
+			warning('Alternatives name should start with a alphabet character followed by a number', 
+					Literals.ALTERNATIVES__NAME,
+					INVALID_NAME)
+		}
+	}
+	
+	@Check
+	def checkVideoSeqNameEndsWithNumeral(Alternatives alternatives) {
+		if (!Character.isDigit(alternatives.name.charAt(1))) {
+			warning('ALternatives name should be followed by a number', 
+					Literals.ALTERNATIVES__NAME,
+					INVALID_NAME)
+		}
+	}
 }

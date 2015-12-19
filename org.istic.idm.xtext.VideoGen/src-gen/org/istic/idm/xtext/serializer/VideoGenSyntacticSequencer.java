@@ -10,6 +10,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.istic.idm.xtext.services.VideoGenGrammarAccess;
@@ -18,17 +20,34 @@ import org.istic.idm.xtext.services.VideoGenGrammarAccess;
 public class VideoGenSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected VideoGenGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Sequence_ProbabilityKeyword_4_3_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (VideoGenGrammarAccess) access;
+		match_Sequence_ProbabilityKeyword_4_3_0_q = new TokenAlias(false, true, grammarAccess.getSequenceAccess().getProbabilityKeyword_4_3_0());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if(ruleCall.getRule() == grammarAccess.getBEGINRule())
+			return getBEGINToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getENDRule())
+			return getENDToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * Synthetic terminal rule. The concrete syntax is to be specified by clients.
+	 * Defaults to the empty string.
+	 */
+	protected String getBEGINToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
+	
+	/**
+	 * Synthetic terminal rule. The concrete syntax is to be specified by clients.
+	 * Defaults to the empty string.
+	 */
+	protected String getENDToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -36,8 +55,25 @@ public class VideoGenSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if(match_Sequence_ProbabilityKeyword_4_3_0_q.equals(syntax))
+				emit_Sequence_ProbabilityKeyword_4_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'probability='?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     description=STRING (ambiguity) probability=INT
+	 *     length=INT (ambiguity) probability=INT
+	 *     mimetype=STRING (ambiguity) probability=INT
+	 *     probability=INT (ambiguity) probability=INT
+	 *     url=STRING BEGIN (ambiguity) probability=INT
+	 */
+	protected void emit_Sequence_ProbabilityKeyword_4_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

@@ -41,40 +41,40 @@ public interface VideoGenFactory extends EFactory
   Statement createStatement();
 
   /**
-   * Returns a new object of class '<em>Alternative</em>'.
+   * Returns a new object of class '<em>Alternatives</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Alternative</em>'.
+   * @return a new object of class '<em>Alternatives</em>'.
    * @generated
    */
-  Alternative createAlternative();
+  Alternatives createAlternatives();
 
   /**
-   * Returns a new object of class '<em>Video Seq</em>'.
+   * Returns a new object of class '<em>Mandatory</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Video Seq</em>'.
+   * @return a new object of class '<em>Mandatory</em>'.
    * @generated
    */
-  VideoSeq createVideoSeq();
+  Mandatory createMandatory();
 
   /**
-   * Returns a new object of class '<em>Mandatory Video Seq</em>'.
+   * Returns a new object of class '<em>Optional</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Mandatory Video Seq</em>'.
+   * @return a new object of class '<em>Optional</em>'.
    * @generated
    */
-  MandatoryVideoSeq createMandatoryVideoSeq();
+  Optional createOptional();
 
   /**
-   * Returns a new object of class '<em>Optional Video Seq</em>'.
+   * Returns a new object of class '<em>Sequence</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Optional Video Seq</em>'.
+   * @return a new object of class '<em>Sequence</em>'.
    * @generated
    */
-  OptionalVideoSeq createOptionalVideoSeq();
+  Sequence createSequence();
 
   /**
    * Returns the package supported by this factory.

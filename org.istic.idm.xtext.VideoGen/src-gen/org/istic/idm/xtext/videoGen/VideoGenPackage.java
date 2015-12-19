@@ -104,14 +104,14 @@ public interface VideoGenPackage extends EPackage
   int STATEMENT_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.AlternativeImpl <em>Alternative</em>}' class.
+   * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.AlternativesImpl <em>Alternatives</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.istic.idm.xtext.videoGen.impl.AlternativeImpl
-   * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getAlternative()
+   * @see org.istic.idm.xtext.videoGen.impl.AlternativesImpl
+   * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getAlternatives()
    * @generated
    */
-  int ALTERNATIVE = 2;
+  int ALTERNATIVES = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -120,35 +120,91 @@ public interface VideoGenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALTERNATIVE__NAME = STATEMENT_FEATURE_COUNT + 0;
+  int ALTERNATIVES__NAME = STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Videoseqs</b></em>' containment reference list.
+   * The feature id for the '<em><b>Sequences</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ALTERNATIVE__VIDEOSEQS = STATEMENT_FEATURE_COUNT + 1;
+  int ALTERNATIVES__SEQUENCES = STATEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Alternative</em>' class.
+   * The number of structural features of the '<em>Alternatives</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ALTERNATIVE_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+  int ALTERNATIVES_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.VideoSeqImpl <em>Video Seq</em>}' class.
+   * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.MandatoryImpl <em>Mandatory</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.istic.idm.xtext.videoGen.impl.VideoSeqImpl
-   * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getVideoSeq()
+   * @see org.istic.idm.xtext.videoGen.impl.MandatoryImpl
+   * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getMandatory()
    * @generated
    */
-  int VIDEO_SEQ = 3;
+  int MANDATORY = 3;
+
+  /**
+   * The feature id for the '<em><b>Sequence</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MANDATORY__SEQUENCE = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Mandatory</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MANDATORY_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.OptionalImpl <em>Optional</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.istic.idm.xtext.videoGen.impl.OptionalImpl
+   * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getOptional()
+   * @generated
+   */
+  int OPTIONAL = 4;
+
+  /**
+   * The feature id for the '<em><b>Sequence</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPTIONAL__SEQUENCE = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Optional</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPTIONAL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.SequenceImpl <em>Sequence</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.istic.idm.xtext.videoGen.impl.SequenceImpl
+   * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getSequence()
+   * @generated
+   */
+  int SEQUENCE = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -157,7 +213,7 @@ public interface VideoGenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIDEO_SEQ__NAME = 0;
+  int SEQUENCE__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -166,7 +222,16 @@ public interface VideoGenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIDEO_SEQ__URL = 1;
+  int SEQUENCE__URL = 1;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEQUENCE__DESCRIPTION = 2;
 
   /**
    * The feature id for the '<em><b>Length</b></em>' attribute.
@@ -175,90 +240,34 @@ public interface VideoGenPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIDEO_SEQ__LENGTH = 2;
+  int SEQUENCE__LENGTH = 3;
 
   /**
-   * The feature id for the '<em><b>Desc</b></em>' attribute.
+   * The feature id for the '<em><b>Mimetype</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VIDEO_SEQ__DESC = 3;
+  int SEQUENCE__MIMETYPE = 4;
 
   /**
-   * The feature id for the '<em><b>Prob</b></em>' attribute.
+   * The feature id for the '<em><b>Probability</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VIDEO_SEQ__PROB = 4;
+  int SEQUENCE__PROBABILITY = 5;
 
   /**
-   * The number of structural features of the '<em>Video Seq</em>' class.
+   * The number of structural features of the '<em>Sequence</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VIDEO_SEQ_FEATURE_COUNT = 5;
-
-  /**
-   * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.MandatoryVideoSeqImpl <em>Mandatory Video Seq</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.istic.idm.xtext.videoGen.impl.MandatoryVideoSeqImpl
-   * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getMandatoryVideoSeq()
-   * @generated
-   */
-  int MANDATORY_VIDEO_SEQ = 4;
-
-  /**
-   * The feature id for the '<em><b>Videoseq</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MANDATORY_VIDEO_SEQ__VIDEOSEQ = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Mandatory Video Seq</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MANDATORY_VIDEO_SEQ_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.OptionalVideoSeqImpl <em>Optional Video Seq</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.istic.idm.xtext.videoGen.impl.OptionalVideoSeqImpl
-   * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getOptionalVideoSeq()
-   * @generated
-   */
-  int OPTIONAL_VIDEO_SEQ = 5;
-
-  /**
-   * The feature id for the '<em><b>Videoseq</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPTIONAL_VIDEO_SEQ__VIDEOSEQ = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Optional Video Seq</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPTIONAL_VIDEO_SEQ_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+  int SEQUENCE_FEATURE_COUNT = 6;
 
 
   /**
@@ -293,143 +302,154 @@ public interface VideoGenPackage extends EPackage
   EClass getStatement();
 
   /**
-   * Returns the meta object for class '{@link org.istic.idm.xtext.videoGen.Alternative <em>Alternative</em>}'.
+   * Returns the meta object for class '{@link org.istic.idm.xtext.videoGen.Alternatives <em>Alternatives</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Alternative</em>'.
-   * @see org.istic.idm.xtext.videoGen.Alternative
+   * @return the meta object for class '<em>Alternatives</em>'.
+   * @see org.istic.idm.xtext.videoGen.Alternatives
    * @generated
    */
-  EClass getAlternative();
+  EClass getAlternatives();
 
   /**
-   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.Alternative#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.istic.idm.xtext.videoGen.Alternative#getName()
-   * @see #getAlternative()
-   * @generated
-   */
-  EAttribute getAlternative_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.istic.idm.xtext.videoGen.Alternative#getVideoseqs <em>Videoseqs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Videoseqs</em>'.
-   * @see org.istic.idm.xtext.videoGen.Alternative#getVideoseqs()
-   * @see #getAlternative()
-   * @generated
-   */
-  EReference getAlternative_Videoseqs();
-
-  /**
-   * Returns the meta object for class '{@link org.istic.idm.xtext.videoGen.VideoSeq <em>Video Seq</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Video Seq</em>'.
-   * @see org.istic.idm.xtext.videoGen.VideoSeq
-   * @generated
-   */
-  EClass getVideoSeq();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.VideoSeq#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.Alternatives#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.istic.idm.xtext.videoGen.VideoSeq#getName()
-   * @see #getVideoSeq()
+   * @see org.istic.idm.xtext.videoGen.Alternatives#getName()
+   * @see #getAlternatives()
    * @generated
    */
-  EAttribute getVideoSeq_Name();
+  EAttribute getAlternatives_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.VideoSeq#getUrl <em>Url</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.istic.idm.xtext.videoGen.Alternatives#getSequences <em>Sequences</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sequences</em>'.
+   * @see org.istic.idm.xtext.videoGen.Alternatives#getSequences()
+   * @see #getAlternatives()
+   * @generated
+   */
+  EReference getAlternatives_Sequences();
+
+  /**
+   * Returns the meta object for class '{@link org.istic.idm.xtext.videoGen.Mandatory <em>Mandatory</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Mandatory</em>'.
+   * @see org.istic.idm.xtext.videoGen.Mandatory
+   * @generated
+   */
+  EClass getMandatory();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.istic.idm.xtext.videoGen.Mandatory#getSequence <em>Sequence</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Sequence</em>'.
+   * @see org.istic.idm.xtext.videoGen.Mandatory#getSequence()
+   * @see #getMandatory()
+   * @generated
+   */
+  EReference getMandatory_Sequence();
+
+  /**
+   * Returns the meta object for class '{@link org.istic.idm.xtext.videoGen.Optional <em>Optional</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Optional</em>'.
+   * @see org.istic.idm.xtext.videoGen.Optional
+   * @generated
+   */
+  EClass getOptional();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.istic.idm.xtext.videoGen.Optional#getSequence <em>Sequence</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Sequence</em>'.
+   * @see org.istic.idm.xtext.videoGen.Optional#getSequence()
+   * @see #getOptional()
+   * @generated
+   */
+  EReference getOptional_Sequence();
+
+  /**
+   * Returns the meta object for class '{@link org.istic.idm.xtext.videoGen.Sequence <em>Sequence</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sequence</em>'.
+   * @see org.istic.idm.xtext.videoGen.Sequence
+   * @generated
+   */
+  EClass getSequence();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.Sequence#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.istic.idm.xtext.videoGen.Sequence#getName()
+   * @see #getSequence()
+   * @generated
+   */
+  EAttribute getSequence_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.Sequence#getUrl <em>Url</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Url</em>'.
-   * @see org.istic.idm.xtext.videoGen.VideoSeq#getUrl()
-   * @see #getVideoSeq()
+   * @see org.istic.idm.xtext.videoGen.Sequence#getUrl()
+   * @see #getSequence()
    * @generated
    */
-  EAttribute getVideoSeq_Url();
+  EAttribute getSequence_Url();
 
   /**
-   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.VideoSeq#getLength <em>Length</em>}'.
+   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.Sequence#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see org.istic.idm.xtext.videoGen.Sequence#getDescription()
+   * @see #getSequence()
+   * @generated
+   */
+  EAttribute getSequence_Description();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.Sequence#getLength <em>Length</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Length</em>'.
-   * @see org.istic.idm.xtext.videoGen.VideoSeq#getLength()
-   * @see #getVideoSeq()
+   * @see org.istic.idm.xtext.videoGen.Sequence#getLength()
+   * @see #getSequence()
    * @generated
    */
-  EAttribute getVideoSeq_Length();
+  EAttribute getSequence_Length();
 
   /**
-   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.VideoSeq#getDesc <em>Desc</em>}'.
+   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.Sequence#getMimetype <em>Mimetype</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Desc</em>'.
-   * @see org.istic.idm.xtext.videoGen.VideoSeq#getDesc()
-   * @see #getVideoSeq()
+   * @return the meta object for the attribute '<em>Mimetype</em>'.
+   * @see org.istic.idm.xtext.videoGen.Sequence#getMimetype()
+   * @see #getSequence()
    * @generated
    */
-  EAttribute getVideoSeq_Desc();
+  EAttribute getSequence_Mimetype();
 
   /**
-   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.VideoSeq#getProb <em>Prob</em>}'.
+   * Returns the meta object for the attribute '{@link org.istic.idm.xtext.videoGen.Sequence#getProbability <em>Probability</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Prob</em>'.
-   * @see org.istic.idm.xtext.videoGen.VideoSeq#getProb()
-   * @see #getVideoSeq()
+   * @return the meta object for the attribute '<em>Probability</em>'.
+   * @see org.istic.idm.xtext.videoGen.Sequence#getProbability()
+   * @see #getSequence()
    * @generated
    */
-  EAttribute getVideoSeq_Prob();
-
-  /**
-   * Returns the meta object for class '{@link org.istic.idm.xtext.videoGen.MandatoryVideoSeq <em>Mandatory Video Seq</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Mandatory Video Seq</em>'.
-   * @see org.istic.idm.xtext.videoGen.MandatoryVideoSeq
-   * @generated
-   */
-  EClass getMandatoryVideoSeq();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.istic.idm.xtext.videoGen.MandatoryVideoSeq#getVideoseq <em>Videoseq</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Videoseq</em>'.
-   * @see org.istic.idm.xtext.videoGen.MandatoryVideoSeq#getVideoseq()
-   * @see #getMandatoryVideoSeq()
-   * @generated
-   */
-  EReference getMandatoryVideoSeq_Videoseq();
-
-  /**
-   * Returns the meta object for class '{@link org.istic.idm.xtext.videoGen.OptionalVideoSeq <em>Optional Video Seq</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Optional Video Seq</em>'.
-   * @see org.istic.idm.xtext.videoGen.OptionalVideoSeq
-   * @generated
-   */
-  EClass getOptionalVideoSeq();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.istic.idm.xtext.videoGen.OptionalVideoSeq#getVideoseq <em>Videoseq</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Videoseq</em>'.
-   * @see org.istic.idm.xtext.videoGen.OptionalVideoSeq#getVideoseq()
-   * @see #getOptionalVideoSeq()
-   * @generated
-   */
-  EReference getOptionalVideoSeq_Videoseq();
+  EAttribute getSequence_Probability();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -483,14 +503,14 @@ public interface VideoGenPackage extends EPackage
     EClass STATEMENT = eINSTANCE.getStatement();
 
     /**
-     * The meta object literal for the '{@link org.istic.idm.xtext.videoGen.impl.AlternativeImpl <em>Alternative</em>}' class.
+     * The meta object literal for the '{@link org.istic.idm.xtext.videoGen.impl.AlternativesImpl <em>Alternatives</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.istic.idm.xtext.videoGen.impl.AlternativeImpl
-     * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getAlternative()
+     * @see org.istic.idm.xtext.videoGen.impl.AlternativesImpl
+     * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getAlternatives()
      * @generated
      */
-    EClass ALTERNATIVE = eINSTANCE.getAlternative();
+    EClass ALTERNATIVES = eINSTANCE.getAlternatives();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -498,25 +518,61 @@ public interface VideoGenPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ALTERNATIVE__NAME = eINSTANCE.getAlternative_Name();
+    EAttribute ALTERNATIVES__NAME = eINSTANCE.getAlternatives_Name();
 
     /**
-     * The meta object literal for the '<em><b>Videoseqs</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Sequences</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ALTERNATIVE__VIDEOSEQS = eINSTANCE.getAlternative_Videoseqs();
+    EReference ALTERNATIVES__SEQUENCES = eINSTANCE.getAlternatives_Sequences();
 
     /**
-     * The meta object literal for the '{@link org.istic.idm.xtext.videoGen.impl.VideoSeqImpl <em>Video Seq</em>}' class.
+     * The meta object literal for the '{@link org.istic.idm.xtext.videoGen.impl.MandatoryImpl <em>Mandatory</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.istic.idm.xtext.videoGen.impl.VideoSeqImpl
-     * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getVideoSeq()
+     * @see org.istic.idm.xtext.videoGen.impl.MandatoryImpl
+     * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getMandatory()
      * @generated
      */
-    EClass VIDEO_SEQ = eINSTANCE.getVideoSeq();
+    EClass MANDATORY = eINSTANCE.getMandatory();
+
+    /**
+     * The meta object literal for the '<em><b>Sequence</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MANDATORY__SEQUENCE = eINSTANCE.getMandatory_Sequence();
+
+    /**
+     * The meta object literal for the '{@link org.istic.idm.xtext.videoGen.impl.OptionalImpl <em>Optional</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.istic.idm.xtext.videoGen.impl.OptionalImpl
+     * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getOptional()
+     * @generated
+     */
+    EClass OPTIONAL = eINSTANCE.getOptional();
+
+    /**
+     * The meta object literal for the '<em><b>Sequence</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPTIONAL__SEQUENCE = eINSTANCE.getOptional_Sequence();
+
+    /**
+     * The meta object literal for the '{@link org.istic.idm.xtext.videoGen.impl.SequenceImpl <em>Sequence</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.istic.idm.xtext.videoGen.impl.SequenceImpl
+     * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getSequence()
+     * @generated
+     */
+    EClass SEQUENCE = eINSTANCE.getSequence();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -524,7 +580,7 @@ public interface VideoGenPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VIDEO_SEQ__NAME = eINSTANCE.getVideoSeq_Name();
+    EAttribute SEQUENCE__NAME = eINSTANCE.getSequence_Name();
 
     /**
      * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
@@ -532,7 +588,15 @@ public interface VideoGenPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VIDEO_SEQ__URL = eINSTANCE.getVideoSeq_Url();
+    EAttribute SEQUENCE__URL = eINSTANCE.getSequence_Url();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SEQUENCE__DESCRIPTION = eINSTANCE.getSequence_Description();
 
     /**
      * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
@@ -540,59 +604,23 @@ public interface VideoGenPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VIDEO_SEQ__LENGTH = eINSTANCE.getVideoSeq_Length();
+    EAttribute SEQUENCE__LENGTH = eINSTANCE.getSequence_Length();
 
     /**
-     * The meta object literal for the '<em><b>Desc</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Mimetype</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VIDEO_SEQ__DESC = eINSTANCE.getVideoSeq_Desc();
+    EAttribute SEQUENCE__MIMETYPE = eINSTANCE.getSequence_Mimetype();
 
     /**
-     * The meta object literal for the '<em><b>Prob</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Probability</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VIDEO_SEQ__PROB = eINSTANCE.getVideoSeq_Prob();
-
-    /**
-     * The meta object literal for the '{@link org.istic.idm.xtext.videoGen.impl.MandatoryVideoSeqImpl <em>Mandatory Video Seq</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.istic.idm.xtext.videoGen.impl.MandatoryVideoSeqImpl
-     * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getMandatoryVideoSeq()
-     * @generated
-     */
-    EClass MANDATORY_VIDEO_SEQ = eINSTANCE.getMandatoryVideoSeq();
-
-    /**
-     * The meta object literal for the '<em><b>Videoseq</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MANDATORY_VIDEO_SEQ__VIDEOSEQ = eINSTANCE.getMandatoryVideoSeq_Videoseq();
-
-    /**
-     * The meta object literal for the '{@link org.istic.idm.xtext.videoGen.impl.OptionalVideoSeqImpl <em>Optional Video Seq</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.istic.idm.xtext.videoGen.impl.OptionalVideoSeqImpl
-     * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getOptionalVideoSeq()
-     * @generated
-     */
-    EClass OPTIONAL_VIDEO_SEQ = eINSTANCE.getOptionalVideoSeq();
-
-    /**
-     * The meta object literal for the '<em><b>Videoseq</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OPTIONAL_VIDEO_SEQ__VIDEOSEQ = eINSTANCE.getOptionalVideoSeq_Videoseq();
+    EAttribute SEQUENCE__PROBABILITY = eINSTANCE.getSequence_Probability();
 
   }
 

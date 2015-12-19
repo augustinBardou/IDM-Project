@@ -22,23 +22,23 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VideoGen");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cVideoGenKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cBEGINTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Assignment cStatementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cStatementsStatementParserRuleCall_2_0 = (RuleCall)cStatementsAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cENDTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//VideoGen:
-		//	"VideoGen" "{" statements+=Statement+ "}";
+		//	"VideoGen" BEGIN statements+=Statement+ END;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"VideoGen" "{" statements+=Statement+ "}"
+		//"VideoGen" BEGIN statements+=Statement+ END
 		public Group getGroup() { return cGroup; }
 
 		//"VideoGen"
 		public Keyword getVideoGenKeyword_0() { return cVideoGenKeyword_0; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		//BEGIN
+		public RuleCall getBEGINTerminalRuleCall_1() { return cBEGINTerminalRuleCall_1; }
 
 		//statements+=Statement+
 		public Assignment getStatementsAssignment_2() { return cStatementsAssignment_2; }
@@ -46,53 +46,53 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		//Statement
 		public RuleCall getStatementsStatementParserRuleCall_2_0() { return cStatementsStatementParserRuleCall_2_0; }
 
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		//END
+		public RuleCall getENDTerminalRuleCall_3() { return cENDTerminalRuleCall_3; }
 	}
 
 	public class StatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Statement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cMandatoryVideoSeqParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cOptionalVideoSeqParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cAlternativeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cOptionalParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMandatoryParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cAlternativesParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Statement:
-		//	MandatoryVideoSeq | OptionalVideoSeq | Alternative;
+		//	Optional | Mandatory | Alternatives;
 		@Override public ParserRule getRule() { return rule; }
 
-		//MandatoryVideoSeq | OptionalVideoSeq | Alternative
+		//Optional | Mandatory | Alternatives
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//MandatoryVideoSeq
-		public RuleCall getMandatoryVideoSeqParserRuleCall_0() { return cMandatoryVideoSeqParserRuleCall_0; }
+		//Optional
+		public RuleCall getOptionalParserRuleCall_0() { return cOptionalParserRuleCall_0; }
 
-		//OptionalVideoSeq
-		public RuleCall getOptionalVideoSeqParserRuleCall_1() { return cOptionalVideoSeqParserRuleCall_1; }
+		//Mandatory
+		public RuleCall getMandatoryParserRuleCall_1() { return cMandatoryParserRuleCall_1; }
 
-		//Alternative
-		public RuleCall getAlternativeParserRuleCall_2() { return cAlternativeParserRuleCall_2; }
+		//Alternatives
+		public RuleCall getAlternativesParserRuleCall_2() { return cAlternativesParserRuleCall_2; }
 	}
 
-	public class AlternativeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Alternative");
+	public class AlternativesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Alternatives");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAlternativesKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cVideoseqsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cVideoseqsVideoSeqParserRuleCall_3_0 = (RuleCall)cVideoseqsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final RuleCall cBEGINTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cSequencesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cSequencesSequenceParserRuleCall_3_0 = (RuleCall)cSequencesAssignment_3.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
-		//Alternative:
-		//	"alternatives" name=ID "{" videoseqs+=VideoSeq+ "}";
+		//Alternatives:
+		//	"Alternatives" name=ID BEGIN sequences+=Sequence+ END;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"alternatives" name=ID "{" videoseqs+=VideoSeq+ "}"
+		//"Alternatives" name=ID BEGIN sequences+=Sequence+ END
 		public Group getGroup() { return cGroup; }
 
-		//"alternatives"
+		//"Alternatives"
 		public Keyword getAlternativesKeyword_0() { return cAlternativesKeyword_0; }
 
 		//name=ID
@@ -101,51 +101,106 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		//BEGIN
+		public RuleCall getBEGINTerminalRuleCall_2() { return cBEGINTerminalRuleCall_2; }
 
-		//videoseqs+=VideoSeq+
-		public Assignment getVideoseqsAssignment_3() { return cVideoseqsAssignment_3; }
+		//sequences+=Sequence+
+		public Assignment getSequencesAssignment_3() { return cSequencesAssignment_3; }
 
-		//VideoSeq
-		public RuleCall getVideoseqsVideoSeqParserRuleCall_3_0() { return cVideoseqsVideoSeqParserRuleCall_3_0; }
+		//Sequence
+		public RuleCall getSequencesSequenceParserRuleCall_3_0() { return cSequencesSequenceParserRuleCall_3_0; }
 
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		//END
+		public RuleCall getENDTerminalRuleCall_4() { return cENDTerminalRuleCall_4; }
 	}
 
-	public class VideoSeqElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VideoSeq");
+	public class MandatoryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Mandatory");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cVideoseqKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cMandatoryKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSequenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSequenceSequenceParserRuleCall_1_0 = (RuleCall)cSequenceAssignment_1.eContents().get(0);
+		
+		//Mandatory:
+		//	"Mandatory" sequence=Sequence;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"Mandatory" sequence=Sequence
+		public Group getGroup() { return cGroup; }
+
+		//"Mandatory"
+		public Keyword getMandatoryKeyword_0() { return cMandatoryKeyword_0; }
+
+		//sequence=Sequence
+		public Assignment getSequenceAssignment_1() { return cSequenceAssignment_1; }
+
+		//Sequence
+		public RuleCall getSequenceSequenceParserRuleCall_1_0() { return cSequenceSequenceParserRuleCall_1_0; }
+	}
+
+	public class OptionalElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Optional");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOptionalKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSequenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSequenceSequenceParserRuleCall_1_0 = (RuleCall)cSequenceAssignment_1.eContents().get(0);
+		
+		//Optional:
+		//	"Optional" sequence=Sequence;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"Optional" sequence=Sequence
+		public Group getGroup() { return cGroup; }
+
+		//"Optional"
+		public Keyword getOptionalKeyword_0() { return cOptionalKeyword_0; }
+
+		//sequence=Sequence
+		public Assignment getSequenceAssignment_1() { return cSequenceAssignment_1; }
+
+		//Sequence
+		public RuleCall getSequenceSequenceParserRuleCall_1_0() { return cSequenceSequenceParserRuleCall_1_0; }
+	}
+
+	public class SequenceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Sequence");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSequenceKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cUrlAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cUrlSTRINGTerminalRuleCall_2_0 = (RuleCall)cUrlAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cLengthKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cLengthAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cLengthINTTerminalRuleCall_4_1_0 = (RuleCall)cLengthAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cDescKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cDescAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cDescSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cDescAssignment_5_1.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cProbKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cProbAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cProbINTTerminalRuleCall_6_1_0 = (RuleCall)cProbAssignment_6_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final RuleCall cBEGINTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final UnorderedGroup cUnorderedGroup_4 = (UnorderedGroup)cGroup.eContents().get(4);
+		private final Group cGroup_4_0 = (Group)cUnorderedGroup_4.eContents().get(0);
+		private final Keyword cDescriptionKeyword_4_0_0 = (Keyword)cGroup_4_0.eContents().get(0);
+		private final Assignment cDescriptionAssignment_4_0_1 = (Assignment)cGroup_4_0.eContents().get(1);
+		private final RuleCall cDescriptionSTRINGTerminalRuleCall_4_0_1_0 = (RuleCall)cDescriptionAssignment_4_0_1.eContents().get(0);
+		private final Group cGroup_4_1 = (Group)cUnorderedGroup_4.eContents().get(1);
+		private final Keyword cLengthKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
+		private final Assignment cLengthAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
+		private final RuleCall cLengthINTTerminalRuleCall_4_1_1_0 = (RuleCall)cLengthAssignment_4_1_1.eContents().get(0);
+		private final Group cGroup_4_2 = (Group)cUnorderedGroup_4.eContents().get(2);
+		private final Keyword cMimetypeKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
+		private final Assignment cMimetypeAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
+		private final RuleCall cMimetypeSTRINGTerminalRuleCall_4_2_1_0 = (RuleCall)cMimetypeAssignment_4_2_1.eContents().get(0);
+		private final Group cGroup_4_3 = (Group)cUnorderedGroup_4.eContents().get(3);
+		private final Keyword cProbabilityKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
+		private final Assignment cProbabilityAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
+		private final RuleCall cProbabilityINTTerminalRuleCall_4_3_1_0 = (RuleCall)cProbabilityAssignment_4_3_1.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
 		
-		//VideoSeq:
-		//	"videoseq" name=ID url=STRING "{" ("length=" length=INT)? ("desc=" desc=STRING)? ("prob=" prob=INT)? "}";
+		//Sequence:
+		//	"Sequence" name=ID url=STRING BEGIN (("description=" description=STRING)? & ("length=" length=INT)? & ("mimetype="
+		//	mimetype=STRING)? & ("probability="? probability=INT)?) END;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"videoseq" name=ID url=STRING "{" ("length=" length=INT)? ("desc=" desc=STRING)? ("prob=" prob=INT)? "}"
+		//"Sequence" name=ID url=STRING BEGIN (("description=" description=STRING)? & ("length=" length=INT)? & ("mimetype="
+		//mimetype=STRING)? & ("probability="? probability=INT)?) END
 		public Group getGroup() { return cGroup; }
 
-		//"videoseq"
-		public Keyword getVideoseqKeyword_0() { return cVideoseqKeyword_0; }
+		//"Sequence"
+		public Keyword getSequenceKeyword_0() { return cSequenceKeyword_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -159,104 +214,74 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getUrlSTRINGTerminalRuleCall_2_0() { return cUrlSTRINGTerminalRuleCall_2_0; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		//BEGIN
+		public RuleCall getBEGINTerminalRuleCall_3() { return cBEGINTerminalRuleCall_3; }
 
-		//("length=" length=INT)?
-		public Group getGroup_4() { return cGroup_4; }
+		//("description=" description=STRING)? & ("length=" length=INT)? & ("mimetype=" mimetype=STRING)? & ("probability="?
+		//probability=INT)?
+		public UnorderedGroup getUnorderedGroup_4() { return cUnorderedGroup_4; }
 
-		//"length="
-		public Keyword getLengthKeyword_4_0() { return cLengthKeyword_4_0; }
+		//("description=" description=STRING)?
+		public Group getGroup_4_0() { return cGroup_4_0; }
 
-		//length=INT
-		public Assignment getLengthAssignment_4_1() { return cLengthAssignment_4_1; }
+		//"description="
+		public Keyword getDescriptionKeyword_4_0_0() { return cDescriptionKeyword_4_0_0; }
 
-		//INT
-		public RuleCall getLengthINTTerminalRuleCall_4_1_0() { return cLengthINTTerminalRuleCall_4_1_0; }
-
-		//("desc=" desc=STRING)?
-		public Group getGroup_5() { return cGroup_5; }
-
-		//"desc="
-		public Keyword getDescKeyword_5_0() { return cDescKeyword_5_0; }
-
-		//desc=STRING
-		public Assignment getDescAssignment_5_1() { return cDescAssignment_5_1; }
+		//description=STRING
+		public Assignment getDescriptionAssignment_4_0_1() { return cDescriptionAssignment_4_0_1; }
 
 		//STRING
-		public RuleCall getDescSTRINGTerminalRuleCall_5_1_0() { return cDescSTRINGTerminalRuleCall_5_1_0; }
+		public RuleCall getDescriptionSTRINGTerminalRuleCall_4_0_1_0() { return cDescriptionSTRINGTerminalRuleCall_4_0_1_0; }
 
-		//("prob=" prob=INT)?
-		public Group getGroup_6() { return cGroup_6; }
+		//("length=" length=INT)?
+		public Group getGroup_4_1() { return cGroup_4_1; }
 
-		//"prob="
-		public Keyword getProbKeyword_6_0() { return cProbKeyword_6_0; }
+		//"length="
+		public Keyword getLengthKeyword_4_1_0() { return cLengthKeyword_4_1_0; }
 
-		//prob=INT
-		public Assignment getProbAssignment_6_1() { return cProbAssignment_6_1; }
+		//length=INT
+		public Assignment getLengthAssignment_4_1_1() { return cLengthAssignment_4_1_1; }
 
 		//INT
-		public RuleCall getProbINTTerminalRuleCall_6_1_0() { return cProbINTTerminalRuleCall_6_1_0; }
+		public RuleCall getLengthINTTerminalRuleCall_4_1_1_0() { return cLengthINTTerminalRuleCall_4_1_1_0; }
 
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
-	}
+		//("mimetype=" mimetype=STRING)?
+		public Group getGroup_4_2() { return cGroup_4_2; }
 
-	public class MandatoryVideoSeqElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MandatoryVideoSeq");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMandatoryKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVideoseqAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVideoseqVideoSeqParserRuleCall_1_0 = (RuleCall)cVideoseqAssignment_1.eContents().get(0);
-		
-		//MandatoryVideoSeq:
-		//	"mandatory" videoseq=VideoSeq;
-		@Override public ParserRule getRule() { return rule; }
+		//"mimetype="
+		public Keyword getMimetypeKeyword_4_2_0() { return cMimetypeKeyword_4_2_0; }
 
-		//"mandatory" videoseq=VideoSeq
-		public Group getGroup() { return cGroup; }
+		//mimetype=STRING
+		public Assignment getMimetypeAssignment_4_2_1() { return cMimetypeAssignment_4_2_1; }
 
-		//"mandatory"
-		public Keyword getMandatoryKeyword_0() { return cMandatoryKeyword_0; }
+		//STRING
+		public RuleCall getMimetypeSTRINGTerminalRuleCall_4_2_1_0() { return cMimetypeSTRINGTerminalRuleCall_4_2_1_0; }
 
-		//videoseq=VideoSeq
-		public Assignment getVideoseqAssignment_1() { return cVideoseqAssignment_1; }
+		//("probability="? probability=INT)?
+		public Group getGroup_4_3() { return cGroup_4_3; }
 
-		//VideoSeq
-		public RuleCall getVideoseqVideoSeqParserRuleCall_1_0() { return cVideoseqVideoSeqParserRuleCall_1_0; }
-	}
+		//"probability="?
+		public Keyword getProbabilityKeyword_4_3_0() { return cProbabilityKeyword_4_3_0; }
 
-	public class OptionalVideoSeqElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OptionalVideoSeq");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cOptionalKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVideoseqAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVideoseqVideoSeqParserRuleCall_1_0 = (RuleCall)cVideoseqAssignment_1.eContents().get(0);
-		
-		//OptionalVideoSeq:
-		//	"optional" videoseq=VideoSeq;
-		@Override public ParserRule getRule() { return rule; }
+		//probability=INT
+		public Assignment getProbabilityAssignment_4_3_1() { return cProbabilityAssignment_4_3_1; }
 
-		//"optional" videoseq=VideoSeq
-		public Group getGroup() { return cGroup; }
+		//INT
+		public RuleCall getProbabilityINTTerminalRuleCall_4_3_1_0() { return cProbabilityINTTerminalRuleCall_4_3_1_0; }
 
-		//"optional"
-		public Keyword getOptionalKeyword_0() { return cOptionalKeyword_0; }
-
-		//videoseq=VideoSeq
-		public Assignment getVideoseqAssignment_1() { return cVideoseqAssignment_1; }
-
-		//VideoSeq
-		public RuleCall getVideoseqVideoSeqParserRuleCall_1_0() { return cVideoseqVideoSeqParserRuleCall_1_0; }
+		//END
+		public RuleCall getENDTerminalRuleCall_5() { return cENDTerminalRuleCall_5; }
 	}
 	
 	
 	private final VideoGenElements pVideoGen;
 	private final StatementElements pStatement;
-	private final AlternativeElements pAlternative;
-	private final VideoSeqElements pVideoSeq;
-	private final MandatoryVideoSeqElements pMandatoryVideoSeq;
-	private final OptionalVideoSeqElements pOptionalVideoSeq;
+	private final AlternativesElements pAlternatives;
+	private final MandatoryElements pMandatory;
+	private final OptionalElements pOptional;
+	private final SequenceElements pSequence;
+	private final TerminalRule tBEGIN;
+	private final TerminalRule tEND;
 	
 	private final Grammar grammar;
 
@@ -269,10 +294,12 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pVideoGen = new VideoGenElements();
 		this.pStatement = new StatementElements();
-		this.pAlternative = new AlternativeElements();
-		this.pVideoSeq = new VideoSeqElements();
-		this.pMandatoryVideoSeq = new MandatoryVideoSeqElements();
-		this.pOptionalVideoSeq = new OptionalVideoSeqElements();
+		this.pAlternatives = new AlternativesElements();
+		this.pMandatory = new MandatoryElements();
+		this.pOptional = new OptionalElements();
+		this.pSequence = new SequenceElements();
+		this.tBEGIN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BEGIN");
+		this.tEND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "END");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -303,7 +330,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//VideoGen:
-	//	"VideoGen" "{" statements+=Statement+ "}";
+	//	"VideoGen" BEGIN statements+=Statement+ END;
 	public VideoGenElements getVideoGenAccess() {
 		return pVideoGen;
 	}
@@ -313,7 +340,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Statement:
-	//	MandatoryVideoSeq | OptionalVideoSeq | Alternative;
+	//	Optional | Mandatory | Alternatives;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
@@ -322,45 +349,58 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		return getStatementAccess().getRule();
 	}
 
-	//Alternative:
-	//	"alternatives" name=ID "{" videoseqs+=VideoSeq+ "}";
-	public AlternativeElements getAlternativeAccess() {
-		return pAlternative;
+	//Alternatives:
+	//	"Alternatives" name=ID BEGIN sequences+=Sequence+ END;
+	public AlternativesElements getAlternativesAccess() {
+		return pAlternatives;
 	}
 	
-	public ParserRule getAlternativeRule() {
-		return getAlternativeAccess().getRule();
+	public ParserRule getAlternativesRule() {
+		return getAlternativesAccess().getRule();
 	}
 
-	//VideoSeq:
-	//	"videoseq" name=ID url=STRING "{" ("length=" length=INT)? ("desc=" desc=STRING)? ("prob=" prob=INT)? "}";
-	public VideoSeqElements getVideoSeqAccess() {
-		return pVideoSeq;
+	//Mandatory:
+	//	"Mandatory" sequence=Sequence;
+	public MandatoryElements getMandatoryAccess() {
+		return pMandatory;
 	}
 	
-	public ParserRule getVideoSeqRule() {
-		return getVideoSeqAccess().getRule();
+	public ParserRule getMandatoryRule() {
+		return getMandatoryAccess().getRule();
 	}
 
-	//MandatoryVideoSeq:
-	//	"mandatory" videoseq=VideoSeq;
-	public MandatoryVideoSeqElements getMandatoryVideoSeqAccess() {
-		return pMandatoryVideoSeq;
+	//Optional:
+	//	"Optional" sequence=Sequence;
+	public OptionalElements getOptionalAccess() {
+		return pOptional;
 	}
 	
-	public ParserRule getMandatoryVideoSeqRule() {
-		return getMandatoryVideoSeqAccess().getRule();
+	public ParserRule getOptionalRule() {
+		return getOptionalAccess().getRule();
 	}
 
-	//OptionalVideoSeq:
-	//	"optional" videoseq=VideoSeq;
-	public OptionalVideoSeqElements getOptionalVideoSeqAccess() {
-		return pOptionalVideoSeq;
+	//Sequence:
+	//	"Sequence" name=ID url=STRING BEGIN (("description=" description=STRING)? & ("length=" length=INT)? & ("mimetype="
+	//	mimetype=STRING)? & ("probability="? probability=INT)?) END;
+	public SequenceElements getSequenceAccess() {
+		return pSequence;
 	}
 	
-	public ParserRule getOptionalVideoSeqRule() {
-		return getOptionalVideoSeqAccess().getRule();
+	public ParserRule getSequenceRule() {
+		return getSequenceAccess().getRule();
 	}
+
+	//terminal BEGIN:
+	//	"synthetic:BEGIN";
+	public TerminalRule getBEGINRule() {
+		return tBEGIN;
+	} 
+
+	//terminal END:
+	//	"synthetic:END";
+	public TerminalRule getENDRule() {
+		return tEND;
+	} 
 
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;

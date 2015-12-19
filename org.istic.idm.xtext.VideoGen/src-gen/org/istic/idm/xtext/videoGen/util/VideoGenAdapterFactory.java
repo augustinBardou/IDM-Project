@@ -85,24 +85,24 @@ public class VideoGenAdapterFactory extends AdapterFactoryImpl
         return createStatementAdapter();
       }
       @Override
-      public Adapter caseAlternative(Alternative object)
+      public Adapter caseAlternatives(Alternatives object)
       {
-        return createAlternativeAdapter();
+        return createAlternativesAdapter();
       }
       @Override
-      public Adapter caseVideoSeq(VideoSeq object)
+      public Adapter caseMandatory(Mandatory object)
       {
-        return createVideoSeqAdapter();
+        return createMandatoryAdapter();
       }
       @Override
-      public Adapter caseMandatoryVideoSeq(MandatoryVideoSeq object)
+      public Adapter caseOptional(Optional object)
       {
-        return createMandatoryVideoSeqAdapter();
+        return createOptionalAdapter();
       }
       @Override
-      public Adapter caseOptionalVideoSeq(OptionalVideoSeq object)
+      public Adapter caseSequence(Sequence object)
       {
-        return createOptionalVideoSeqAdapter();
+        return createSequenceAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -157,61 +157,61 @@ public class VideoGenAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.istic.idm.xtext.videoGen.Alternative <em>Alternative</em>}'.
+   * Creates a new adapter for an object of class '{@link org.istic.idm.xtext.videoGen.Alternatives <em>Alternatives</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.istic.idm.xtext.videoGen.Alternative
+   * @see org.istic.idm.xtext.videoGen.Alternatives
    * @generated
    */
-  public Adapter createAlternativeAdapter()
+  public Adapter createAlternativesAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.istic.idm.xtext.videoGen.VideoSeq <em>Video Seq</em>}'.
+   * Creates a new adapter for an object of class '{@link org.istic.idm.xtext.videoGen.Mandatory <em>Mandatory</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.istic.idm.xtext.videoGen.VideoSeq
+   * @see org.istic.idm.xtext.videoGen.Mandatory
    * @generated
    */
-  public Adapter createVideoSeqAdapter()
+  public Adapter createMandatoryAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.istic.idm.xtext.videoGen.MandatoryVideoSeq <em>Mandatory Video Seq</em>}'.
+   * Creates a new adapter for an object of class '{@link org.istic.idm.xtext.videoGen.Optional <em>Optional</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.istic.idm.xtext.videoGen.MandatoryVideoSeq
+   * @see org.istic.idm.xtext.videoGen.Optional
    * @generated
    */
-  public Adapter createMandatoryVideoSeqAdapter()
+  public Adapter createOptionalAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.istic.idm.xtext.videoGen.OptionalVideoSeq <em>Optional Video Seq</em>}'.
+   * Creates a new adapter for an object of class '{@link org.istic.idm.xtext.videoGen.Sequence <em>Sequence</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.istic.idm.xtext.videoGen.OptionalVideoSeq
+   * @see org.istic.idm.xtext.videoGen.Sequence
    * @generated
    */
-  public Adapter createOptionalVideoSeqAdapter()
+  public Adapter createSequenceAdapter()
   {
     return null;
   }
