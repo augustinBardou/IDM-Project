@@ -39,23 +39,29 @@ public class VideoGenParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 					put(grammarAccess.getVideoGenAccess().getGroup(), "rule__VideoGen__Group__0");
-					put(grammarAccess.getAlternativeAccess().getGroup(), "rule__Alternative__Group__0");
-					put(grammarAccess.getVideoSeqAccess().getGroup(), "rule__VideoSeq__Group__0");
-					put(grammarAccess.getVideoSeqAccess().getGroup_4(), "rule__VideoSeq__Group_4__0");
-					put(grammarAccess.getVideoSeqAccess().getGroup_5(), "rule__VideoSeq__Group_5__0");
-					put(grammarAccess.getVideoSeqAccess().getGroup_6(), "rule__VideoSeq__Group_6__0");
-					put(grammarAccess.getMandatoryVideoSeqAccess().getGroup(), "rule__MandatoryVideoSeq__Group__0");
-					put(grammarAccess.getOptionalVideoSeqAccess().getGroup(), "rule__OptionalVideoSeq__Group__0");
+					put(grammarAccess.getStatementAccess().getGroup_0(), "rule__Statement__Group_0__0");
+					put(grammarAccess.getStatementAccess().getGroup_1(), "rule__Statement__Group_1__0");
+					put(grammarAccess.getAlternativesAccess().getGroup(), "rule__Alternatives__Group__0");
+					put(grammarAccess.getOptionalAccess().getGroup(), "rule__Optional__Group__0");
+					put(grammarAccess.getOptionalAccess().getGroup_0(), "rule__Optional__Group_0__0");
+					put(grammarAccess.getSequenceAccess().getGroup(), "rule__Sequence__Group__0");
+					put(grammarAccess.getSequenceAccess().getGroup_3_0(), "rule__Sequence__Group_3_0__0");
+					put(grammarAccess.getSequenceAccess().getGroup_3_0_0(), "rule__Sequence__Group_3_0_0__0");
+					put(grammarAccess.getSequenceAccess().getGroup_3_0_1(), "rule__Sequence__Group_3_0_1__0");
+					put(grammarAccess.getSequenceAccess().getGroup_3_1(), "rule__Sequence__Group_3_1__0");
+					put(grammarAccess.getSequenceAccess().getGroup_3_2(), "rule__Sequence__Group_3_2__0");
 					put(grammarAccess.getVideoGenAccess().getStatementsAssignment_2(), "rule__VideoGen__StatementsAssignment_2");
-					put(grammarAccess.getAlternativeAccess().getNameAssignment_1(), "rule__Alternative__NameAssignment_1");
-					put(grammarAccess.getAlternativeAccess().getVideoseqsAssignment_3(), "rule__Alternative__VideoseqsAssignment_3");
-					put(grammarAccess.getVideoSeqAccess().getNameAssignment_1(), "rule__VideoSeq__NameAssignment_1");
-					put(grammarAccess.getVideoSeqAccess().getUrlAssignment_2(), "rule__VideoSeq__UrlAssignment_2");
-					put(grammarAccess.getVideoSeqAccess().getLengthAssignment_4_1(), "rule__VideoSeq__LengthAssignment_4_1");
-					put(grammarAccess.getVideoSeqAccess().getDescAssignment_5_1(), "rule__VideoSeq__DescAssignment_5_1");
-					put(grammarAccess.getVideoSeqAccess().getProbAssignment_6_1(), "rule__VideoSeq__ProbAssignment_6_1");
-					put(grammarAccess.getMandatoryVideoSeqAccess().getVideoseqAssignment_1(), "rule__MandatoryVideoSeq__VideoseqAssignment_1");
-					put(grammarAccess.getOptionalVideoSeqAccess().getVideoseqAssignment_1(), "rule__OptionalVideoSeq__VideoseqAssignment_1");
+					put(grammarAccess.getAlternativesAccess().getNameAssignment_1(), "rule__Alternatives__NameAssignment_1");
+					put(grammarAccess.getAlternativesAccess().getOptionsAssignment_3(), "rule__Alternatives__OptionsAssignment_3");
+					put(grammarAccess.getMandatoryAccess().getSequenceAssignment(), "rule__Mandatory__SequenceAssignment");
+					put(grammarAccess.getOptionalAccess().getProbabilityAssignment_0_1(), "rule__Optional__ProbabilityAssignment_0_1");
+					put(grammarAccess.getOptionalAccess().getSequenceAssignment_1(), "rule__Optional__SequenceAssignment_1");
+					put(grammarAccess.getSequenceAccess().getNameAssignment_1(), "rule__Sequence__NameAssignment_1");
+					put(grammarAccess.getSequenceAccess().getUrlAssignment_3_0_0_1(), "rule__Sequence__UrlAssignment_3_0_0_1");
+					put(grammarAccess.getSequenceAccess().getDescriptionAssignment_3_0_1_1(), "rule__Sequence__DescriptionAssignment_3_0_1_1");
+					put(grammarAccess.getSequenceAccess().getLengthAssignment_3_1_1(), "rule__Sequence__LengthAssignment_3_1_1");
+					put(grammarAccess.getSequenceAccess().getMimetypeAssignment_3_2_1(), "rule__Sequence__MimetypeAssignment_3_2_1");
+					put(grammarAccess.getSequenceAccess().getUnorderedGroup_3(), "rule__Sequence__UnorderedGroup_3");
 				}
 			};
 		}

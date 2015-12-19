@@ -127,7 +127,8 @@ Workflow {
     
     		// provides a compare view
     		fragment = compare.CompareFragment auto-inject {}
-    	}
+    		
+		}
 	}
 }
 

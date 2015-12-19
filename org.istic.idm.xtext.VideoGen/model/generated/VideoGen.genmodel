@@ -19,8 +19,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VideoGen.ecore#//Mandatory/sequence"/>
     </genClasses>
     <genClasses ecoreClass="VideoGen.ecore#//Optional">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VideoGen.ecore#//Optional/sequence"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//Optional/probability"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VideoGen.ecore#//Optional/sequence"/>
     </genClasses>
     <genClasses ecoreClass="VideoGen.ecore#//Sequence">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VideoGen.ecore#//Sequence/name"/>

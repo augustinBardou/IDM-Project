@@ -226,9 +226,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOptional_Sequence()
+  public EAttribute getOptional_Probability()
   {
-    return (EReference)optionalEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)optionalEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -236,9 +236,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOptional_Probability()
+  public EReference getOptional_Sequence()
   {
-    return (EAttribute)optionalEClass.getEStructuralFeatures().get(1);
+    return (EReference)optionalEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -344,8 +344,8 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
     createEReference(mandatoryEClass, MANDATORY__SEQUENCE);
 
     optionalEClass = createEClass(OPTIONAL);
-    createEReference(optionalEClass, OPTIONAL__SEQUENCE);
     createEAttribute(optionalEClass, OPTIONAL__PROBABILITY);
+    createEReference(optionalEClass, OPTIONAL__SEQUENCE);
 
     sequenceEClass = createEClass(SEQUENCE);
     createEAttribute(sequenceEClass, SEQUENCE__NAME);
@@ -402,8 +402,8 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
     initEReference(getMandatory_Sequence(), this.getSequence(), null, "sequence", null, 0, 1, Mandatory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(optionalEClass, Optional.class, "Optional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOptional_Sequence(), this.getSequence(), null, "sequence", null, 0, 1, Optional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getOptional_Probability(), ecorePackage.getEInt(), "probability", null, 0, 1, Optional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOptional_Sequence(), this.getSequence(), null, "sequence", null, 0, 1, Optional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sequenceEClass, Sequence.class, "Sequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSequence_Name(), ecorePackage.getEString(), "name", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

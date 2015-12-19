@@ -20,34 +20,21 @@ import org.istic.idm.xtext.services.VideoGenGrammarAccess;
 public class VideoGenSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected VideoGenGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Optional_ProbabilityKeyword_1_0_q;
+	protected AbstractElementAlias match_Sequence_UrlKeyword_3_0_0_0_q;
+	protected AbstractElementAlias match_Statement_MandatoryKeyword_1_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (VideoGenGrammarAccess) access;
-		match_Optional_ProbabilityKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getOptionalAccess().getProbabilityKeyword_1_0());
+		match_Sequence_UrlKeyword_3_0_0_0_q = new TokenAlias(false, true, grammarAccess.getSequenceAccess().getUrlKeyword_3_0_0_0());
+		match_Statement_MandatoryKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getStatementAccess().getMandatoryKeyword_1_0());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getBEGINRule())
-			return getBEGINToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getENDRule())
-			return getENDToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * Synthetic terminal rule. The concrete syntax is to be specified by clients.
-	 * Defaults to the empty string.
-	 */
-	protected String getBEGINToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
-	
-	/**
-	 * Synthetic terminal rule. The concrete syntax is to be specified by clients.
-	 * Defaults to the empty string.
-	 */
-	protected String getENDToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -55,20 +42,37 @@ public class VideoGenSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Optional_ProbabilityKeyword_1_0_q.equals(syntax))
-				emit_Optional_ProbabilityKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_Sequence_UrlKeyword_3_0_0_0_q.equals(syntax))
+				emit_Sequence_UrlKeyword_3_0_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Statement_MandatoryKeyword_1_0_q.equals(syntax))
+				emit_Statement_MandatoryKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     'probability='?
+	 *     'url='?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     sequence=Sequence (ambiguity) probability=INT
+	 *     description=STRING (ambiguity) url=STRING
+	 *     length=INT (ambiguity) url=STRING
+	 *     mimetype=STRING (ambiguity) url=STRING
+	 *     name=ID '{' (ambiguity) url=STRING
+	 *     url=STRING (ambiguity) url=STRING
 	 */
-	protected void emit_Optional_ProbabilityKeyword_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Sequence_UrlKeyword_3_0_0_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '@Mandatory'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) sequence=Sequence
+	 */
+	protected void emit_Statement_MandatoryKeyword_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

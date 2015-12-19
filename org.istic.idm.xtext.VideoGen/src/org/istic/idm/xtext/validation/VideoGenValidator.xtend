@@ -7,6 +7,7 @@ import org.eclipse.xtext.validation.Check
 import org.istic.idm.xtext.videoGen.VideoGenPackage.Literals
 import org.istic.idm.xtext.videoGen.Alternatives
 import org.istic.idm.xtext.videoGen.Sequence
+import org.istic.idm.xtext.videoGen.Optional
 
 /**
  * This class contains custom validation rules. 
@@ -16,7 +17,35 @@ import org.istic.idm.xtext.videoGen.Sequence
 class VideoGenValidator extends AbstractVideoGenValidator {
 
   public static val INVALID_NAME = 'invalidName'
+  public static val INVALID_PROBABILITY = 'invalidProbability'
 
+	@Check
+	def checkOptionalProbability(Optional optional) {
+		if (optional.probability > 100) {
+			error('Optional probability should not be higher than 100%', 
+					Literals.OPTIONAL__PROBABILITY,
+					INVALID_PROBABILITY)
+		}
+		else if (optional.probability == 100) {
+			warning('Optional probability should not equal 100%, otherwize create a Mandatory sequence instead ;)', 
+					Literals.OPTIONAL__PROBABILITY,
+					INVALID_PROBABILITY)
+		}
+	}
+	
+	@Check
+	def checkAlternativesProbability(Alternatives alternatives) {
+		var total = 0
+		for (option: alternatives.options) {
+			total += option.probability
+		}	
+		if (total > 100) {
+			error('Probabilities sum inside an alternatives should not exceed 100%', 
+					Literals.ALTERNATIVES__OPTIONS,
+					INVALID_PROBABILITY)
+		}
+	}
+	
 	@Check
 	def checkStatementNameStartsWithAlphabet(Sequence sequence) {
 		if (!Character.isAlphabetic(sequence.name.charAt(0))) {

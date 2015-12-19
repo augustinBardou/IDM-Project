@@ -79,7 +79,7 @@ public class VideoGenSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (sequence=Sequence probability=INT?)
+	 *     (probability=INT? sequence=Sequence)
 	 */
 	protected void sequence_Optional(EObject context, Optional semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

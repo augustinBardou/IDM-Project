@@ -59,6 +59,12 @@ public class VideoGenToPlayList {
 		System.out.println("Flowplayer launched...");
 	}
 	
+	public static void launchConfigurator() throws IOException {
+		writeToFile("flowplayer.m3u8", PlayListTransform.toM3U(playlist, true, true));
+		VideoGenTransform.toConfigurator(videoGen);
+		System.out.println("Configurator launched...");
+	}
+	
 	public static void main(String[] args) throws IOException {
 
 		if (args.length > 0) {
@@ -80,6 +86,7 @@ public class VideoGenToPlayList {
 		VideoGenTransform.ConvertTo(VideoCodec.MPEGTS, videoGen);
 		playlist = VideoGenTransform.toPlayList(videoGen);
 		launchFlowPlayer();
+		launchConfigurator();
 	}
 
 }

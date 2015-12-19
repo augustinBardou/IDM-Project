@@ -3,11 +3,18 @@
  */
 package org.istic.idm.xtext.generator
 
+import java.util.HashMap
+import org.eclipse.emf.common.util.URI
+import org.istic.idm.xtext.videoGen.Alternatives
+import org.istic.idm.xtext.videoGen.Optional
+import org.istic.idm.xtext.videoGen.Mandatory
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import org.eclipse.xtext.generator.IGenerator
+import org.istic.idm.xtext.videoGen.VideoGen
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
-import org.eclipse.xtext.generator.IGenerator
-import com.google.inject.Inject
 import org.istic.idm.xtext.videoGen.Sequence
+import org.istic.idm.xtext.VideoGenStandaloneSetup
 
 /**
  * Generates code from your model files on save.
@@ -16,7 +23,63 @@ import org.istic.idm.xtext.videoGen.Sequence
  */
 class VideoGenGenerator implements IGenerator {
 
-	//@Inject PlayListGenerator playListGenerator
+	def saveVideoGen(URI uri, VideoGen videoGen) {
+		var Resource rs = new ResourceSetImpl().createResource(uri); 
+		rs.getContents.add(videoGen); 
+		rs.save(new HashMap());
+	}
+	def loadVideoGen(URI uri) {
+		VideoGenStandaloneSetup.doSetup
+		var res = new ResourceSetImpl().getResource(uri, true);
+		res.contents.get(0) as VideoGen
+	}
+	
+		
+	def void doGenerate(URI uri) {
+		var videoGen = loadVideoGen(uri)
+		videoGen.statements.forEach[statement |
+			var statementIndice = 0
+			if (statement instanceof Mandatory) {
+				// MODEL MANAGEMENT (ANALYSIS, TRANSFORMATION)
+				statement.sequence.name = "Mandatory_" + statementIndice
+			}
+			if (statement instanceof Optional) {
+				// MODEL MANAGEMENT (ANALYSIS, TRANSFORMATION)
+				statement.sequence.name = "Optional_" + statementIndice
+					if (statement.probability.equals(null)) {
+						statement.probability = 50
+					}	
+			}
+			var alternateIndice = 0
+			if (statement instanceof Alternatives) {
+				var totalUndefinedOptions = statement.options.filter[probability.equals(null)].length
+				if (totalUndefinedOptions == 0) {
+					totalUndefinedOptions = 1
+				}
+				var alreadyDefinedProbability = 0
+				for (optional: statement.options) {
+					alreadyDefinedProbability += optional.probability	
+				}
+				var leftProbability = (100 - alreadyDefinedProbability) / totalUndefinedOptions
+				
+				for (optional: statement.options) {
+					if (optional.probability.equals(null)) {
+						optional.probability = leftProbability
+					}	
+				}
+				
+				// MODEL MANAGEMENT (ANALYSIS, TRANSFORMATION)
+				var indice = 0
+				for (sequence: statement.options.map[sequence]) { 
+					sequence.name = "Alternative_Sequence_" + alternateIndice + "_" + indice
+				}
+				indice++
+				alternateIndice++
+			}
+			statementIndice++
+		]
+		saveVideoGen(URI.createURI("controls/restructured.vg"), videoGen) 
+	}
 
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		// Videos list control
@@ -25,7 +88,7 @@ class VideoGenGenerator implements IGenerator {
 				.filter(typeof(Sequence))
 				.map[url]
 				.join('\n'))
-		//playListGenerator.doGenerate(resource, fsa)
-    } 
-
+		//resource.allContents.filter(typeof(VideoGen)).forEach[videoGen | doGenerate(resource.URI)]
+    }
+				
 }

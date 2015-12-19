@@ -43,9 +43,6 @@ class VideoGenTest {
 				assertEquals(String, statement.sequence.name.class)
 				assertEquals(String, statement.sequence.url.class)
 				assertEquals(Integer, statement.sequence.length.class)
-				assertTrue(100 >= statement.sequence.probability)
-				assertTrue(0 <= statement.sequence.probability)
-				assertEquals(Integer, statement.sequence.probability.class)
 				assertEquals(String, statement.sequence.description.class)
 				// MODEL MANAGEMENT (ANALYSIS, TRANSFORMATION)
 				statement.sequence.name = statement.sequence.name + "_VideoGen"
@@ -55,29 +52,33 @@ class VideoGenTest {
 				assertEquals(String, statement.sequence.name.class)
 				assertEquals(String, statement.sequence.url.class)
 				assertEquals(Integer, statement.sequence.length.class)
-				assertTrue(100 >= statement.sequence.probability)
-				assertTrue(0 <= statement.sequence.probability)
-				assertEquals(Integer, statement.sequence.probability.class)
+				assertTrue(100 >= statement.probability)
+				assertTrue(0 <= statement.probability)
+				assertEquals(Integer, statement.probability.class)
 				assertEquals(String, statement.sequence.description.class)
 				// MODEL MANAGEMENT (ANALYSIS, TRANSFORMATION)
 				statement.sequence.name = statement.sequence.name + "_VideoGen"
 			}
 			if (statement instanceof Alternatives) {
-				assertNotEquals(0, statement.sequences.size)
+				assertNotEquals(0, statement.options.size)
 				var totalProb = 0
-				for (Sequence videoSeq: statement.sequences) {
-					assertEquals(String, videoSeq.name.class)
-					assertEquals(String, videoSeq.url.class)
-					assertEquals(Integer, videoSeq.length.class)
-					assertTrue(100 >= videoSeq.probability)
-					assertTrue(0 <= videoSeq.probability)
-					assertEquals(Integer, videoSeq.probability.class)
-					assertEquals(String, videoSeq.description.class)
-					totalProb += videoSeq.probability
+				for (optional: statement.options) {
+					assertEquals(String, optional.sequence.name.class)
+					assertEquals(String, optional.sequence.url.class)
+					assertEquals(Integer, optional.sequence.length.class)
+					assertTrue(100 >= optional.probability)
+					assertTrue(0 <= optional.probability)
+					assertEquals(Integer, optional.probability.class)
+					assertEquals(String, optional.sequence.description.class)
+					totalProb += optional.probability
 				}
 				assertEquals(100, totalProb)
 				// MODEL MANAGEMENT (ANALYSIS, TRANSFORMATION)
-				statement.sequences.forEach[v | v.name = v.name + "_VideoGen"]
+				var indice = 0
+				for (sequence: statement.options.map[sequence]) { 
+					sequence.name = sequence.name + "_#" + indice
+				}
+				indice++
 			}
 		}
 		saveVideoGen(URI.createURI("test.xmi"), videoGen)
