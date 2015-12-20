@@ -8,6 +8,7 @@ import org.istic.idm.xtext.videoGen.VideoGenPackage.Literals
 import org.istic.idm.xtext.videoGen.Alternatives
 import org.istic.idm.xtext.videoGen.Sequence
 import org.istic.idm.xtext.videoGen.Optional
+import org.istic.idm.xtext.videoGen.VideoGen
 
 /**
  * This class contains custom validation rules. 
@@ -19,6 +20,20 @@ class VideoGenValidator extends AbstractVideoGenValidator {
   public static val INVALID_NAME = 'invalidName'
   public static val INVALID_PROBABILITY = 'invalidProbability'
 
+	@Check
+	def checkUniqueIdentifiers(Sequence sequence) {
+		sequence.eResource.allContents
+			.filter(typeof(Sequence))
+			.takeWhile[seq2 | !seq2.equals(sequence)]
+			.forEach[seq2 |
+				if (seq2.name.equals(sequence.name)) {
+					error('Sequence name should be unique.', 
+							Literals.SEQUENCE__NAME,
+							INVALID_NAME)
+				}
+			]
+	}
+	
 	@Check
 	def checkOptionalProbability(Optional optional) {
 		if (optional.probability > 100) {
@@ -46,38 +61,4 @@ class VideoGenValidator extends AbstractVideoGenValidator {
 		}
 	}
 	
-	@Check
-	def checkStatementNameStartsWithAlphabet(Sequence sequence) {
-		if (!Character.isAlphabetic(sequence.name.charAt(0))) {
-			warning('Sequence name should start with a alphabet character followed by a number', 
-					Literals.SEQUENCE__NAME,
-					INVALID_NAME)
-		}
-	}
-	
-	@Check
-	def checkStatementNameEndsWithNumeral(Sequence sequence) {
-		if (!Character.isDigit(sequence.name.charAt(1))) {
-			warning('Sequence name should be followed by a number', 
-					Literals.SEQUENCE__NAME,
-					INVALID_NAME)
-		}
-	}
-	@Check
-	def checkVideoSeqNameStartsWithAlphabet(Alternatives alternatives) {
-		if (!Character.isAlphabetic(alternatives.name.charAt(0))) {
-			warning('Alternatives name should start with a alphabet character followed by a number', 
-					Literals.ALTERNATIVES__NAME,
-					INVALID_NAME)
-		}
-	}
-	
-	@Check
-	def checkVideoSeqNameEndsWithNumeral(Alternatives alternatives) {
-		if (!Character.isDigit(alternatives.name.charAt(1))) {
-			warning('ALternatives name should be followed by a number', 
-					Literals.ALTERNATIVES__NAME,
-					INVALID_NAME)
-		}
-	}
 }
