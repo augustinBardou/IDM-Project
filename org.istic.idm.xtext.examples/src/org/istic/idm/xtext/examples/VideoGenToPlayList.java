@@ -4,14 +4,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.istic.idm.ecore.PlayList.impl.PlayListImpl;
+import org.istic.idm.ecore.PlayList.util.PlayListTransform;
+import org.istic.idm.xtext.VideoCodec;
 import org.istic.idm.xtext.VideoGenStandaloneSetup;
 import org.istic.idm.xtext.VideoGenTransform;
-import org.istic.idm.xtext.VideoCodec;
 import org.istic.idm.xtext.videoGen.VideoGen;
-
-import PlayList.PlayList;
-import PlayList.impl.PlayListImpl;
-import PlayList.util.PlayListTransform;
 
 
 public class VideoGenToPlayList {

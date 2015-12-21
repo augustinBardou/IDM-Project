@@ -8,7 +8,6 @@ import org.istic.idm.xtext.videoGen.VideoGenPackage.Literals
 import org.istic.idm.xtext.videoGen.Alternatives
 import org.istic.idm.xtext.videoGen.Sequence
 import org.istic.idm.xtext.videoGen.Optional
-import org.istic.idm.xtext.videoGen.VideoGen
 
 /**
  * This class contains custom validation rules. 
@@ -17,9 +16,39 @@ import org.istic.idm.xtext.videoGen.VideoGen
  */
 class VideoGenValidator extends AbstractVideoGenValidator {
 
+  public static val DUPLICATED_DESCRIPTION = 'duplicatedDescription'
+  public static val DUPLICATED_URL = 'duplicatedURL'
   public static val INVALID_NAME = 'invalidName'
   public static val INVALID_PROBABILITY = 'invalidProbability'
 
+	@Check
+	def checkUniqueDescription(Sequence sequence) {
+		sequence.eResource.allContents
+			.filter(typeof(Sequence))
+			.takeWhile[seq2 | !seq2.equals(sequence)]
+			.forEach[seq2 |
+				if (seq2.description.equals(sequence.description)) {
+					info('Duplicated description', 
+							Literals.SEQUENCE__DESCRIPTION,
+							DUPLICATED_DESCRIPTION)
+				}
+			]
+	}
+	
+	@Check
+	def checkUniqueURL(Sequence sequence) {
+		sequence.eResource.allContents
+			.filter(typeof(Sequence))
+			.takeWhile[seq2 | !seq2.equals(sequence)]
+			.forEach[seq2 |
+				if (seq2.url.equals(sequence.url)) {
+					info('Duplicated url', 
+							Literals.SEQUENCE__URL,
+							DUPLICATED_URL)
+				}
+			]
+	}
+	
 	@Check
 	def checkUniqueIdentifiers(Sequence sequence) {
 		sequence.eResource.allContents
@@ -51,11 +80,13 @@ class VideoGenValidator extends AbstractVideoGenValidator {
 	@Check
 	def checkAlternativesProbability(Alternatives alternatives) {
 		var total = 0
+		var Optional lastOption
 		for (option: alternatives.options) {
 			total += option.probability
+			lastOption = option
 		}	
 		if (total > 100) {
-			error('Probabilities sum inside an alternatives should not exceed 100%', 
+			error('Probabilities sum inside an Alternatives should not exceed 100%', 
 					Literals.ALTERNATIVES__OPTIONS,
 					INVALID_PROBABILITY)
 		}

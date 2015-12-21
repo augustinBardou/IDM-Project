@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.istic.idm.xtext.videoGen.Mimetypes_Enum;
 import org.istic.idm.xtext.videoGen.Sequence;
 import org.istic.idm.xtext.videoGen.VideoGenPackage;
 
@@ -119,7 +120,7 @@ public class SequenceImpl extends MinimalEObjectImpl.Container implements Sequen
    * @generated
    * @ordered
    */
-  protected static final String MIMETYPE_EDEFAULT = null;
+  protected static final Mimetypes_Enum MIMETYPE_EDEFAULT = Mimetypes_Enum.MP4;
 
   /**
    * The cached value of the '{@link #getMimetype() <em>Mimetype</em>}' attribute.
@@ -129,7 +130,7 @@ public class SequenceImpl extends MinimalEObjectImpl.Container implements Sequen
    * @generated
    * @ordered
    */
-  protected String mimetype = MIMETYPE_EDEFAULT;
+  protected Mimetypes_Enum mimetype = MIMETYPE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -249,7 +250,7 @@ public class SequenceImpl extends MinimalEObjectImpl.Container implements Sequen
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getMimetype()
+  public Mimetypes_Enum getMimetype()
   {
     return mimetype;
   }
@@ -259,10 +260,10 @@ public class SequenceImpl extends MinimalEObjectImpl.Container implements Sequen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMimetype(String newMimetype)
+  public void setMimetype(Mimetypes_Enum newMimetype)
   {
-    String oldMimetype = mimetype;
-    mimetype = newMimetype;
+    Mimetypes_Enum oldMimetype = mimetype;
+    mimetype = newMimetype == null ? MIMETYPE_EDEFAULT : newMimetype;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, VideoGenPackage.SEQUENCE__MIMETYPE, oldMimetype, mimetype));
   }
@@ -314,7 +315,7 @@ public class SequenceImpl extends MinimalEObjectImpl.Container implements Sequen
         setLength((Integer)newValue);
         return;
       case VideoGenPackage.SEQUENCE__MIMETYPE:
-        setMimetype((String)newValue);
+        setMimetype((Mimetypes_Enum)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -368,7 +369,7 @@ public class SequenceImpl extends MinimalEObjectImpl.Container implements Sequen
       case VideoGenPackage.SEQUENCE__LENGTH:
         return length != LENGTH_EDEFAULT;
       case VideoGenPackage.SEQUENCE__MIMETYPE:
-        return MIMETYPE_EDEFAULT == null ? mimetype != null : !MIMETYPE_EDEFAULT.equals(mimetype);
+        return mimetype != MIMETYPE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

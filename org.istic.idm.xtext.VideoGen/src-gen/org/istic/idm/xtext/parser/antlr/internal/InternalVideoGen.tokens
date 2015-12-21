@@ -2,9 +2,16 @@
 '@Mandatory'=15
 '@Optional'=14
 '@Probability('=17
+'AVI'=30
 'Alternatives'=16
+'FLV'=25
+'MP4'=24
+'MPEG'=27
+'MPEGTS'=26
 'Sequence'=19
 'VideoGen'=11
+'WEBM'=28
+'WMV'=29
 'description='=21
 'length='=22
 'mimetype='=23
@@ -31,3 +38,10 @@ T__20=20
 T__21=21
 T__22=22
 T__23=23
+T__24=24
+T__25=25
+T__26=26
+T__27=27
+T__28=28
+T__29=29
+T__30=30

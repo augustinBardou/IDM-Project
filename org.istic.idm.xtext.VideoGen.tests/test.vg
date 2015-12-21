@@ -1,37 +1,61 @@
 VideoGen {
-
-	mandatory videoseq v1 "/home/blacknight/Vidéos/Clips musicaux/combustion-meshuggah_cover_D.mp4" {
-		desc="La vidéo 1"
+	@Mandatory
+	Sequence v1 {
+		url="/home/blacknight/tmp/combustion.mp4" 
+		description="Meshuggah Guitar Cover - Combustion"
+		mimetype=MP4
 	}
-	optional videoseq v2 "/home/blacknight/Vidéos/Clips musicaux/Djragonball_original_-Sarah.mp4" {
-		desc="La vidéo 2"
-		prob=40
-	 }
-	alternatives v3 {
-		videoseq v31 "/home/blacknight/Vidéos/Clips musicaux/ENTER THE FREEMAN_ Half-Life Film.mp4" {
-			desc="La vidéo alt 3 1"
-		 	prob=15
-		}
-		videoseq v32 "/home/blacknight/Vidéos/Clips musicaux/H-Blockx_-_Fly.flv" {
-		 	desc="La vidéo alt 3 2"
-		 	prob=30
-		}
-		videoseq v33 "/home/blacknight/Vidéos/Clips musicaux/H-Blockx_-_Little_Girl.flv" {
-			desc="La vidéo alt 3 3"
-			prob=55
+	@Optional
+	@Probability(25)
+	Sequence v2 { 
+			url="/home/blacknight/tmp/djragonball.mp4"
+			description="Djragonball original by Sarah"
+			mimetype=MP4
+	}
+	Alternatives v3 {
+		@Probability(25)
+		Sequence v31 {
+			url="/home/blacknight/tmp/step_back.flv"
+			description="H-Blockx - Step Back"
+			mimetype=FLV
+		 }
+		@Probability(30)
+		Sequence v32 {
+			url="/home/blacknight/tmp/fly.flv"
+		 	description="H-Burl=locks - Fly"
+		 }
+		@Probability(45)
+		Sequence v33 {
+			url="/home/blacknight/tmp/little_girl.flv"
+			description="H-Blocks - Little Girl"
 		}
 	}
-	alternatives v4 {
-		videoseq v41 "/home/blacknight/Vidéos/Clips musicaux/Red Hot Chili Peppers - Coffee Shop.mp4" {
-			desc="La vidéo alt 4 1"
-			prob=85
+	@Optional
+	Sequence v4 {
+		url="/home/blacknight/tmp/les_claypool.mp4"
+		description="Primus - Live Bass Solo"
+	}
+	Alternatives v5 {
+		@Probability(35)
+		Sequence v51 {
+			url="/home/blacknight/tmp/coffee_shop.mp4"
+			description="Red Hot Chili Peppers - Coffee Shop"
 		}
-		videoseq v42 "/home/blacknight/Vidéos/Clips musicaux/Immortal - Live in Graspop [2008][DVD].mp4" {
-			desc="La vidéo alt 4 2"
-			prob=15
+		Sequence v52 {
+			url="/home/blacknight/tmp/blind.flv"
+			description="Korn - Blind"
+			mimetype=FLV
 		}
 	}
-	mandatory videoseq v5 "/home/blacknight/Vidéos/Clips musicaux/Korn_-_Blind.flv" {
-		desc="La vidéo 5"
+	@Mandatory
+	Sequence v6 {
+		url="/home/blacknight/tmp/terror_eyes_the_night.avi"
+		description="Zach Hill & Carson McWhirter - Terror Eyes the Night (studio recording)"
+		mimetype=AVI
+	}
+	@Mandatory
+	Sequence v7 {
+		url="/home/blacknight/tmp/terror_eyes_the_night.avi"
+		description="Zach Hill & Carson McWhirter - Terror Eyes the Night (studio recording)"
 	}
 }

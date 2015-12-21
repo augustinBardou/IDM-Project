@@ -1,11 +1,6 @@
 /**
  */
-package PlayList.impl;
-
-import PlayList.PlayList;
-import PlayList.PlayListFactory;
-import PlayList.PlayListPackage;
-import PlayList.Video;
+package org.istic.idm.ecore.PlayList.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -13,6 +8,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.istic.idm.ecore.PlayList.PlayList;
+import org.istic.idm.ecore.PlayList.PlayListFactory;
+import org.istic.idm.ecore.PlayList.PlayListPackage;
+import org.istic.idm.ecore.PlayList.Video;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,7 +45,7 @@ public class PlayListPackageImpl extends EPackageImpl implements PlayListPackage
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see PlayList.PlayListPackage#eNS_URI
+	 * @see org.istic.idm.ecore.PlayList.PlayListPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
@@ -227,7 +226,7 @@ public class PlayListPackageImpl extends EPackageImpl implements PlayListPackage
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(playListEClass, PlayList.class, "PlayList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(playListEClass, PlayList.class, "org.istic.idm.ecore.PlayList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPlayList_Video(), this.getVideo(), null, "video", null, 0, -1, PlayList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(videoEClass, Video.class, "Video", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

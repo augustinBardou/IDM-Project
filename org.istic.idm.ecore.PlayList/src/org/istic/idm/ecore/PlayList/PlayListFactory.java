@@ -1,17 +1,16 @@
 /**
  */
-package PlayList;
+package org.istic.idm.ecore.PlayList;
 
 import org.eclipse.emf.ecore.EFactory;
-
-import PlayList.impl.PlayListFactoryImpl;
+import org.istic.idm.ecore.PlayList.impl.PlayListFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see PlayList.PlayListPackage
+ * @see org.istic.idm.ecore.PlayList.PlayListPackage
  * @generated
  */
 public interface PlayListFactory extends EFactory {

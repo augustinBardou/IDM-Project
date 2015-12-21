@@ -1,13 +1,13 @@
 /**
  */
-package PlayList.impl;
+package org.istic.idm.ecore.PlayList.impl;
 
-import PlayList.PlayListPackage;
-import PlayList.Video;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.istic.idm.ecore.PlayList.PlayListPackage;
+import org.istic.idm.ecore.PlayList.Video;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link PlayList.impl.VideoImpl#getDuration <em>Duration</em>}</li>
- *   <li>{@link PlayList.impl.VideoImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link PlayList.impl.VideoImpl#getPath <em>Path</em>}</li>
- *   <li>{@link PlayList.impl.VideoImpl#getMimetype <em>Mimetype</em>}</li>
+ *   <li>{@link org.istic.idm.ecore.PlayList.impl.VideoImpl#getDuration <em>Duration</em>}</li>
+ *   <li>{@link org.istic.idm.ecore.PlayList.impl.VideoImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.istic.idm.ecore.PlayList.impl.VideoImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link org.istic.idm.ecore.PlayList.impl.VideoImpl#getMimetype <em>Mimetype</em>}</li>
  * </ul>
  *
  * @generated
@@ -122,7 +122,7 @@ public class VideoImpl extends MinimalEObjectImpl.Container implements Video {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PlayListPackage.Literals.VIDEO;
+		return org.istic.idm.ecore.PlayList.PlayListPackage.Literals.VIDEO;
 	}
 
 	/**

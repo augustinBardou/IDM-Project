@@ -33,7 +33,16 @@ Sequence:
 		("url="? url=STRING)
 		("description=" description=STRING)? &
 		("length=" length=INT)? &
-		("mimetype=" mimetype=STRING)?
+		("mimetype=" mimetype=Mimetypes_Enum)?
 	)
 	"}"
 ;
+
+enum Mimetypes_Enum:
+	mp4='MP4' |
+	flv='FLV' |
+	mpegts='MPEGTS' |
+	mpeg='MPEG' |
+	webm='WEBM' |
+	wmv='WMV' |
+	avi='AVI';

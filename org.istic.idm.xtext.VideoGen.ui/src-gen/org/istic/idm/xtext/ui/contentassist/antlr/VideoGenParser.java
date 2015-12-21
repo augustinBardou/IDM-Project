@@ -38,6 +38,7 @@ public class VideoGenParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
+					put(grammarAccess.getMimetypes_EnumAccess().getAlternatives(), "rule__Mimetypes_Enum__Alternatives");
 					put(grammarAccess.getVideoGenAccess().getGroup(), "rule__VideoGen__Group__0");
 					put(grammarAccess.getStatementAccess().getGroup_0(), "rule__Statement__Group_0__0");
 					put(grammarAccess.getStatementAccess().getGroup_1(), "rule__Statement__Group_1__0");

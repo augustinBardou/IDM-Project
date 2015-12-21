@@ -4,6 +4,7 @@ package org.istic.idm.xtext.videoGen;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -269,6 +270,16 @@ public interface VideoGenPackage extends EPackage
    */
   int SEQUENCE_FEATURE_COUNT = 5;
 
+  /**
+   * The meta object id for the '{@link org.istic.idm.xtext.videoGen.Mimetypes_Enum <em>Mimetypes Enum</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.istic.idm.xtext.videoGen.Mimetypes_Enum
+   * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getMimetypes_Enum()
+   * @generated
+   */
+  int MIMETYPES_ENUM = 6;
+
 
   /**
    * Returns the meta object for class '{@link org.istic.idm.xtext.videoGen.VideoGen <em>Video Gen</em>}'.
@@ -452,6 +463,16 @@ public interface VideoGenPackage extends EPackage
   EAttribute getSequence_Mimetype();
 
   /**
+   * Returns the meta object for enum '{@link org.istic.idm.xtext.videoGen.Mimetypes_Enum <em>Mimetypes Enum</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Mimetypes Enum</em>'.
+   * @see org.istic.idm.xtext.videoGen.Mimetypes_Enum
+   * @generated
+   */
+  EEnum getMimetypes_Enum();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -621,6 +642,16 @@ public interface VideoGenPackage extends EPackage
      * @generated
      */
     EAttribute SEQUENCE__MIMETYPE = eINSTANCE.getSequence_Mimetype();
+
+    /**
+     * The meta object literal for the '{@link org.istic.idm.xtext.videoGen.Mimetypes_Enum <em>Mimetypes Enum</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.istic.idm.xtext.videoGen.Mimetypes_Enum
+     * @see org.istic.idm.xtext.videoGen.impl.VideoGenPackageImpl#getMimetypes_Enum()
+     * @generated
+     */
+    EEnum MIMETYPES_ENUM = eINSTANCE.getMimetypes_Enum();
 
   }
 

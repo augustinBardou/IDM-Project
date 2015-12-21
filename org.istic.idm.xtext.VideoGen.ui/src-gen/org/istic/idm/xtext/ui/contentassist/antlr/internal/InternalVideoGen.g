@@ -225,6 +225,25 @@ finally {
 
 
 
+// Rule Mimetypes_Enum
+ruleMimetypes_Enum
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMimetypes_EnumAccess().getAlternatives()); }
+(rule__Mimetypes_Enum__Alternatives)
+{ after(grammarAccess.getMimetypes_EnumAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 rule__Statement__Alternatives
     @init {
 		int stackSize = keepStackSize();
@@ -246,6 +265,65 @@ rule__Statement__Alternatives
 { before(grammarAccess.getStatementAccess().getAlternativesParserRuleCall_2()); }
 	ruleAlternatives
 { after(grammarAccess.getStatementAccess().getAlternativesParserRuleCall_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Mimetypes_Enum__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMimetypes_EnumAccess().getMp4EnumLiteralDeclaration_0()); }
+(	'MP4' 
+)
+{ after(grammarAccess.getMimetypes_EnumAccess().getMp4EnumLiteralDeclaration_0()); }
+)
+
+    |(
+{ before(grammarAccess.getMimetypes_EnumAccess().getFlvEnumLiteralDeclaration_1()); }
+(	'FLV' 
+)
+{ after(grammarAccess.getMimetypes_EnumAccess().getFlvEnumLiteralDeclaration_1()); }
+)
+
+    |(
+{ before(grammarAccess.getMimetypes_EnumAccess().getMpegtsEnumLiteralDeclaration_2()); }
+(	'MPEGTS' 
+)
+{ after(grammarAccess.getMimetypes_EnumAccess().getMpegtsEnumLiteralDeclaration_2()); }
+)
+
+    |(
+{ before(grammarAccess.getMimetypes_EnumAccess().getMpegEnumLiteralDeclaration_3()); }
+(	'MPEG' 
+)
+{ after(grammarAccess.getMimetypes_EnumAccess().getMpegEnumLiteralDeclaration_3()); }
+)
+
+    |(
+{ before(grammarAccess.getMimetypes_EnumAccess().getWebmEnumLiteralDeclaration_4()); }
+(	'WEBM' 
+)
+{ after(grammarAccess.getMimetypes_EnumAccess().getWebmEnumLiteralDeclaration_4()); }
+)
+
+    |(
+{ before(grammarAccess.getMimetypes_EnumAccess().getWmvEnumLiteralDeclaration_5()); }
+(	'WMV' 
+)
+{ after(grammarAccess.getMimetypes_EnumAccess().getWmvEnumLiteralDeclaration_5()); }
+)
+
+    |(
+{ before(grammarAccess.getMimetypes_EnumAccess().getAviEnumLiteralDeclaration_6()); }
+(	'AVI' 
+)
+{ after(grammarAccess.getMimetypes_EnumAccess().getAviEnumLiteralDeclaration_6()); }
 )
 
 ;
@@ -1600,8 +1678,8 @@ rule__Sequence__MimetypeAssignment_3_2_1
     }
 :
 (
-{ before(grammarAccess.getSequenceAccess().getMimetypeSTRINGTerminalRuleCall_3_2_1_0()); }
-	RULE_STRING{ after(grammarAccess.getSequenceAccess().getMimetypeSTRINGTerminalRuleCall_3_2_1_0()); }
+{ before(grammarAccess.getSequenceAccess().getMimetypeMimetypes_EnumEnumRuleCall_3_2_1_0()); }
+	ruleMimetypes_Enum{ after(grammarAccess.getSequenceAccess().getMimetypeMimetypes_EnumEnumRuleCall_3_2_1_0()); }
 )
 
 ;

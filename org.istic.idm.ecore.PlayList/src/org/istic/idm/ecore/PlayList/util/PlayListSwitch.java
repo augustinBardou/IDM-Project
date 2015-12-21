@@ -1,13 +1,12 @@
 /**
  */
-package PlayList.util;
-
-import PlayList.*;
+package org.istic.idm.ecore.PlayList.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+import org.istic.idm.ecore.PlayList.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +18,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see PlayList.PlayListPackage
+ * @see org.istic.idm.ecore.PlayList.PlayListPackage
  * @generated
  */
 public class PlayListSwitch<T> extends Switch<T> {

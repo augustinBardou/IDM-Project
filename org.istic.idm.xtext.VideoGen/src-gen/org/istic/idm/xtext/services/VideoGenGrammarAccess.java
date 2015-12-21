@@ -210,16 +210,16 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_3_2 = (Group)cUnorderedGroup_3.eContents().get(2);
 		private final Keyword cMimetypeKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
 		private final Assignment cMimetypeAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
-		private final RuleCall cMimetypeSTRINGTerminalRuleCall_3_2_1_0 = (RuleCall)cMimetypeAssignment_3_2_1.eContents().get(0);
+		private final RuleCall cMimetypeMimetypes_EnumEnumRuleCall_3_2_1_0 = (RuleCall)cMimetypeAssignment_3_2_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Sequence:
 		//	"Sequence" name=ID "{" (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? &
-		//	("mimetype=" mimetype=STRING)?) "}";
+		//	("mimetype=" mimetype=Mimetypes_Enum)?) "}";
 		@Override public ParserRule getRule() { return rule; }
 
 		//"Sequence" name=ID "{" (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? &
-		//("mimetype=" mimetype=STRING)?) "}"
+		//("mimetype=" mimetype=Mimetypes_Enum)?) "}"
 		public Group getGroup() { return cGroup; }
 
 		//"Sequence"
@@ -234,7 +234,8 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? & ("mimetype=" mimetype=STRING)?
+		//("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? & ("mimetype="
+		//mimetype=Mimetypes_Enum)?
 		public UnorderedGroup getUnorderedGroup_3() { return cUnorderedGroup_3; }
 
 		//("url="? url=STRING) ("description=" description=STRING)?
@@ -276,22 +277,90 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getLengthINTTerminalRuleCall_3_1_1_0() { return cLengthINTTerminalRuleCall_3_1_1_0; }
 
-		//("mimetype=" mimetype=STRING)?
+		//("mimetype=" mimetype=Mimetypes_Enum)?
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
 		//"mimetype="
 		public Keyword getMimetypeKeyword_3_2_0() { return cMimetypeKeyword_3_2_0; }
 
-		//mimetype=STRING
+		//mimetype=Mimetypes_Enum
 		public Assignment getMimetypeAssignment_3_2_1() { return cMimetypeAssignment_3_2_1; }
 
-		//STRING
-		public RuleCall getMimetypeSTRINGTerminalRuleCall_3_2_1_0() { return cMimetypeSTRINGTerminalRuleCall_3_2_1_0; }
+		//Mimetypes_Enum
+		public RuleCall getMimetypeMimetypes_EnumEnumRuleCall_3_2_1_0() { return cMimetypeMimetypes_EnumEnumRuleCall_3_2_1_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	
+	
+	public class Mimetypes_EnumElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Mimetypes_Enum");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cMp4EnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cMp4MP4Keyword_0_0 = (Keyword)cMp4EnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cFlvEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cFlvFLVKeyword_1_0 = (Keyword)cFlvEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cMpegtsEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cMpegtsMPEGTSKeyword_2_0 = (Keyword)cMpegtsEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cMpegEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cMpegMPEGKeyword_3_0 = (Keyword)cMpegEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cWebmEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cWebmWEBMKeyword_4_0 = (Keyword)cWebmEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cWmvEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cWmvWMVKeyword_5_0 = (Keyword)cWmvEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cAviEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cAviAVIKeyword_6_0 = (Keyword)cAviEnumLiteralDeclaration_6.eContents().get(0);
+		
+		//enum Mimetypes_Enum:
+		//	mp4="MP4" | flv="FLV" | mpegts="MPEGTS" | mpeg="MPEG" | webm="WEBM" | wmv="WMV" | avi="AVI";
+		public EnumRule getRule() { return rule; }
+
+		//mp4="MP4" | flv="FLV" | mpegts="MPEGTS" | mpeg="MPEG" | webm="WEBM" | wmv="WMV" | avi="AVI"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//mp4="MP4"
+		public EnumLiteralDeclaration getMp4EnumLiteralDeclaration_0() { return cMp4EnumLiteralDeclaration_0; }
+
+		//"MP4"
+		public Keyword getMp4MP4Keyword_0_0() { return cMp4MP4Keyword_0_0; }
+
+		//flv="FLV"
+		public EnumLiteralDeclaration getFlvEnumLiteralDeclaration_1() { return cFlvEnumLiteralDeclaration_1; }
+
+		//"FLV"
+		public Keyword getFlvFLVKeyword_1_0() { return cFlvFLVKeyword_1_0; }
+
+		//mpegts="MPEGTS"
+		public EnumLiteralDeclaration getMpegtsEnumLiteralDeclaration_2() { return cMpegtsEnumLiteralDeclaration_2; }
+
+		//"MPEGTS"
+		public Keyword getMpegtsMPEGTSKeyword_2_0() { return cMpegtsMPEGTSKeyword_2_0; }
+
+		//mpeg="MPEG"
+		public EnumLiteralDeclaration getMpegEnumLiteralDeclaration_3() { return cMpegEnumLiteralDeclaration_3; }
+
+		//"MPEG"
+		public Keyword getMpegMPEGKeyword_3_0() { return cMpegMPEGKeyword_3_0; }
+
+		//webm="WEBM"
+		public EnumLiteralDeclaration getWebmEnumLiteralDeclaration_4() { return cWebmEnumLiteralDeclaration_4; }
+
+		//"WEBM"
+		public Keyword getWebmWEBMKeyword_4_0() { return cWebmWEBMKeyword_4_0; }
+
+		//wmv="WMV"
+		public EnumLiteralDeclaration getWmvEnumLiteralDeclaration_5() { return cWmvEnumLiteralDeclaration_5; }
+
+		//"WMV"
+		public Keyword getWmvWMVKeyword_5_0() { return cWmvWMVKeyword_5_0; }
+
+		//avi="AVI"
+		public EnumLiteralDeclaration getAviEnumLiteralDeclaration_6() { return cAviEnumLiteralDeclaration_6; }
+
+		//"AVI"
+		public Keyword getAviAVIKeyword_6_0() { return cAviAVIKeyword_6_0; }
+	}
 	
 	private final VideoGenElements pVideoGen;
 	private final StatementElements pStatement;
@@ -299,6 +368,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	private final MandatoryElements pMandatory;
 	private final OptionalElements pOptional;
 	private final SequenceElements pSequence;
+	private final Mimetypes_EnumElements unknownRuleMimetypes_Enum;
 	
 	private final Grammar grammar;
 
@@ -315,6 +385,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMandatory = new MandatoryElements();
 		this.pOptional = new OptionalElements();
 		this.pSequence = new SequenceElements();
+		this.unknownRuleMimetypes_Enum = new Mimetypes_EnumElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -396,13 +467,23 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Sequence:
 	//	"Sequence" name=ID "{" (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? &
-	//	("mimetype=" mimetype=STRING)?) "}";
+	//	("mimetype=" mimetype=Mimetypes_Enum)?) "}";
 	public SequenceElements getSequenceAccess() {
 		return pSequence;
 	}
 	
 	public ParserRule getSequenceRule() {
 		return getSequenceAccess().getRule();
+	}
+
+	//enum Mimetypes_Enum:
+	//	mp4="MP4" | flv="FLV" | mpegts="MPEGTS" | mpeg="MPEG" | webm="WEBM" | wmv="WMV" | avi="AVI";
+	public Mimetypes_EnumElements getMimetypes_EnumAccess() {
+		return unknownRuleMimetypes_Enum;
+	}
+	
+	public EnumRule getMimetypes_EnumRule() {
+		return getMimetypes_EnumAccess().getRule();
 	}
 
 	//terminal ID:

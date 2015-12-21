@@ -3,6 +3,7 @@
 package org.istic.idm.xtext.videoGen.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -80,6 +81,40 @@ public class VideoGenFactoryImpl extends EFactoryImpl implements VideoGenFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case VideoGenPackage.MIMETYPES_ENUM:
+        return createMimetypes_EnumFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case VideoGenPackage.MIMETYPES_ENUM:
+        return convertMimetypes_EnumToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public VideoGen createVideoGen()
   {
     VideoGenImpl videoGen = new VideoGenImpl();
@@ -139,6 +174,28 @@ public class VideoGenFactoryImpl extends EFactoryImpl implements VideoGenFactory
   {
     SequenceImpl sequence = new SequenceImpl();
     return sequence;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Mimetypes_Enum createMimetypes_EnumFromString(EDataType eDataType, String initialValue)
+  {
+    Mimetypes_Enum result = Mimetypes_Enum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertMimetypes_EnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

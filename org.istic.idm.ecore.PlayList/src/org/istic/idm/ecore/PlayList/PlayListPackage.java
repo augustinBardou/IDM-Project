@@ -1,13 +1,12 @@
 /**
  */
-package PlayList;
+package org.istic.idm.ecore.PlayList;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
-import PlayList.impl.PlayListPackageImpl;
+import org.istic.idm.ecore.PlayList.impl.PlayListPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import PlayList.impl.PlayListPackageImpl;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see PlayList.PlayListFactory
+ * @see org.istic.idm.ecore.PlayList.PlayListFactory
  * @model kind="package"
  * @generated
  */
@@ -32,7 +31,7 @@ public interface PlayListPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "PlayList";
+	String eNAME = "org.istic.idm.ecore.PlayList";
 
 	/**
 	 * The package namespace URI.
@@ -40,7 +39,7 @@ public interface PlayListPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/PlayList";
+	String eNS_URI = "http://www.example.org/org.istic.idm.ecore.PlayList";
 
 	/**
 	 * The package namespace name.
@@ -48,7 +47,7 @@ public interface PlayListPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "PlayList";
+	String eNS_PREFIX = "org.istic.idm.ecore.PlayList";
 
 	/**
 	 * The singleton instance of the package.
@@ -59,11 +58,11 @@ public interface PlayListPackage extends EPackage {
 	PlayListPackage eINSTANCE = PlayListPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link PlayList.impl.PlayListImpl <em>Play List</em>}' class.
+	 * The meta object id for the '{@link org.istic.idm.ecore.PlayList.impl.PlayListImpl <em>Play List</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see PlayList.impl.PlayListImpl
-	 * @see PlayList.impl.PlayListPackageImpl#getPlayList()
+	 * @see org.istic.idm.ecore.PlayList.impl.PlayListImpl
+	 * @see org.istic.idm.ecore.PlayList.impl.PlayListPackageImpl#getPlayList()
 	 * @generated
 	 */
 	int PLAY_LIST = 0;
@@ -96,11 +95,11 @@ public interface PlayListPackage extends EPackage {
 	int PLAY_LIST_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link PlayList.impl.VideoImpl <em>Video</em>}' class.
+	 * The meta object id for the '{@link org.istic.idm.ecore.PlayList.impl.VideoImpl <em>Video</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see PlayList.impl.VideoImpl
-	 * @see PlayList.impl.PlayListPackageImpl#getVideo()
+	 * @see org.istic.idm.ecore.PlayList.impl.VideoImpl
+	 * @see org.istic.idm.ecore.PlayList.impl.PlayListPackageImpl#getVideo()
 	 * @generated
 	 */
 	int VIDEO = 1;
@@ -161,75 +160,75 @@ public interface PlayListPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link PlayList.PlayList <em>Play List</em>}'.
+	 * Returns the meta object for class '{@link org.istic.idm.ecore.PlayList.PlayList <em>Play List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Play List</em>'.
-	 * @see PlayList.PlayList
+	 * @see org.istic.idm.ecore.PlayList.PlayList
 	 * @generated
 	 */
 	EClass getPlayList();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link PlayList.PlayList#getVideo <em>Video</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.istic.idm.ecore.PlayList.PlayList#getVideo <em>Video</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Video</em>'.
-	 * @see PlayList.PlayList#getVideo()
+	 * @see org.istic.idm.ecore.PlayList.PlayList#getVideo()
 	 * @see #getPlayList()
 	 * @generated
 	 */
 	EReference getPlayList_Video();
 
 	/**
-	 * Returns the meta object for class '{@link PlayList.Video <em>Video</em>}'.
+	 * Returns the meta object for class '{@link org.istic.idm.ecore.PlayList.Video <em>Video</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Video</em>'.
-	 * @see PlayList.Video
+	 * @see org.istic.idm.ecore.PlayList.Video
 	 * @generated
 	 */
 	EClass getVideo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link PlayList.Video#getDuration <em>Duration</em>}'.
+	 * Returns the meta object for the attribute '{@link org.istic.idm.ecore.PlayList.Video#getDuration <em>Duration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Duration</em>'.
-	 * @see PlayList.Video#getDuration()
+	 * @see org.istic.idm.ecore.PlayList.Video#getDuration()
 	 * @see #getVideo()
 	 * @generated
 	 */
 	EAttribute getVideo_Duration();
 
 	/**
-	 * Returns the meta object for the attribute '{@link PlayList.Video#getDescription <em>Description</em>}'.
+	 * Returns the meta object for the attribute '{@link org.istic.idm.ecore.PlayList.Video#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see PlayList.Video#getDescription()
+	 * @see org.istic.idm.ecore.PlayList.Video#getDescription()
 	 * @see #getVideo()
 	 * @generated
 	 */
 	EAttribute getVideo_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link PlayList.Video#getPath <em>Path</em>}'.
+	 * Returns the meta object for the attribute '{@link org.istic.idm.ecore.PlayList.Video#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Path</em>'.
-	 * @see PlayList.Video#getPath()
+	 * @see org.istic.idm.ecore.PlayList.Video#getPath()
 	 * @see #getVideo()
 	 * @generated
 	 */
 	EAttribute getVideo_Path();
 
 	/**
-	 * Returns the meta object for the attribute '{@link PlayList.Video#getMimetype <em>Mimetype</em>}'.
+	 * Returns the meta object for the attribute '{@link org.istic.idm.ecore.PlayList.Video#getMimetype <em>Mimetype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Mimetype</em>'.
-	 * @see PlayList.Video#getMimetype()
+	 * @see org.istic.idm.ecore.PlayList.Video#getMimetype()
 	 * @see #getVideo()
 	 * @generated
 	 */
@@ -259,11 +258,11 @@ public interface PlayListPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link PlayList.impl.PlayListImpl <em>Play List</em>}' class.
+		 * The meta object literal for the '{@link org.istic.idm.ecore.PlayList.impl.PlayListImpl <em>Play List</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see PlayList.impl.PlayListImpl
-		 * @see PlayList.impl.PlayListPackageImpl#getPlayList()
+		 * @see org.istic.idm.ecore.PlayList.impl.PlayListImpl
+		 * @see org.istic.idm.ecore.PlayList.impl.PlayListPackageImpl#getPlayList()
 		 * @generated
 		 */
 		EClass PLAY_LIST = eINSTANCE.getPlayList();
@@ -277,11 +276,11 @@ public interface PlayListPackage extends EPackage {
 		EReference PLAY_LIST__VIDEO = eINSTANCE.getPlayList_Video();
 
 		/**
-		 * The meta object literal for the '{@link PlayList.impl.VideoImpl <em>Video</em>}' class.
+		 * The meta object literal for the '{@link org.istic.idm.ecore.PlayList.impl.VideoImpl <em>Video</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see PlayList.impl.VideoImpl
-		 * @see PlayList.impl.PlayListPackageImpl#getVideo()
+		 * @see org.istic.idm.ecore.PlayList.impl.VideoImpl
+		 * @see org.istic.idm.ecore.PlayList.impl.PlayListPackageImpl#getVideo()
 		 * @generated
 		 */
 		EClass VIDEO = eINSTANCE.getVideo();

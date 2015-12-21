@@ -88,7 +88,7 @@ public class VideoGenSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (name=ID url=STRING description=STRING? length=INT? mimetype=STRING?)
+	 *     (name=ID url=STRING description=STRING? length=INT? mimetype=Mimetypes_Enum?)
 	 */
 	protected void sequence_Sequence(EObject context, Sequence semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

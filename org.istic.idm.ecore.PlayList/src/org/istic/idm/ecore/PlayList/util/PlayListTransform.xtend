@@ -1,12 +1,9 @@
-package PlayList.util
+package org.istic.idm.ecore.PlayList.util
 
-import PlayList.PlayList
-import java.io.File
-import java.io.FileWriter
-import java.nio.file.Files
 import java.nio.file.Paths
 import org.apache.commons.exec.CommandLine
 import org.apache.commons.exec.DefaultExecutor
+import org.istic.idm.ecore.PlayList.PlayList
 
 class PlayListTransform{
   
@@ -64,7 +61,7 @@ class PlayListTransform{
     }
     
     def static toFlowPlayer(PlayList playList) {
-		val indexPath = Paths.get("/home/blacknight/workspace/org.istic.idm.ecore.PlayList/resources/site/index.html").toAbsolutePath
+		val indexPath = Paths.get("/home/blacknight/workspace/PlayList/resources/site/index.html").toAbsolutePath
 		val cmd = "firefox " + indexPath;
 		val commandLine = CommandLine.parse(cmd);
 		val executor = new DefaultExecutor();

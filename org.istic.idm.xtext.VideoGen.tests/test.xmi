@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="ASCII"?>
 <videoGen:VideoGen xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:videoGen="http://www.istic.org/idm/xtext/VideoGen">
-  <statements xsi:type="videoGen:MandatoryVideoSeq">
-    <videoseq name="v1_VideoGen" url="/home/blacknight/Vid&#xe9;os/Clips musicaux/combustion-meshuggah_cover_D.mp4" desc="La vid&#xe9;o 1"/>
+  <statements xsi:type="videoGen:Mandatory">
+    <sequence name="v1" url="/home/blacknight/tmp/combustion.mp4" description="Meshuggah Guitar Cover - Combustion"/>
   </statements>
-  <statements xsi:type="videoGen:OptionalVideoSeq">
-    <videoseq name="v2_VideoGen" url="/home/blacknight/Vid&#xe9;os/Clips musicaux/Djragonball_original_-Sarah.mp4" desc="La vid&#xe9;o 2" prob="40"/>
+  <statements xsi:type="videoGen:Optional" probability="25">
+    <sequence name="v2" url="/home/blacknight/tmp/djragonball.mp4" description="Djragonball original by Sarah"/>
   </statements>
-  <statements xsi:type="videoGen:Alternative" name="v3">
-    <videoseqs name="v31_VideoGen" url="/home/blacknight/Vid&#xe9;os/Clips musicaux/ENTER THE FREEMAN_ Half-Life Film.mp4" desc="La vid&#xe9;o alt 3 1" prob="15"/>
-    <videoseqs name="v32_VideoGen" url="/home/blacknight/Vid&#xe9;os/Clips musicaux/H-Blockx_-_Fly.flv" desc="La vid&#xe9;o alt 3 2" prob="30"/>
-    <videoseqs name="v33_VideoGen" url="/home/blacknight/Vid&#xe9;os/Clips musicaux/H-Blockx_-_Little_Girl.flv" desc="La vid&#xe9;o alt 3 3" prob="55"/>
+  <statements xsi:type="videoGen:Alternatives" name="v3">
+    <options probability="25">
+      <sequence name="v31" url="/home/blacknight/tmp/step_back.flv" description="H-Blockx - Step Back" mimetype="FLV"/>
+    </options>
+    <options probability="30">
+      <sequence name="v32" url="/home/blacknight/tmp/fly.flv" description="H-Burl=locks - Fly"/>
+    </options>
+    <options probability="45">
+      <sequence name="v33" url="/home/blacknight/tmp/little_girl.flv" description="H-Blocks - Little Girl"/>
+    </options>
   </statements>
-  <statements xsi:type="videoGen:Alternative" name="v4">
-    <videoseqs name="v41_VideoGen" url="/home/blacknight/Vid&#xe9;os/Clips musicaux/Red Hot Chili Peppers - Coffee Shop.mp4" desc="La vid&#xe9;o alt 4 1" prob="85"/>
-    <videoseqs name="v42_VideoGen" url="/home/blacknight/Vid&#xe9;os/Clips musicaux/Immortal - Live in Graspop [2008][DVD].mp4" desc="La vid&#xe9;o alt 4 2" prob="15"/>
+  <statements xsi:type="videoGen:Optional">
+    <sequence name="v4" url="/home/blacknight/tmp/les_claypool.mp4" description="Primus - Live Bass Solo"/>
   </statements>
-  <statements xsi:type="videoGen:MandatoryVideoSeq">
-    <videoseq name="v5_VideoGen" url="/home/blacknight/Vid&#xe9;os/Clips musicaux/Korn_-_Blind.flv" desc="La vid&#xe9;o 5"/>
+  <statements xsi:type="videoGen:Alternatives" name="v5">
+    <options probability="35">
+      <sequence name="v51" url="/home/blacknight/tmp/coffee_shop.mp4" description="Red Hot Chili Peppers - Coffee Shop"/>
+    </options>
+    <options>
+      <sequence name="v52" url="/home/blacknight/tmp/blind.flv" description="Korn - Blind" mimetype="FLV"/>
+    </options>
+  </statements>
+  <statements xsi:type="videoGen:Mandatory">
+    <sequence name="v6" url="/home/blacknight/tmp/terror_eyes_the_night.avi" description="Zach Hill &amp; Carson McWhirter - Terror Eyes the Night (studio recording)" mimetype="AVI"/>
+  </statements>
+  <statements xsi:type="videoGen:Mandatory">
+    <sequence name="v7" url="/home/blacknight/tmp/terror_eyes_the_night.avi" description="Zach Hill &amp; Carson McWhirter - Terror Eyes the Night (studio recording)"/>
   </statements>
 </videoGen:VideoGen>

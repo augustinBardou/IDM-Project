@@ -1,10 +1,5 @@
 package org.istic.idm.xtext
 
-import PlayList.PlayList
-import PlayList.Video
-import PlayList.impl.PlayListFactoryImpl
-import PlayList.impl.PlayListImpl
-import PlayList.impl.VideoImpl
 import com.xuggle.xuggler.IContainer
 import java.io.File
 import java.nio.file.Paths
@@ -12,14 +7,20 @@ import java.util.ArrayList
 import java.util.List
 import org.apache.commons.exec.CommandLine
 import org.apache.commons.exec.DefaultExecutor
+import org.istic.idm.ecore.PlayList.Video
+import org.istic.idm.ecore.PlayList.impl.PlayListFactoryImpl
+import org.istic.idm.ecore.PlayList.impl.PlayListImpl
+import org.istic.idm.ecore.PlayList.impl.VideoImpl
+import org.istic.idm.xtext.videoGen.Alternatives
+import org.istic.idm.xtext.videoGen.Mandatory
+import org.istic.idm.xtext.videoGen.Mimetypes_Enum
 import org.istic.idm.xtext.videoGen.Optional
 import org.istic.idm.xtext.videoGen.Sequence
 import org.istic.idm.xtext.videoGen.VideoGen
 import org.istic.idm.xtext.videoGen.VideoGenFactory
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
-import org.istic.idm.xtext.videoGen.Alternatives
-import org.istic.idm.xtext.videoGen.Mandatory
+import org.istic.idm.ecore.PlayList.PlayList
 
 class VideoGenTransform {
   
@@ -29,7 +30,7 @@ class VideoGenTransform {
 		p_video.duration = videoseq.length
 		p_video.path = videoseq.url   
 		p_video.description = videoseq.description 
-		p_video.mimetype = videoseq.mimetype
+		p_video.mimetype = videoseq.mimetype.getName
    	}
    
     def private static isSelected(Optional video) {
@@ -165,7 +166,7 @@ class VideoGenTransform {
 				println(e.message)
 			}
 			sequence.url = wd + "/" + type.format + "/" + newFullPathName
-			sequence.mimetype = type.mimeType
+			sequence.mimetype = Mimetypes_Enum.getByName(type.name)
         ]
     }
     
@@ -178,8 +179,9 @@ class VideoGenTransform {
 				   throw new RuntimeException("failed to open");
 			}
 			sequence.length = (container.duration / 1000000) as int;
-			//video.mime = container.format.outputFormatMimeType;
+			//sequence.mimetype = Mimetypes_Enum.getByName(container.format.outputFormatMimeType)
         ]
+        videogen
     }
     
     def static toPlayList(VideoGen videogen){

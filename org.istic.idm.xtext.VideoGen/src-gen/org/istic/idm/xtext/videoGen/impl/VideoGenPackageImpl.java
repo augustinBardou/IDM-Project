@@ -4,6 +4,7 @@ package org.istic.idm.xtext.videoGen.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -11,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.istic.idm.xtext.videoGen.Alternatives;
 import org.istic.idm.xtext.videoGen.Mandatory;
+import org.istic.idm.xtext.videoGen.Mimetypes_Enum;
 import org.istic.idm.xtext.videoGen.Optional;
 import org.istic.idm.xtext.videoGen.Sequence;
 import org.istic.idm.xtext.videoGen.Statement;
@@ -67,6 +69,13 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * @generated
    */
   private EClass sequenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum mimetypes_EnumEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -306,6 +315,16 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getMimetypes_Enum()
+  {
+    return mimetypes_EnumEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public VideoGenFactory getVideoGenFactory()
   {
     return (VideoGenFactory)getEFactoryInstance();
@@ -353,6 +372,9 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
     createEAttribute(sequenceEClass, SEQUENCE__DESCRIPTION);
     createEAttribute(sequenceEClass, SEQUENCE__LENGTH);
     createEAttribute(sequenceEClass, SEQUENCE__MIMETYPE);
+
+    // Create enums
+    mimetypes_EnumEEnum = createEEnum(MIMETYPES_ENUM);
   }
 
   /**
@@ -410,7 +432,17 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
     initEAttribute(getSequence_Url(), ecorePackage.getEString(), "url", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSequence_Description(), ecorePackage.getEString(), "description", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSequence_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSequence_Mimetype(), ecorePackage.getEString(), "mimetype", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSequence_Mimetype(), this.getMimetypes_Enum(), "mimetype", null, 0, 1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(mimetypes_EnumEEnum, Mimetypes_Enum.class, "Mimetypes_Enum");
+    addEEnumLiteral(mimetypes_EnumEEnum, Mimetypes_Enum.MP4);
+    addEEnumLiteral(mimetypes_EnumEEnum, Mimetypes_Enum.FLV);
+    addEEnumLiteral(mimetypes_EnumEEnum, Mimetypes_Enum.MPEGTS);
+    addEEnumLiteral(mimetypes_EnumEEnum, Mimetypes_Enum.MPEG);
+    addEEnumLiteral(mimetypes_EnumEEnum, Mimetypes_Enum.WEBM);
+    addEEnumLiteral(mimetypes_EnumEEnum, Mimetypes_Enum.WMV);
+    addEEnumLiteral(mimetypes_EnumEEnum, Mimetypes_Enum.AVI);
 
     // Create resource
     createResource(eNS_URI);

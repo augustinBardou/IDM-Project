@@ -1,39 +1,61 @@
 VideoGen {
-
-	mandatory videoseq v1 "/home/blacknight/tmp/combustion.mp4" {
-		desc="Meshuggah Guitar Cover - Combustion"
+	@Mandatory
+	Sequence v1 {
+		url="/home/blacknight/tmp/combustion.mp4" 
+		description="Meshuggah Guitar Cover - Combustion"
+		mimetype=MP4
 	}
-	optional videoseq v2 "/home/blacknight/tmp/djragonball.mp4" {
-		desc="Djragonball original by Sarah"
-		prob=65
-	 }
-	alternatives v3 {
-		videoseq v31 "/home/blacknight/tmp/step_back.flv" {
-			desc="H-Blockx - Step Back"
-		 	prob=25
-		}
-		videoseq v32 "/home/blacknight/tmp/fly.flv" {
-		 	desc="H-Blocks - Fly"
-		 	prob=30
-		}
-		videoseq v33 "/home/blacknight/tmp/little_girl.flv" {
-			desc="H-Blocks - Little Girl"
-			prob=45
-		}
+	@Optional
+	@Probability(25)
+	Sequence v2 { 
+			url="/home/blacknight/tmp/djragonball.mp4"
+			description="Djragonball original by Sarah"
+			mimetype=MP4
 	}
-	optional videoseq v4 "/home/blacknight/tmp/les_claypool.mp4" {
-		desc="Primus - Live Bass Solo"
-	}
-	alternatives v5 {
-		videoseq v51 "/home/blacknight/tmp/coffee_shop.mp4" {
-			desc="Red Hot Chili Peppers - Coffee Shop"
-		}
-		videoseq v52 "/home/blacknight/tmp/blind.flv" {
-			desc="Korn - Blind"
+	Alternatives v3 {
+		@Probability(25)
+		Sequence v31 {
+			url="/home/blacknight/tmp/step_back.flv"
+			description="H-Blockx - Step Back"
+			mimetype=FLV
+		 }
+		@Probability(30)
+		Sequence v32 {
+			url="/home/blacknight/tmp/fly.flv"
+		 	description="H-Burl=locks - Fly"
+		 }
+		@Probability(45)
+		Sequence v33 {
+			url="/home/blacknight/tmp/little_girl.flv"
+			description="H-Blocks - Little Girl"
 		}
 	}
-	mandatory videoseq v6 "/home/blacknight/tmp/terror_eyes_the_night.avi" {
-		desc="Zach Hill & Carson McWhirter - Terror Eyes the Night (studio recording)"
+	@Optional
+	Sequence v4 {
+		url="/home/blacknight/tmp/les_claypool.mp4"
+		description="Primus - Live Bass Solo"
 	}
-	
+	Alternatives v5 {
+		@Probability(35)
+		Sequence v51 {
+			url="/home/blacknight/tmp/coffee_shop.mp4"
+			description="Red Hot Chili Peppers - Coffee Shop"
+		}
+		Sequence v52 {
+			url="/home/blacknight/tmp/blind.flv"
+			description="Korn - Blind"
+			mimetype=FLV
+		}
+	}
+	@Mandatory
+	Sequence v6 {
+		url="/home/blacknight/tmp/terror_eyes_the_night.avi"
+		description="Zach Hill & Carson McWhirter - Terror Eyes the Night (studio recording)"
+		mimetype=AVI
+	}
+	@Mandatory
+	Sequence v7 {
+		url="/home/blacknight/tmp/terror_eyes_the_night.avi"
+		description="Zach Hill & Carson McWhirter - Terror Eyes the Night (studio recording)"
+	}
 }

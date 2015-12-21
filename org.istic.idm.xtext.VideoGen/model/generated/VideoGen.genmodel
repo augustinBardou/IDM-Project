@@ -7,6 +7,15 @@
     editorPluginID="org.istic.idm.xtext.VideoGen.editor" runtimeVersion="2.11">
   <genPackages prefix="VideoGen" basePackage="org.istic.idm.xtext" disposableProviderFactory="true"
       fileExtensions="vg" ecorePackage="VideoGen.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="VideoGen.ecore#//Mimetypes_Enum">
+      <genEnumLiterals ecoreEnumLiteral="VideoGen.ecore#//Mimetypes_Enum/mp4"/>
+      <genEnumLiterals ecoreEnumLiteral="VideoGen.ecore#//Mimetypes_Enum/flv"/>
+      <genEnumLiterals ecoreEnumLiteral="VideoGen.ecore#//Mimetypes_Enum/mpegts"/>
+      <genEnumLiterals ecoreEnumLiteral="VideoGen.ecore#//Mimetypes_Enum/mpeg"/>
+      <genEnumLiterals ecoreEnumLiteral="VideoGen.ecore#//Mimetypes_Enum/webm"/>
+      <genEnumLiterals ecoreEnumLiteral="VideoGen.ecore#//Mimetypes_Enum/wmv"/>
+      <genEnumLiterals ecoreEnumLiteral="VideoGen.ecore#//Mimetypes_Enum/avi"/>
+    </genEnums>
     <genClasses ecoreClass="VideoGen.ecore#//VideoGen">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VideoGen.ecore#//VideoGen/statements"/>
     </genClasses>

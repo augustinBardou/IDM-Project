@@ -57,7 +57,7 @@ public class VideoGenSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     description=STRING (ambiguity) url=STRING
 	 *     length=INT (ambiguity) url=STRING
-	 *     mimetype=STRING (ambiguity) url=STRING
+	 *     mimetype=Mimetypes_Enum (ambiguity) url=STRING
 	 *     name=ID '{' (ambiguity) url=STRING
 	 *     url=STRING (ambiguity) url=STRING
 	 */

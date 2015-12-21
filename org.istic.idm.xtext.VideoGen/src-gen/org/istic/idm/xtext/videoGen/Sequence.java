@@ -132,6 +132,7 @@ public interface Sequence extends EObject
 
   /**
    * Returns the value of the '<em><b>Mimetype</b></em>' attribute.
+   * The literals are from the enumeration {@link org.istic.idm.xtext.videoGen.Mimetypes_Enum}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Mimetype</em>' attribute isn't clear,
@@ -139,21 +140,23 @@ public interface Sequence extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Mimetype</em>' attribute.
-   * @see #setMimetype(String)
+   * @see org.istic.idm.xtext.videoGen.Mimetypes_Enum
+   * @see #setMimetype(Mimetypes_Enum)
    * @see org.istic.idm.xtext.videoGen.VideoGenPackage#getSequence_Mimetype()
    * @model
    * @generated
    */
-  String getMimetype();
+  Mimetypes_Enum getMimetype();
 
   /**
    * Sets the value of the '{@link org.istic.idm.xtext.videoGen.Sequence#getMimetype <em>Mimetype</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Mimetype</em>' attribute.
+   * @see org.istic.idm.xtext.videoGen.Mimetypes_Enum
    * @see #getMimetype()
    * @generated
    */
-  void setMimetype(String value);
+  void setMimetype(Mimetypes_Enum value);
 
 } // Sequence

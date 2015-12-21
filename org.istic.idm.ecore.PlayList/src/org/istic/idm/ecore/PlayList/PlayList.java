@@ -1,6 +1,6 @@
 /**
  */
-package PlayList;
+package org.istic.idm.ecore.PlayList;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,17 +15,17 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link PlayList.PlayList#getVideo <em>Video</em>}</li>
+ *   <li>{@link org.istic.idm.ecore.PlayList.PlayList#getVideo <em>Video</em>}</li>
  * </ul>
  *
- * @see PlayList.PlayListPackage#getPlayList()
+ * @see org.istic.idm.ecore.PlayList.PlayListPackage#getPlayList()
  * @model
  * @generated
  */
 public interface PlayList extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Video</b></em>' containment reference list.
-	 * The list contents are of type {@link PlayList.Video}.
+	 * The list contents are of type {@link org.istic.idm.ecore.PlayList.Video}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Video</em>' containment reference list isn't clear,
@@ -33,10 +33,10 @@ public interface PlayList extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Video</em>' containment reference list.
-	 * @see PlayList.PlayListPackage#getPlayList_Video()
+	 * @see org.istic.idm.ecore.PlayList.PlayListPackage#getPlayList_Video()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Video> getVideo();
 
-} // PlayList
+} // org.istic.idm.ecore.PlayList

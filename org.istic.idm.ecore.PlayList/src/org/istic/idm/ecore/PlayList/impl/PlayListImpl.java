@@ -1,10 +1,7 @@
 /**
  */
-package PlayList.impl;
+package org.istic.idm.ecore.PlayList.impl;
 
-import PlayList.PlayList;
-import PlayList.PlayListPackage;
-import PlayList.Video;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -18,6 +15,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.istic.idm.ecore.PlayList.PlayList;
+import org.istic.idm.ecore.PlayList.PlayListPackage;
+import org.istic.idm.ecore.PlayList.Video;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link PlayList.impl.PlayListImpl#getVideo <em>Video</em>}</li>
+ *   <li>{@link org.istic.idm.ecore.PlayList.impl.PlayListImpl#getVideo <em>Video</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,7 +59,7 @@ public class PlayListImpl extends MinimalEObjectImpl.Container implements PlayLi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PlayListPackage.Literals.PLAY_LIST;
+		return org.istic.idm.ecore.PlayList.PlayListPackage.Literals.PLAY_LIST;
 	}
 
 	/**
