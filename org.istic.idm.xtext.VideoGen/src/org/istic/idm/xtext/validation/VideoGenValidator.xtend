@@ -8,6 +8,8 @@ import org.istic.idm.xtext.videoGen.VideoGenPackage.Literals
 import org.istic.idm.xtext.videoGen.Alternatives
 import org.istic.idm.xtext.videoGen.Sequence
 import org.istic.idm.xtext.videoGen.Optional
+import java.io.File
+import java.nio.file.FileSystem
 
 /**
  * This class contains custom validation rules. 
@@ -19,7 +21,18 @@ class VideoGenValidator extends AbstractVideoGenValidator {
   public static val DUPLICATED_DESCRIPTION = 'duplicatedDescription'
   public static val DUPLICATED_URL = 'duplicatedURL'
   public static val INVALID_NAME = 'invalidName'
+  public static val INVALID_URL = 'invalidUrl'
   public static val INVALID_PROBABILITY = 'invalidProbability'
+
+	@Check
+	def checkIsUrlExists(Sequence sequence) {
+		if (!new File(sequence.url).exists) {
+			info('File not found', 
+					Literals.SEQUENCE__URL,
+					INVALID_URL)
+		}
+	}
+	
 
 	@Check
 	def checkUniqueDescription(Sequence sequence) {
@@ -50,6 +63,7 @@ class VideoGenValidator extends AbstractVideoGenValidator {
 	}
 	
 	@Check
+		savePLS();
 	def checkUniqueIdentifiers(Sequence sequence) {
 		sequence.eResource.allContents
 			.filter(typeof(Sequence))
