@@ -9,7 +9,6 @@ import org.istic.idm.xtext.videoGen.Alternatives
 import org.istic.idm.xtext.videoGen.Sequence
 import org.istic.idm.xtext.videoGen.Optional
 import java.io.File
-import java.nio.file.FileSystem
 
 /**
  * This class contains custom validation rules. 
@@ -63,7 +62,6 @@ class VideoGenValidator extends AbstractVideoGenValidator {
 	}
 	
 	@Check
-		savePLS();
 	def checkUniqueIdentifiers(Sequence sequence) {
 		sequence.eResource.allContents
 			.filter(typeof(Sequence))
