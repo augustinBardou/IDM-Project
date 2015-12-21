@@ -26,7 +26,7 @@ class VideoGenValidator extends AbstractVideoGenValidator {
 	@Check
 	def checkIsUrlExists(Sequence sequence) {
 		if (!new File(sequence.url).exists) {
-			info('File not found', 
+			error('File not found', 
 					Literals.SEQUENCE__URL,
 					INVALID_URL)
 		}
