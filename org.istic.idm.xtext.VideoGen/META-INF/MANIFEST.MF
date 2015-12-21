@@ -29,4 +29,5 @@ Export-Package: org.istic.idm.xtext,
  org.istic.idm.xtext.validation,
  org.istic.idm.xtext.scoping,
  org.istic.idm.xtext.generator,
- org.istic.idm.xtext.formatting
+ org.istic.idm.xtext.formatting,
+ org.istic.idm.xtext.utils

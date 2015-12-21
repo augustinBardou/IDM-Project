@@ -82,9 +82,9 @@ ruleVideoGen returns [EObject current=null]
     {
     	newLeafNode(otherlv_0, grammarAccess.getVideoGenAccess().getVideoGenKeyword_0());
     }
-	otherlv_1='{' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getVideoGenAccess().getLeftCurlyBracketKeyword_1());
+this_LEFT_BRACKET_1=RULE_LEFT_BRACKET
+    { 
+    newLeafNode(this_LEFT_BRACKET_1, grammarAccess.getVideoGenAccess().getLEFT_BRACKETTerminalRuleCall_1()); 
     }
 (
 (
@@ -104,9 +104,9 @@ ruleVideoGen returns [EObject current=null]
 	    }
 
 )
-)+	otherlv_3='}' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getVideoGenAccess().getRightCurlyBracketKeyword_3());
+)+this_RIGHT_BRACKET_3=RULE_RIGHT_BRACKET
+    { 
+    newLeafNode(this_RIGHT_BRACKET_3, grammarAccess.getVideoGenAccess().getRIGHT_BRACKETTerminalRuleCall_3()); 
     }
 )
 ;
@@ -209,9 +209,9 @@ ruleAlternatives returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2='{' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getAlternativesAccess().getLeftCurlyBracketKeyword_2());
+)this_LEFT_BRACKET_2=RULE_LEFT_BRACKET
+    { 
+    newLeafNode(this_LEFT_BRACKET_2, grammarAccess.getAlternativesAccess().getLEFT_BRACKETTerminalRuleCall_2()); 
     }
 (
 (
@@ -231,9 +231,9 @@ ruleAlternatives returns [EObject current=null]
 	    }
 
 )
-)+	otherlv_4='}' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getAlternativesAccess().getRightCurlyBracketKeyword_4());
+)+this_RIGHT_BRACKET_4=RULE_RIGHT_BRACKET
+    { 
+    newLeafNode(this_RIGHT_BRACKET_4, grammarAccess.getAlternativesAccess().getRIGHT_BRACKETTerminalRuleCall_4()); 
     }
 )
 ;
@@ -382,9 +382,9 @@ ruleSequence returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2='{' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getSequenceAccess().getLeftCurlyBracketKeyword_2());
+)this_LEFT_BRACKET_2=RULE_LEFT_BRACKET
+    { 
+    newLeafNode(this_LEFT_BRACKET_2, grammarAccess.getSequenceAccess().getLEFT_BRACKETTerminalRuleCall_2()); 
     }
 (
 
@@ -527,9 +527,9 @@ ruleSequence returns [EObject current=null]
 	  getUnorderedGroupHelper().leave(grammarAccess.getSequenceAccess().getUnorderedGroup_3());
 	}
 
-)	otherlv_12='}' 
-    {
-    	newLeafNode(otherlv_12, grammarAccess.getSequenceAccess().getRightCurlyBracketKeyword_4());
+)this_RIGHT_BRACKET_12=RULE_RIGHT_BRACKET
+    { 
+    newLeafNode(this_RIGHT_BRACKET_12, grammarAccess.getSequenceAccess().getRIGHT_BRACKETTerminalRuleCall_4()); 
     }
 )
 ;
@@ -586,6 +586,10 @@ ruleMimetypes_Enum returns [Enumerator current=null]
 ));
 
 
+
+RULE_LEFT_BRACKET : '{';
+
+RULE_RIGHT_BRACKET : '}';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

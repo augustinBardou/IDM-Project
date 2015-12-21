@@ -1,12 +1,10 @@
-package utils
+package org.istic.idm.xtext.utils
 
 import com.xuggle.xuggler.IContainer
 import java.io.File
 import java.nio.file.Paths
 import java.util.ArrayList
 import java.util.List
-import org.apache.commons.exec.CommandLine
-import org.apache.commons.exec.DefaultExecutor
 import org.istic.idm.ecore.PlayList.Video
 import org.istic.idm.ecore.PlayList.impl.PlayListFactoryImpl
 import org.istic.idm.ecore.PlayList.impl.PlayListImpl
@@ -21,10 +19,9 @@ import org.istic.idm.xtext.videoGen.VideoGenFactory
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
 import org.istic.idm.ecore.PlayList.PlayList
-import java.nio.file.Files
 import java.nio.file.Path
 
-class VideoGenTransform {
+public class VideoGenTransform {
   
   	static Boolean debug = false
   	static Path tmp = Paths.get(System.getProperty("java.io.tmpdir") + "/VideoGenGenerated");
@@ -121,17 +118,16 @@ class VideoGenTransform {
         return "";
     }
    
-    def static createThumbnails(VideoGen videogen){
+    def static Path createThumbnails(Sequence sequence){
 
 		val dir = Paths.get(tmp + "/" + "thumbnails/")
 		println("Thumbnails Temporary folder: " + dir)
 		Execute.mkDirs(dir)
-        allSequences(videogen).forEach[sequence |
-			val fullPath = Paths.get(sequence.url)
-			val extention = getFileExtension(fullPath.fileName.toString)
-			val thumbFileName = Paths.get(dir + "/" + fullPath.fileName.toString.replaceAll("." + extention, ".png"))
-			Execute.createThumbnails(fullPath, thumbFileName)
-        ]
+		val fullPath = Paths.get(sequence.url)
+		val extention = getFileExtension(fullPath.fileName.toString)
+		val thumbFileName = Paths.get(dir + "/" + fullPath.fileName.toString.replaceAll("." + extention, ".png"))
+		Execute.createThumbnails(fullPath, thumbFileName)
+		thumbFileName
     }
     
     def static ConvertTo(VideoCodec type, VideoGen videogen){
@@ -164,7 +160,7 @@ class VideoGenTransform {
         videogen
     }
     
-    def static toPlayList(VideoGen videogen){
+    def static toPlayList(VideoGen videogen, Boolean withThumbnail){
         var PlayListFactoryImpl playlistFactory = PlayListFactoryImpl.init() as PlayListFactoryImpl
         val PlayListImpl playlist = playlistFactory.createPlayList() as PlayListImpl
         
@@ -184,6 +180,10 @@ class VideoGenTransform {
 				var Object obj = new PlayListFactoryImpl().createVideo()
 				var p_video = obj as Video
 				transferData(p_video, sequence)
+				var video = p_video as VideoImpl
+				if (withThumbnail) {
+					video.thumbnail = createThumbnails(sequence).toAbsolutePath.toString
+				}
 				playlist.video.add(p_video as VideoImpl)
 			}
         ]

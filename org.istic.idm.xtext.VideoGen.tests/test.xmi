@@ -2,55 +2,55 @@
 <videoGen:VideoGen xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:videoGen="http://www.istic.org/idm/xtext/VideoGen">
   <statements xsi:type="videoGen:Alternatives" name="intro">
     <options>
-      <sequence name="intro1" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/intro/Mass.mp4"/>
+      <sequence name="intro1" url="/tmp/VideoGen/intro/Mass.mp4"/>
     </options>
     <options>
-      <sequence name="intro2" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/intro/TimsSuicide.mp4"/>
+      <sequence name="intro2" url="/tmp/VideoGen/intro/TimsSuicide.mp4"/>
     </options>
   </statements>
   <statements xsi:type="videoGen:Optional" probability="30">
-    <sequence name="haha1" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/haha/Eddy Wally - Wow.mp4"/>
+    <sequence name="haha1" url="/tmp/VideoGen/haha/EddyWally-Wow.mp4"/>
   </statements>
   <statements xsi:type="videoGen:Alternatives" name="cats">
     <options probability="55">
-      <sequence name="cat1" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/intro/Acrostatics.mp4"/>
+      <sequence name="cat1" url="/tmp/VideoGen/intro/Acrostatics.mp4"/>
     </options>
     <options>
-      <sequence name="cat2" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/intro/Cat Jump Fail.mp4"/>
+      <sequence name="cat2" url="/tmp/VideoGen/intro/CatJumpFail.mp4"/>
     </options>
   </statements>
   <statements xsi:type="videoGen:Optional" probability="10">
-    <sequence name="haha2" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/haha/Eddy Wally - Wow.mp4"/>
+    <sequence name="haha2" url="/tmp/VideoGen/haha/EddyWally-Wow.mp4"/>
   </statements>
   <statements xsi:type="videoGen:Mandatory">
-    <sequence name="tv1" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/tv/public access TV.mp4"/>
+    <sequence name="tv1" url="/tmp/VideoGen/tv/PublicAccessTV.mp4"/>
   </statements>
   <statements xsi:type="videoGen:Alternatives" name="wtf">
     <options>
-      <sequence name="wtf1" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/wtf/Cereal.mp4"/>
+      <sequence name="wtf1" url="/tmp/VideoGen/wtf/Cereal.mp4"/>
     </options>
     <options>
-      <sequence name="wtf2" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/wtf/The strongest motherfucker in the world.mp4"/>
+      <sequence name="wtf2" url="/tmp/VideoGen/wtf/TheStrongestMotherfuckerInTheWorld.mp4"/>
     </options>
     <options>
-      <sequence name="wtf3" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/wtf/Then I don't need a jacket TETRIS VERSION.mp4"/>
+      <sequence name="wtf3" url="/tmp/VideoGen/wtf/ThenIDontNeedAJacket.mp4"/>
     </options>
     <options>
-      <sequence name="wtf4" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/wtf/warm it up exe That's a 10.mp4"/>
+      <sequence name="wtf4" url="/tmp/VideoGen/wtf/WarmItUp.mp4"/>
     </options>
   </statements>
   <statements xsi:type="videoGen:Mandatory">
-    <sequence name="haha3" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/haha/haha.mp4"/>
+    <sequence name="haha3" url="/tmp/VideoGen/haha/haha.mp4"/>
   </statements>
   <statements xsi:type="videoGen:Alternatives" name="outro">
     <options>
-      <sequence name="outro1" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/outro/EVEN NOW...THE EVIL SEED OF WHAT YOU'VE DONE GERMINATES WITH.mp4"/>
+      <sequence name="outro1" url="/tmp/VideoGen/outro/THEEVILSEEDOFWHATYOUVEDONEGERMINATESWITH.mp4"/>
     </options>
     <options>
-      <sequence name="outro2" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/outro/Poltergeist.mp4"/>
+      <sequence name="outro2" url="/tmp/VideoGen/outro/Poltergeist.mp4"/>
     </options>
   </statements>
   <statements xsi:type="videoGen:Mandatory">
-    <sequence name="haha4" url="/home/blacknight/workspace/org.istic.idm.xtext.example/resources/haha/haha.mp4"/>
+    <sequence name="haha4" url="/tmp/VideoGen/haha/haha.mp4"/>
   </statements>
 </videoGen:VideoGen>

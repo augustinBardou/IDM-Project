@@ -22,31 +22,31 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalVideoGenParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'MP4'", "'FLV'", "'MPEGTS'", "'MPEG'", "'WEBM'", "'WMV'", "'AVI'", "'VideoGen'", "'{'", "'}'", "'@Optional'", "'@Mandatory'", "'Alternatives'", "'@Probability('", "')'", "'Sequence'", "'url='", "'description='", "'length='", "'mimetype='"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_LEFT_BRACKET", "RULE_RIGHT_BRACKET", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'MP4'", "'FLV'", "'MPEGTS'", "'MPEG'", "'WEBM'", "'WMV'", "'AVI'", "'VideoGen'", "'@Optional'", "'@Mandatory'", "'Alternatives'", "'@Probability('", "')'", "'Sequence'", "'url='", "'description='", "'length='", "'mimetype='"
     };
-    public static final int RULE_STRING=6;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_STRING=8;
+    public static final int RULE_SL_COMMENT=10;
     public static final int T__19=19;
     public static final int T__15=15;
+    public static final int RULE_RIGHT_BRACKET=5;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int T__11=11;
-    public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int T__30=30;
-    public static final int RULE_ID=4;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_ID=6;
+    public static final int RULE_WS=11;
+    public static final int RULE_LEFT_BRACKET=4;
+    public static final int RULE_ANY_OTHER=12;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=5;
+    public static final int RULE_INT=7;
     public static final int T__29=29;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int RULE_ML_COMMENT=9;
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
@@ -729,37 +729,37 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
             // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:279:1: ( ( ( 'MP4' ) ) | ( ( 'FLV' ) ) | ( ( 'MPEGTS' ) ) | ( ( 'MPEG' ) ) | ( ( 'WEBM' ) ) | ( ( 'WMV' ) ) | ( ( 'AVI' ) ) )
             int alt2=7;
             switch ( input.LA(1) ) {
-            case 11:
+            case 13:
                 {
                 alt2=1;
                 }
                 break;
-            case 12:
+            case 14:
                 {
                 alt2=2;
                 }
                 break;
-            case 13:
+            case 15:
                 {
                 alt2=3;
                 }
                 break;
-            case 14:
+            case 16:
                 {
                 alt2=4;
                 }
                 break;
-            case 15:
+            case 17:
                 {
                 alt2=5;
                 }
                 break;
-            case 16:
+            case 18:
                 {
                 alt2=6;
                 }
                 break;
-            case 17:
+            case 19:
                 {
                 alt2=7;
                 }
@@ -782,7 +782,7 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:282:1: ( 'MP4' )
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:282:3: 'MP4'
                     {
-                    match(input,11,FOLLOW_11_in_rule__Mimetypes_Enum__Alternatives535); 
+                    match(input,13,FOLLOW_13_in_rule__Mimetypes_Enum__Alternatives535); 
 
                     }
 
@@ -803,7 +803,7 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:289:1: ( 'FLV' )
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:289:3: 'FLV'
                     {
-                    match(input,12,FOLLOW_12_in_rule__Mimetypes_Enum__Alternatives556); 
+                    match(input,14,FOLLOW_14_in_rule__Mimetypes_Enum__Alternatives556); 
 
                     }
 
@@ -824,7 +824,7 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:296:1: ( 'MPEGTS' )
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:296:3: 'MPEGTS'
                     {
-                    match(input,13,FOLLOW_13_in_rule__Mimetypes_Enum__Alternatives577); 
+                    match(input,15,FOLLOW_15_in_rule__Mimetypes_Enum__Alternatives577); 
 
                     }
 
@@ -845,7 +845,7 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:303:1: ( 'MPEG' )
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:303:3: 'MPEG'
                     {
-                    match(input,14,FOLLOW_14_in_rule__Mimetypes_Enum__Alternatives598); 
+                    match(input,16,FOLLOW_16_in_rule__Mimetypes_Enum__Alternatives598); 
 
                     }
 
@@ -866,7 +866,7 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:310:1: ( 'WEBM' )
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:310:3: 'WEBM'
                     {
-                    match(input,15,FOLLOW_15_in_rule__Mimetypes_Enum__Alternatives619); 
+                    match(input,17,FOLLOW_17_in_rule__Mimetypes_Enum__Alternatives619); 
 
                     }
 
@@ -887,7 +887,7 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:317:1: ( 'WMV' )
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:317:3: 'WMV'
                     {
-                    match(input,16,FOLLOW_16_in_rule__Mimetypes_Enum__Alternatives640); 
+                    match(input,18,FOLLOW_18_in_rule__Mimetypes_Enum__Alternatives640); 
 
                     }
 
@@ -908,7 +908,7 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:324:1: ( 'AVI' )
                     // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:324:3: 'AVI'
                     {
-                    match(input,17,FOLLOW_17_in_rule__Mimetypes_Enum__Alternatives661); 
+                    match(input,19,FOLLOW_19_in_rule__Mimetypes_Enum__Alternatives661); 
 
                     }
 
@@ -988,7 +988,7 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
             // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:354:1: 'VideoGen'
             {
              before(grammarAccess.getVideoGenAccess().getVideoGenKeyword_0()); 
-            match(input,18,FOLLOW_18_in_rule__VideoGen__Group__0__Impl725); 
+            match(input,20,FOLLOW_20_in_rule__VideoGen__Group__0__Impl725); 
              after(grammarAccess.getVideoGenAccess().getVideoGenKeyword_0()); 
 
             }
@@ -1050,21 +1050,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VideoGen__Group__1__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:379:1: rule__VideoGen__Group__1__Impl : ( '{' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:379:1: rule__VideoGen__Group__1__Impl : ( RULE_LEFT_BRACKET ) ;
     public final void rule__VideoGen__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:383:1: ( ( '{' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:384:1: ( '{' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:383:1: ( ( RULE_LEFT_BRACKET ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:384:1: ( RULE_LEFT_BRACKET )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:384:1: ( '{' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:385:1: '{'
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:384:1: ( RULE_LEFT_BRACKET )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:385:1: RULE_LEFT_BRACKET
             {
-             before(grammarAccess.getVideoGenAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,19,FOLLOW_19_in_rule__VideoGen__Group__1__Impl787); 
-             after(grammarAccess.getVideoGenAccess().getLeftCurlyBracketKeyword_1()); 
+             before(grammarAccess.getVideoGenAccess().getLEFT_BRACKETTerminalRuleCall_1()); 
+            match(input,RULE_LEFT_BRACKET,FOLLOW_RULE_LEFT_BRACKET_in_rule__VideoGen__Group__1__Impl786); 
+             after(grammarAccess.getVideoGenAccess().getLEFT_BRACKETTerminalRuleCall_1()); 
 
             }
 
@@ -1087,21 +1087,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VideoGen__Group__2"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:398:1: rule__VideoGen__Group__2 : rule__VideoGen__Group__2__Impl rule__VideoGen__Group__3 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:396:1: rule__VideoGen__Group__2 : rule__VideoGen__Group__2__Impl rule__VideoGen__Group__3 ;
     public final void rule__VideoGen__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:402:1: ( rule__VideoGen__Group__2__Impl rule__VideoGen__Group__3 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:403:2: rule__VideoGen__Group__2__Impl rule__VideoGen__Group__3
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:400:1: ( rule__VideoGen__Group__2__Impl rule__VideoGen__Group__3 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:401:2: rule__VideoGen__Group__2__Impl rule__VideoGen__Group__3
             {
-            pushFollow(FOLLOW_rule__VideoGen__Group__2__Impl_in_rule__VideoGen__Group__2818);
+            pushFollow(FOLLOW_rule__VideoGen__Group__2__Impl_in_rule__VideoGen__Group__2815);
             rule__VideoGen__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__VideoGen__Group__3_in_rule__VideoGen__Group__2821);
+            pushFollow(FOLLOW_rule__VideoGen__Group__3_in_rule__VideoGen__Group__2818);
             rule__VideoGen__Group__3();
 
             state._fsp--;
@@ -1125,26 +1125,26 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VideoGen__Group__2__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:410:1: rule__VideoGen__Group__2__Impl : ( ( ( rule__VideoGen__StatementsAssignment_2 ) ) ( ( rule__VideoGen__StatementsAssignment_2 )* ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:408:1: rule__VideoGen__Group__2__Impl : ( ( ( rule__VideoGen__StatementsAssignment_2 ) ) ( ( rule__VideoGen__StatementsAssignment_2 )* ) ) ;
     public final void rule__VideoGen__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:414:1: ( ( ( ( rule__VideoGen__StatementsAssignment_2 ) ) ( ( rule__VideoGen__StatementsAssignment_2 )* ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:415:1: ( ( ( rule__VideoGen__StatementsAssignment_2 ) ) ( ( rule__VideoGen__StatementsAssignment_2 )* ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:412:1: ( ( ( ( rule__VideoGen__StatementsAssignment_2 ) ) ( ( rule__VideoGen__StatementsAssignment_2 )* ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:413:1: ( ( ( rule__VideoGen__StatementsAssignment_2 ) ) ( ( rule__VideoGen__StatementsAssignment_2 )* ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:415:1: ( ( ( rule__VideoGen__StatementsAssignment_2 ) ) ( ( rule__VideoGen__StatementsAssignment_2 )* ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:416:1: ( ( rule__VideoGen__StatementsAssignment_2 ) ) ( ( rule__VideoGen__StatementsAssignment_2 )* )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:413:1: ( ( ( rule__VideoGen__StatementsAssignment_2 ) ) ( ( rule__VideoGen__StatementsAssignment_2 )* ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:414:1: ( ( rule__VideoGen__StatementsAssignment_2 ) ) ( ( rule__VideoGen__StatementsAssignment_2 )* )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:416:1: ( ( rule__VideoGen__StatementsAssignment_2 ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:417:1: ( rule__VideoGen__StatementsAssignment_2 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:414:1: ( ( rule__VideoGen__StatementsAssignment_2 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:415:1: ( rule__VideoGen__StatementsAssignment_2 )
             {
              before(grammarAccess.getVideoGenAccess().getStatementsAssignment_2()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:418:1: ( rule__VideoGen__StatementsAssignment_2 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:418:2: rule__VideoGen__StatementsAssignment_2
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:416:1: ( rule__VideoGen__StatementsAssignment_2 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:416:2: rule__VideoGen__StatementsAssignment_2
             {
-            pushFollow(FOLLOW_rule__VideoGen__StatementsAssignment_2_in_rule__VideoGen__Group__2__Impl850);
+            pushFollow(FOLLOW_rule__VideoGen__StatementsAssignment_2_in_rule__VideoGen__Group__2__Impl847);
             rule__VideoGen__StatementsAssignment_2();
 
             state._fsp--;
@@ -1156,11 +1156,11 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:421:1: ( ( rule__VideoGen__StatementsAssignment_2 )* )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:422:1: ( rule__VideoGen__StatementsAssignment_2 )*
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:419:1: ( ( rule__VideoGen__StatementsAssignment_2 )* )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:420:1: ( rule__VideoGen__StatementsAssignment_2 )*
             {
              before(grammarAccess.getVideoGenAccess().getStatementsAssignment_2()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:423:1: ( rule__VideoGen__StatementsAssignment_2 )*
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:421:1: ( rule__VideoGen__StatementsAssignment_2 )*
             loop3:
             do {
                 int alt3=2;
@@ -1173,9 +1173,9 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:423:2: rule__VideoGen__StatementsAssignment_2
+            	    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:421:2: rule__VideoGen__StatementsAssignment_2
             	    {
-            	    pushFollow(FOLLOW_rule__VideoGen__StatementsAssignment_2_in_rule__VideoGen__Group__2__Impl862);
+            	    pushFollow(FOLLOW_rule__VideoGen__StatementsAssignment_2_in_rule__VideoGen__Group__2__Impl859);
             	    rule__VideoGen__StatementsAssignment_2();
 
             	    state._fsp--;
@@ -1215,16 +1215,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VideoGen__Group__3"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:434:1: rule__VideoGen__Group__3 : rule__VideoGen__Group__3__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:432:1: rule__VideoGen__Group__3 : rule__VideoGen__Group__3__Impl ;
     public final void rule__VideoGen__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:438:1: ( rule__VideoGen__Group__3__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:439:2: rule__VideoGen__Group__3__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:436:1: ( rule__VideoGen__Group__3__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:437:2: rule__VideoGen__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__VideoGen__Group__3__Impl_in_rule__VideoGen__Group__3895);
+            pushFollow(FOLLOW_rule__VideoGen__Group__3__Impl_in_rule__VideoGen__Group__3892);
             rule__VideoGen__Group__3__Impl();
 
             state._fsp--;
@@ -1248,21 +1248,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VideoGen__Group__3__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:445:1: rule__VideoGen__Group__3__Impl : ( '}' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:443:1: rule__VideoGen__Group__3__Impl : ( RULE_RIGHT_BRACKET ) ;
     public final void rule__VideoGen__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:449:1: ( ( '}' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:450:1: ( '}' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:447:1: ( ( RULE_RIGHT_BRACKET ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:448:1: ( RULE_RIGHT_BRACKET )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:450:1: ( '}' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:451:1: '}'
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:448:1: ( RULE_RIGHT_BRACKET )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:449:1: RULE_RIGHT_BRACKET
             {
-             before(grammarAccess.getVideoGenAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,20,FOLLOW_20_in_rule__VideoGen__Group__3__Impl923); 
-             after(grammarAccess.getVideoGenAccess().getRightCurlyBracketKeyword_3()); 
+             before(grammarAccess.getVideoGenAccess().getRIGHT_BRACKETTerminalRuleCall_3()); 
+            match(input,RULE_RIGHT_BRACKET,FOLLOW_RULE_RIGHT_BRACKET_in_rule__VideoGen__Group__3__Impl919); 
+             after(grammarAccess.getVideoGenAccess().getRIGHT_BRACKETTerminalRuleCall_3()); 
 
             }
 
@@ -1285,21 +1285,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Statement__Group_0__0"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:472:1: rule__Statement__Group_0__0 : rule__Statement__Group_0__0__Impl rule__Statement__Group_0__1 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:468:1: rule__Statement__Group_0__0 : rule__Statement__Group_0__0__Impl rule__Statement__Group_0__1 ;
     public final void rule__Statement__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:476:1: ( rule__Statement__Group_0__0__Impl rule__Statement__Group_0__1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:477:2: rule__Statement__Group_0__0__Impl rule__Statement__Group_0__1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:472:1: ( rule__Statement__Group_0__0__Impl rule__Statement__Group_0__1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:473:2: rule__Statement__Group_0__0__Impl rule__Statement__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Statement__Group_0__0__Impl_in_rule__Statement__Group_0__0962);
+            pushFollow(FOLLOW_rule__Statement__Group_0__0__Impl_in_rule__Statement__Group_0__0956);
             rule__Statement__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group_0__1_in_rule__Statement__Group_0__0965);
+            pushFollow(FOLLOW_rule__Statement__Group_0__1_in_rule__Statement__Group_0__0959);
             rule__Statement__Group_0__1();
 
             state._fsp--;
@@ -1323,20 +1323,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Statement__Group_0__0__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:484:1: rule__Statement__Group_0__0__Impl : ( '@Optional' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:480:1: rule__Statement__Group_0__0__Impl : ( '@Optional' ) ;
     public final void rule__Statement__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:488:1: ( ( '@Optional' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:489:1: ( '@Optional' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:484:1: ( ( '@Optional' ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:485:1: ( '@Optional' )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:489:1: ( '@Optional' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:490:1: '@Optional'
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:485:1: ( '@Optional' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:486:1: '@Optional'
             {
              before(grammarAccess.getStatementAccess().getOptionalKeyword_0_0()); 
-            match(input,21,FOLLOW_21_in_rule__Statement__Group_0__0__Impl993); 
+            match(input,21,FOLLOW_21_in_rule__Statement__Group_0__0__Impl987); 
              after(grammarAccess.getStatementAccess().getOptionalKeyword_0_0()); 
 
             }
@@ -1360,16 +1360,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Statement__Group_0__1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:503:1: rule__Statement__Group_0__1 : rule__Statement__Group_0__1__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:499:1: rule__Statement__Group_0__1 : rule__Statement__Group_0__1__Impl ;
     public final void rule__Statement__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:507:1: ( rule__Statement__Group_0__1__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:508:2: rule__Statement__Group_0__1__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:503:1: ( rule__Statement__Group_0__1__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:504:2: rule__Statement__Group_0__1__Impl
             {
-            pushFollow(FOLLOW_rule__Statement__Group_0__1__Impl_in_rule__Statement__Group_0__11024);
+            pushFollow(FOLLOW_rule__Statement__Group_0__1__Impl_in_rule__Statement__Group_0__11018);
             rule__Statement__Group_0__1__Impl();
 
             state._fsp--;
@@ -1393,20 +1393,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Statement__Group_0__1__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:514:1: rule__Statement__Group_0__1__Impl : ( ruleOptional ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:510:1: rule__Statement__Group_0__1__Impl : ( ruleOptional ) ;
     public final void rule__Statement__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:518:1: ( ( ruleOptional ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:519:1: ( ruleOptional )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:514:1: ( ( ruleOptional ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:515:1: ( ruleOptional )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:519:1: ( ruleOptional )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:520:1: ruleOptional
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:515:1: ( ruleOptional )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:516:1: ruleOptional
             {
              before(grammarAccess.getStatementAccess().getOptionalParserRuleCall_0_1()); 
-            pushFollow(FOLLOW_ruleOptional_in_rule__Statement__Group_0__1__Impl1051);
+            pushFollow(FOLLOW_ruleOptional_in_rule__Statement__Group_0__1__Impl1045);
             ruleOptional();
 
             state._fsp--;
@@ -1434,21 +1434,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Statement__Group_1__0"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:535:1: rule__Statement__Group_1__0 : rule__Statement__Group_1__0__Impl rule__Statement__Group_1__1 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:531:1: rule__Statement__Group_1__0 : rule__Statement__Group_1__0__Impl rule__Statement__Group_1__1 ;
     public final void rule__Statement__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:539:1: ( rule__Statement__Group_1__0__Impl rule__Statement__Group_1__1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:540:2: rule__Statement__Group_1__0__Impl rule__Statement__Group_1__1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:535:1: ( rule__Statement__Group_1__0__Impl rule__Statement__Group_1__1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:536:2: rule__Statement__Group_1__0__Impl rule__Statement__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Statement__Group_1__0__Impl_in_rule__Statement__Group_1__01084);
+            pushFollow(FOLLOW_rule__Statement__Group_1__0__Impl_in_rule__Statement__Group_1__01078);
             rule__Statement__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group_1__1_in_rule__Statement__Group_1__01087);
+            pushFollow(FOLLOW_rule__Statement__Group_1__1_in_rule__Statement__Group_1__01081);
             rule__Statement__Group_1__1();
 
             state._fsp--;
@@ -1472,20 +1472,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Statement__Group_1__0__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:547:1: rule__Statement__Group_1__0__Impl : ( ( '@Mandatory' )? ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:543:1: rule__Statement__Group_1__0__Impl : ( ( '@Mandatory' )? ) ;
     public final void rule__Statement__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:551:1: ( ( ( '@Mandatory' )? ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:552:1: ( ( '@Mandatory' )? )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:547:1: ( ( ( '@Mandatory' )? ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:548:1: ( ( '@Mandatory' )? )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:552:1: ( ( '@Mandatory' )? )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:553:1: ( '@Mandatory' )?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:548:1: ( ( '@Mandatory' )? )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:549:1: ( '@Mandatory' )?
             {
              before(grammarAccess.getStatementAccess().getMandatoryKeyword_1_0()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:554:1: ( '@Mandatory' )?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:550:1: ( '@Mandatory' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1494,9 +1494,9 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:555:2: '@Mandatory'
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:551:2: '@Mandatory'
                     {
-                    match(input,22,FOLLOW_22_in_rule__Statement__Group_1__0__Impl1116); 
+                    match(input,22,FOLLOW_22_in_rule__Statement__Group_1__0__Impl1110); 
 
                     }
                     break;
@@ -1526,16 +1526,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Statement__Group_1__1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:566:1: rule__Statement__Group_1__1 : rule__Statement__Group_1__1__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:562:1: rule__Statement__Group_1__1 : rule__Statement__Group_1__1__Impl ;
     public final void rule__Statement__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:570:1: ( rule__Statement__Group_1__1__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:571:2: rule__Statement__Group_1__1__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:566:1: ( rule__Statement__Group_1__1__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:567:2: rule__Statement__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Statement__Group_1__1__Impl_in_rule__Statement__Group_1__11149);
+            pushFollow(FOLLOW_rule__Statement__Group_1__1__Impl_in_rule__Statement__Group_1__11143);
             rule__Statement__Group_1__1__Impl();
 
             state._fsp--;
@@ -1559,20 +1559,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Statement__Group_1__1__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:577:1: rule__Statement__Group_1__1__Impl : ( ruleMandatory ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:573:1: rule__Statement__Group_1__1__Impl : ( ruleMandatory ) ;
     public final void rule__Statement__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:581:1: ( ( ruleMandatory ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:582:1: ( ruleMandatory )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:577:1: ( ( ruleMandatory ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:578:1: ( ruleMandatory )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:582:1: ( ruleMandatory )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:583:1: ruleMandatory
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:578:1: ( ruleMandatory )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:579:1: ruleMandatory
             {
              before(grammarAccess.getStatementAccess().getMandatoryParserRuleCall_1_1()); 
-            pushFollow(FOLLOW_ruleMandatory_in_rule__Statement__Group_1__1__Impl1176);
+            pushFollow(FOLLOW_ruleMandatory_in_rule__Statement__Group_1__1__Impl1170);
             ruleMandatory();
 
             state._fsp--;
@@ -1600,21 +1600,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Alternatives__Group__0"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:598:1: rule__Alternatives__Group__0 : rule__Alternatives__Group__0__Impl rule__Alternatives__Group__1 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:594:1: rule__Alternatives__Group__0 : rule__Alternatives__Group__0__Impl rule__Alternatives__Group__1 ;
     public final void rule__Alternatives__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:602:1: ( rule__Alternatives__Group__0__Impl rule__Alternatives__Group__1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:603:2: rule__Alternatives__Group__0__Impl rule__Alternatives__Group__1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:598:1: ( rule__Alternatives__Group__0__Impl rule__Alternatives__Group__1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:599:2: rule__Alternatives__Group__0__Impl rule__Alternatives__Group__1
             {
-            pushFollow(FOLLOW_rule__Alternatives__Group__0__Impl_in_rule__Alternatives__Group__01209);
+            pushFollow(FOLLOW_rule__Alternatives__Group__0__Impl_in_rule__Alternatives__Group__01203);
             rule__Alternatives__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Alternatives__Group__1_in_rule__Alternatives__Group__01212);
+            pushFollow(FOLLOW_rule__Alternatives__Group__1_in_rule__Alternatives__Group__01206);
             rule__Alternatives__Group__1();
 
             state._fsp--;
@@ -1638,20 +1638,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Alternatives__Group__0__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:610:1: rule__Alternatives__Group__0__Impl : ( 'Alternatives' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:606:1: rule__Alternatives__Group__0__Impl : ( 'Alternatives' ) ;
     public final void rule__Alternatives__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:614:1: ( ( 'Alternatives' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:615:1: ( 'Alternatives' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:610:1: ( ( 'Alternatives' ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:611:1: ( 'Alternatives' )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:615:1: ( 'Alternatives' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:616:1: 'Alternatives'
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:611:1: ( 'Alternatives' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:612:1: 'Alternatives'
             {
              before(grammarAccess.getAlternativesAccess().getAlternativesKeyword_0()); 
-            match(input,23,FOLLOW_23_in_rule__Alternatives__Group__0__Impl1240); 
+            match(input,23,FOLLOW_23_in_rule__Alternatives__Group__0__Impl1234); 
              after(grammarAccess.getAlternativesAccess().getAlternativesKeyword_0()); 
 
             }
@@ -1675,21 +1675,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Alternatives__Group__1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:629:1: rule__Alternatives__Group__1 : rule__Alternatives__Group__1__Impl rule__Alternatives__Group__2 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:625:1: rule__Alternatives__Group__1 : rule__Alternatives__Group__1__Impl rule__Alternatives__Group__2 ;
     public final void rule__Alternatives__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:633:1: ( rule__Alternatives__Group__1__Impl rule__Alternatives__Group__2 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:634:2: rule__Alternatives__Group__1__Impl rule__Alternatives__Group__2
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:629:1: ( rule__Alternatives__Group__1__Impl rule__Alternatives__Group__2 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:630:2: rule__Alternatives__Group__1__Impl rule__Alternatives__Group__2
             {
-            pushFollow(FOLLOW_rule__Alternatives__Group__1__Impl_in_rule__Alternatives__Group__11271);
+            pushFollow(FOLLOW_rule__Alternatives__Group__1__Impl_in_rule__Alternatives__Group__11265);
             rule__Alternatives__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Alternatives__Group__2_in_rule__Alternatives__Group__11274);
+            pushFollow(FOLLOW_rule__Alternatives__Group__2_in_rule__Alternatives__Group__11268);
             rule__Alternatives__Group__2();
 
             state._fsp--;
@@ -1713,23 +1713,23 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Alternatives__Group__1__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:641:1: rule__Alternatives__Group__1__Impl : ( ( rule__Alternatives__NameAssignment_1 ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:637:1: rule__Alternatives__Group__1__Impl : ( ( rule__Alternatives__NameAssignment_1 ) ) ;
     public final void rule__Alternatives__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:645:1: ( ( ( rule__Alternatives__NameAssignment_1 ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:646:1: ( ( rule__Alternatives__NameAssignment_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:641:1: ( ( ( rule__Alternatives__NameAssignment_1 ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:642:1: ( ( rule__Alternatives__NameAssignment_1 ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:646:1: ( ( rule__Alternatives__NameAssignment_1 ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:647:1: ( rule__Alternatives__NameAssignment_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:642:1: ( ( rule__Alternatives__NameAssignment_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:643:1: ( rule__Alternatives__NameAssignment_1 )
             {
              before(grammarAccess.getAlternativesAccess().getNameAssignment_1()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:648:1: ( rule__Alternatives__NameAssignment_1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:648:2: rule__Alternatives__NameAssignment_1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:644:1: ( rule__Alternatives__NameAssignment_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:644:2: rule__Alternatives__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Alternatives__NameAssignment_1_in_rule__Alternatives__Group__1__Impl1301);
+            pushFollow(FOLLOW_rule__Alternatives__NameAssignment_1_in_rule__Alternatives__Group__1__Impl1295);
             rule__Alternatives__NameAssignment_1();
 
             state._fsp--;
@@ -1760,21 +1760,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Alternatives__Group__2"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:658:1: rule__Alternatives__Group__2 : rule__Alternatives__Group__2__Impl rule__Alternatives__Group__3 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:654:1: rule__Alternatives__Group__2 : rule__Alternatives__Group__2__Impl rule__Alternatives__Group__3 ;
     public final void rule__Alternatives__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:662:1: ( rule__Alternatives__Group__2__Impl rule__Alternatives__Group__3 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:663:2: rule__Alternatives__Group__2__Impl rule__Alternatives__Group__3
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:658:1: ( rule__Alternatives__Group__2__Impl rule__Alternatives__Group__3 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:659:2: rule__Alternatives__Group__2__Impl rule__Alternatives__Group__3
             {
-            pushFollow(FOLLOW_rule__Alternatives__Group__2__Impl_in_rule__Alternatives__Group__21331);
+            pushFollow(FOLLOW_rule__Alternatives__Group__2__Impl_in_rule__Alternatives__Group__21325);
             rule__Alternatives__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Alternatives__Group__3_in_rule__Alternatives__Group__21334);
+            pushFollow(FOLLOW_rule__Alternatives__Group__3_in_rule__Alternatives__Group__21328);
             rule__Alternatives__Group__3();
 
             state._fsp--;
@@ -1798,21 +1798,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Alternatives__Group__2__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:670:1: rule__Alternatives__Group__2__Impl : ( '{' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:666:1: rule__Alternatives__Group__2__Impl : ( RULE_LEFT_BRACKET ) ;
     public final void rule__Alternatives__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:674:1: ( ( '{' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:675:1: ( '{' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:670:1: ( ( RULE_LEFT_BRACKET ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:671:1: ( RULE_LEFT_BRACKET )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:675:1: ( '{' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:676:1: '{'
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:671:1: ( RULE_LEFT_BRACKET )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:672:1: RULE_LEFT_BRACKET
             {
-             before(grammarAccess.getAlternativesAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,19,FOLLOW_19_in_rule__Alternatives__Group__2__Impl1362); 
-             after(grammarAccess.getAlternativesAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getAlternativesAccess().getLEFT_BRACKETTerminalRuleCall_2()); 
+            match(input,RULE_LEFT_BRACKET,FOLLOW_RULE_LEFT_BRACKET_in_rule__Alternatives__Group__2__Impl1355); 
+             after(grammarAccess.getAlternativesAccess().getLEFT_BRACKETTerminalRuleCall_2()); 
 
             }
 
@@ -1835,21 +1835,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Alternatives__Group__3"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:689:1: rule__Alternatives__Group__3 : rule__Alternatives__Group__3__Impl rule__Alternatives__Group__4 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:683:1: rule__Alternatives__Group__3 : rule__Alternatives__Group__3__Impl rule__Alternatives__Group__4 ;
     public final void rule__Alternatives__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:693:1: ( rule__Alternatives__Group__3__Impl rule__Alternatives__Group__4 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:694:2: rule__Alternatives__Group__3__Impl rule__Alternatives__Group__4
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:687:1: ( rule__Alternatives__Group__3__Impl rule__Alternatives__Group__4 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:688:2: rule__Alternatives__Group__3__Impl rule__Alternatives__Group__4
             {
-            pushFollow(FOLLOW_rule__Alternatives__Group__3__Impl_in_rule__Alternatives__Group__31393);
+            pushFollow(FOLLOW_rule__Alternatives__Group__3__Impl_in_rule__Alternatives__Group__31384);
             rule__Alternatives__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Alternatives__Group__4_in_rule__Alternatives__Group__31396);
+            pushFollow(FOLLOW_rule__Alternatives__Group__4_in_rule__Alternatives__Group__31387);
             rule__Alternatives__Group__4();
 
             state._fsp--;
@@ -1873,26 +1873,26 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Alternatives__Group__3__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:701:1: rule__Alternatives__Group__3__Impl : ( ( ( rule__Alternatives__OptionsAssignment_3 ) ) ( ( rule__Alternatives__OptionsAssignment_3 )* ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:695:1: rule__Alternatives__Group__3__Impl : ( ( ( rule__Alternatives__OptionsAssignment_3 ) ) ( ( rule__Alternatives__OptionsAssignment_3 )* ) ) ;
     public final void rule__Alternatives__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:705:1: ( ( ( ( rule__Alternatives__OptionsAssignment_3 ) ) ( ( rule__Alternatives__OptionsAssignment_3 )* ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:706:1: ( ( ( rule__Alternatives__OptionsAssignment_3 ) ) ( ( rule__Alternatives__OptionsAssignment_3 )* ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:699:1: ( ( ( ( rule__Alternatives__OptionsAssignment_3 ) ) ( ( rule__Alternatives__OptionsAssignment_3 )* ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:700:1: ( ( ( rule__Alternatives__OptionsAssignment_3 ) ) ( ( rule__Alternatives__OptionsAssignment_3 )* ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:706:1: ( ( ( rule__Alternatives__OptionsAssignment_3 ) ) ( ( rule__Alternatives__OptionsAssignment_3 )* ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:707:1: ( ( rule__Alternatives__OptionsAssignment_3 ) ) ( ( rule__Alternatives__OptionsAssignment_3 )* )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:700:1: ( ( ( rule__Alternatives__OptionsAssignment_3 ) ) ( ( rule__Alternatives__OptionsAssignment_3 )* ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:701:1: ( ( rule__Alternatives__OptionsAssignment_3 ) ) ( ( rule__Alternatives__OptionsAssignment_3 )* )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:707:1: ( ( rule__Alternatives__OptionsAssignment_3 ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:708:1: ( rule__Alternatives__OptionsAssignment_3 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:701:1: ( ( rule__Alternatives__OptionsAssignment_3 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:702:1: ( rule__Alternatives__OptionsAssignment_3 )
             {
              before(grammarAccess.getAlternativesAccess().getOptionsAssignment_3()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:709:1: ( rule__Alternatives__OptionsAssignment_3 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:709:2: rule__Alternatives__OptionsAssignment_3
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:703:1: ( rule__Alternatives__OptionsAssignment_3 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:703:2: rule__Alternatives__OptionsAssignment_3
             {
-            pushFollow(FOLLOW_rule__Alternatives__OptionsAssignment_3_in_rule__Alternatives__Group__3__Impl1425);
+            pushFollow(FOLLOW_rule__Alternatives__OptionsAssignment_3_in_rule__Alternatives__Group__3__Impl1416);
             rule__Alternatives__OptionsAssignment_3();
 
             state._fsp--;
@@ -1904,11 +1904,11 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:712:1: ( ( rule__Alternatives__OptionsAssignment_3 )* )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:713:1: ( rule__Alternatives__OptionsAssignment_3 )*
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:706:1: ( ( rule__Alternatives__OptionsAssignment_3 )* )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:707:1: ( rule__Alternatives__OptionsAssignment_3 )*
             {
              before(grammarAccess.getAlternativesAccess().getOptionsAssignment_3()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:714:1: ( rule__Alternatives__OptionsAssignment_3 )*
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:708:1: ( rule__Alternatives__OptionsAssignment_3 )*
             loop5:
             do {
                 int alt5=2;
@@ -1921,9 +1921,9 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
                 switch (alt5) {
             	case 1 :
-            	    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:714:2: rule__Alternatives__OptionsAssignment_3
+            	    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:708:2: rule__Alternatives__OptionsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__Alternatives__OptionsAssignment_3_in_rule__Alternatives__Group__3__Impl1437);
+            	    pushFollow(FOLLOW_rule__Alternatives__OptionsAssignment_3_in_rule__Alternatives__Group__3__Impl1428);
             	    rule__Alternatives__OptionsAssignment_3();
 
             	    state._fsp--;
@@ -1963,16 +1963,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Alternatives__Group__4"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:725:1: rule__Alternatives__Group__4 : rule__Alternatives__Group__4__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:719:1: rule__Alternatives__Group__4 : rule__Alternatives__Group__4__Impl ;
     public final void rule__Alternatives__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:729:1: ( rule__Alternatives__Group__4__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:730:2: rule__Alternatives__Group__4__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:723:1: ( rule__Alternatives__Group__4__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:724:2: rule__Alternatives__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Alternatives__Group__4__Impl_in_rule__Alternatives__Group__41470);
+            pushFollow(FOLLOW_rule__Alternatives__Group__4__Impl_in_rule__Alternatives__Group__41461);
             rule__Alternatives__Group__4__Impl();
 
             state._fsp--;
@@ -1996,21 +1996,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Alternatives__Group__4__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:736:1: rule__Alternatives__Group__4__Impl : ( '}' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:730:1: rule__Alternatives__Group__4__Impl : ( RULE_RIGHT_BRACKET ) ;
     public final void rule__Alternatives__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:740:1: ( ( '}' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:741:1: ( '}' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:734:1: ( ( RULE_RIGHT_BRACKET ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:735:1: ( RULE_RIGHT_BRACKET )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:741:1: ( '}' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:742:1: '}'
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:735:1: ( RULE_RIGHT_BRACKET )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:736:1: RULE_RIGHT_BRACKET
             {
-             before(grammarAccess.getAlternativesAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,20,FOLLOW_20_in_rule__Alternatives__Group__4__Impl1498); 
-             after(grammarAccess.getAlternativesAccess().getRightCurlyBracketKeyword_4()); 
+             before(grammarAccess.getAlternativesAccess().getRIGHT_BRACKETTerminalRuleCall_4()); 
+            match(input,RULE_RIGHT_BRACKET,FOLLOW_RULE_RIGHT_BRACKET_in_rule__Alternatives__Group__4__Impl1488); 
+             after(grammarAccess.getAlternativesAccess().getRIGHT_BRACKETTerminalRuleCall_4()); 
 
             }
 
@@ -2033,21 +2033,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Optional__Group__0"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:765:1: rule__Optional__Group__0 : rule__Optional__Group__0__Impl rule__Optional__Group__1 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:757:1: rule__Optional__Group__0 : rule__Optional__Group__0__Impl rule__Optional__Group__1 ;
     public final void rule__Optional__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:769:1: ( rule__Optional__Group__0__Impl rule__Optional__Group__1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:770:2: rule__Optional__Group__0__Impl rule__Optional__Group__1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:761:1: ( rule__Optional__Group__0__Impl rule__Optional__Group__1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:762:2: rule__Optional__Group__0__Impl rule__Optional__Group__1
             {
-            pushFollow(FOLLOW_rule__Optional__Group__0__Impl_in_rule__Optional__Group__01539);
+            pushFollow(FOLLOW_rule__Optional__Group__0__Impl_in_rule__Optional__Group__01527);
             rule__Optional__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Optional__Group__1_in_rule__Optional__Group__01542);
+            pushFollow(FOLLOW_rule__Optional__Group__1_in_rule__Optional__Group__01530);
             rule__Optional__Group__1();
 
             state._fsp--;
@@ -2071,20 +2071,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Optional__Group__0__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:777:1: rule__Optional__Group__0__Impl : ( ( rule__Optional__Group_0__0 )? ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:769:1: rule__Optional__Group__0__Impl : ( ( rule__Optional__Group_0__0 )? ) ;
     public final void rule__Optional__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:781:1: ( ( ( rule__Optional__Group_0__0 )? ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:782:1: ( ( rule__Optional__Group_0__0 )? )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:773:1: ( ( ( rule__Optional__Group_0__0 )? ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:774:1: ( ( rule__Optional__Group_0__0 )? )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:782:1: ( ( rule__Optional__Group_0__0 )? )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:783:1: ( rule__Optional__Group_0__0 )?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:774:1: ( ( rule__Optional__Group_0__0 )? )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:775:1: ( rule__Optional__Group_0__0 )?
             {
              before(grammarAccess.getOptionalAccess().getGroup_0()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:784:1: ( rule__Optional__Group_0__0 )?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:776:1: ( rule__Optional__Group_0__0 )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -2093,9 +2093,9 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:784:2: rule__Optional__Group_0__0
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:776:2: rule__Optional__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__Optional__Group_0__0_in_rule__Optional__Group__0__Impl1569);
+                    pushFollow(FOLLOW_rule__Optional__Group_0__0_in_rule__Optional__Group__0__Impl1557);
                     rule__Optional__Group_0__0();
 
                     state._fsp--;
@@ -2129,16 +2129,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Optional__Group__1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:794:1: rule__Optional__Group__1 : rule__Optional__Group__1__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:786:1: rule__Optional__Group__1 : rule__Optional__Group__1__Impl ;
     public final void rule__Optional__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:798:1: ( rule__Optional__Group__1__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:799:2: rule__Optional__Group__1__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:790:1: ( rule__Optional__Group__1__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:791:2: rule__Optional__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Optional__Group__1__Impl_in_rule__Optional__Group__11600);
+            pushFollow(FOLLOW_rule__Optional__Group__1__Impl_in_rule__Optional__Group__11588);
             rule__Optional__Group__1__Impl();
 
             state._fsp--;
@@ -2162,23 +2162,23 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Optional__Group__1__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:805:1: rule__Optional__Group__1__Impl : ( ( rule__Optional__SequenceAssignment_1 ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:797:1: rule__Optional__Group__1__Impl : ( ( rule__Optional__SequenceAssignment_1 ) ) ;
     public final void rule__Optional__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:809:1: ( ( ( rule__Optional__SequenceAssignment_1 ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:810:1: ( ( rule__Optional__SequenceAssignment_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:801:1: ( ( ( rule__Optional__SequenceAssignment_1 ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:802:1: ( ( rule__Optional__SequenceAssignment_1 ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:810:1: ( ( rule__Optional__SequenceAssignment_1 ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:811:1: ( rule__Optional__SequenceAssignment_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:802:1: ( ( rule__Optional__SequenceAssignment_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:803:1: ( rule__Optional__SequenceAssignment_1 )
             {
              before(grammarAccess.getOptionalAccess().getSequenceAssignment_1()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:812:1: ( rule__Optional__SequenceAssignment_1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:812:2: rule__Optional__SequenceAssignment_1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:804:1: ( rule__Optional__SequenceAssignment_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:804:2: rule__Optional__SequenceAssignment_1
             {
-            pushFollow(FOLLOW_rule__Optional__SequenceAssignment_1_in_rule__Optional__Group__1__Impl1627);
+            pushFollow(FOLLOW_rule__Optional__SequenceAssignment_1_in_rule__Optional__Group__1__Impl1615);
             rule__Optional__SequenceAssignment_1();
 
             state._fsp--;
@@ -2209,21 +2209,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Optional__Group_0__0"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:826:1: rule__Optional__Group_0__0 : rule__Optional__Group_0__0__Impl rule__Optional__Group_0__1 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:818:1: rule__Optional__Group_0__0 : rule__Optional__Group_0__0__Impl rule__Optional__Group_0__1 ;
     public final void rule__Optional__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:830:1: ( rule__Optional__Group_0__0__Impl rule__Optional__Group_0__1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:831:2: rule__Optional__Group_0__0__Impl rule__Optional__Group_0__1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:822:1: ( rule__Optional__Group_0__0__Impl rule__Optional__Group_0__1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:823:2: rule__Optional__Group_0__0__Impl rule__Optional__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Optional__Group_0__0__Impl_in_rule__Optional__Group_0__01661);
+            pushFollow(FOLLOW_rule__Optional__Group_0__0__Impl_in_rule__Optional__Group_0__01649);
             rule__Optional__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Optional__Group_0__1_in_rule__Optional__Group_0__01664);
+            pushFollow(FOLLOW_rule__Optional__Group_0__1_in_rule__Optional__Group_0__01652);
             rule__Optional__Group_0__1();
 
             state._fsp--;
@@ -2247,20 +2247,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Optional__Group_0__0__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:838:1: rule__Optional__Group_0__0__Impl : ( '@Probability(' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:830:1: rule__Optional__Group_0__0__Impl : ( '@Probability(' ) ;
     public final void rule__Optional__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:842:1: ( ( '@Probability(' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:843:1: ( '@Probability(' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:834:1: ( ( '@Probability(' ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:835:1: ( '@Probability(' )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:843:1: ( '@Probability(' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:844:1: '@Probability('
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:835:1: ( '@Probability(' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:836:1: '@Probability('
             {
              before(grammarAccess.getOptionalAccess().getProbabilityKeyword_0_0()); 
-            match(input,24,FOLLOW_24_in_rule__Optional__Group_0__0__Impl1692); 
+            match(input,24,FOLLOW_24_in_rule__Optional__Group_0__0__Impl1680); 
              after(grammarAccess.getOptionalAccess().getProbabilityKeyword_0_0()); 
 
             }
@@ -2284,21 +2284,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Optional__Group_0__1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:857:1: rule__Optional__Group_0__1 : rule__Optional__Group_0__1__Impl rule__Optional__Group_0__2 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:849:1: rule__Optional__Group_0__1 : rule__Optional__Group_0__1__Impl rule__Optional__Group_0__2 ;
     public final void rule__Optional__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:861:1: ( rule__Optional__Group_0__1__Impl rule__Optional__Group_0__2 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:862:2: rule__Optional__Group_0__1__Impl rule__Optional__Group_0__2
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:853:1: ( rule__Optional__Group_0__1__Impl rule__Optional__Group_0__2 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:854:2: rule__Optional__Group_0__1__Impl rule__Optional__Group_0__2
             {
-            pushFollow(FOLLOW_rule__Optional__Group_0__1__Impl_in_rule__Optional__Group_0__11723);
+            pushFollow(FOLLOW_rule__Optional__Group_0__1__Impl_in_rule__Optional__Group_0__11711);
             rule__Optional__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Optional__Group_0__2_in_rule__Optional__Group_0__11726);
+            pushFollow(FOLLOW_rule__Optional__Group_0__2_in_rule__Optional__Group_0__11714);
             rule__Optional__Group_0__2();
 
             state._fsp--;
@@ -2322,23 +2322,23 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Optional__Group_0__1__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:869:1: rule__Optional__Group_0__1__Impl : ( ( rule__Optional__ProbabilityAssignment_0_1 ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:861:1: rule__Optional__Group_0__1__Impl : ( ( rule__Optional__ProbabilityAssignment_0_1 ) ) ;
     public final void rule__Optional__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:873:1: ( ( ( rule__Optional__ProbabilityAssignment_0_1 ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:874:1: ( ( rule__Optional__ProbabilityAssignment_0_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:865:1: ( ( ( rule__Optional__ProbabilityAssignment_0_1 ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:866:1: ( ( rule__Optional__ProbabilityAssignment_0_1 ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:874:1: ( ( rule__Optional__ProbabilityAssignment_0_1 ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:875:1: ( rule__Optional__ProbabilityAssignment_0_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:866:1: ( ( rule__Optional__ProbabilityAssignment_0_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:867:1: ( rule__Optional__ProbabilityAssignment_0_1 )
             {
              before(grammarAccess.getOptionalAccess().getProbabilityAssignment_0_1()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:876:1: ( rule__Optional__ProbabilityAssignment_0_1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:876:2: rule__Optional__ProbabilityAssignment_0_1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:868:1: ( rule__Optional__ProbabilityAssignment_0_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:868:2: rule__Optional__ProbabilityAssignment_0_1
             {
-            pushFollow(FOLLOW_rule__Optional__ProbabilityAssignment_0_1_in_rule__Optional__Group_0__1__Impl1753);
+            pushFollow(FOLLOW_rule__Optional__ProbabilityAssignment_0_1_in_rule__Optional__Group_0__1__Impl1741);
             rule__Optional__ProbabilityAssignment_0_1();
 
             state._fsp--;
@@ -2369,16 +2369,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Optional__Group_0__2"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:886:1: rule__Optional__Group_0__2 : rule__Optional__Group_0__2__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:878:1: rule__Optional__Group_0__2 : rule__Optional__Group_0__2__Impl ;
     public final void rule__Optional__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:890:1: ( rule__Optional__Group_0__2__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:891:2: rule__Optional__Group_0__2__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:882:1: ( rule__Optional__Group_0__2__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:883:2: rule__Optional__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__Optional__Group_0__2__Impl_in_rule__Optional__Group_0__21783);
+            pushFollow(FOLLOW_rule__Optional__Group_0__2__Impl_in_rule__Optional__Group_0__21771);
             rule__Optional__Group_0__2__Impl();
 
             state._fsp--;
@@ -2402,20 +2402,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Optional__Group_0__2__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:897:1: rule__Optional__Group_0__2__Impl : ( ')' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:889:1: rule__Optional__Group_0__2__Impl : ( ')' ) ;
     public final void rule__Optional__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:901:1: ( ( ')' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:902:1: ( ')' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:893:1: ( ( ')' ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:894:1: ( ')' )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:902:1: ( ')' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:903:1: ')'
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:894:1: ( ')' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:895:1: ')'
             {
              before(grammarAccess.getOptionalAccess().getRightParenthesisKeyword_0_2()); 
-            match(input,25,FOLLOW_25_in_rule__Optional__Group_0__2__Impl1811); 
+            match(input,25,FOLLOW_25_in_rule__Optional__Group_0__2__Impl1799); 
              after(grammarAccess.getOptionalAccess().getRightParenthesisKeyword_0_2()); 
 
             }
@@ -2439,21 +2439,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group__0"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:922:1: rule__Sequence__Group__0 : rule__Sequence__Group__0__Impl rule__Sequence__Group__1 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:914:1: rule__Sequence__Group__0 : rule__Sequence__Group__0__Impl rule__Sequence__Group__1 ;
     public final void rule__Sequence__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:926:1: ( rule__Sequence__Group__0__Impl rule__Sequence__Group__1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:927:2: rule__Sequence__Group__0__Impl rule__Sequence__Group__1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:918:1: ( rule__Sequence__Group__0__Impl rule__Sequence__Group__1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:919:2: rule__Sequence__Group__0__Impl rule__Sequence__Group__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group__0__Impl_in_rule__Sequence__Group__01848);
+            pushFollow(FOLLOW_rule__Sequence__Group__0__Impl_in_rule__Sequence__Group__01836);
             rule__Sequence__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group__1_in_rule__Sequence__Group__01851);
+            pushFollow(FOLLOW_rule__Sequence__Group__1_in_rule__Sequence__Group__01839);
             rule__Sequence__Group__1();
 
             state._fsp--;
@@ -2477,20 +2477,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group__0__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:934:1: rule__Sequence__Group__0__Impl : ( 'Sequence' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:926:1: rule__Sequence__Group__0__Impl : ( 'Sequence' ) ;
     public final void rule__Sequence__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:938:1: ( ( 'Sequence' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:939:1: ( 'Sequence' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:930:1: ( ( 'Sequence' ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:931:1: ( 'Sequence' )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:939:1: ( 'Sequence' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:940:1: 'Sequence'
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:931:1: ( 'Sequence' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:932:1: 'Sequence'
             {
              before(grammarAccess.getSequenceAccess().getSequenceKeyword_0()); 
-            match(input,26,FOLLOW_26_in_rule__Sequence__Group__0__Impl1879); 
+            match(input,26,FOLLOW_26_in_rule__Sequence__Group__0__Impl1867); 
              after(grammarAccess.getSequenceAccess().getSequenceKeyword_0()); 
 
             }
@@ -2514,21 +2514,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group__1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:953:1: rule__Sequence__Group__1 : rule__Sequence__Group__1__Impl rule__Sequence__Group__2 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:945:1: rule__Sequence__Group__1 : rule__Sequence__Group__1__Impl rule__Sequence__Group__2 ;
     public final void rule__Sequence__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:957:1: ( rule__Sequence__Group__1__Impl rule__Sequence__Group__2 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:958:2: rule__Sequence__Group__1__Impl rule__Sequence__Group__2
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:949:1: ( rule__Sequence__Group__1__Impl rule__Sequence__Group__2 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:950:2: rule__Sequence__Group__1__Impl rule__Sequence__Group__2
             {
-            pushFollow(FOLLOW_rule__Sequence__Group__1__Impl_in_rule__Sequence__Group__11910);
+            pushFollow(FOLLOW_rule__Sequence__Group__1__Impl_in_rule__Sequence__Group__11898);
             rule__Sequence__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group__2_in_rule__Sequence__Group__11913);
+            pushFollow(FOLLOW_rule__Sequence__Group__2_in_rule__Sequence__Group__11901);
             rule__Sequence__Group__2();
 
             state._fsp--;
@@ -2552,23 +2552,23 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group__1__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:965:1: rule__Sequence__Group__1__Impl : ( ( rule__Sequence__NameAssignment_1 ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:957:1: rule__Sequence__Group__1__Impl : ( ( rule__Sequence__NameAssignment_1 ) ) ;
     public final void rule__Sequence__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:969:1: ( ( ( rule__Sequence__NameAssignment_1 ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:970:1: ( ( rule__Sequence__NameAssignment_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:961:1: ( ( ( rule__Sequence__NameAssignment_1 ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:962:1: ( ( rule__Sequence__NameAssignment_1 ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:970:1: ( ( rule__Sequence__NameAssignment_1 ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:971:1: ( rule__Sequence__NameAssignment_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:962:1: ( ( rule__Sequence__NameAssignment_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:963:1: ( rule__Sequence__NameAssignment_1 )
             {
              before(grammarAccess.getSequenceAccess().getNameAssignment_1()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:972:1: ( rule__Sequence__NameAssignment_1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:972:2: rule__Sequence__NameAssignment_1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:964:1: ( rule__Sequence__NameAssignment_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:964:2: rule__Sequence__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Sequence__NameAssignment_1_in_rule__Sequence__Group__1__Impl1940);
+            pushFollow(FOLLOW_rule__Sequence__NameAssignment_1_in_rule__Sequence__Group__1__Impl1928);
             rule__Sequence__NameAssignment_1();
 
             state._fsp--;
@@ -2599,21 +2599,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group__2"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:982:1: rule__Sequence__Group__2 : rule__Sequence__Group__2__Impl rule__Sequence__Group__3 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:974:1: rule__Sequence__Group__2 : rule__Sequence__Group__2__Impl rule__Sequence__Group__3 ;
     public final void rule__Sequence__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:986:1: ( rule__Sequence__Group__2__Impl rule__Sequence__Group__3 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:987:2: rule__Sequence__Group__2__Impl rule__Sequence__Group__3
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:978:1: ( rule__Sequence__Group__2__Impl rule__Sequence__Group__3 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:979:2: rule__Sequence__Group__2__Impl rule__Sequence__Group__3
             {
-            pushFollow(FOLLOW_rule__Sequence__Group__2__Impl_in_rule__Sequence__Group__21970);
+            pushFollow(FOLLOW_rule__Sequence__Group__2__Impl_in_rule__Sequence__Group__21958);
             rule__Sequence__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group__3_in_rule__Sequence__Group__21973);
+            pushFollow(FOLLOW_rule__Sequence__Group__3_in_rule__Sequence__Group__21961);
             rule__Sequence__Group__3();
 
             state._fsp--;
@@ -2637,21 +2637,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group__2__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:994:1: rule__Sequence__Group__2__Impl : ( '{' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:986:1: rule__Sequence__Group__2__Impl : ( RULE_LEFT_BRACKET ) ;
     public final void rule__Sequence__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:998:1: ( ( '{' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:999:1: ( '{' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:990:1: ( ( RULE_LEFT_BRACKET ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:991:1: ( RULE_LEFT_BRACKET )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:999:1: ( '{' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1000:1: '{'
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:991:1: ( RULE_LEFT_BRACKET )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:992:1: RULE_LEFT_BRACKET
             {
-             before(grammarAccess.getSequenceAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,19,FOLLOW_19_in_rule__Sequence__Group__2__Impl2001); 
-             after(grammarAccess.getSequenceAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getSequenceAccess().getLEFT_BRACKETTerminalRuleCall_2()); 
+            match(input,RULE_LEFT_BRACKET,FOLLOW_RULE_LEFT_BRACKET_in_rule__Sequence__Group__2__Impl1988); 
+             after(grammarAccess.getSequenceAccess().getLEFT_BRACKETTerminalRuleCall_2()); 
 
             }
 
@@ -2674,21 +2674,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group__3"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1013:1: rule__Sequence__Group__3 : rule__Sequence__Group__3__Impl rule__Sequence__Group__4 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1003:1: rule__Sequence__Group__3 : rule__Sequence__Group__3__Impl rule__Sequence__Group__4 ;
     public final void rule__Sequence__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1017:1: ( rule__Sequence__Group__3__Impl rule__Sequence__Group__4 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1018:2: rule__Sequence__Group__3__Impl rule__Sequence__Group__4
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1007:1: ( rule__Sequence__Group__3__Impl rule__Sequence__Group__4 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1008:2: rule__Sequence__Group__3__Impl rule__Sequence__Group__4
             {
-            pushFollow(FOLLOW_rule__Sequence__Group__3__Impl_in_rule__Sequence__Group__32032);
+            pushFollow(FOLLOW_rule__Sequence__Group__3__Impl_in_rule__Sequence__Group__32017);
             rule__Sequence__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group__4_in_rule__Sequence__Group__32035);
+            pushFollow(FOLLOW_rule__Sequence__Group__4_in_rule__Sequence__Group__32020);
             rule__Sequence__Group__4();
 
             state._fsp--;
@@ -2712,23 +2712,23 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group__3__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1025:1: rule__Sequence__Group__3__Impl : ( ( rule__Sequence__UnorderedGroup_3 ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1015:1: rule__Sequence__Group__3__Impl : ( ( rule__Sequence__UnorderedGroup_3 ) ) ;
     public final void rule__Sequence__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1029:1: ( ( ( rule__Sequence__UnorderedGroup_3 ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1030:1: ( ( rule__Sequence__UnorderedGroup_3 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1019:1: ( ( ( rule__Sequence__UnorderedGroup_3 ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1020:1: ( ( rule__Sequence__UnorderedGroup_3 ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1030:1: ( ( rule__Sequence__UnorderedGroup_3 ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1031:1: ( rule__Sequence__UnorderedGroup_3 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1020:1: ( ( rule__Sequence__UnorderedGroup_3 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1021:1: ( rule__Sequence__UnorderedGroup_3 )
             {
              before(grammarAccess.getSequenceAccess().getUnorderedGroup_3()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1032:1: ( rule__Sequence__UnorderedGroup_3 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1032:2: rule__Sequence__UnorderedGroup_3
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1022:1: ( rule__Sequence__UnorderedGroup_3 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1022:2: rule__Sequence__UnorderedGroup_3
             {
-            pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3_in_rule__Sequence__Group__3__Impl2062);
+            pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3_in_rule__Sequence__Group__3__Impl2047);
             rule__Sequence__UnorderedGroup_3();
 
             state._fsp--;
@@ -2759,16 +2759,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group__4"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1042:1: rule__Sequence__Group__4 : rule__Sequence__Group__4__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1032:1: rule__Sequence__Group__4 : rule__Sequence__Group__4__Impl ;
     public final void rule__Sequence__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1046:1: ( rule__Sequence__Group__4__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1047:2: rule__Sequence__Group__4__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1036:1: ( rule__Sequence__Group__4__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1037:2: rule__Sequence__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group__4__Impl_in_rule__Sequence__Group__42092);
+            pushFollow(FOLLOW_rule__Sequence__Group__4__Impl_in_rule__Sequence__Group__42077);
             rule__Sequence__Group__4__Impl();
 
             state._fsp--;
@@ -2792,21 +2792,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group__4__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1053:1: rule__Sequence__Group__4__Impl : ( '}' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1043:1: rule__Sequence__Group__4__Impl : ( RULE_RIGHT_BRACKET ) ;
     public final void rule__Sequence__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1057:1: ( ( '}' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1058:1: ( '}' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1047:1: ( ( RULE_RIGHT_BRACKET ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1048:1: ( RULE_RIGHT_BRACKET )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1058:1: ( '}' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1059:1: '}'
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1048:1: ( RULE_RIGHT_BRACKET )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1049:1: RULE_RIGHT_BRACKET
             {
-             before(grammarAccess.getSequenceAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,20,FOLLOW_20_in_rule__Sequence__Group__4__Impl2120); 
-             after(grammarAccess.getSequenceAccess().getRightCurlyBracketKeyword_4()); 
+             before(grammarAccess.getSequenceAccess().getRIGHT_BRACKETTerminalRuleCall_4()); 
+            match(input,RULE_RIGHT_BRACKET,FOLLOW_RULE_RIGHT_BRACKET_in_rule__Sequence__Group__4__Impl2104); 
+             after(grammarAccess.getSequenceAccess().getRIGHT_BRACKETTerminalRuleCall_4()); 
 
             }
 
@@ -2829,21 +2829,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_0__0"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1082:1: rule__Sequence__Group_3_0__0 : rule__Sequence__Group_3_0__0__Impl rule__Sequence__Group_3_0__1 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1070:1: rule__Sequence__Group_3_0__0 : rule__Sequence__Group_3_0__0__Impl rule__Sequence__Group_3_0__1 ;
     public final void rule__Sequence__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1086:1: ( rule__Sequence__Group_3_0__0__Impl rule__Sequence__Group_3_0__1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1087:2: rule__Sequence__Group_3_0__0__Impl rule__Sequence__Group_3_0__1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1074:1: ( rule__Sequence__Group_3_0__0__Impl rule__Sequence__Group_3_0__1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1075:2: rule__Sequence__Group_3_0__0__Impl rule__Sequence__Group_3_0__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3_0__0__Impl_in_rule__Sequence__Group_3_0__02161);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_0__0__Impl_in_rule__Sequence__Group_3_0__02143);
             rule__Sequence__Group_3_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_3_0__1_in_rule__Sequence__Group_3_0__02164);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_0__1_in_rule__Sequence__Group_3_0__02146);
             rule__Sequence__Group_3_0__1();
 
             state._fsp--;
@@ -2867,23 +2867,23 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_0__0__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1094:1: rule__Sequence__Group_3_0__0__Impl : ( ( rule__Sequence__Group_3_0_0__0 ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1082:1: rule__Sequence__Group_3_0__0__Impl : ( ( rule__Sequence__Group_3_0_0__0 ) ) ;
     public final void rule__Sequence__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1098:1: ( ( ( rule__Sequence__Group_3_0_0__0 ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1099:1: ( ( rule__Sequence__Group_3_0_0__0 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1086:1: ( ( ( rule__Sequence__Group_3_0_0__0 ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1087:1: ( ( rule__Sequence__Group_3_0_0__0 ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1099:1: ( ( rule__Sequence__Group_3_0_0__0 ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1100:1: ( rule__Sequence__Group_3_0_0__0 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1087:1: ( ( rule__Sequence__Group_3_0_0__0 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1088:1: ( rule__Sequence__Group_3_0_0__0 )
             {
              before(grammarAccess.getSequenceAccess().getGroup_3_0_0()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1101:1: ( rule__Sequence__Group_3_0_0__0 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1101:2: rule__Sequence__Group_3_0_0__0
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1089:1: ( rule__Sequence__Group_3_0_0__0 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1089:2: rule__Sequence__Group_3_0_0__0
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3_0_0__0_in_rule__Sequence__Group_3_0__0__Impl2191);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_0_0__0_in_rule__Sequence__Group_3_0__0__Impl2173);
             rule__Sequence__Group_3_0_0__0();
 
             state._fsp--;
@@ -2914,16 +2914,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_0__1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1111:1: rule__Sequence__Group_3_0__1 : rule__Sequence__Group_3_0__1__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1099:1: rule__Sequence__Group_3_0__1 : rule__Sequence__Group_3_0__1__Impl ;
     public final void rule__Sequence__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1115:1: ( rule__Sequence__Group_3_0__1__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1116:2: rule__Sequence__Group_3_0__1__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1103:1: ( rule__Sequence__Group_3_0__1__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1104:2: rule__Sequence__Group_3_0__1__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3_0__1__Impl_in_rule__Sequence__Group_3_0__12221);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_0__1__Impl_in_rule__Sequence__Group_3_0__12203);
             rule__Sequence__Group_3_0__1__Impl();
 
             state._fsp--;
@@ -2947,20 +2947,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_0__1__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1122:1: rule__Sequence__Group_3_0__1__Impl : ( ( rule__Sequence__Group_3_0_1__0 )? ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1110:1: rule__Sequence__Group_3_0__1__Impl : ( ( rule__Sequence__Group_3_0_1__0 )? ) ;
     public final void rule__Sequence__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1126:1: ( ( ( rule__Sequence__Group_3_0_1__0 )? ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1127:1: ( ( rule__Sequence__Group_3_0_1__0 )? )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1114:1: ( ( ( rule__Sequence__Group_3_0_1__0 )? ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1115:1: ( ( rule__Sequence__Group_3_0_1__0 )? )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1127:1: ( ( rule__Sequence__Group_3_0_1__0 )? )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1128:1: ( rule__Sequence__Group_3_0_1__0 )?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1115:1: ( ( rule__Sequence__Group_3_0_1__0 )? )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1116:1: ( rule__Sequence__Group_3_0_1__0 )?
             {
              before(grammarAccess.getSequenceAccess().getGroup_3_0_1()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1129:1: ( rule__Sequence__Group_3_0_1__0 )?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1117:1: ( rule__Sequence__Group_3_0_1__0 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2969,9 +2969,9 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1129:2: rule__Sequence__Group_3_0_1__0
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1117:2: rule__Sequence__Group_3_0_1__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_3_0_1__0_in_rule__Sequence__Group_3_0__1__Impl2248);
+                    pushFollow(FOLLOW_rule__Sequence__Group_3_0_1__0_in_rule__Sequence__Group_3_0__1__Impl2230);
                     rule__Sequence__Group_3_0_1__0();
 
                     state._fsp--;
@@ -3005,21 +3005,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_0_0__0"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1143:1: rule__Sequence__Group_3_0_0__0 : rule__Sequence__Group_3_0_0__0__Impl rule__Sequence__Group_3_0_0__1 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1131:1: rule__Sequence__Group_3_0_0__0 : rule__Sequence__Group_3_0_0__0__Impl rule__Sequence__Group_3_0_0__1 ;
     public final void rule__Sequence__Group_3_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1147:1: ( rule__Sequence__Group_3_0_0__0__Impl rule__Sequence__Group_3_0_0__1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1148:2: rule__Sequence__Group_3_0_0__0__Impl rule__Sequence__Group_3_0_0__1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1135:1: ( rule__Sequence__Group_3_0_0__0__Impl rule__Sequence__Group_3_0_0__1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1136:2: rule__Sequence__Group_3_0_0__0__Impl rule__Sequence__Group_3_0_0__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3_0_0__0__Impl_in_rule__Sequence__Group_3_0_0__02283);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_0_0__0__Impl_in_rule__Sequence__Group_3_0_0__02265);
             rule__Sequence__Group_3_0_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_3_0_0__1_in_rule__Sequence__Group_3_0_0__02286);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_0_0__1_in_rule__Sequence__Group_3_0_0__02268);
             rule__Sequence__Group_3_0_0__1();
 
             state._fsp--;
@@ -3043,20 +3043,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_0_0__0__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1155:1: rule__Sequence__Group_3_0_0__0__Impl : ( ( 'url=' )? ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1143:1: rule__Sequence__Group_3_0_0__0__Impl : ( ( 'url=' )? ) ;
     public final void rule__Sequence__Group_3_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1159:1: ( ( ( 'url=' )? ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1160:1: ( ( 'url=' )? )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1147:1: ( ( ( 'url=' )? ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1148:1: ( ( 'url=' )? )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1160:1: ( ( 'url=' )? )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1161:1: ( 'url=' )?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1148:1: ( ( 'url=' )? )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1149:1: ( 'url=' )?
             {
              before(grammarAccess.getSequenceAccess().getUrlKeyword_3_0_0_0()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1162:1: ( 'url=' )?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1150:1: ( 'url=' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -3065,9 +3065,9 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1163:2: 'url='
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1151:2: 'url='
                     {
-                    match(input,27,FOLLOW_27_in_rule__Sequence__Group_3_0_0__0__Impl2315); 
+                    match(input,27,FOLLOW_27_in_rule__Sequence__Group_3_0_0__0__Impl2297); 
 
                     }
                     break;
@@ -3097,16 +3097,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_0_0__1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1174:1: rule__Sequence__Group_3_0_0__1 : rule__Sequence__Group_3_0_0__1__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1162:1: rule__Sequence__Group_3_0_0__1 : rule__Sequence__Group_3_0_0__1__Impl ;
     public final void rule__Sequence__Group_3_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1178:1: ( rule__Sequence__Group_3_0_0__1__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1179:2: rule__Sequence__Group_3_0_0__1__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1166:1: ( rule__Sequence__Group_3_0_0__1__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1167:2: rule__Sequence__Group_3_0_0__1__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3_0_0__1__Impl_in_rule__Sequence__Group_3_0_0__12348);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_0_0__1__Impl_in_rule__Sequence__Group_3_0_0__12330);
             rule__Sequence__Group_3_0_0__1__Impl();
 
             state._fsp--;
@@ -3130,23 +3130,23 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_0_0__1__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1185:1: rule__Sequence__Group_3_0_0__1__Impl : ( ( rule__Sequence__UrlAssignment_3_0_0_1 ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1173:1: rule__Sequence__Group_3_0_0__1__Impl : ( ( rule__Sequence__UrlAssignment_3_0_0_1 ) ) ;
     public final void rule__Sequence__Group_3_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1189:1: ( ( ( rule__Sequence__UrlAssignment_3_0_0_1 ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1190:1: ( ( rule__Sequence__UrlAssignment_3_0_0_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1177:1: ( ( ( rule__Sequence__UrlAssignment_3_0_0_1 ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1178:1: ( ( rule__Sequence__UrlAssignment_3_0_0_1 ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1190:1: ( ( rule__Sequence__UrlAssignment_3_0_0_1 ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1191:1: ( rule__Sequence__UrlAssignment_3_0_0_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1178:1: ( ( rule__Sequence__UrlAssignment_3_0_0_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1179:1: ( rule__Sequence__UrlAssignment_3_0_0_1 )
             {
              before(grammarAccess.getSequenceAccess().getUrlAssignment_3_0_0_1()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1192:1: ( rule__Sequence__UrlAssignment_3_0_0_1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1192:2: rule__Sequence__UrlAssignment_3_0_0_1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1180:1: ( rule__Sequence__UrlAssignment_3_0_0_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1180:2: rule__Sequence__UrlAssignment_3_0_0_1
             {
-            pushFollow(FOLLOW_rule__Sequence__UrlAssignment_3_0_0_1_in_rule__Sequence__Group_3_0_0__1__Impl2375);
+            pushFollow(FOLLOW_rule__Sequence__UrlAssignment_3_0_0_1_in_rule__Sequence__Group_3_0_0__1__Impl2357);
             rule__Sequence__UrlAssignment_3_0_0_1();
 
             state._fsp--;
@@ -3177,21 +3177,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_0_1__0"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1206:1: rule__Sequence__Group_3_0_1__0 : rule__Sequence__Group_3_0_1__0__Impl rule__Sequence__Group_3_0_1__1 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1194:1: rule__Sequence__Group_3_0_1__0 : rule__Sequence__Group_3_0_1__0__Impl rule__Sequence__Group_3_0_1__1 ;
     public final void rule__Sequence__Group_3_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1210:1: ( rule__Sequence__Group_3_0_1__0__Impl rule__Sequence__Group_3_0_1__1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1211:2: rule__Sequence__Group_3_0_1__0__Impl rule__Sequence__Group_3_0_1__1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1198:1: ( rule__Sequence__Group_3_0_1__0__Impl rule__Sequence__Group_3_0_1__1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1199:2: rule__Sequence__Group_3_0_1__0__Impl rule__Sequence__Group_3_0_1__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3_0_1__0__Impl_in_rule__Sequence__Group_3_0_1__02409);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_0_1__0__Impl_in_rule__Sequence__Group_3_0_1__02391);
             rule__Sequence__Group_3_0_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_3_0_1__1_in_rule__Sequence__Group_3_0_1__02412);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_0_1__1_in_rule__Sequence__Group_3_0_1__02394);
             rule__Sequence__Group_3_0_1__1();
 
             state._fsp--;
@@ -3215,20 +3215,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_0_1__0__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1218:1: rule__Sequence__Group_3_0_1__0__Impl : ( 'description=' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1206:1: rule__Sequence__Group_3_0_1__0__Impl : ( 'description=' ) ;
     public final void rule__Sequence__Group_3_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1222:1: ( ( 'description=' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1223:1: ( 'description=' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1210:1: ( ( 'description=' ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1211:1: ( 'description=' )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1223:1: ( 'description=' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1224:1: 'description='
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1211:1: ( 'description=' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1212:1: 'description='
             {
              before(grammarAccess.getSequenceAccess().getDescriptionKeyword_3_0_1_0()); 
-            match(input,28,FOLLOW_28_in_rule__Sequence__Group_3_0_1__0__Impl2440); 
+            match(input,28,FOLLOW_28_in_rule__Sequence__Group_3_0_1__0__Impl2422); 
              after(grammarAccess.getSequenceAccess().getDescriptionKeyword_3_0_1_0()); 
 
             }
@@ -3252,16 +3252,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_0_1__1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1237:1: rule__Sequence__Group_3_0_1__1 : rule__Sequence__Group_3_0_1__1__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1225:1: rule__Sequence__Group_3_0_1__1 : rule__Sequence__Group_3_0_1__1__Impl ;
     public final void rule__Sequence__Group_3_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1241:1: ( rule__Sequence__Group_3_0_1__1__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1242:2: rule__Sequence__Group_3_0_1__1__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1229:1: ( rule__Sequence__Group_3_0_1__1__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1230:2: rule__Sequence__Group_3_0_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3_0_1__1__Impl_in_rule__Sequence__Group_3_0_1__12471);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_0_1__1__Impl_in_rule__Sequence__Group_3_0_1__12453);
             rule__Sequence__Group_3_0_1__1__Impl();
 
             state._fsp--;
@@ -3285,23 +3285,23 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_0_1__1__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1248:1: rule__Sequence__Group_3_0_1__1__Impl : ( ( rule__Sequence__DescriptionAssignment_3_0_1_1 ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1236:1: rule__Sequence__Group_3_0_1__1__Impl : ( ( rule__Sequence__DescriptionAssignment_3_0_1_1 ) ) ;
     public final void rule__Sequence__Group_3_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1252:1: ( ( ( rule__Sequence__DescriptionAssignment_3_0_1_1 ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1253:1: ( ( rule__Sequence__DescriptionAssignment_3_0_1_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1240:1: ( ( ( rule__Sequence__DescriptionAssignment_3_0_1_1 ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1241:1: ( ( rule__Sequence__DescriptionAssignment_3_0_1_1 ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1253:1: ( ( rule__Sequence__DescriptionAssignment_3_0_1_1 ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1254:1: ( rule__Sequence__DescriptionAssignment_3_0_1_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1241:1: ( ( rule__Sequence__DescriptionAssignment_3_0_1_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1242:1: ( rule__Sequence__DescriptionAssignment_3_0_1_1 )
             {
              before(grammarAccess.getSequenceAccess().getDescriptionAssignment_3_0_1_1()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1255:1: ( rule__Sequence__DescriptionAssignment_3_0_1_1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1255:2: rule__Sequence__DescriptionAssignment_3_0_1_1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1243:1: ( rule__Sequence__DescriptionAssignment_3_0_1_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1243:2: rule__Sequence__DescriptionAssignment_3_0_1_1
             {
-            pushFollow(FOLLOW_rule__Sequence__DescriptionAssignment_3_0_1_1_in_rule__Sequence__Group_3_0_1__1__Impl2498);
+            pushFollow(FOLLOW_rule__Sequence__DescriptionAssignment_3_0_1_1_in_rule__Sequence__Group_3_0_1__1__Impl2480);
             rule__Sequence__DescriptionAssignment_3_0_1_1();
 
             state._fsp--;
@@ -3332,21 +3332,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_1__0"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1269:1: rule__Sequence__Group_3_1__0 : rule__Sequence__Group_3_1__0__Impl rule__Sequence__Group_3_1__1 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1257:1: rule__Sequence__Group_3_1__0 : rule__Sequence__Group_3_1__0__Impl rule__Sequence__Group_3_1__1 ;
     public final void rule__Sequence__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1273:1: ( rule__Sequence__Group_3_1__0__Impl rule__Sequence__Group_3_1__1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1274:2: rule__Sequence__Group_3_1__0__Impl rule__Sequence__Group_3_1__1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1261:1: ( rule__Sequence__Group_3_1__0__Impl rule__Sequence__Group_3_1__1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1262:2: rule__Sequence__Group_3_1__0__Impl rule__Sequence__Group_3_1__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3_1__0__Impl_in_rule__Sequence__Group_3_1__02532);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_1__0__Impl_in_rule__Sequence__Group_3_1__02514);
             rule__Sequence__Group_3_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_3_1__1_in_rule__Sequence__Group_3_1__02535);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_1__1_in_rule__Sequence__Group_3_1__02517);
             rule__Sequence__Group_3_1__1();
 
             state._fsp--;
@@ -3370,20 +3370,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_1__0__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1281:1: rule__Sequence__Group_3_1__0__Impl : ( 'length=' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1269:1: rule__Sequence__Group_3_1__0__Impl : ( 'length=' ) ;
     public final void rule__Sequence__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1285:1: ( ( 'length=' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1286:1: ( 'length=' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1273:1: ( ( 'length=' ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1274:1: ( 'length=' )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1286:1: ( 'length=' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1287:1: 'length='
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1274:1: ( 'length=' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1275:1: 'length='
             {
              before(grammarAccess.getSequenceAccess().getLengthKeyword_3_1_0()); 
-            match(input,29,FOLLOW_29_in_rule__Sequence__Group_3_1__0__Impl2563); 
+            match(input,29,FOLLOW_29_in_rule__Sequence__Group_3_1__0__Impl2545); 
              after(grammarAccess.getSequenceAccess().getLengthKeyword_3_1_0()); 
 
             }
@@ -3407,16 +3407,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_1__1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1300:1: rule__Sequence__Group_3_1__1 : rule__Sequence__Group_3_1__1__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1288:1: rule__Sequence__Group_3_1__1 : rule__Sequence__Group_3_1__1__Impl ;
     public final void rule__Sequence__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1304:1: ( rule__Sequence__Group_3_1__1__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1305:2: rule__Sequence__Group_3_1__1__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1292:1: ( rule__Sequence__Group_3_1__1__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1293:2: rule__Sequence__Group_3_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3_1__1__Impl_in_rule__Sequence__Group_3_1__12594);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_1__1__Impl_in_rule__Sequence__Group_3_1__12576);
             rule__Sequence__Group_3_1__1__Impl();
 
             state._fsp--;
@@ -3440,23 +3440,23 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_1__1__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1311:1: rule__Sequence__Group_3_1__1__Impl : ( ( rule__Sequence__LengthAssignment_3_1_1 ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1299:1: rule__Sequence__Group_3_1__1__Impl : ( ( rule__Sequence__LengthAssignment_3_1_1 ) ) ;
     public final void rule__Sequence__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1315:1: ( ( ( rule__Sequence__LengthAssignment_3_1_1 ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1316:1: ( ( rule__Sequence__LengthAssignment_3_1_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1303:1: ( ( ( rule__Sequence__LengthAssignment_3_1_1 ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1304:1: ( ( rule__Sequence__LengthAssignment_3_1_1 ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1316:1: ( ( rule__Sequence__LengthAssignment_3_1_1 ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1317:1: ( rule__Sequence__LengthAssignment_3_1_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1304:1: ( ( rule__Sequence__LengthAssignment_3_1_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1305:1: ( rule__Sequence__LengthAssignment_3_1_1 )
             {
              before(grammarAccess.getSequenceAccess().getLengthAssignment_3_1_1()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1318:1: ( rule__Sequence__LengthAssignment_3_1_1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1318:2: rule__Sequence__LengthAssignment_3_1_1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1306:1: ( rule__Sequence__LengthAssignment_3_1_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1306:2: rule__Sequence__LengthAssignment_3_1_1
             {
-            pushFollow(FOLLOW_rule__Sequence__LengthAssignment_3_1_1_in_rule__Sequence__Group_3_1__1__Impl2621);
+            pushFollow(FOLLOW_rule__Sequence__LengthAssignment_3_1_1_in_rule__Sequence__Group_3_1__1__Impl2603);
             rule__Sequence__LengthAssignment_3_1_1();
 
             state._fsp--;
@@ -3487,21 +3487,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_2__0"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1332:1: rule__Sequence__Group_3_2__0 : rule__Sequence__Group_3_2__0__Impl rule__Sequence__Group_3_2__1 ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1320:1: rule__Sequence__Group_3_2__0 : rule__Sequence__Group_3_2__0__Impl rule__Sequence__Group_3_2__1 ;
     public final void rule__Sequence__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1336:1: ( rule__Sequence__Group_3_2__0__Impl rule__Sequence__Group_3_2__1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1337:2: rule__Sequence__Group_3_2__0__Impl rule__Sequence__Group_3_2__1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1324:1: ( rule__Sequence__Group_3_2__0__Impl rule__Sequence__Group_3_2__1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1325:2: rule__Sequence__Group_3_2__0__Impl rule__Sequence__Group_3_2__1
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3_2__0__Impl_in_rule__Sequence__Group_3_2__02655);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_2__0__Impl_in_rule__Sequence__Group_3_2__02637);
             rule__Sequence__Group_3_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sequence__Group_3_2__1_in_rule__Sequence__Group_3_2__02658);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_2__1_in_rule__Sequence__Group_3_2__02640);
             rule__Sequence__Group_3_2__1();
 
             state._fsp--;
@@ -3525,20 +3525,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_2__0__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1344:1: rule__Sequence__Group_3_2__0__Impl : ( 'mimetype=' ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1332:1: rule__Sequence__Group_3_2__0__Impl : ( 'mimetype=' ) ;
     public final void rule__Sequence__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1348:1: ( ( 'mimetype=' ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1349:1: ( 'mimetype=' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1336:1: ( ( 'mimetype=' ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1337:1: ( 'mimetype=' )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1349:1: ( 'mimetype=' )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1350:1: 'mimetype='
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1337:1: ( 'mimetype=' )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1338:1: 'mimetype='
             {
              before(grammarAccess.getSequenceAccess().getMimetypeKeyword_3_2_0()); 
-            match(input,30,FOLLOW_30_in_rule__Sequence__Group_3_2__0__Impl2686); 
+            match(input,30,FOLLOW_30_in_rule__Sequence__Group_3_2__0__Impl2668); 
              after(grammarAccess.getSequenceAccess().getMimetypeKeyword_3_2_0()); 
 
             }
@@ -3562,16 +3562,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_2__1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1363:1: rule__Sequence__Group_3_2__1 : rule__Sequence__Group_3_2__1__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1351:1: rule__Sequence__Group_3_2__1 : rule__Sequence__Group_3_2__1__Impl ;
     public final void rule__Sequence__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1367:1: ( rule__Sequence__Group_3_2__1__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1368:2: rule__Sequence__Group_3_2__1__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1355:1: ( rule__Sequence__Group_3_2__1__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1356:2: rule__Sequence__Group_3_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__Group_3_2__1__Impl_in_rule__Sequence__Group_3_2__12717);
+            pushFollow(FOLLOW_rule__Sequence__Group_3_2__1__Impl_in_rule__Sequence__Group_3_2__12699);
             rule__Sequence__Group_3_2__1__Impl();
 
             state._fsp--;
@@ -3595,23 +3595,23 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__Group_3_2__1__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1374:1: rule__Sequence__Group_3_2__1__Impl : ( ( rule__Sequence__MimetypeAssignment_3_2_1 ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1362:1: rule__Sequence__Group_3_2__1__Impl : ( ( rule__Sequence__MimetypeAssignment_3_2_1 ) ) ;
     public final void rule__Sequence__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1378:1: ( ( ( rule__Sequence__MimetypeAssignment_3_2_1 ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1379:1: ( ( rule__Sequence__MimetypeAssignment_3_2_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1366:1: ( ( ( rule__Sequence__MimetypeAssignment_3_2_1 ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1367:1: ( ( rule__Sequence__MimetypeAssignment_3_2_1 ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1379:1: ( ( rule__Sequence__MimetypeAssignment_3_2_1 ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1380:1: ( rule__Sequence__MimetypeAssignment_3_2_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1367:1: ( ( rule__Sequence__MimetypeAssignment_3_2_1 ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1368:1: ( rule__Sequence__MimetypeAssignment_3_2_1 )
             {
              before(grammarAccess.getSequenceAccess().getMimetypeAssignment_3_2_1()); 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1381:1: ( rule__Sequence__MimetypeAssignment_3_2_1 )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1381:2: rule__Sequence__MimetypeAssignment_3_2_1
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1369:1: ( rule__Sequence__MimetypeAssignment_3_2_1 )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1369:2: rule__Sequence__MimetypeAssignment_3_2_1
             {
-            pushFollow(FOLLOW_rule__Sequence__MimetypeAssignment_3_2_1_in_rule__Sequence__Group_3_2__1__Impl2744);
+            pushFollow(FOLLOW_rule__Sequence__MimetypeAssignment_3_2_1_in_rule__Sequence__Group_3_2__1__Impl2726);
             rule__Sequence__MimetypeAssignment_3_2_1();
 
             state._fsp--;
@@ -3642,17 +3642,17 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__UnorderedGroup_3"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1396:1: rule__Sequence__UnorderedGroup_3 : rule__Sequence__UnorderedGroup_3__0 {...}?;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1384:1: rule__Sequence__UnorderedGroup_3 : rule__Sequence__UnorderedGroup_3__0 {...}?;
     public final void rule__Sequence__UnorderedGroup_3() throws RecognitionException {
 
             	int stackSize = keepStackSize();
         		getUnorderedGroupHelper().enter(grammarAccess.getSequenceAccess().getUnorderedGroup_3());
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1401:1: ( rule__Sequence__UnorderedGroup_3__0 {...}?)
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1402:2: rule__Sequence__UnorderedGroup_3__0 {...}?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1389:1: ( rule__Sequence__UnorderedGroup_3__0 {...}?)
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1390:2: rule__Sequence__UnorderedGroup_3__0 {...}?
             {
-            pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3__0_in_rule__Sequence__UnorderedGroup_32779);
+            pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3__0_in_rule__Sequence__UnorderedGroup_32761);
             rule__Sequence__UnorderedGroup_3__0();
 
             state._fsp--;
@@ -3680,17 +3680,17 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__UnorderedGroup_3__Impl"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1413:1: rule__Sequence__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) ) ) ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1401:1: rule__Sequence__UnorderedGroup_3__Impl : ( ({...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) ) ) ) ;
     public final void rule__Sequence__UnorderedGroup_3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		boolean selected = false;
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1418:1: ( ( ({...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) ) ) ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1419:3: ( ({...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1406:1: ( ( ({...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) ) ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1407:3: ( ({...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) ) ) )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1419:3: ( ({...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) ) ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1407:3: ( ({...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) ) ) | ({...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) ) ) )
             int alt9=3;
             int LA9_0 = input.LA(1);
 
@@ -3711,16 +3711,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1421:4: ({...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1409:4: ({...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) ) )
                     {
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1421:4: ({...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) ) )
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1422:5: {...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1409:4: ({...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1410:5: {...}? => ( ( ( rule__Sequence__Group_3_0__0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getSequenceAccess().getUnorderedGroup_3(), 0) ) {
                         throw new FailedPredicateException(input, "rule__Sequence__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getSequenceAccess().getUnorderedGroup_3(), 0)");
                     }
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1422:105: ( ( ( rule__Sequence__Group_3_0__0 ) ) )
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1423:6: ( ( rule__Sequence__Group_3_0__0 ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1410:105: ( ( ( rule__Sequence__Group_3_0__0 ) ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1411:6: ( ( rule__Sequence__Group_3_0__0 ) )
                     {
                      
                     	 				  getUnorderedGroupHelper().select(grammarAccess.getSequenceAccess().getUnorderedGroup_3(), 0);
@@ -3728,14 +3728,14 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
                     	 				  selected = true;
                     	 				
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1429:6: ( ( rule__Sequence__Group_3_0__0 ) )
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1431:7: ( rule__Sequence__Group_3_0__0 )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1417:6: ( ( rule__Sequence__Group_3_0__0 ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1419:7: ( rule__Sequence__Group_3_0__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_3_0()); 
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1432:7: ( rule__Sequence__Group_3_0__0 )
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1432:8: rule__Sequence__Group_3_0__0
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1420:7: ( rule__Sequence__Group_3_0__0 )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1420:8: rule__Sequence__Group_3_0__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_3_0__0_in_rule__Sequence__UnorderedGroup_3__Impl2868);
+                    pushFollow(FOLLOW_rule__Sequence__Group_3_0__0_in_rule__Sequence__UnorderedGroup_3__Impl2850);
                     rule__Sequence__Group_3_0__0();
 
                     state._fsp--;
@@ -3757,16 +3757,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1438:4: ({...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1426:4: ({...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) ) )
                     {
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1438:4: ({...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) ) )
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1439:5: {...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1426:4: ({...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1427:5: {...}? => ( ( ( rule__Sequence__Group_3_1__0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getSequenceAccess().getUnorderedGroup_3(), 1) ) {
                         throw new FailedPredicateException(input, "rule__Sequence__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getSequenceAccess().getUnorderedGroup_3(), 1)");
                     }
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1439:105: ( ( ( rule__Sequence__Group_3_1__0 ) ) )
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1440:6: ( ( rule__Sequence__Group_3_1__0 ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1427:105: ( ( ( rule__Sequence__Group_3_1__0 ) ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1428:6: ( ( rule__Sequence__Group_3_1__0 ) )
                     {
                      
                     	 				  getUnorderedGroupHelper().select(grammarAccess.getSequenceAccess().getUnorderedGroup_3(), 1);
@@ -3774,14 +3774,14 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
                     	 				  selected = true;
                     	 				
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1446:6: ( ( rule__Sequence__Group_3_1__0 ) )
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1448:7: ( rule__Sequence__Group_3_1__0 )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1434:6: ( ( rule__Sequence__Group_3_1__0 ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1436:7: ( rule__Sequence__Group_3_1__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_3_1()); 
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1449:7: ( rule__Sequence__Group_3_1__0 )
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1449:8: rule__Sequence__Group_3_1__0
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1437:7: ( rule__Sequence__Group_3_1__0 )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1437:8: rule__Sequence__Group_3_1__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_3_1__0_in_rule__Sequence__UnorderedGroup_3__Impl2959);
+                    pushFollow(FOLLOW_rule__Sequence__Group_3_1__0_in_rule__Sequence__UnorderedGroup_3__Impl2941);
                     rule__Sequence__Group_3_1__0();
 
                     state._fsp--;
@@ -3803,16 +3803,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1455:4: ({...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1443:4: ({...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) ) )
                     {
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1455:4: ({...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) ) )
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1456:5: {...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1443:4: ({...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1444:5: {...}? => ( ( ( rule__Sequence__Group_3_2__0 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getSequenceAccess().getUnorderedGroup_3(), 2) ) {
                         throw new FailedPredicateException(input, "rule__Sequence__UnorderedGroup_3__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getSequenceAccess().getUnorderedGroup_3(), 2)");
                     }
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1456:105: ( ( ( rule__Sequence__Group_3_2__0 ) ) )
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1457:6: ( ( rule__Sequence__Group_3_2__0 ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1444:105: ( ( ( rule__Sequence__Group_3_2__0 ) ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1445:6: ( ( rule__Sequence__Group_3_2__0 ) )
                     {
                      
                     	 				  getUnorderedGroupHelper().select(grammarAccess.getSequenceAccess().getUnorderedGroup_3(), 2);
@@ -3820,14 +3820,14 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
                     	 				  selected = true;
                     	 				
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1463:6: ( ( rule__Sequence__Group_3_2__0 ) )
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1465:7: ( rule__Sequence__Group_3_2__0 )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1451:6: ( ( rule__Sequence__Group_3_2__0 ) )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1453:7: ( rule__Sequence__Group_3_2__0 )
                     {
                      before(grammarAccess.getSequenceAccess().getGroup_3_2()); 
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1466:7: ( rule__Sequence__Group_3_2__0 )
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1466:8: rule__Sequence__Group_3_2__0
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1454:7: ( rule__Sequence__Group_3_2__0 )
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1454:8: rule__Sequence__Group_3_2__0
                     {
-                    pushFollow(FOLLOW_rule__Sequence__Group_3_2__0_in_rule__Sequence__UnorderedGroup_3__Impl3050);
+                    pushFollow(FOLLOW_rule__Sequence__Group_3_2__0_in_rule__Sequence__UnorderedGroup_3__Impl3032);
                     rule__Sequence__Group_3_2__0();
 
                     state._fsp--;
@@ -3872,21 +3872,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__UnorderedGroup_3__0"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1481:1: rule__Sequence__UnorderedGroup_3__0 : rule__Sequence__UnorderedGroup_3__Impl ( rule__Sequence__UnorderedGroup_3__1 )? ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1469:1: rule__Sequence__UnorderedGroup_3__0 : rule__Sequence__UnorderedGroup_3__Impl ( rule__Sequence__UnorderedGroup_3__1 )? ;
     public final void rule__Sequence__UnorderedGroup_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1485:1: ( rule__Sequence__UnorderedGroup_3__Impl ( rule__Sequence__UnorderedGroup_3__1 )? )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1486:2: rule__Sequence__UnorderedGroup_3__Impl ( rule__Sequence__UnorderedGroup_3__1 )?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1473:1: ( rule__Sequence__UnorderedGroup_3__Impl ( rule__Sequence__UnorderedGroup_3__1 )? )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1474:2: rule__Sequence__UnorderedGroup_3__Impl ( rule__Sequence__UnorderedGroup_3__1 )?
             {
-            pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3__Impl_in_rule__Sequence__UnorderedGroup_3__03109);
+            pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3__Impl_in_rule__Sequence__UnorderedGroup_3__03091);
             rule__Sequence__UnorderedGroup_3__Impl();
 
             state._fsp--;
 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1487:2: ( rule__Sequence__UnorderedGroup_3__1 )?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1475:2: ( rule__Sequence__UnorderedGroup_3__1 )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -3901,9 +3901,9 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1487:2: rule__Sequence__UnorderedGroup_3__1
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1475:2: rule__Sequence__UnorderedGroup_3__1
                     {
-                    pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3__1_in_rule__Sequence__UnorderedGroup_3__03112);
+                    pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3__1_in_rule__Sequence__UnorderedGroup_3__03094);
                     rule__Sequence__UnorderedGroup_3__1();
 
                     state._fsp--;
@@ -3933,21 +3933,21 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__UnorderedGroup_3__1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1494:1: rule__Sequence__UnorderedGroup_3__1 : rule__Sequence__UnorderedGroup_3__Impl ( rule__Sequence__UnorderedGroup_3__2 )? ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1482:1: rule__Sequence__UnorderedGroup_3__1 : rule__Sequence__UnorderedGroup_3__Impl ( rule__Sequence__UnorderedGroup_3__2 )? ;
     public final void rule__Sequence__UnorderedGroup_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1498:1: ( rule__Sequence__UnorderedGroup_3__Impl ( rule__Sequence__UnorderedGroup_3__2 )? )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1499:2: rule__Sequence__UnorderedGroup_3__Impl ( rule__Sequence__UnorderedGroup_3__2 )?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1486:1: ( rule__Sequence__UnorderedGroup_3__Impl ( rule__Sequence__UnorderedGroup_3__2 )? )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1487:2: rule__Sequence__UnorderedGroup_3__Impl ( rule__Sequence__UnorderedGroup_3__2 )?
             {
-            pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3__Impl_in_rule__Sequence__UnorderedGroup_3__13137);
+            pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3__Impl_in_rule__Sequence__UnorderedGroup_3__13119);
             rule__Sequence__UnorderedGroup_3__Impl();
 
             state._fsp--;
 
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1500:2: ( rule__Sequence__UnorderedGroup_3__2 )?
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1488:2: ( rule__Sequence__UnorderedGroup_3__2 )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -3962,9 +3962,9 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1500:2: rule__Sequence__UnorderedGroup_3__2
+                    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1488:2: rule__Sequence__UnorderedGroup_3__2
                     {
-                    pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3__2_in_rule__Sequence__UnorderedGroup_3__13140);
+                    pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3__2_in_rule__Sequence__UnorderedGroup_3__13122);
                     rule__Sequence__UnorderedGroup_3__2();
 
                     state._fsp--;
@@ -3994,16 +3994,16 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__UnorderedGroup_3__2"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1507:1: rule__Sequence__UnorderedGroup_3__2 : rule__Sequence__UnorderedGroup_3__Impl ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1495:1: rule__Sequence__UnorderedGroup_3__2 : rule__Sequence__UnorderedGroup_3__Impl ;
     public final void rule__Sequence__UnorderedGroup_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1511:1: ( rule__Sequence__UnorderedGroup_3__Impl )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1512:2: rule__Sequence__UnorderedGroup_3__Impl
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1499:1: ( rule__Sequence__UnorderedGroup_3__Impl )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1500:2: rule__Sequence__UnorderedGroup_3__Impl
             {
-            pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3__Impl_in_rule__Sequence__UnorderedGroup_3__23165);
+            pushFollow(FOLLOW_rule__Sequence__UnorderedGroup_3__Impl_in_rule__Sequence__UnorderedGroup_3__23147);
             rule__Sequence__UnorderedGroup_3__Impl();
 
             state._fsp--;
@@ -4027,20 +4027,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VideoGen__StatementsAssignment_2"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1525:1: rule__VideoGen__StatementsAssignment_2 : ( ruleStatement ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1513:1: rule__VideoGen__StatementsAssignment_2 : ( ruleStatement ) ;
     public final void rule__VideoGen__StatementsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1529:1: ( ( ruleStatement ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1530:1: ( ruleStatement )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1517:1: ( ( ruleStatement ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1518:1: ( ruleStatement )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1530:1: ( ruleStatement )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1531:1: ruleStatement
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1518:1: ( ruleStatement )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1519:1: ruleStatement
             {
              before(grammarAccess.getVideoGenAccess().getStatementsStatementParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleStatement_in_rule__VideoGen__StatementsAssignment_23199);
+            pushFollow(FOLLOW_ruleStatement_in_rule__VideoGen__StatementsAssignment_23181);
             ruleStatement();
 
             state._fsp--;
@@ -4068,20 +4068,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Alternatives__NameAssignment_1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1540:1: rule__Alternatives__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1528:1: rule__Alternatives__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Alternatives__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1544:1: ( ( RULE_ID ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1545:1: ( RULE_ID )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1532:1: ( ( RULE_ID ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1533:1: ( RULE_ID )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1545:1: ( RULE_ID )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1546:1: RULE_ID
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1533:1: ( RULE_ID )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1534:1: RULE_ID
             {
              before(grammarAccess.getAlternativesAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Alternatives__NameAssignment_13230); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Alternatives__NameAssignment_13212); 
              after(grammarAccess.getAlternativesAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -4105,20 +4105,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Alternatives__OptionsAssignment_3"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1555:1: rule__Alternatives__OptionsAssignment_3 : ( ruleOptional ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1543:1: rule__Alternatives__OptionsAssignment_3 : ( ruleOptional ) ;
     public final void rule__Alternatives__OptionsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1559:1: ( ( ruleOptional ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1560:1: ( ruleOptional )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1547:1: ( ( ruleOptional ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1548:1: ( ruleOptional )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1560:1: ( ruleOptional )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1561:1: ruleOptional
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1548:1: ( ruleOptional )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1549:1: ruleOptional
             {
              before(grammarAccess.getAlternativesAccess().getOptionsOptionalParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleOptional_in_rule__Alternatives__OptionsAssignment_33261);
+            pushFollow(FOLLOW_ruleOptional_in_rule__Alternatives__OptionsAssignment_33243);
             ruleOptional();
 
             state._fsp--;
@@ -4146,20 +4146,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Mandatory__SequenceAssignment"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1570:1: rule__Mandatory__SequenceAssignment : ( ruleSequence ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1558:1: rule__Mandatory__SequenceAssignment : ( ruleSequence ) ;
     public final void rule__Mandatory__SequenceAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1574:1: ( ( ruleSequence ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1575:1: ( ruleSequence )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1562:1: ( ( ruleSequence ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1563:1: ( ruleSequence )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1575:1: ( ruleSequence )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1576:1: ruleSequence
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1563:1: ( ruleSequence )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1564:1: ruleSequence
             {
              before(grammarAccess.getMandatoryAccess().getSequenceSequenceParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleSequence_in_rule__Mandatory__SequenceAssignment3292);
+            pushFollow(FOLLOW_ruleSequence_in_rule__Mandatory__SequenceAssignment3274);
             ruleSequence();
 
             state._fsp--;
@@ -4187,20 +4187,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Optional__ProbabilityAssignment_0_1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1585:1: rule__Optional__ProbabilityAssignment_0_1 : ( RULE_INT ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1573:1: rule__Optional__ProbabilityAssignment_0_1 : ( RULE_INT ) ;
     public final void rule__Optional__ProbabilityAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1589:1: ( ( RULE_INT ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1590:1: ( RULE_INT )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1577:1: ( ( RULE_INT ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1578:1: ( RULE_INT )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1590:1: ( RULE_INT )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1591:1: RULE_INT
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1578:1: ( RULE_INT )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1579:1: RULE_INT
             {
              before(grammarAccess.getOptionalAccess().getProbabilityINTTerminalRuleCall_0_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Optional__ProbabilityAssignment_0_13323); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Optional__ProbabilityAssignment_0_13305); 
              after(grammarAccess.getOptionalAccess().getProbabilityINTTerminalRuleCall_0_1_0()); 
 
             }
@@ -4224,20 +4224,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Optional__SequenceAssignment_1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1600:1: rule__Optional__SequenceAssignment_1 : ( ruleSequence ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1588:1: rule__Optional__SequenceAssignment_1 : ( ruleSequence ) ;
     public final void rule__Optional__SequenceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1604:1: ( ( ruleSequence ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1605:1: ( ruleSequence )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1592:1: ( ( ruleSequence ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1593:1: ( ruleSequence )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1605:1: ( ruleSequence )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1606:1: ruleSequence
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1593:1: ( ruleSequence )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1594:1: ruleSequence
             {
              before(grammarAccess.getOptionalAccess().getSequenceSequenceParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleSequence_in_rule__Optional__SequenceAssignment_13354);
+            pushFollow(FOLLOW_ruleSequence_in_rule__Optional__SequenceAssignment_13336);
             ruleSequence();
 
             state._fsp--;
@@ -4265,20 +4265,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__NameAssignment_1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1615:1: rule__Sequence__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1603:1: rule__Sequence__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Sequence__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1619:1: ( ( RULE_ID ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1620:1: ( RULE_ID )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1607:1: ( ( RULE_ID ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1608:1: ( RULE_ID )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1620:1: ( RULE_ID )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1621:1: RULE_ID
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1608:1: ( RULE_ID )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1609:1: RULE_ID
             {
              before(grammarAccess.getSequenceAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Sequence__NameAssignment_13385); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Sequence__NameAssignment_13367); 
              after(grammarAccess.getSequenceAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -4302,20 +4302,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__UrlAssignment_3_0_0_1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1630:1: rule__Sequence__UrlAssignment_3_0_0_1 : ( RULE_STRING ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1618:1: rule__Sequence__UrlAssignment_3_0_0_1 : ( RULE_STRING ) ;
     public final void rule__Sequence__UrlAssignment_3_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1634:1: ( ( RULE_STRING ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1635:1: ( RULE_STRING )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1622:1: ( ( RULE_STRING ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1623:1: ( RULE_STRING )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1635:1: ( RULE_STRING )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1636:1: RULE_STRING
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1623:1: ( RULE_STRING )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1624:1: RULE_STRING
             {
              before(grammarAccess.getSequenceAccess().getUrlSTRINGTerminalRuleCall_3_0_0_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Sequence__UrlAssignment_3_0_0_13416); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Sequence__UrlAssignment_3_0_0_13398); 
              after(grammarAccess.getSequenceAccess().getUrlSTRINGTerminalRuleCall_3_0_0_1_0()); 
 
             }
@@ -4339,20 +4339,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__DescriptionAssignment_3_0_1_1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1645:1: rule__Sequence__DescriptionAssignment_3_0_1_1 : ( RULE_STRING ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1633:1: rule__Sequence__DescriptionAssignment_3_0_1_1 : ( RULE_STRING ) ;
     public final void rule__Sequence__DescriptionAssignment_3_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1649:1: ( ( RULE_STRING ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1650:1: ( RULE_STRING )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1637:1: ( ( RULE_STRING ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1638:1: ( RULE_STRING )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1650:1: ( RULE_STRING )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1651:1: RULE_STRING
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1638:1: ( RULE_STRING )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1639:1: RULE_STRING
             {
              before(grammarAccess.getSequenceAccess().getDescriptionSTRINGTerminalRuleCall_3_0_1_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Sequence__DescriptionAssignment_3_0_1_13447); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Sequence__DescriptionAssignment_3_0_1_13429); 
              after(grammarAccess.getSequenceAccess().getDescriptionSTRINGTerminalRuleCall_3_0_1_1_0()); 
 
             }
@@ -4376,20 +4376,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__LengthAssignment_3_1_1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1660:1: rule__Sequence__LengthAssignment_3_1_1 : ( RULE_INT ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1648:1: rule__Sequence__LengthAssignment_3_1_1 : ( RULE_INT ) ;
     public final void rule__Sequence__LengthAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1664:1: ( ( RULE_INT ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1665:1: ( RULE_INT )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1652:1: ( ( RULE_INT ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1653:1: ( RULE_INT )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1665:1: ( RULE_INT )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1666:1: RULE_INT
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1653:1: ( RULE_INT )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1654:1: RULE_INT
             {
              before(grammarAccess.getSequenceAccess().getLengthINTTerminalRuleCall_3_1_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Sequence__LengthAssignment_3_1_13478); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Sequence__LengthAssignment_3_1_13460); 
              after(grammarAccess.getSequenceAccess().getLengthINTTerminalRuleCall_3_1_1_0()); 
 
             }
@@ -4413,20 +4413,20 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Sequence__MimetypeAssignment_3_2_1"
-    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1675:1: rule__Sequence__MimetypeAssignment_3_2_1 : ( ruleMimetypes_Enum ) ;
+    // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1663:1: rule__Sequence__MimetypeAssignment_3_2_1 : ( ruleMimetypes_Enum ) ;
     public final void rule__Sequence__MimetypeAssignment_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1679:1: ( ( ruleMimetypes_Enum ) )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1680:1: ( ruleMimetypes_Enum )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1667:1: ( ( ruleMimetypes_Enum ) )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1668:1: ( ruleMimetypes_Enum )
             {
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1680:1: ( ruleMimetypes_Enum )
-            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1681:1: ruleMimetypes_Enum
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1668:1: ( ruleMimetypes_Enum )
+            // ../org.istic.idm.xtext.VideoGen.ui/src-gen/org/istic/idm/xtext/ui/contentassist/antlr/internal/InternalVideoGen.g:1669:1: ruleMimetypes_Enum
             {
              before(grammarAccess.getSequenceAccess().getMimetypeMimetypes_EnumEnumRuleCall_3_2_1_0()); 
-            pushFollow(FOLLOW_ruleMimetypes_Enum_in_rule__Sequence__MimetypeAssignment_3_2_13509);
+            pushFollow(FOLLOW_ruleMimetypes_Enum_in_rule__Sequence__MimetypeAssignment_3_2_13491);
             ruleMimetypes_Enum();
 
             state._fsp--;
@@ -4479,121 +4479,121 @@ public class InternalVideoGenParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_rule__Statement__Group_0__0_in_rule__Statement__Alternatives466 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Statement__Group_1__0_in_rule__Statement__Alternatives484 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAlternatives_in_rule__Statement__Alternatives502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__Mimetypes_Enum__Alternatives535 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Mimetypes_Enum__Alternatives556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Mimetypes_Enum__Alternatives577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Mimetypes_Enum__Alternatives598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Mimetypes_Enum__Alternatives619 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Mimetypes_Enum__Alternatives640 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Mimetypes_Enum__Alternatives661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VideoGen__Group__0__Impl_in_rule__VideoGen__Group__0694 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_13_in_rule__Mimetypes_Enum__Alternatives535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Mimetypes_Enum__Alternatives556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Mimetypes_Enum__Alternatives577 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Mimetypes_Enum__Alternatives598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Mimetypes_Enum__Alternatives619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Mimetypes_Enum__Alternatives640 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Mimetypes_Enum__Alternatives661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VideoGen__Group__0__Impl_in_rule__VideoGen__Group__0694 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__VideoGen__Group__1_in_rule__VideoGen__Group__0697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__VideoGen__Group__0__Impl725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__VideoGen__Group__0__Impl725 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VideoGen__Group__1__Impl_in_rule__VideoGen__Group__1756 = new BitSet(new long[]{0x0000000004E00000L});
     public static final BitSet FOLLOW_rule__VideoGen__Group__2_in_rule__VideoGen__Group__1759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__VideoGen__Group__1__Impl787 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VideoGen__Group__2__Impl_in_rule__VideoGen__Group__2818 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__VideoGen__Group__3_in_rule__VideoGen__Group__2821 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VideoGen__StatementsAssignment_2_in_rule__VideoGen__Group__2__Impl850 = new BitSet(new long[]{0x0000000004E00002L});
-    public static final BitSet FOLLOW_rule__VideoGen__StatementsAssignment_2_in_rule__VideoGen__Group__2__Impl862 = new BitSet(new long[]{0x0000000004E00002L});
-    public static final BitSet FOLLOW_rule__VideoGen__Group__3__Impl_in_rule__VideoGen__Group__3895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__VideoGen__Group__3__Impl923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group_0__0__Impl_in_rule__Statement__Group_0__0962 = new BitSet(new long[]{0x0000000005400000L});
-    public static final BitSet FOLLOW_rule__Statement__Group_0__1_in_rule__Statement__Group_0__0965 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Statement__Group_0__0__Impl993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group_0__1__Impl_in_rule__Statement__Group_0__11024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOptional_in_rule__Statement__Group_0__1__Impl1051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group_1__0__Impl_in_rule__Statement__Group_1__01084 = new BitSet(new long[]{0x0000000004400000L});
-    public static final BitSet FOLLOW_rule__Statement__Group_1__1_in_rule__Statement__Group_1__01087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__Statement__Group_1__0__Impl1116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group_1__1__Impl_in_rule__Statement__Group_1__11149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMandatory_in_rule__Statement__Group_1__1__Impl1176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alternatives__Group__0__Impl_in_rule__Alternatives__Group__01209 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Alternatives__Group__1_in_rule__Alternatives__Group__01212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__Alternatives__Group__0__Impl1240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alternatives__Group__1__Impl_in_rule__Alternatives__Group__11271 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__Alternatives__Group__2_in_rule__Alternatives__Group__11274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alternatives__NameAssignment_1_in_rule__Alternatives__Group__1__Impl1301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alternatives__Group__2__Impl_in_rule__Alternatives__Group__21331 = new BitSet(new long[]{0x0000000005400000L});
-    public static final BitSet FOLLOW_rule__Alternatives__Group__3_in_rule__Alternatives__Group__21334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Alternatives__Group__2__Impl1362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alternatives__Group__3__Impl_in_rule__Alternatives__Group__31393 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__Alternatives__Group__4_in_rule__Alternatives__Group__31396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alternatives__OptionsAssignment_3_in_rule__Alternatives__Group__3__Impl1425 = new BitSet(new long[]{0x0000000005400002L});
-    public static final BitSet FOLLOW_rule__Alternatives__OptionsAssignment_3_in_rule__Alternatives__Group__3__Impl1437 = new BitSet(new long[]{0x0000000005400002L});
-    public static final BitSet FOLLOW_rule__Alternatives__Group__4__Impl_in_rule__Alternatives__Group__41470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Alternatives__Group__4__Impl1498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Optional__Group__0__Impl_in_rule__Optional__Group__01539 = new BitSet(new long[]{0x0000000005400000L});
-    public static final BitSet FOLLOW_rule__Optional__Group__1_in_rule__Optional__Group__01542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Optional__Group_0__0_in_rule__Optional__Group__0__Impl1569 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Optional__Group__1__Impl_in_rule__Optional__Group__11600 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Optional__SequenceAssignment_1_in_rule__Optional__Group__1__Impl1627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Optional__Group_0__0__Impl_in_rule__Optional__Group_0__01661 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Optional__Group_0__1_in_rule__Optional__Group_0__01664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Optional__Group_0__0__Impl1692 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Optional__Group_0__1__Impl_in_rule__Optional__Group_0__11723 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Optional__Group_0__2_in_rule__Optional__Group_0__11726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Optional__ProbabilityAssignment_0_1_in_rule__Optional__Group_0__1__Impl1753 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Optional__Group_0__2__Impl_in_rule__Optional__Group_0__21783 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Optional__Group_0__2__Impl1811 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group__0__Impl_in_rule__Sequence__Group__01848 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Sequence__Group__1_in_rule__Sequence__Group__01851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Sequence__Group__0__Impl1879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group__1__Impl_in_rule__Sequence__Group__11910 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group__2_in_rule__Sequence__Group__11913 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__NameAssignment_1_in_rule__Sequence__Group__1__Impl1940 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group__2__Impl_in_rule__Sequence__Group__21970 = new BitSet(new long[]{0x0000000068000040L});
-    public static final BitSet FOLLOW_rule__Sequence__Group__3_in_rule__Sequence__Group__21973 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Sequence__Group__2__Impl2001 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group__3__Impl_in_rule__Sequence__Group__32032 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group__4_in_rule__Sequence__Group__32035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3_in_rule__Sequence__Group__3__Impl2062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group__4__Impl_in_rule__Sequence__Group__42092 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Sequence__Group__4__Impl2120 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_0__0__Impl_in_rule__Sequence__Group_3_0__02161 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_0__1_in_rule__Sequence__Group_3_0__02164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_0__0_in_rule__Sequence__Group_3_0__0__Impl2191 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_0__1__Impl_in_rule__Sequence__Group_3_0__12221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_1__0_in_rule__Sequence__Group_3_0__1__Impl2248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_0__0__Impl_in_rule__Sequence__Group_3_0_0__02283 = new BitSet(new long[]{0x0000000008000040L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_0__1_in_rule__Sequence__Group_3_0_0__02286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Sequence__Group_3_0_0__0__Impl2315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_0__1__Impl_in_rule__Sequence__Group_3_0_0__12348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__UrlAssignment_3_0_0_1_in_rule__Sequence__Group_3_0_0__1__Impl2375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_1__0__Impl_in_rule__Sequence__Group_3_0_1__02409 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_1__1_in_rule__Sequence__Group_3_0_1__02412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Sequence__Group_3_0_1__0__Impl2440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_1__1__Impl_in_rule__Sequence__Group_3_0_1__12471 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__DescriptionAssignment_3_0_1_1_in_rule__Sequence__Group_3_0_1__1__Impl2498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_1__0__Impl_in_rule__Sequence__Group_3_1__02532 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_1__1_in_rule__Sequence__Group_3_1__02535 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__Sequence__Group_3_1__0__Impl2563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_1__1__Impl_in_rule__Sequence__Group_3_1__12594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__LengthAssignment_3_1_1_in_rule__Sequence__Group_3_1__1__Impl2621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_2__0__Impl_in_rule__Sequence__Group_3_2__02655 = new BitSet(new long[]{0x000000000003F800L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_2__1_in_rule__Sequence__Group_3_2__02658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__Sequence__Group_3_2__0__Impl2686 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_2__1__Impl_in_rule__Sequence__Group_3_2__12717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__MimetypeAssignment_3_2_1_in_rule__Sequence__Group_3_2__1__Impl2744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3__0_in_rule__Sequence__UnorderedGroup_32779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_0__0_in_rule__Sequence__UnorderedGroup_3__Impl2868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_1__0_in_rule__Sequence__UnorderedGroup_3__Impl2959 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__Group_3_2__0_in_rule__Sequence__UnorderedGroup_3__Impl3050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3__Impl_in_rule__Sequence__UnorderedGroup_3__03109 = new BitSet(new long[]{0x0000000068000042L});
-    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3__1_in_rule__Sequence__UnorderedGroup_3__03112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3__Impl_in_rule__Sequence__UnorderedGroup_3__13137 = new BitSet(new long[]{0x0000000068000042L});
-    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3__2_in_rule__Sequence__UnorderedGroup_3__13140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3__Impl_in_rule__Sequence__UnorderedGroup_3__23165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatement_in_rule__VideoGen__StatementsAssignment_23199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Alternatives__NameAssignment_13230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOptional_in_rule__Alternatives__OptionsAssignment_33261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSequence_in_rule__Mandatory__SequenceAssignment3292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Optional__ProbabilityAssignment_0_13323 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSequence_in_rule__Optional__SequenceAssignment_13354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Sequence__NameAssignment_13385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Sequence__UrlAssignment_3_0_0_13416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Sequence__DescriptionAssignment_3_0_1_13447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Sequence__LengthAssignment_3_1_13478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMimetypes_Enum_in_rule__Sequence__MimetypeAssignment_3_2_13509 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LEFT_BRACKET_in_rule__VideoGen__Group__1__Impl786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VideoGen__Group__2__Impl_in_rule__VideoGen__Group__2815 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__VideoGen__Group__3_in_rule__VideoGen__Group__2818 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VideoGen__StatementsAssignment_2_in_rule__VideoGen__Group__2__Impl847 = new BitSet(new long[]{0x0000000004E00002L});
+    public static final BitSet FOLLOW_rule__VideoGen__StatementsAssignment_2_in_rule__VideoGen__Group__2__Impl859 = new BitSet(new long[]{0x0000000004E00002L});
+    public static final BitSet FOLLOW_rule__VideoGen__Group__3__Impl_in_rule__VideoGen__Group__3892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RIGHT_BRACKET_in_rule__VideoGen__Group__3__Impl919 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group_0__0__Impl_in_rule__Statement__Group_0__0956 = new BitSet(new long[]{0x0000000005400000L});
+    public static final BitSet FOLLOW_rule__Statement__Group_0__1_in_rule__Statement__Group_0__0959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Statement__Group_0__0__Impl987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group_0__1__Impl_in_rule__Statement__Group_0__11018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOptional_in_rule__Statement__Group_0__1__Impl1045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group_1__0__Impl_in_rule__Statement__Group_1__01078 = new BitSet(new long[]{0x0000000004400000L});
+    public static final BitSet FOLLOW_rule__Statement__Group_1__1_in_rule__Statement__Group_1__01081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__Statement__Group_1__0__Impl1110 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group_1__1__Impl_in_rule__Statement__Group_1__11143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMandatory_in_rule__Statement__Group_1__1__Impl1170 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Alternatives__Group__0__Impl_in_rule__Alternatives__Group__01203 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Alternatives__Group__1_in_rule__Alternatives__Group__01206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Alternatives__Group__0__Impl1234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Alternatives__Group__1__Impl_in_rule__Alternatives__Group__11265 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Alternatives__Group__2_in_rule__Alternatives__Group__11268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Alternatives__NameAssignment_1_in_rule__Alternatives__Group__1__Impl1295 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Alternatives__Group__2__Impl_in_rule__Alternatives__Group__21325 = new BitSet(new long[]{0x0000000005400000L});
+    public static final BitSet FOLLOW_rule__Alternatives__Group__3_in_rule__Alternatives__Group__21328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LEFT_BRACKET_in_rule__Alternatives__Group__2__Impl1355 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Alternatives__Group__3__Impl_in_rule__Alternatives__Group__31384 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Alternatives__Group__4_in_rule__Alternatives__Group__31387 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Alternatives__OptionsAssignment_3_in_rule__Alternatives__Group__3__Impl1416 = new BitSet(new long[]{0x0000000005400002L});
+    public static final BitSet FOLLOW_rule__Alternatives__OptionsAssignment_3_in_rule__Alternatives__Group__3__Impl1428 = new BitSet(new long[]{0x0000000005400002L});
+    public static final BitSet FOLLOW_rule__Alternatives__Group__4__Impl_in_rule__Alternatives__Group__41461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RIGHT_BRACKET_in_rule__Alternatives__Group__4__Impl1488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Optional__Group__0__Impl_in_rule__Optional__Group__01527 = new BitSet(new long[]{0x0000000005400000L});
+    public static final BitSet FOLLOW_rule__Optional__Group__1_in_rule__Optional__Group__01530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Optional__Group_0__0_in_rule__Optional__Group__0__Impl1557 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Optional__Group__1__Impl_in_rule__Optional__Group__11588 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Optional__SequenceAssignment_1_in_rule__Optional__Group__1__Impl1615 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Optional__Group_0__0__Impl_in_rule__Optional__Group_0__01649 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Optional__Group_0__1_in_rule__Optional__Group_0__01652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Optional__Group_0__0__Impl1680 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Optional__Group_0__1__Impl_in_rule__Optional__Group_0__11711 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Optional__Group_0__2_in_rule__Optional__Group_0__11714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Optional__ProbabilityAssignment_0_1_in_rule__Optional__Group_0__1__Impl1741 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Optional__Group_0__2__Impl_in_rule__Optional__Group_0__21771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Optional__Group_0__2__Impl1799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group__0__Impl_in_rule__Sequence__Group__01836 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Sequence__Group__1_in_rule__Sequence__Group__01839 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Sequence__Group__0__Impl1867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group__1__Impl_in_rule__Sequence__Group__11898 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Sequence__Group__2_in_rule__Sequence__Group__11901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__NameAssignment_1_in_rule__Sequence__Group__1__Impl1928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group__2__Impl_in_rule__Sequence__Group__21958 = new BitSet(new long[]{0x0000000068000100L});
+    public static final BitSet FOLLOW_rule__Sequence__Group__3_in_rule__Sequence__Group__21961 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LEFT_BRACKET_in_rule__Sequence__Group__2__Impl1988 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group__3__Impl_in_rule__Sequence__Group__32017 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Sequence__Group__4_in_rule__Sequence__Group__32020 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3_in_rule__Sequence__Group__3__Impl2047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group__4__Impl_in_rule__Sequence__Group__42077 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RIGHT_BRACKET_in_rule__Sequence__Group__4__Impl2104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_0__0__Impl_in_rule__Sequence__Group_3_0__02143 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_0__1_in_rule__Sequence__Group_3_0__02146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_0__0_in_rule__Sequence__Group_3_0__0__Impl2173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_0__1__Impl_in_rule__Sequence__Group_3_0__12203 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_1__0_in_rule__Sequence__Group_3_0__1__Impl2230 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_0__0__Impl_in_rule__Sequence__Group_3_0_0__02265 = new BitSet(new long[]{0x0000000008000100L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_0__1_in_rule__Sequence__Group_3_0_0__02268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Sequence__Group_3_0_0__0__Impl2297 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_0__1__Impl_in_rule__Sequence__Group_3_0_0__12330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__UrlAssignment_3_0_0_1_in_rule__Sequence__Group_3_0_0__1__Impl2357 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_1__0__Impl_in_rule__Sequence__Group_3_0_1__02391 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_1__1_in_rule__Sequence__Group_3_0_1__02394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__Sequence__Group_3_0_1__0__Impl2422 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_0_1__1__Impl_in_rule__Sequence__Group_3_0_1__12453 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__DescriptionAssignment_3_0_1_1_in_rule__Sequence__Group_3_0_1__1__Impl2480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_1__0__Impl_in_rule__Sequence__Group_3_1__02514 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_1__1_in_rule__Sequence__Group_3_1__02517 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__Sequence__Group_3_1__0__Impl2545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_1__1__Impl_in_rule__Sequence__Group_3_1__12576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__LengthAssignment_3_1_1_in_rule__Sequence__Group_3_1__1__Impl2603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_2__0__Impl_in_rule__Sequence__Group_3_2__02637 = new BitSet(new long[]{0x00000000000FE000L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_2__1_in_rule__Sequence__Group_3_2__02640 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__Sequence__Group_3_2__0__Impl2668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_2__1__Impl_in_rule__Sequence__Group_3_2__12699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__MimetypeAssignment_3_2_1_in_rule__Sequence__Group_3_2__1__Impl2726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3__0_in_rule__Sequence__UnorderedGroup_32761 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_0__0_in_rule__Sequence__UnorderedGroup_3__Impl2850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_1__0_in_rule__Sequence__UnorderedGroup_3__Impl2941 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__Group_3_2__0_in_rule__Sequence__UnorderedGroup_3__Impl3032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3__Impl_in_rule__Sequence__UnorderedGroup_3__03091 = new BitSet(new long[]{0x0000000068000102L});
+    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3__1_in_rule__Sequence__UnorderedGroup_3__03094 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3__Impl_in_rule__Sequence__UnorderedGroup_3__13119 = new BitSet(new long[]{0x0000000068000102L});
+    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3__2_in_rule__Sequence__UnorderedGroup_3__13122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sequence__UnorderedGroup_3__Impl_in_rule__Sequence__UnorderedGroup_3__23147 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatement_in_rule__VideoGen__StatementsAssignment_23181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Alternatives__NameAssignment_13212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOptional_in_rule__Alternatives__OptionsAssignment_33243 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSequence_in_rule__Mandatory__SequenceAssignment3274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Optional__ProbabilityAssignment_0_13305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSequence_in_rule__Optional__SequenceAssignment_13336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Sequence__NameAssignment_13367 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Sequence__UrlAssignment_3_0_0_13398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Sequence__DescriptionAssignment_3_0_1_13429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Sequence__LengthAssignment_3_1_13460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMimetypes_Enum_in_rule__Sequence__MimetypeAssignment_3_2_13491 = new BitSet(new long[]{0x0000000000000002L});
 
 }

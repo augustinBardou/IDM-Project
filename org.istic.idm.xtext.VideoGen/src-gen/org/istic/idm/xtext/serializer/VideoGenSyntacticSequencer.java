@@ -32,9 +32,30 @@ public class VideoGenSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if(ruleCall.getRule() == grammarAccess.getLEFT_BRACKETRule())
+			return getLEFT_BRACKETToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getRIGHT_BRACKETRule())
+			return getRIGHT_BRACKETToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * terminal LEFT_BRACKET: '{' ;
+	 */
+	protected String getLEFT_BRACKETToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "{";
+	}
+	
+	/**
+	 * terminal RIGHT_BRACKET: '}';
+	 */
+	protected String getRIGHT_BRACKETToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "}";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -58,7 +79,7 @@ public class VideoGenSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     description=STRING (ambiguity) url=STRING
 	 *     length=INT (ambiguity) url=STRING
 	 *     mimetype=Mimetypes_Enum (ambiguity) url=STRING
-	 *     name=ID '{' (ambiguity) url=STRING
+	 *     name=ID LEFT_BRACKET (ambiguity) url=STRING
 	 *     url=STRING (ambiguity) url=STRING
 	 */
 	protected void emit_Sequence_UrlKeyword_3_0_0_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {

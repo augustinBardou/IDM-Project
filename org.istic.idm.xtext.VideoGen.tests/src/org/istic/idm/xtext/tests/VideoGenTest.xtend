@@ -14,7 +14,7 @@ import org.istic.idm.xtext.videoGen.Optional
 import org.istic.idm.xtext.videoGen.Alternatives
 import org.junit.Test
 import org.istic.idm.xtext.videoGen.Mandatory
-import org.istic.idm.xtext.VideoGenTransform
+import org.istic.idm.xtext.utils.VideoGenTransform
 
 class VideoGenTest {
 

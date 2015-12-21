@@ -22,23 +22,23 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VideoGen");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cVideoGenKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cLEFT_BRACKETTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Assignment cStatementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cStatementsStatementParserRuleCall_2_0 = (RuleCall)cStatementsAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cRIGHT_BRACKETTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//VideoGen:
-		//	"VideoGen" "{" statements+=Statement+ "}";
+		//	"VideoGen" LEFT_BRACKET statements+=Statement+ RIGHT_BRACKET;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"VideoGen" "{" statements+=Statement+ "}"
+		//"VideoGen" LEFT_BRACKET statements+=Statement+ RIGHT_BRACKET
 		public Group getGroup() { return cGroup; }
 
 		//"VideoGen"
 		public Keyword getVideoGenKeyword_0() { return cVideoGenKeyword_0; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		//LEFT_BRACKET
+		public RuleCall getLEFT_BRACKETTerminalRuleCall_1() { return cLEFT_BRACKETTerminalRuleCall_1; }
 
 		//statements+=Statement+
 		public Assignment getStatementsAssignment_2() { return cStatementsAssignment_2; }
@@ -46,8 +46,8 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		//Statement
 		public RuleCall getStatementsStatementParserRuleCall_2_0() { return cStatementsStatementParserRuleCall_2_0; }
 
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		//RIGHT_BRACKET
+		public RuleCall getRIGHT_BRACKETTerminalRuleCall_3() { return cRIGHT_BRACKETTerminalRuleCall_3; }
 	}
 
 	public class StatementElements extends AbstractParserRuleElementFinder {
@@ -96,16 +96,16 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAlternativesKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cLEFT_BRACKETTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Assignment cOptionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cOptionsOptionalParserRuleCall_3_0 = (RuleCall)cOptionsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final RuleCall cRIGHT_BRACKETTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//Alternatives:
-		//	"Alternatives" name=ID "{" options+=Optional+ "}";
+		//	"Alternatives" name=ID LEFT_BRACKET options+=Optional+ RIGHT_BRACKET;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"Alternatives" name=ID "{" options+=Optional+ "}"
+		//"Alternatives" name=ID LEFT_BRACKET options+=Optional+ RIGHT_BRACKET
 		public Group getGroup() { return cGroup; }
 
 		//"Alternatives"
@@ -117,8 +117,8 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		//LEFT_BRACKET
+		public RuleCall getLEFT_BRACKETTerminalRuleCall_2() { return cLEFT_BRACKETTerminalRuleCall_2; }
 
 		//options+=Optional+
 		public Assignment getOptionsAssignment_3() { return cOptionsAssignment_3; }
@@ -126,8 +126,8 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		//Optional
 		public RuleCall getOptionsOptionalParserRuleCall_3_0() { return cOptionsOptionalParserRuleCall_3_0; }
 
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		//RIGHT_BRACKET
+		public RuleCall getRIGHT_BRACKETTerminalRuleCall_4() { return cRIGHT_BRACKETTerminalRuleCall_4; }
 	}
 
 	public class MandatoryElements extends AbstractParserRuleElementFinder {
@@ -192,7 +192,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSequenceKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cLEFT_BRACKETTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final UnorderedGroup cUnorderedGroup_3 = (UnorderedGroup)cGroup.eContents().get(3);
 		private final Group cGroup_3_0 = (Group)cUnorderedGroup_3.eContents().get(0);
 		private final Group cGroup_3_0_0 = (Group)cGroup_3_0.eContents().get(0);
@@ -211,15 +211,15 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMimetypeKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
 		private final Assignment cMimetypeAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
 		private final RuleCall cMimetypeMimetypes_EnumEnumRuleCall_3_2_1_0 = (RuleCall)cMimetypeAssignment_3_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final RuleCall cRIGHT_BRACKETTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//Sequence:
-		//	"Sequence" name=ID "{" (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? &
-		//	("mimetype=" mimetype=Mimetypes_Enum)?) "}";
+		//	"Sequence" name=ID LEFT_BRACKET (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? &
+		//	("mimetype=" mimetype=Mimetypes_Enum)?) RIGHT_BRACKET;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"Sequence" name=ID "{" (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? &
-		//("mimetype=" mimetype=Mimetypes_Enum)?) "}"
+		//"Sequence" name=ID LEFT_BRACKET (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? &
+		//("mimetype=" mimetype=Mimetypes_Enum)?) RIGHT_BRACKET
 		public Group getGroup() { return cGroup; }
 
 		//"Sequence"
@@ -231,8 +231,8 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		//LEFT_BRACKET
+		public RuleCall getLEFT_BRACKETTerminalRuleCall_2() { return cLEFT_BRACKETTerminalRuleCall_2; }
 
 		//("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? & ("mimetype="
 		//mimetype=Mimetypes_Enum)?
@@ -289,8 +289,8 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		//Mimetypes_Enum
 		public RuleCall getMimetypeMimetypes_EnumEnumRuleCall_3_2_1_0() { return cMimetypeMimetypes_EnumEnumRuleCall_3_2_1_0; }
 
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		//RIGHT_BRACKET
+		public RuleCall getRIGHT_BRACKETTerminalRuleCall_4() { return cRIGHT_BRACKETTerminalRuleCall_4; }
 	}
 	
 	
@@ -369,6 +369,8 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	private final OptionalElements pOptional;
 	private final SequenceElements pSequence;
 	private final Mimetypes_EnumElements unknownRuleMimetypes_Enum;
+	private final TerminalRule tLEFT_BRACKET;
+	private final TerminalRule tRIGHT_BRACKET;
 	
 	private final Grammar grammar;
 
@@ -386,6 +388,8 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		this.pOptional = new OptionalElements();
 		this.pSequence = new SequenceElements();
 		this.unknownRuleMimetypes_Enum = new Mimetypes_EnumElements();
+		this.tLEFT_BRACKET = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LEFT_BRACKET");
+		this.tRIGHT_BRACKET = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "RIGHT_BRACKET");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -416,7 +420,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//VideoGen:
-	//	"VideoGen" "{" statements+=Statement+ "}";
+	//	"VideoGen" LEFT_BRACKET statements+=Statement+ RIGHT_BRACKET;
 	public VideoGenElements getVideoGenAccess() {
 		return pVideoGen;
 	}
@@ -436,7 +440,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Alternatives:
-	//	"Alternatives" name=ID "{" options+=Optional+ "}";
+	//	"Alternatives" name=ID LEFT_BRACKET options+=Optional+ RIGHT_BRACKET;
 	public AlternativesElements getAlternativesAccess() {
 		return pAlternatives;
 	}
@@ -466,8 +470,8 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Sequence:
-	//	"Sequence" name=ID "{" (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? &
-	//	("mimetype=" mimetype=Mimetypes_Enum)?) "}";
+	//	"Sequence" name=ID LEFT_BRACKET (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? &
+	//	("mimetype=" mimetype=Mimetypes_Enum)?) RIGHT_BRACKET;
 	public SequenceElements getSequenceAccess() {
 		return pSequence;
 	}
@@ -485,6 +489,18 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	public EnumRule getMimetypes_EnumRule() {
 		return getMimetypes_EnumAccess().getRule();
 	}
+
+	//terminal LEFT_BRACKET:
+	//	"{";
+	public TerminalRule getLEFT_BRACKETRule() {
+		return tLEFT_BRACKET;
+	} 
+
+	//terminal RIGHT_BRACKET:
+	//	"}";
+	public TerminalRule getRIGHT_BRACKETRule() {
+		return tRIGHT_BRACKET;
+	} 
 
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
