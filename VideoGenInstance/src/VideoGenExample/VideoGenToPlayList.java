@@ -42,7 +42,6 @@ public class VideoGenToPlayList {
 			writer.flush();
 			writer.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return file; 
@@ -99,7 +98,6 @@ public class VideoGenToPlayList {
 				try {
 					rewriter.write(line + "\n");
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -112,7 +110,7 @@ public class VideoGenToPlayList {
 		CommandLine commandLine = CommandLine.parse(cmd);
 		DefaultExecutor executor = new DefaultExecutor();
 		executor.setExitValue(0);
-		int exitValue = executor.execute(commandLine);
+		executor.execute(commandLine);
     }
     
 	

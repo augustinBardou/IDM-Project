@@ -197,30 +197,28 @@ public class VideoGenTransform {
     
     
     def static toConfigurator(VideoGen videogen){
-       	'''
-       	<div class="videogen">
-       		<button class="generate">Generate</button>
-       		«FOR statement: videogen.statements»
-       			<div class="videoseq">
-       			«IF statement instanceof Alternatives»
-					«FOR option: statement.options»
-						<div>«option.sequence.name» - «option.sequence.description»</div>
-						<button type="radio">Activate ?</div>
-				   	«ENDFOR»
-				«ENDIF»
-				«IF statement instanceof Mandatory»
-					<div>«statement.sequence.name» - «statement.sequence.description»</div>
-				«ENDIF»
-				«IF statement instanceof Optional»
-					<div>«statement.sequence.name» - «statement.sequence.description»</div>
-					«IF statement.probability == 0»
-						<button type="radio">Activate ?</div>
-					«ENDIF»
-				«ENDIF»
-       			</div>
-       		«ENDFOR»
-       	</div>
-       	''' 
+	   '''<div class="videogen">
+	<button class="generate">Generate</button>
+	«FOR statement: videogen.statements»
+		<div class="videoseq">
+		«IF statement instanceof Alternatives»
+			«FOR option: statement.options»
+				<div>«option.sequence.name» - «option.sequence.description»</div>
+				<button type="radio">Activate ?</div>
+		   «ENDFOR»
+		«ENDIF»
+		«IF statement instanceof Mandatory»
+			<div>«statement.sequence.name» - «statement.sequence.description»</div>
+		«ENDIF»
+		«IF statement instanceof Optional»
+			<div>«statement.sequence.name» - «statement.sequence.description»</div>
+			«IF statement.probability == 0»
+				<button type="radio">Activate ?</div>
+			«ENDIF»
+		«ENDIF»
+		</div>
+	«ENDFOR»
+</div>''' 
     }
     
 }
