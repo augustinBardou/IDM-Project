@@ -109,7 +109,7 @@ public class VideoGenToPlayList {
 		String cmd = "firefox " + generatedIndexPath;
 		CommandLine commandLine = CommandLine.parse(cmd);
 		DefaultExecutor executor = new DefaultExecutor();
-		executor.setExitValue(1);
+		executor.setExitValue(0);
 		int exitValue = executor.execute(commandLine);
     }
     
@@ -130,11 +130,8 @@ public class VideoGenToPlayList {
 		writeToFile("test.ffmpeg", PlayListTransform.toFFMPEG(playlist));
 		writeToFile("test.pls", PlayListTransform.toPLS(playlist));
 
-		//VideoGenTransform.toConfigurator(videoGen);
-
 		// Convertion then transformation
 		launchFlowPlayer();
-		//launchConfigurator();
 	}
 
 }

@@ -1,0 +1,60 @@
+VideoGen {
+	Alternatives intro {
+		Sequence intro1 {
+			url="/tmp/VideoGen/intro/Mass.mp4"
+		}
+		Sequence intro2 {
+			url="/tmp/VideoGen/intro/TimsSuicide.mp4"
+		}
+	}
+	@Optional
+	@Probability(30)
+	Sequence haha1 { 
+			url="/tmp/VideoGen/haha/EddyWally-Wow.mp4"
+	}
+	Alternatives cats {
+		@Probability(55)
+		Sequence cat1 {
+			url="/tmp/VideoGen/intro/Acrostatics.mp4"
+		}
+		Sequence cat2 {
+			url="/tmp/VideoGen/intro/CatJumpFail.mp4"
+		}
+	}
+	@Optional
+	@Probability(10)
+	Sequence haha2 { 
+			url="/tmp/VideoGen/haha/EddyWally-Wow.mp4"
+	}
+	Sequence tv1 {
+		url="/tmp/VideoGen/tv/PublicAccessTV.mp4"
+	}
+	Alternatives wtf {
+		Sequence wtf1 {
+			url="/tmp/VideoGen/wtf/Cereal.mp4"
+		}
+		Sequence wtf2 {
+			url="/tmp/VideoGen/wtf/TheStrongestMotherfuckerInTheWorld.mp4"
+		}
+		Sequence wtf3 {
+			url="/tmp/VideoGen/wtf/ThenIDontNeedAJacket.mp4"
+		}
+		Sequence wtf4 {
+			url="/tmp/VideoGen/wtf/WarmItUp.mp4"
+		}
+	}
+	Sequence haha3 {
+		url="/tmp/VideoGen/haha/haha.mp4"
+	}
+	Alternatives outro {
+		Sequence outro1 {
+			url="/tmp/VideoGen/outro/THEEVILSEEDOFWHATYOUVEDONEGERMINATESWITH.mp4"
+		}
+		Sequence outro2 {
+			url="/tmp/VideoGen/outro/Poltergeist.mp4"
+		}
+	}
+	Sequence haha4 {
+		url="/tmp/VideoGen/haha/haha.mp4"
+	}
+}
