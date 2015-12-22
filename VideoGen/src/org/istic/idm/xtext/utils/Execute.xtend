@@ -91,7 +91,7 @@ public class Execute {
 
 	def static void createThumbnails(Path fullPath, Path thumbFileName) {
 		var String cmd = '''avconv -i "«fullPath»" -r 1 -t 00:00:01 -ss 00:00:02 -f image2 "«thumbFileName»"'''
-		var ExecResult result = execCmd(cmd, 0)
+		var ExecResult result = execCmd(cmd, 1)
 		for (String line : result.getLines()) {
 			LOGGER.finest(line)
 		}
@@ -100,7 +100,7 @@ public class Execute {
 
 	def static void convert(Path fullPath, Path newFullPathName, String format) {
 		var String cmd = '''avconv -i "«fullPath»" -strict -2 -f «format» "«newFullPathName»"'''
-		var ExecResult result = execCmd(cmd, 0)
+		var ExecResult result = execCmd(cmd, 1)
 		for (String line : result.getLines()) {
 			LOGGER.finest(line)
 		}

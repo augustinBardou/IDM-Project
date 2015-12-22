@@ -119,10 +119,12 @@ public class VideoGenTransform {
     }
    
     def static Path createThumbnails(Sequence sequence){
-
+	
 		val dir = Paths.get(tmp + "/" + "thumbnails/")
 		println("Thumbnails Temporary folder: " + dir)
-		Execute.mkDirs(dir)
+		if (dir.toFile.exists) {
+			Execute.mkDirs(dir)
+		}
 		val fullPath = Paths.get(sequence.url)
 		val extention = getFileExtension(fullPath.fileName.toString)
 		val thumbFileName = Paths.get(dir + "/" + fullPath.fileName.toString.replaceAll("." + extention, ".png"))
@@ -133,6 +135,9 @@ public class VideoGenTransform {
     def static ConvertTo(VideoCodec type, VideoGen videogen){
 		
 		val dir = Paths.get(tmp + "/" + "converted" + "/" + type.name + "/")
+		if (dir.toFile.exists) {
+			Execute.mkDirs(dir)
+		}
 		println("Convertion Temporary folder: " + dir)
 		Execute.mkDirs(dir)
         allSequences(videogen).forEach[sequence |

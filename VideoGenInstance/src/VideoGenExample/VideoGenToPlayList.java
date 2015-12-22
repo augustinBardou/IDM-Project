@@ -31,7 +31,9 @@ public class VideoGenToPlayList {
 	static Path path = Paths.get("bin/playlists/").toAbsolutePath();
 	
 	private static File writeToFile(String filename, String content) {
-		Execute.mkDirs(path);
+		if (!path.toFile().exists()) {
+			Execute.mkDirs(path);
+		}
 		FileWriter writer;
 		File file = new File(path  + "/" + filename);
 		try {
