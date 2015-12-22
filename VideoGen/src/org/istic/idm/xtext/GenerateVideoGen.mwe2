@@ -6,7 +6,7 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/org/istic/idm/xtext/VideoGen.xtext"
 var fileExtensions = "vg"
-var projectName = "org.istic.idm.xtext.VideoGen"
+var projectName = "VideoGen"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
 var encoding = "UTF-8"

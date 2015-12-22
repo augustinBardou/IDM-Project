@@ -9,7 +9,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <!-- The "minimalist" skin, "minimalist.css", "functional.css" and "playful.css" are available -->
-   <link rel="stylesheet" href="skin/playful.css">
+   <link rel="stylesheet" href="%rootpath%/skin/playful.css">
 
    <!-- Minimal styling for this standalone page (can be removed) -->
    <style>
@@ -18,6 +18,8 @@
 		font-size: 14px;
 		margin: 0;
 		padding: 0;
+		background-color: black;
+		color: white;
 	}
 	#content {
 		margin: 50px auto;
@@ -26,7 +28,7 @@
    
 	#basic-playlist {
 		/* player (and playlist) background */
-		background:#333 url("skin/img/railway_station.jpg");
+		background:#333 url("%rootpath%/skin/img/railway_station.jpg");
 		-webkit-background-size:cover;
 		-moz-background-size:cover;
 		background-size:cover;
@@ -38,7 +40,7 @@
 	#basic-playlist .fp-playlist {
 		/* the playlist root element */
 		position:absolute;
-		bottom:-135px;
+		bottom:-180px;
 		left:0;
 		width:100%;
 		text-align:center;
@@ -46,14 +48,14 @@
 	#basic-playlist .fp-playlist a {
 		/* playlist entry */
 		display:inline-block;
-		width:100px;
-		height:100px;
+		width:40px;
+		height:40px;
 		margin:0 10px;
 		-webkit-transition:all .3s;
 		-moz-transition:all .3s;
 		transition:all .3s;
 		border:4px solid #fff;
-		background:url("skin/img/thumbs.jpg") -1px -1px no-repeat;
+		background:url("%rootpath%/skin/img/thumbs.jpg") -1px -1px no-repeat;
 		-webkit-border-radius:5px;
 		-moz-border-radius:5px;
 		border-radius:5px;
@@ -67,12 +69,6 @@
 	.is-paused#basic-playlist .fp-playlist a.is-active {
 		border-color:#1c87b4
 	}
-	#basic-playlist .fp-playlist .item2 {
-		background-position:-197px -1px
-	}
-	#basic-playlist .fp-playlist .item3 {
-		background-position:-393px -1px
-	}
 	#basic-playlist .fp-playlist .item4 {
 		background-position:-589px -1px
 	}
@@ -84,7 +80,7 @@
 		-webkit-transition:opacity .5s;
 		-moz-transition:opacity .5s;
 		transition:opacity .5s;
-		background:url("skin/img/buttons.png");
+		background:url("%rootpath%/skin/img/buttons.png");
 		opacity:0;
 		filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 		height:20px;
@@ -110,10 +106,10 @@
 	}
 	@media (max-width: 570px) {
 		#basic-playlist .fp-playlist {
-			bottom:-90px;}
+			bottom:0;}
 		#basic-playlist .fp-playlist a {
-			width:55px;
-			height:55px
+			width:50px;
+			height:50px
 		}
 	} 
       </style>
@@ -122,25 +118,25 @@
    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 
    <!-- Flowplayer-->
-   <script src="flowplayer.js"></script>
+   <script src="%rootpath%/flowplayer.js"></script>
 
    <script>
 flowplayer.conf = {
-  swf: "flowplayer.swf",
+  live: true,
+  swf: "%rootpath%/flowplayerhls.swf",
   // blacktrash.org, flowplayer.dev, localhost
-  key: "$234140469777507, $238892071193566, $158769847315888",
+  key: "$234140469777507, $238892071193566, $158769847315888, $173588832526605",
   debug: true,
   rtmpt: false
 };
    
 // listen to playlist events
 function log() {
-   $("#event-info").css("opacity", 1)
-      .append("<p>" + [].slice.call(arguments).join(", ") + "</p>");
+   $("#event-info").append("<p>" + [].slice.call(arguments).join(", ") + "</p>");
 }
 flowplayer(function(api, root) {
 	api.bind("load", function(e, api, video) {
-		$("#vinfo").text(api.engine.engineName + " engine playing " + video.type);
+		log(api.engine.engineName + " engine playing " + video.type);
 		log("clip " + video.index, "is_last: " + video.is_last);
 	}).bind("cuepoint", function(e, api, cuepoint) {
 		log("clip " + api.video.index, "cuepoint " + cuepoint.time);
@@ -152,23 +148,19 @@ flowplayer(function(api, root) {
 
 <body>
 <div id="content">
+   <h1>VideoGen · Flowplayer</h1>
 
-<div id="basic-playlist" class="flowplayer is-splash is-closeable" data-ratio="0.5625" data-engine="flash">
-	<video autoplay>
-		<!--source type="application/x-mpegurl" src="/home/blacknight/workspace/org.istic.idm.xtext.example/flowplayer.m3u8"-->
-		<source type="%playlistType%" src="%playlistSource%">
+<div id="basic-playlist" class="flowplayer" data-ratio="0.5625" data-setup='{"techOrder": ["flash", "html5"]}'>
+	<video autoplay data-title="Live stream" preload="metadata">
+		<source type="%playlistType%" src="blob:file://%playlistSource%">
 	</video>
 
 	<a class="fp-prev"></a>
 	<a class="fp-next"></a>
 	
-	<div class="fp-playlist">
-		%playlistElements%
-	</div>
 </div>
 
 <div id="event-info"></div>
-<p id="vinfo" class="info">&nbsp;</p>
 
 
 </div><!--/end content -->

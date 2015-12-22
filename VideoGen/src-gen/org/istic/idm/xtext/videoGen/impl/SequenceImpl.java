@@ -120,7 +120,7 @@ public class SequenceImpl extends MinimalEObjectImpl.Container implements Sequen
    * @generated
    * @ordered
    */
-  protected static final Mimetypes_Enum MIMETYPE_EDEFAULT = Mimetypes_Enum.MP4;
+  protected static final Mimetypes_Enum MIMETYPE_EDEFAULT = Mimetypes_Enum.NONE;
 
   /**
    * The cached value of the '{@link #getMimetype() <em>Mimetype</em>}' attribute.

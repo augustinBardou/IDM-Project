@@ -436,6 +436,7 @@ public class VideoGenPackageImpl extends EPackageImpl implements VideoGenPackage
 
     // Initialize enums and add enum literals
     initEEnum(mimetypes_EnumEEnum, Mimetypes_Enum.class, "Mimetypes_Enum");
+    addEEnumLiteral(mimetypes_EnumEEnum, Mimetypes_Enum.NONE);
     addEEnumLiteral(mimetypes_EnumEEnum, Mimetypes_Enum.MP4);
     addEEnumLiteral(mimetypes_EnumEEnum, Mimetypes_Enum.FLV);
     addEEnumLiteral(mimetypes_EnumEEnum, Mimetypes_Enum.MPEGTS);

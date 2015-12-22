@@ -297,69 +297,77 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	public class Mimetypes_EnumElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Mimetypes_Enum");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cMp4EnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cMp4MP4Keyword_0_0 = (Keyword)cMp4EnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cFlvEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cFlvFLVKeyword_1_0 = (Keyword)cFlvEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cMpegtsEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cMpegtsMPEGTSKeyword_2_0 = (Keyword)cMpegtsEnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cMpegEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cMpegMPEGKeyword_3_0 = (Keyword)cMpegEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cWebmEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cWebmWEBMKeyword_4_0 = (Keyword)cWebmEnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cWmvEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cWmvWMVKeyword_5_0 = (Keyword)cWmvEnumLiteralDeclaration_5.eContents().get(0);
-		private final EnumLiteralDeclaration cAviEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
-		private final Keyword cAviAVIKeyword_6_0 = (Keyword)cAviEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cNoneEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cNoneNONEKeyword_0_0 = (Keyword)cNoneEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cMp4EnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cMp4MP4Keyword_1_0 = (Keyword)cMp4EnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cFlvEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cFlvFLVKeyword_2_0 = (Keyword)cFlvEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cMpegtsEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cMpegtsMPEGTSKeyword_3_0 = (Keyword)cMpegtsEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cMpegEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cMpegMPEGKeyword_4_0 = (Keyword)cMpegEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cWebmEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cWebmWEBMKeyword_5_0 = (Keyword)cWebmEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cWmvEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cWmvWMVKeyword_6_0 = (Keyword)cWmvEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cAviEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cAviAVIKeyword_7_0 = (Keyword)cAviEnumLiteralDeclaration_7.eContents().get(0);
 		
 		//enum Mimetypes_Enum:
-		//	mp4="MP4" | flv="FLV" | mpegts="MPEGTS" | mpeg="MPEG" | webm="WEBM" | wmv="WMV" | avi="AVI";
+		//	none="NONE" | mp4="MP4" | flv="FLV" | mpegts="MPEGTS" | mpeg="MPEG" | webm="WEBM" | wmv="WMV" | avi="AVI";
 		public EnumRule getRule() { return rule; }
 
-		//mp4="MP4" | flv="FLV" | mpegts="MPEGTS" | mpeg="MPEG" | webm="WEBM" | wmv="WMV" | avi="AVI"
+		//none="NONE" | mp4="MP4" | flv="FLV" | mpegts="MPEGTS" | mpeg="MPEG" | webm="WEBM" | wmv="WMV" | avi="AVI"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//none="NONE"
+		public EnumLiteralDeclaration getNoneEnumLiteralDeclaration_0() { return cNoneEnumLiteralDeclaration_0; }
+
+		//"NONE"
+		public Keyword getNoneNONEKeyword_0_0() { return cNoneNONEKeyword_0_0; }
+
 		//mp4="MP4"
-		public EnumLiteralDeclaration getMp4EnumLiteralDeclaration_0() { return cMp4EnumLiteralDeclaration_0; }
+		public EnumLiteralDeclaration getMp4EnumLiteralDeclaration_1() { return cMp4EnumLiteralDeclaration_1; }
 
 		//"MP4"
-		public Keyword getMp4MP4Keyword_0_0() { return cMp4MP4Keyword_0_0; }
+		public Keyword getMp4MP4Keyword_1_0() { return cMp4MP4Keyword_1_0; }
 
 		//flv="FLV"
-		public EnumLiteralDeclaration getFlvEnumLiteralDeclaration_1() { return cFlvEnumLiteralDeclaration_1; }
+		public EnumLiteralDeclaration getFlvEnumLiteralDeclaration_2() { return cFlvEnumLiteralDeclaration_2; }
 
 		//"FLV"
-		public Keyword getFlvFLVKeyword_1_0() { return cFlvFLVKeyword_1_0; }
+		public Keyword getFlvFLVKeyword_2_0() { return cFlvFLVKeyword_2_0; }
 
 		//mpegts="MPEGTS"
-		public EnumLiteralDeclaration getMpegtsEnumLiteralDeclaration_2() { return cMpegtsEnumLiteralDeclaration_2; }
+		public EnumLiteralDeclaration getMpegtsEnumLiteralDeclaration_3() { return cMpegtsEnumLiteralDeclaration_3; }
 
 		//"MPEGTS"
-		public Keyword getMpegtsMPEGTSKeyword_2_0() { return cMpegtsMPEGTSKeyword_2_0; }
+		public Keyword getMpegtsMPEGTSKeyword_3_0() { return cMpegtsMPEGTSKeyword_3_0; }
 
 		//mpeg="MPEG"
-		public EnumLiteralDeclaration getMpegEnumLiteralDeclaration_3() { return cMpegEnumLiteralDeclaration_3; }
+		public EnumLiteralDeclaration getMpegEnumLiteralDeclaration_4() { return cMpegEnumLiteralDeclaration_4; }
 
 		//"MPEG"
-		public Keyword getMpegMPEGKeyword_3_0() { return cMpegMPEGKeyword_3_0; }
+		public Keyword getMpegMPEGKeyword_4_0() { return cMpegMPEGKeyword_4_0; }
 
 		//webm="WEBM"
-		public EnumLiteralDeclaration getWebmEnumLiteralDeclaration_4() { return cWebmEnumLiteralDeclaration_4; }
+		public EnumLiteralDeclaration getWebmEnumLiteralDeclaration_5() { return cWebmEnumLiteralDeclaration_5; }
 
 		//"WEBM"
-		public Keyword getWebmWEBMKeyword_4_0() { return cWebmWEBMKeyword_4_0; }
+		public Keyword getWebmWEBMKeyword_5_0() { return cWebmWEBMKeyword_5_0; }
 
 		//wmv="WMV"
-		public EnumLiteralDeclaration getWmvEnumLiteralDeclaration_5() { return cWmvEnumLiteralDeclaration_5; }
+		public EnumLiteralDeclaration getWmvEnumLiteralDeclaration_6() { return cWmvEnumLiteralDeclaration_6; }
 
 		//"WMV"
-		public Keyword getWmvWMVKeyword_5_0() { return cWmvWMVKeyword_5_0; }
+		public Keyword getWmvWMVKeyword_6_0() { return cWmvWMVKeyword_6_0; }
 
 		//avi="AVI"
-		public EnumLiteralDeclaration getAviEnumLiteralDeclaration_6() { return cAviEnumLiteralDeclaration_6; }
+		public EnumLiteralDeclaration getAviEnumLiteralDeclaration_7() { return cAviEnumLiteralDeclaration_7; }
 
 		//"AVI"
-		public Keyword getAviAVIKeyword_6_0() { return cAviAVIKeyword_6_0; }
+		public Keyword getAviAVIKeyword_7_0() { return cAviAVIKeyword_7_0; }
 	}
 	
 	private final VideoGenElements pVideoGen;
@@ -481,7 +489,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum Mimetypes_Enum:
-	//	mp4="MP4" | flv="FLV" | mpegts="MPEGTS" | mpeg="MPEG" | webm="WEBM" | wmv="WMV" | avi="AVI";
+	//	none="NONE" | mp4="MP4" | flv="FLV" | mpegts="MPEGTS" | mpeg="MPEG" | webm="WEBM" | wmv="WMV" | avi="AVI";
 	public Mimetypes_EnumElements getMimetypes_EnumAccess() {
 		return unknownRuleMimetypes_Enum;
 	}

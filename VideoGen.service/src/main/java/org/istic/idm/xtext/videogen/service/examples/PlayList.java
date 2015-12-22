@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import org.istic.idm.ecore.PlayList.impl.PlayListImpl;
 import org.istic.idm.ecore.PlayList.util.PlayListTransform;
 import org.istic.idm.xtext.VideoGenStandaloneSetup;
-import org.istic.idm.xtext.utils.Execute;
+import org.istic.idm.xtext.utils.VideoGenHelper;
 import org.istic.idm.xtext.videoGen.VideoGen;
 
 import org.istic.idm.xtext.utils.VideoGenTransform;
@@ -23,9 +23,9 @@ public class PlayList {
 	static String filename = Paths.get(FlowPlayer.class.getResource("/test.vg").getPath()).toAbsolutePath().toString();
 	static Path path = Paths.get("generated/playlists-" + LocalDateTime.now() + "/").toAbsolutePath();
 	
-	private static File writeToFile(String filename, String content) {
+	public static File writeToFile(String filename, String content) {
 		if (!path.toFile().exists()) {
-			Execute.mkDirs(path);
+			VideoGenHelper.mkDirs(path);
 		}
 		FileWriter writer;
 		File file = new File(path  + "/" + filename);
@@ -49,7 +49,7 @@ public class PlayList {
 
 		// Only transformation
 		videoGen = VideoGenStandaloneSetup.loadVideoGen(filename);
-		//VideoGenTransform.addMetadata(videoGen);
+		VideoGenTransform.addMetadata(videoGen);
 		playlist = VideoGenTransform.toPlayList(videoGen, false);
 		writeToFile("test.m3u", PlayListTransform.toM3U(playlist));
 		writeToFile("test-extended.m3u", PlayListTransform.toM3U(playlist, true, true));

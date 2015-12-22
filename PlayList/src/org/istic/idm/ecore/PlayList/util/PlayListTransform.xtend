@@ -3,6 +3,9 @@ package org.istic.idm.ecore.PlayList.util
 import java.io.FileWriter
 import java.nio.file.Path
 import org.istic.idm.ecore.PlayList.PlayList
+import java.util.Map
+import java.util.HashMap
+import com.google.common.collect.Lists
 
 class PlayListTransform{
   
@@ -31,17 +34,28 @@ class PlayListTransform{
     }
     
     def static toM3U(PlayList playlist){
-    	return toM3U(playlist, false, false)
+    	return toM3U(playlist, false, false, new HashMap)
     }
 
     def static toM3U(PlayList playlist, Boolean extended){
-    	return toM3U(playlist, extended, false)
+    	return toM3U(playlist, extended, false, new HashMap)
     }
 
     def static toM3U(PlayList playlist, Boolean extended, Boolean discontinued){
+    	return toM3U(playlist, extended, false, new HashMap)
+    }
+
+    def static toM3U(PlayList playlist, Boolean extended, Boolean discontinued, Map<String, String> options){
     	val content = new StringBuffer
         if (extended) {
         	content.append("#EXTM3U" + "\n")
+			content.append("#EXT-X-VERSION:3" + "\n")
+			content.append("#EXT-X-MEDIA-SEQUENCE:44850" + "\n")
+		}
+		if (!options.empty) {
+			val list = Lists.newArrayList
+			options.forEach[key, value| list.add(key + "=" + value)]
+			content.append("#EXT-X-STREAM-INF:" + list.join(",") + "\n")
 		}
         playlist.video.forEach[video | 
 			if (extended) {

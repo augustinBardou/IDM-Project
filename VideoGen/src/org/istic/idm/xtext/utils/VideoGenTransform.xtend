@@ -40,8 +40,12 @@ public class VideoGenTransform {
    
    	def private static transferData(Video p_video, Sequence videoseq) {
 		p_video.duration = videoseq.length
-		p_video.path = videoseq.url   
-		p_video.description = videoseq.description 
+		p_video.path = videoseq.url
+		if (videoseq.description == null) {
+			p_video.description = ""
+		} else {
+			p_video.description = videoseq.description
+		}
 		p_video.mimetype = videoseq.mimetype.getName
    	}
    
@@ -123,12 +127,12 @@ public class VideoGenTransform {
 		val dir = Paths.get(tmp + "/" + "thumbnails/")
 		println("Thumbnails Temporary folder: " + dir)
 		if (dir.toFile.exists) {
-			Execute.mkDirs(dir)
+			VideoGenHelper.mkDirs(dir)
 		}
 		val fullPath = Paths.get(sequence.url)
 		val extention = getFileExtension(fullPath.fileName.toString)
 		val thumbFileName = Paths.get(dir + "/" + fullPath.fileName.toString.replaceAll("." + extention, ".png"))
-		Execute.createThumbnails(fullPath, thumbFileName)
+		VideoGenHelper.createThumbnails(fullPath, thumbFileName)
 		thumbFileName
     }
     
@@ -136,16 +140,16 @@ public class VideoGenTransform {
 		
 		val dir = Paths.get(tmp + "/" + "converted" + "/" + type.name + "/")
 		if (dir.toFile.exists) {
-			Execute.mkDirs(dir)
+			VideoGenHelper.mkDirs(dir)
 		}
 		println("Convertion Temporary folder: " + dir)
-		Execute.mkDirs(dir)
+		VideoGenHelper.mkDirs(dir)
         allSequences(videogen).forEach[sequence |
 			
 			val fullPath = Paths.get(sequence.url)
 			val extention = getFileExtension(fullPath.fileName.toString)
 			val newFullPathName = Paths.get(dir + "/" + fullPath.fileName.toString.replaceAll("." + extention, "." + type.extention))
-			Execute.convert(fullPath, newFullPathName, type.format)
+			VideoGenHelper.convert(fullPath, newFullPathName, type.format)
 			sequence.url = newFullPathName.toAbsolutePath.toString
 			sequence.mimetype = Mimetypes_Enum.getByName(type.name)
         ]
@@ -154,13 +158,9 @@ public class VideoGenTransform {
     def static addMetadata(VideoGen videogen){
         
         allSequences(videogen).forEach[sequence |
-
-			val IContainer container = IContainer.make()
-			if (container.open(new File(sequence.url).absolutePath, IContainer.Type.READ, null) <0) {
-				   throw new RuntimeException("failed to open");
-			}
-			sequence.length = (container.duration / 1000000) as int;
-			//sequence.mimetype = Mimetypes_Enum.getByName(container.format.outputFormatMimeType)
+        	val url = Paths.get(sequence.url)
+			sequence.length = VideoGenHelper.getDuration(url)
+			sequence.mimetype = VideoGenHelper.getMimeType(url)
         ]
         videogen
     }

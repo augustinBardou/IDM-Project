@@ -39,6 +39,7 @@ Sequence:
 ;
 
 enum Mimetypes_Enum:
+	none='NONE' |
 	mp4='MP4' |
 	flv='FLV' |
 	mpegts='MPEGTS' |

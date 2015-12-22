@@ -36,29 +36,20 @@ class VideoGenTest {
 	def test1() {
 		
 		// loading
-		var videoGen = loadVideoGen(URI.createURI(Paths.get("test.vg").toAbsolutePath.toString))
+		var videoGen = loadVideoGen(URI.createURI(Paths.get("resources/test.vg").toAbsolutePath.toString))
 		assertNotNull(videoGen)
 		saveVideoGen(URI.createURI("test.xmi"), videoGen)
 		var indice = 0
 		for (Statement statement: videoGen.statements) {
 			if (statement instanceof Mandatory) {
 				assertNotNull(statement.sequence)
-				assertEquals(String, statement.sequence.name.class)
-				assertEquals(String, statement.sequence.url.class)
-				assertEquals(Integer, statement.sequence.length.class)
-				assertEquals(String, statement.sequence.description.class)
 				// MODEL MANAGEMENT (ANALYSIS, TRANSFORMATION)
 				statement.sequence.name = "MandatorySequence_" + indice
 			}
 			if (statement instanceof Optional) {
 				assertNotNull(statement.sequence)
-				assertEquals(String, statement.sequence.name.class)
-				assertEquals(String, statement.sequence.url.class)
-				assertEquals(Integer, statement.sequence.length.class)
 				assertTrue(100 >= statement.probability)
 				assertTrue(0 <= statement.probability)
-				assertEquals(Integer, statement.probability.class)
-				assertEquals(String, statement.sequence.description.class)
 				// MODEL MANAGEMENT (ANALYSIS, TRANSFORMATION)
 				statement.sequence.name = "OptionalSequence_" + indice
 			}
@@ -67,13 +58,8 @@ class VideoGenTest {
 				assertNotEquals(0, statement.options.size)
 				var totalProb = 0
 				for (optional: statement.options) {
-					assertEquals(String, optional.sequence.name.class)
-					assertEquals(String, optional.sequence.url.class)
-					assertEquals(Integer, optional.sequence.length.class)
 					assertTrue(100 >= optional.probability)
 					assertTrue(0 <= optional.probability)
-					assertEquals(Integer, optional.probability.class)
-					assertEquals(String, optional.sequence.description.class)
 					totalProb += optional.probability
 				}
 				//assertEquals(100, totalProb)

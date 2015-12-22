@@ -20,6 +20,16 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum Mimetypes_Enum implements Enumerator
 {
   /**
+   * The '<em><b>None</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #NONE_VALUE
+   * @generated
+   * @ordered
+   */
+  NONE(0, "none", "NONE"),
+
+  /**
    * The '<em><b>Mp4</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -27,7 +37,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  MP4(0, "mp4", "MP4"),
+  MP4(1, "mp4", "MP4"),
 
   /**
    * The '<em><b>Flv</b></em>' literal object.
@@ -37,7 +47,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  FLV(1, "flv", "FLV"),
+  FLV(2, "flv", "FLV"),
 
   /**
    * The '<em><b>Mpegts</b></em>' literal object.
@@ -47,7 +57,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  MPEGTS(2, "mpegts", "MPEGTS"),
+  MPEGTS(3, "mpegts", "MPEGTS"),
 
   /**
    * The '<em><b>Mpeg</b></em>' literal object.
@@ -57,7 +67,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  MPEG(3, "mpeg", "MPEG"),
+  MPEG(4, "mpeg", "MPEG"),
 
   /**
    * The '<em><b>Webm</b></em>' literal object.
@@ -67,7 +77,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  WEBM(4, "webm", "WEBM"),
+  WEBM(5, "webm", "WEBM"),
 
   /**
    * The '<em><b>Wmv</b></em>' literal object.
@@ -77,7 +87,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  WMV(5, "wmv", "WMV"),
+  WMV(6, "wmv", "WMV"),
 
   /**
    * The '<em><b>Avi</b></em>' literal object.
@@ -87,7 +97,22 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  AVI(6, "avi", "AVI");
+  AVI(7, "avi", "AVI");
+
+  /**
+   * The '<em><b>None</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>None</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #NONE
+   * @model name="none" literal="NONE"
+   * @generated
+   * @ordered
+   */
+  public static final int NONE_VALUE = 0;
 
   /**
    * The '<em><b>Mp4</b></em>' literal value.
@@ -102,7 +127,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int MP4_VALUE = 0;
+  public static final int MP4_VALUE = 1;
 
   /**
    * The '<em><b>Flv</b></em>' literal value.
@@ -117,7 +142,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int FLV_VALUE = 1;
+  public static final int FLV_VALUE = 2;
 
   /**
    * The '<em><b>Mpegts</b></em>' literal value.
@@ -132,7 +157,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int MPEGTS_VALUE = 2;
+  public static final int MPEGTS_VALUE = 3;
 
   /**
    * The '<em><b>Mpeg</b></em>' literal value.
@@ -147,7 +172,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int MPEG_VALUE = 3;
+  public static final int MPEG_VALUE = 4;
 
   /**
    * The '<em><b>Webm</b></em>' literal value.
@@ -162,7 +187,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int WEBM_VALUE = 4;
+  public static final int WEBM_VALUE = 5;
 
   /**
    * The '<em><b>Wmv</b></em>' literal value.
@@ -177,7 +202,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int WMV_VALUE = 5;
+  public static final int WMV_VALUE = 6;
 
   /**
    * The '<em><b>Avi</b></em>' literal value.
@@ -192,7 +217,7 @@ public enum Mimetypes_Enum implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int AVI_VALUE = 6;
+  public static final int AVI_VALUE = 7;
 
   /**
    * An array of all the '<em><b>Mimetypes Enum</b></em>' enumerators.
@@ -203,6 +228,7 @@ public enum Mimetypes_Enum implements Enumerator
   private static final Mimetypes_Enum[] VALUES_ARRAY =
     new Mimetypes_Enum[]
     {
+      NONE,
       MP4,
       FLV,
       MPEGTS,
@@ -274,6 +300,7 @@ public enum Mimetypes_Enum implements Enumerator
   {
     switch (value)
     {
+      case NONE_VALUE: return NONE;
       case MP4_VALUE: return MP4;
       case FLV_VALUE: return FLV;
       case MPEGTS_VALUE: return MPEGTS;

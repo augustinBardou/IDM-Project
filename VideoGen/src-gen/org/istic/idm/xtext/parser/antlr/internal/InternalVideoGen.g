@@ -542,46 +542,52 @@ ruleSequence returns [EObject current=null]
 ruleMimetypes_Enum returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
-((	enumLiteral_0='MP4' 
+((	enumLiteral_0='NONE' 
 	{
-        $current = grammarAccess.getMimetypes_EnumAccess().getMp4EnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getMimetypes_EnumAccess().getMp4EnumLiteralDeclaration_0()); 
+        $current = grammarAccess.getMimetypes_EnumAccess().getNoneEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getMimetypes_EnumAccess().getNoneEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='FLV' 
+    |(	enumLiteral_1='MP4' 
 	{
-        $current = grammarAccess.getMimetypes_EnumAccess().getFlvEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getMimetypes_EnumAccess().getFlvEnumLiteralDeclaration_1()); 
+        $current = grammarAccess.getMimetypes_EnumAccess().getMp4EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getMimetypes_EnumAccess().getMp4EnumLiteralDeclaration_1()); 
     }
 )
-    |(	enumLiteral_2='MPEGTS' 
+    |(	enumLiteral_2='FLV' 
 	{
-        $current = grammarAccess.getMimetypes_EnumAccess().getMpegtsEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_2, grammarAccess.getMimetypes_EnumAccess().getMpegtsEnumLiteralDeclaration_2()); 
+        $current = grammarAccess.getMimetypes_EnumAccess().getFlvEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getMimetypes_EnumAccess().getFlvEnumLiteralDeclaration_2()); 
     }
 )
-    |(	enumLiteral_3='MPEG' 
+    |(	enumLiteral_3='MPEGTS' 
 	{
-        $current = grammarAccess.getMimetypes_EnumAccess().getMpegEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_3, grammarAccess.getMimetypes_EnumAccess().getMpegEnumLiteralDeclaration_3()); 
+        $current = grammarAccess.getMimetypes_EnumAccess().getMpegtsEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getMimetypes_EnumAccess().getMpegtsEnumLiteralDeclaration_3()); 
     }
 )
-    |(	enumLiteral_4='WEBM' 
+    |(	enumLiteral_4='MPEG' 
 	{
-        $current = grammarAccess.getMimetypes_EnumAccess().getWebmEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_4, grammarAccess.getMimetypes_EnumAccess().getWebmEnumLiteralDeclaration_4()); 
+        $current = grammarAccess.getMimetypes_EnumAccess().getMpegEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_4, grammarAccess.getMimetypes_EnumAccess().getMpegEnumLiteralDeclaration_4()); 
     }
 )
-    |(	enumLiteral_5='WMV' 
+    |(	enumLiteral_5='WEBM' 
 	{
-        $current = grammarAccess.getMimetypes_EnumAccess().getWmvEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_5, grammarAccess.getMimetypes_EnumAccess().getWmvEnumLiteralDeclaration_5()); 
+        $current = grammarAccess.getMimetypes_EnumAccess().getWebmEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_5, grammarAccess.getMimetypes_EnumAccess().getWebmEnumLiteralDeclaration_5()); 
     }
 )
-    |(	enumLiteral_6='AVI' 
+    |(	enumLiteral_6='WMV' 
 	{
-        $current = grammarAccess.getMimetypes_EnumAccess().getAviEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_6, grammarAccess.getMimetypes_EnumAccess().getAviEnumLiteralDeclaration_6()); 
+        $current = grammarAccess.getMimetypes_EnumAccess().getWmvEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_6, grammarAccess.getMimetypes_EnumAccess().getWmvEnumLiteralDeclaration_6()); 
+    }
+)
+    |(	enumLiteral_7='AVI' 
+	{
+        $current = grammarAccess.getMimetypes_EnumAccess().getAviEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_7, grammarAccess.getMimetypes_EnumAccess().getAviEnumLiteralDeclaration_7()); 
     }
 ));
 

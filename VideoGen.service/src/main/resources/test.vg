@@ -15,10 +15,10 @@ VideoGen {
 	Alternatives cats {
 		@Probability(55)
 		Sequence cat1 {
-			url="/tmp/VideoGen/intro/Acrostatics.mp4"
+			url="/tmp/VideoGen/cats/Acroscatics.mp4"
 		}
 		Sequence cat2 {
-			url="/tmp/VideoGen/intro/CatJumpFail.mp4"
+			url="/tmp/VideoGen/cats/CatJumpFail.mp4"
 		}
 	}
 	@Optional
@@ -37,7 +37,7 @@ VideoGen {
 			url="/tmp/VideoGen/wtf/TheStrongestMotherfuckerInTheWorld.mp4"
 		}
 		Sequence wtf3 {
-			url="/tmp/VideoGen/wtf/ThenIDontNeedAJacket.mp4"
+			url="/tmp/VideoGen/wtf/ThenIdontNeedAJacket.mp4"
 		}
 		Sequence wtf4 {
 			url="/tmp/VideoGen/wtf/WarmItUp.mp4"
