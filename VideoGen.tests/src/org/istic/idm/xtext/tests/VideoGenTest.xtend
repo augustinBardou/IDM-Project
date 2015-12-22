@@ -15,6 +15,7 @@ import org.istic.idm.xtext.videoGen.Alternatives
 import org.junit.Test
 import org.istic.idm.xtext.videoGen.Mandatory
 import org.istic.idm.xtext.utils.VideoGenTransform
+import java.nio.file.Paths
 
 class VideoGenTest {
 
@@ -35,7 +36,7 @@ class VideoGenTest {
 	def test1() {
 		
 		// loading
-		var videoGen = loadVideoGen(URI.createURI("test.vg"))
+		var videoGen = loadVideoGen(URI.createURI(Paths.get("test.vg").toAbsolutePath.toString))
 		assertNotNull(videoGen)
 		saveVideoGen(URI.createURI("test.xmi"), videoGen)
 		var indice = 0

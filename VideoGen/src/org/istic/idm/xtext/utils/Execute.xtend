@@ -5,11 +5,11 @@ import java.nio.file.Path
 import java.util.LinkedList
 import java.util.List
 import java.util.logging.Level
+import org.apache.commons.exec.LogOutputStream
 import org.apache.commons.exec.CommandLine
 import org.apache.commons.exec.DefaultExecutor
-import org.apache.commons.exec.ExecuteException
-import org.apache.commons.exec.LogOutputStream
 import org.apache.commons.exec.PumpStreamHandler
+import org.apache.commons.exec.ExecuteException
 
 /** 
  * Execute helper using apache commons exed

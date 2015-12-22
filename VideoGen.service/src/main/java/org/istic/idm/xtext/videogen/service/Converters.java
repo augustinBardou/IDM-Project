@@ -1,4 +1,4 @@
-package org.istic.idm.xtext.VideoGen.service;
+package org.istic.idm.xtext.videogen.service;
 
 import org.istic.idm.ecore.PlayList.PlayList;
 import org.istic.idm.xtext.utils.VideoGenTransform;

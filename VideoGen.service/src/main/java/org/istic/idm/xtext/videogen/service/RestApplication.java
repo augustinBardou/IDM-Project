@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.istic.idm.xtext.VideoGen.service;
+package org.istic.idm.xtext.videogen.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
