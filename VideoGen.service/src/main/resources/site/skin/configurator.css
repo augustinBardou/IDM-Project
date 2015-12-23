@@ -1,0 +1,57 @@
+#configurator .sequence {
+	font-size: medium;	
+	border-style: solid;
+	border-width: medium;
+	color: black;
+	margin-top: 20px;
+	padding:10px;
+	border-radius: 10px;
+ 	width: auto;
+ 	display: block;
+	width : auto;
+	height: 140px;
+}
+#configurator .sequence .floatTitle {
+	float: right;
+	font-size: small;
+	font-weight: bold;
+}
+
+#configurator .sequence .description {
+	font-size: small;
+	font-stretch: condensed;
+	height: 35px;
+	overflow: hidden;
+}
+
+#configurator .sequence img {
+	width: 80px;
+	height: 80px;
+	padding: 5px;
+	max-width: 100%;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#configurator .mandatory {
+	background-color: #FFE2E2;
+	border-color: red;
+}
+
+#configurator .optional {
+	background-color: #FFF4E2;
+	border-color: orange;
+}
+
+#configurator .alternatives {
+	background-color: #E2FFEB;
+	border-color: green;
+}
+
+#configurator .alternatives .option {
+	float: left;
+	width : 100px;
+	height: 100px;
+	padding-right: 20px
+}

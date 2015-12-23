@@ -1,10 +1,10 @@
 package org.istic.idm.xtext.utils
 
-import com.xuggle.xuggler.IContainer
-import java.io.File
+import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.ArrayList
 import java.util.List
+import org.istic.idm.ecore.PlayList.PlayList
 import org.istic.idm.ecore.PlayList.Video
 import org.istic.idm.ecore.PlayList.impl.PlayListFactoryImpl
 import org.istic.idm.ecore.PlayList.impl.PlayListImpl
@@ -18,8 +18,7 @@ import org.istic.idm.xtext.videoGen.VideoGen
 import org.istic.idm.xtext.videoGen.VideoGenFactory
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
-import org.istic.idm.ecore.PlayList.PlayList
-import java.nio.file.Path
+import java.util.HashMap
 
 public class VideoGenTransform {
   
@@ -197,28 +196,39 @@ public class VideoGenTransform {
     
     
     def static toConfigurator(VideoGen videogen){
-	   '''<div class="videogen">
-	<button class="generate">Generate</button>
-	«FOR statement: videogen.statements»
-		<div class="videoseq">
-		«IF statement instanceof Alternatives»
-			«FOR option: statement.options»
-				<div>«option.sequence.name» - «option.sequence.description»</div>
-				<button type="radio">Activate ?</div>
-		   «ENDFOR»
-		«ENDIF»
-		«IF statement instanceof Mandatory»
-			<div>«statement.sequence.name» - «statement.sequence.description»</div>
-		«ENDIF»
-		«IF statement instanceof Optional»
-			<div>«statement.sequence.name» - «statement.sequence.description»</div>
-			«IF statement.probability == 0»
-				<button type="radio">Activate ?</div>
+    	val thumbnails = new HashMap
+    	for (sequence: videogen.allSequences) {
+    		thumbnails.put(sequence.name, createThumbnails(sequence))
+    	}
+	    '''<div id="configurator">
+	    «FOR statement: videogen.statements»
+			«IF statement instanceof Alternatives»
+	    		<div class="sequence alternatives" id="«statement.name»">
+	    		<div class="floatTitle">Alternative</div>
+				«FOR option: statement.options»
+					<div class="option">
+						<div class="description">«option.sequence.description»</div>
+						<a href=""><img src="«thumbnails.get(option.sequence.name)»"/></a>
+					</div>
+				«ENDFOR»
+				</div>
 			«ENDIF»
-		«ENDIF»
-		</div>
-	«ENDFOR»
-</div>''' 
-    }
+			«IF statement instanceof Mandatory»
+				<div id="«statement.sequence.name»" class="sequence mandatory">
+					<div class="floatTitle">Mandatory</div>
+					<div class="description">«statement.sequence.description»</div>
+					<img src="«thumbnails.get(statement.sequence.name)»"/>
+				</div>
+			«ENDIF»
+			«IF statement instanceof Optional»
+				<div id="«statement.sequence.name»" class="sequence optional">
+					<div class="floatTitle">Optional</div>
+					<div class="description">«statement.sequence.description»</div>
+					<img src="«thumbnails.get(statement.sequence.name)»"/>
+				</div>
+			«ENDIF»
+		«ENDFOR»
+		</div>'''
+	}
     
 }

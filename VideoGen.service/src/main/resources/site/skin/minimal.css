@@ -1,0 +1,21 @@
+body {
+	font-family: "myriad pro", tahoma, verdana, arial, sans-serif;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	color: white;
+}
+#content {
+	margin: 50px auto;
+	max-width: 600px;
+}
+
+#basic-playlist {
+	/* player (and playlist) background */
+	background:#333 url("%rootpath%/skin/img/railway_station.jpg");
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	background-size:cover;
+	margin-bottom:50px;
+}

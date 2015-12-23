@@ -10,109 +10,8 @@
 
    <!-- The "minimalist" skin, "minimalist.css", "functional.css" and "playful.css" are available -->
    <link rel="stylesheet" href="%rootpath%/skin/playful.css">
-
-   <!-- Minimal styling for this standalone page (can be removed) -->
-   <style>
-	body {
-		font-family: "myriad pro", tahoma, verdana, arial, sans-serif;
-		font-size: 14px;
-		margin: 0;
-		padding: 0;
-		background-color: black;
-		color: white;
-	}
-	#content {
-		margin: 50px auto;
-		max-width: 982px;
-	}
-   
-	#basic-playlist {
-		/* player (and playlist) background */
-		background:#333 url("%rootpath%/skin/img/railway_station.jpg");
-		-webkit-background-size:cover;
-		-moz-background-size:cover;
-		background-size:cover;
-		margin-bottom:150px;
-	}
-	#basic-playlist.is-splash .fp-prev,#basic-playlist.is-splash .fp-next {
-		display:none
-	}
-	#basic-playlist .fp-playlist {
-		/* the playlist root element */
-		position:absolute;
-		bottom:-180px;
-		left:0;
-		width:100%;
-		text-align:center;
-	}
-	#basic-playlist .fp-playlist a {
-		/* playlist entry */
-		display:inline-block;
-		width:40px;
-		height:40px;
-		margin:0 10px;
-		-webkit-transition:all .3s;
-		-moz-transition:all .3s;
-		transition:all .3s;
-		border:4px solid #fff;
-		background:url("%rootpath%/skin/img/thumbs.jpg") -1px -1px no-repeat;
-		-webkit-border-radius:5px;
-		-moz-border-radius:5px;
-		border-radius:5px;
-	}
-	#basic-playlist .fp-playlist a:hover {
-		border-color:#ccc
-	}
-	#basic-playlist .fp-playlist a.is-active {
-		border-color:#52b9e4;
-	}
-	.is-paused#basic-playlist .fp-playlist a.is-active {
-		border-color:#1c87b4
-	}
-	#basic-playlist .fp-playlist .item4 {
-		background-position:-589px -1px
-	}
-	#basic-playlist .fp-prev,#basic-playlist .fp-next {
-		/* next and prev buttons */
-		position:absolute;
-		top:44%;
-		cursor:pointer;
-		-webkit-transition:opacity .5s;
-		-moz-transition:opacity .5s;
-		transition:opacity .5s;
-		background:url("%rootpath%/skin/img/buttons.png");
-		opacity:0;
-		filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-		height:20px;
-		width:12px;
-	}
-	.is-mouseover#basic-playlist .fp-prev,.is-mouseover#basic-playlist .fp-next {
-		opacity:1;
-		filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100)
-	}
-	#basic-playlist .fp-prev {
-		left:-20px;
-		background-position:0 -200px;
-	}
-	#basic-playlist .fp-prev:hover {
-		background-position:0 -300px
-	}
-	#basic-playlist .fp-next {
-		right:-20px;
-		background-position:0 -400px;
-	}
-	#basic-playlist .fp-next:hover {
-		background-position:0 -500px
-	}
-	@media (max-width: 570px) {
-		#basic-playlist .fp-playlist {
-			bottom:0;}
-		#basic-playlist .fp-playlist a {
-			width:50px;
-			height:50px
-		}
-	} 
-      </style>
+   <link rel="stylesheet" href="%rootpath%/skin/minimal.css">
+   <link rel="stylesheet" href="%rootpath%/skin/configurator.css">
 
    <!-- Flowplayer depends on jquery -->
    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -155,10 +54,9 @@ flowplayer(function(api, root) {
 		<source type="%playlistType%" src="blob:file://%playlistSource%">
 	</video>
 
-	<a class="fp-prev"></a>
-	<a class="fp-next"></a>
-	
 </div>
+
+%configurator%
 
 <div id="event-info"></div>
 
