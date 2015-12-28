@@ -123,11 +123,14 @@ public class VideoGenHelper {
 		for (String line : result.getLines()) {
 			LOGGER.finest(line)
 		}
-		var tmpResult = result.lines.filter[contains("'" + fullPath + "'")].get(0).split(" ").get(2).split(",")
+		val durationPattern = result.lines.filter[contains("'" + fullPath + "'")]
 		var mimeType = Mimetypes_Enum.NONE
-		for (mt: tmpResult) {
-			if (Mimetypes_Enum.values.map[mte | mte.getName()].contains(mt)) {
-				mimeType = Mimetypes_Enum.getByName(mt)
+		if (durationPattern.size > 0) {
+			var tmpResult = durationPattern.get(0).split(" ").get(2).split(",")
+			for (mt: tmpResult) {
+				if (Mimetypes_Enum.values.map[mte | mte.getName()].contains(mt)) {
+					mimeType = Mimetypes_Enum.getByName(mt)
+				}
 			}
 		}
 		mimeType
@@ -140,9 +143,14 @@ public class VideoGenHelper {
 		for (String line : result.getLines()) {
 			LOGGER.finest(line)
 		}
-		var tmpResult = result.lines.filter[contains("Duration")].get(0).split(" ").get(3).replace(',', '')
-		val repr = LocalTime.parse(tmpResult)
-		repr.minute * 60 + repr.second
+		val durationPattern = result.lines.filter[contains("Duration")]
+		var duration = 0
+		if (durationPattern.size > 0) {
+			var tmpResult = durationPattern.get(0).split(" ").get(3).replace(',', '')
+			val repr = LocalTime.parse(tmpResult)
+			duration = repr.minute * 60 + repr.second
+		}
+		duration	
 	}
 	
 	def static void mkDirs(Path path) {
