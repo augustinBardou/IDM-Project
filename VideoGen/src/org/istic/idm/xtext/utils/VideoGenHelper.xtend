@@ -108,7 +108,7 @@ public class VideoGenHelper {
 	}
 
 	def static void convert(Path fullPath, Path newFullPathName, String format) {
-		var cmd = '''avconv -i "«fullPath»" -strict -2 -f «format» "«newFullPathName»"'''
+		var cmd = '''avconv -i "«fullPath»" -strict -2 -vcodec h264 -acodec aac -f «format» "«newFullPathName»"'''
 		var ExecResult result = execCmd(cmd, 1)
 		for (String line : result.getLines()) {
 			LOGGER.finest(line)
