@@ -73,7 +73,8 @@ public class FlowPlayer {
 				}
 				if (line.contains(playListElementsTPL)) {
 					StringBuffer subcontent = new StringBuffer();
-					subcontent.append("<div class=\"fp-playlist\">");
+					subcontent.append("<a class=\"fp-prev\"></a><a class=\"fp-next\"></a>" +
+							"<div class=\"fp-playlist\">");
 					for (Video video : playlist.getVideo()) {
 						subcontent.append("<a href=\"blob:file://" + video.getPath() + "\" style=\"background-image:url(" + video.getThumbnail() + ")\"></a>");
 					}

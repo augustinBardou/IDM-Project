@@ -114,9 +114,7 @@ public class VideoGenTransform {
 	
 		val dir = Paths.get(tmp + "/" + "thumbnails/")
 		println("Thumbnails Temporary folder: " + dir)
-		if (dir.toFile.exists) {
-			VideoGenHelper.mkDirs(dir)
-		}
+		VideoGenHelper.mkDirs(dir)
 		val fullPath = Paths.get(sequence.url)
 		val extention = getFileExtension(fullPath.fileName.toString)
 		val thumbFileName = Paths.get(dir + "/" + fullPath.fileName.toString.replaceAll("." + extention, ".png"))
@@ -215,7 +213,7 @@ public class VideoGenTransform {
 		<div id="«statement.sequence.name»" class="sequence optional">
 			<div class="floatTitle">Optional</div>
 			<div class="description">«statement.sequence.description»</div>
-			<a href=""><img src="«thumbnails.get(statement.sequence.name)»"/>
+			<a href=""><img src="«thumbnails.get(statement.sequence.name)»"/></a>
 		</div>
 	«ENDIF»
 «ENDFOR»

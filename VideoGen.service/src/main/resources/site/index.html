@@ -9,24 +9,26 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <!-- The "minimalist" skin, "minimalist.css", "functional.css" and "playful.css" are available -->
-   <link rel="stylesheet" href="%rootpath%/skin/playful.css">
-   <link rel="stylesheet" href="%rootpath%/skin/minimal.css">
-   <link rel="stylesheet" href="%rootpath%/skin/configurator.css">
+   <link rel="stylesheet" href="skin/playful.css">
+   <link rel="stylesheet" href="skin/minimal.css">
+   <link rel="stylesheet" href="skin/configurator.css">
 
    <!-- Flowplayer depends on jquery -->
    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 
    <!-- Flowplayer-->
-   <script src="%rootpath%/flowplayer.js"></script>
+   <script src="flowplayer.js"></script>
 
    <script>
 flowplayer.conf = {
   live: true,
-  swf: "%rootpath%/flowplayerhls.swf",
+  swf: "flowplayerhls.swf",
   // blacktrash.org, flowplayer.dev, localhost
   key: "$234140469777507, $238892071193566, $158769847315888, $173588832526605",
   debug: true,
-  rtmpt: false
+  rtmpt: false,
+  setup: {"techOrder": ["flash", "html5"]},
+  ratio: 0.5625
 };
    
 // listen to playlist events
@@ -49,10 +51,11 @@ flowplayer(function(api, root) {
 <div id="content">
    <h1>VideoGen · Flowplayer</h1>
 
-<div id="basic-playlist" class="flowplayer" data-ratio="0.5625" data-setup='{"techOrder": ["flash", "html5"]}'>
-	<video autoplay data-title="Live stream" preload="metadata">
-		<source type="%playlistType%" src="blob:file://%playlistSource%">
+<div id="basic-playlist" class="flowplayer is-splash is-closeable">
+	<video autoplay preload="metadata">
+		<source type="%playlistType%" src="%playlistSource%">
 	</video>
+	
 
 </div>
 

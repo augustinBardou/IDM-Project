@@ -104,7 +104,6 @@ public class VideoGenHelper {
 		for (String line : result.getLines()) {
 			LOGGER.finest(line)
 		}
-
 	}
 
 	def static void convert(Path fullPath, Path newFullPathName, String format) {
@@ -113,7 +112,6 @@ public class VideoGenHelper {
 		for (String line : result.getLines()) {
 			LOGGER.finest(line)
 		}
-
 	}
 
 	def static Mimetypes_Enum getMimeType(Path fullPath) {

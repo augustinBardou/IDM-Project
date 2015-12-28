@@ -1,57 +1,64 @@
+#configurator {
+	height:auto;
+}
+
 #configurator .sequence {
 	font-size: medium;	
 	border-style: solid;
 	border-width: medium;
-	color: black;
 	margin-top: 20px;
 	padding:10px;
 	border-radius: 10px;
- 	width: auto;
  	display: block;
 	width : auto;
-	height: 140px;
+	height:auto;
+	min-height: 100%;
+	overflow:auto;
+	clear: both;
 }
 #configurator .sequence .floatTitle {
 	float: right;
 	font-size: small;
 	font-weight: bold;
+	height: 140px;
 }
 
 #configurator .sequence .description {
 	font-size: small;
 	font-stretch: condensed;
+	font-variant: small-caps;
 	height: 35px;
 	overflow: hidden;
+	text-align: center;
 }
 
 #configurator .sequence img {
 	width: 80px;
 	height: 80px;
-	padding: 5px;
+	margin: 5px;
 	max-width: 100%;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	border: 5px solid #FFF;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
 }
 
-#configurator .mandatory {
-	background-color: #FFE2E2;
+#configurator .mandatory img {
 	border-color: red;
 }
 
-#configurator .optional {
-	background-color: #FFF4E2;
+#configurator .optional img {
 	border-color: orange;
 }
 
-#configurator .alternatives {
-	background-color: #E2FFEB;
+#configurator .alternatives img {
 	border-color: green;
 }
 
-#configurator .alternatives .option {
-	float: left;
-	width : 100px;
-	height: 100px;
-	padding-right: 20px
+#configurator .sequence .option {
+	float:left;
+	width : 110px;
+	height: 110px;
+	margin-bottom: 25px;
+	display: block;
 }
