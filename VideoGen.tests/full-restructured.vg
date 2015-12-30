@@ -1,0 +1,60 @@
+VideoGen {
+	Alternatives Alternative_0 {
+		Sequence Alternative_0_Sequence_0 {
+			url="/tmp/VideoGen/intro/Mass.mp4"
+		}
+		Sequence Alternative_0_Sequence_0 {
+			url="/tmp/VideoGen/intro/TimsSuicide.mp4"
+		}
+	}
+	@Optional
+	@Probability(30)
+	Sequence OptionalSequence_0 { 
+			url="/tmp/VideoGen/haha/EddyWally-Wow.mp4"
+	}
+	Alternatives Alternative_0 {
+		@Probability(55)
+		Sequence Alternative_0_Sequence_0 {
+			url="/tmp/VideoGen/intro/Acrostatics.mp4"
+		}
+		Sequence Alternative_0_Sequence_0 {
+			url="/tmp/VideoGen/intro/CatJumpFail.mp4"
+		}
+	}
+	@Optional
+	@Probability(10)
+	Sequence OptionalSequence_0 { 
+			url="/tmp/VideoGen/haha/EddyWally-Wow.mp4"
+	}
+	Sequence MandatorySequence_0 {
+		url="/tmp/VideoGen/tv/PublicAccessTV.mp4"
+	}
+	Alternatives Alternative_0 {
+		Sequence Alternative_0_Sequence_0 {
+			url="/tmp/VideoGen/wtf/Cereal.mp4"
+		}
+		Sequence Alternative_0_Sequence_0 {
+			url="/tmp/VideoGen/wtf/TheStrongestMotherfuckerInTheWorld.mp4"
+		}
+		Sequence Alternative_0_Sequence_0 {
+			url="/tmp/VideoGen/wtf/ThenIDontNeedAJacket.mp4"
+		}
+		Sequence Alternative_0_Sequence_0 {
+			url="/tmp/VideoGen/wtf/WarmItUp.mp4"
+		}
+	}
+	Sequence MandatorySequence_0 {
+		url="/tmp/VideoGen/haha/haha.mp4"
+	}
+	Alternatives Alternative_0 {
+		Sequence Alternative_0_Sequence_0 {
+			url="/tmp/VideoGen/outro/THEEVILSEEDOFWHATYOUVEDONEGERMINATESWITH.mp4"
+		}
+		Sequence Alternative_0_Sequence_0 {
+			url="/tmp/VideoGen/outro/Poltergeist.mp4"
+		}
+	}
+	Sequence MandatorySequence_0 {
+		url="/tmp/VideoGen/haha/haha.mp4"
+	}
+}
