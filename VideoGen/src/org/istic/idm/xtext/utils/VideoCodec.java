@@ -1,5 +1,12 @@
 package org.istic.idm.xtext.utils;
 
+/**
+ * Enum to bind different mime types format to HTML and fffmpeg parameters
+ * 
+ * FIXME : should be better in xtend to normalize BUT enum in xtend does not appear to take parameters ???
+ * 
+ * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ */
 public enum VideoCodec {
 	MP4("mp4", "mp4", "video/mp4"),
 	FLV("flv", "flv", "video/flash"),

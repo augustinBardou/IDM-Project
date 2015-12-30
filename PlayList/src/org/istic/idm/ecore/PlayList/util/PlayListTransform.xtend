@@ -7,10 +7,20 @@ import java.util.Map
 import java.util.HashMap
 import com.google.common.collect.Lists
 
+/**
+ * Define some PlayList transformation's specifications
+ * 
+ * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ * FIXME: create classes per transformation types. Example M3U (with extended specification), PLS, ASX, WPL, etc
+ * TODO: delegate to Lizzy library the managment of playlists tranformations (http://lizzy.sourceforge.net/)
+ */
 class PlayListTransform{
-  
-	new() { }
-
+	
+	/**
+	 * Internal helper to write a content into a file
+	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+	 */
 	def static writeToFile(Path filename, String content) {
 		val writer = new FileWriter(filename.toFile)
 		writer.write(content)
@@ -18,6 +28,13 @@ class PlayListTransform{
 		writer.close()
 	}
 	
+	/**
+	 * Return a textual representation of a PLS format
+	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+	 * @see https://en.wikipedia.org/wiki/PLS_%28file_format%29
+	 * @see http://schworak.com/blog/e41/extended-pls-plsv2/
+	 */
     def static toPLS(PlayList playlist){
     	val content = new StringBuffer
         content.append("[playlist]\n")
@@ -33,18 +50,66 @@ class PlayListTransform{
         content.toString
     }
     
+	/**
+	 * Return a textual representation of a simple M3U model to text conversion
+	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+	 * @see https://en.wikipedia.org/wiki/M3U
+	 * @see http://schworak.com/blog/e39/m3u-play-list-specification/
+	 * @see http://tools.ietf.org/html/draft-pantos-http-live-streaming
+	 * 
+	 * TODO: normalize option usability for each M3U methods
+	 */
     def static toM3U(PlayList playlist){
     	return toM3U(playlist, false, false, new HashMap)
     }
 
+	/**
+	 * Return a textual representation of a M3U model to text conversion with extended facility
+	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+	 * @see https://en.wikipedia.org/wiki/M3U
+	 * @see http://schworak.com/blog/e39/m3u-play-list-specification/
+	 * @see http://tools.ietf.org/html/draft-pantos-http-live-streaming
+	 * 
+	 * TODO: normalize option usability for each M3U methods
+	 */
     def static toM3U(PlayList playlist, Boolean extended){
     	return toM3U(playlist, extended, false, new HashMap)
     }
 
+	/**
+	 * Return a textual representation of a M3U model to text convertion with extended and discontinuited facility
+	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+	 * @see https://en.wikipedia.org/wiki/M3U
+	 * @see http://schworak.com/blog/e39/m3u-play-list-specification/
+	 * @see http://tools.ietf.org/html/draft-pantos-http-live-streaming
+	 * 
+	 * TODO: normalize option usability for each M3U methods
+	 */
     def static toM3U(PlayList playlist, Boolean extended, Boolean discontinued){
     	return toM3U(playlist, extended, false, new HashMap)
     }
 
+	/**
+	 * Return a textual representation of a M3U model to text convertion with extended, discontinuited and stream facility
+	 * 
+	 * Example : 
+	 * 		result => 
+	 * 		options => {
+	 * 						"CODECS": "avc1.66.30,mp4a.40.2",
+	 * 						"RESOLUTION": "640x360",
+	 * 						"BANDWITH": "684383",
+	 * 						...
+	 * 					} 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+	 * @see https://en.wikipedia.org/wiki/M3U
+	 * @see http://schworak.com/blog/e39/m3u-play-list-specification/
+	 * @see http://tools.ietf.org/html/draft-pantos-http-live-streaming
+	 * 
+	 * TODO: normalize option usability for each M3U methods
+	 */
     def static toM3U(PlayList playlist, Boolean extended, Boolean discontinued, Map<String, String> options){
     	val content = new StringBuffer
         if (extended) {
@@ -72,6 +137,12 @@ class PlayListTransform{
         content.toString
     }
     
+	/**
+	 * FFMEPG model to text convertion
+	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+	 * @Deprecated
+	 */
     def static toFFMPEG(PlayList playlist){
     	val content = new StringBuffer
         playlist.video.forEach[video | 

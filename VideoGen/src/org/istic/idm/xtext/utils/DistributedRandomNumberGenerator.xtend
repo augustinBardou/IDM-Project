@@ -2,6 +2,14 @@ package org.istic.idm.xtext.utils
 
 import java.util.HashMap
 
+
+
+/**
+ * Randomization helper
+ * 
+ * @see https://stackoverflow.com/questions/20327958/random-number-with-probabilities/20329901#20329901
+ * @Author http://stackoverflow.com/users/2128755/trylimits
+ */
 public class DistributedRandomNumberGenerator {
 	HashMap<Integer, Double> distribution
 	double distSum

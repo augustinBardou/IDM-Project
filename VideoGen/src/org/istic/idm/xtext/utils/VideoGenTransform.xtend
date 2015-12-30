@@ -3,7 +3,9 @@ package org.istic.idm.xtext.utils
 import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.ArrayList
-import java.util.List
+import java.util.Collection
+import java.util.HashMap
+import java.util.logging.Logger
 import org.istic.idm.ecore.PlayList.PlayList
 import org.istic.idm.ecore.PlayList.Video
 import org.istic.idm.ecore.PlayList.impl.PlayListFactoryImpl
@@ -18,14 +20,38 @@ import org.istic.idm.xtext.videoGen.VideoGen
 import org.istic.idm.xtext.videoGen.VideoGenFactory
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
-import java.util.HashMap
 
-public class VideoGenTransform {
-  
+/**
+ * Define some VideoGen transformation's specifications
+ * 
+ * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ * 
+ * FIXME: Is it a good idea to have only one class to manage tranformations ? Should it be better to split inside the xtext/ecore framework ?
+ */
+ public class VideoGenTransform {
+ 
+	/**
+	 * Local logger
+	 * 
+	 * @author <stephane.mangin@freesbee.fr>
+	 * 
+	 */	
+	protected static Logger LOGGER = Logger.getLogger("videoGen.transformations")
+	
+ 	/**
+ 	 * Add a temporay system path
+	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+	 * 
+	 * TODO: could it be better to instanciate the class and allow the setting of a temporary path (local or remote) ?
+ 	 */
   	static Path tmp = Paths.get(System.getProperty("java.io.tmpdir") + "/VideoGenGenerated");
   
-	new() { }
-  
+ 	/**
+ 	 * Transfers (some) metadatas from a VideoGen Sequence instance to a PlayList Video instance (description, length, mime type and url)
+ 	 *  
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ 	 */ 
    	def private static transferData(Video p_video, Sequence videoseq) {
 		p_video.duration = videoseq.length
 		p_video.path = videoseq.url
@@ -37,6 +63,11 @@ public class VideoGenTransform {
 		p_video.mimetype = videoseq.mimetype.getName
    	}
    
+ 	/**
+ 	 * Apply the given Optional instance's percentage to allow or not its selectability
+ 	 *  
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ 	 */ 
     def private static isSelected(Optional video) {
         
         var DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator()
@@ -58,6 +89,11 @@ public class VideoGenTransform {
         return false
     }
     
+ 	/**
+ 	 * Selects a sequence inside the given Alternatices instance accordingly to options' percentages.
+ 	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ 	 */ 
     def private static selectSequence(Alternatives alternatives) {
         
         val DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator()
@@ -79,6 +115,11 @@ public class VideoGenTransform {
         return alternatives.options.get(index).sequence
     }
     
+ 	/**
+ 	 * Tranform a VideoGen instance to a PlayList instance
+ 	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ 	 */ 
     def static toVideoGen(PlayList playList){
         var VideoGenFactory videoGenFactory = VideoGenFactoryImpl.init()
         val VideoGenImpl videoGen = videoGenFactory.createVideoGen() as VideoGenImpl
@@ -86,8 +127,15 @@ public class VideoGenTransform {
         return videoGen as VideoGen
     }
     
-    def static private List<Sequence> allSequences(VideoGen videoGen) {
-		val List<Sequence> sequences = new ArrayList<Sequence>
+ 	/**
+ 	 * Return all sequences contained in a VideoGen instance
+ 	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+	 * 
+ 	 * TODO: should it be public ? 
+ 	 */ 
+    def static private Collection<Sequence> allSequences(VideoGen videoGen) {
+		val Collection<Sequence> sequences = new ArrayList<Sequence>
 			
         videoGen.statements.forEach[statement |
 			if (statement instanceof Alternatives) {
@@ -103,13 +151,29 @@ public class VideoGenTransform {
 		sequences
     }
      
+ 	/**
+ 	 * Return the file extention of the given file pathname
+ 	 *  
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ 	 * 
+ 	 * FIXME: use of Optional should welcomed ! Or add a helper method to detect format with file headers
+ 	 */ 
     def private static String getFileExtension(String fileName) {
+    	var extention = ""
         if(fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0) {
-			return fileName.substring(fileName.lastIndexOf(".")+1);
+			extention = fileName.substring(fileName.lastIndexOf(".")+1);
         }
-        return "";
+        extention
     }
    
+ 	/**
+ 	 * create thumbnails for a Sequence instance
+ 	 * Use of VideoGenHelper helper class
+ 	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ 	 * @see VideoGenHelper#mkDirs(Path)
+ 	 * @see VideoGenHelper#createThumbnails(Path, Path)
+ 	 */ 
     def static Path createThumbnails(Sequence sequence){
 	
 		val dir = Paths.get(tmp + "/" + "thumbnails/")
@@ -119,16 +183,23 @@ public class VideoGenTransform {
 		val extention = getFileExtension(fullPath.fileName.toString)
 		val thumbFileName = Paths.get(dir + "/" + fullPath.fileName.toString.replaceAll("." + extention, ".png"))
 		VideoGenHelper.createThumbnails(fullPath, thumbFileName)
+
 		thumbFileName
     }
     
+ 	/**
+ 	 * Convert VideoGen Sequence url videos to the given mime type.
+ 	 * Use of VideoGenHelper helper class 
+ 	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ 	 * @see VideoGenHelper#mkDirs(Path)
+ 	 * @see VideoGenHelper#convert(Path, Path, String)
+	 * 
+ 	 * TODO: somethings should be done better... But what ?
+ 	 */ 
     def static ConvertTo(VideoCodec type, VideoGen videogen){
 		
 		val dir = Paths.get(tmp + "/" + "converted" + "/" + type.name + "/")
-		if (dir.toFile.exists) {
-			VideoGenHelper.mkDirs(dir)
-		}
-		println("Convertion Temporary folder: " + dir)
 		VideoGenHelper.mkDirs(dir)
         allSequences(videogen).forEach[sequence |
 			
@@ -141,6 +212,17 @@ public class VideoGenTransform {
         ]
     }
     
+ 	/**
+ 	 * Add some probably missing or misformatted metadatas into the VideoGen instance
+ 	 * For instance, videos duration and mime types.
+ 	 * Use of VideoGenHelper helper class 
+ 	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ 	 * @see VideoGenHelper#getDuration(Path)
+ 	 * @see VideoGenHelper#getMimeType(Path)
+	 * 
+ 	 * FIXME: should create a new VideoGen instance to not modify the given one.
+ 	 */ 
     def static addMetadata(VideoGen videogen){
         
         allSequences(videogen).forEach[sequence |
@@ -151,6 +233,11 @@ public class VideoGenTransform {
         videogen
     }
     
+ 	/**
+ 	 * Tranformation from VideoGen instance to Playlist instance
+ 	 *  
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ 	 */ 
     def static toPlayList(VideoGen videogen, Boolean withThumbnail){
         var PlayListFactoryImpl playlistFactory = PlayListFactoryImpl.init() as PlayListFactoryImpl
         val PlayListImpl playlist = playlistFactory.createPlayList() as PlayListImpl
@@ -181,7 +268,13 @@ public class VideoGenTransform {
         playlist
     }
     
-    
+ 	/**
+ 	 * Transfert some data from a VideoGen Sequence instance to a PlayList Video instance
+ 	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+	 * 
+ 	 * FIXME: should find a better way to create this kind of ModelToText transformation. For instance, through multiples methods to get each portions of the resulting document.
+ 	 */ 
     def static toConfigurator(VideoGen videogen){
     	val thumbnails = new HashMap
     	for (sequence: videogen.allSequences) {
