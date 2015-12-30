@@ -34,7 +34,7 @@ public class VideoGenValidatorHelper {
 		
 	}
 
-	def static checkIsUrlExistsError(List<Sequence> sequences, Sequence sequence) {
+	def static checkIsUrlExists(List<Sequence> sequences, Sequence sequence) {
 		val result = new Result()
 		if (!new File(sequence.url).exists) {
 			result.set('File not found')
@@ -42,7 +42,7 @@ public class VideoGenValidatorHelper {
 		result
 	}
 	
-	def static checkUniqueDescriptionWarning(List<Sequence> sequences, Sequence sequence) {
+	def static checkUniqueDescription(List<Sequence> sequences, Sequence sequence) {
 		val result = new Result()
 		sequences.takeWhile[seq2 | !seq2.equals(sequence)]
 			.forEach[seq2 |
@@ -53,7 +53,7 @@ public class VideoGenValidatorHelper {
 		result
 	}
 	
-	def static checkUniqueURLWarning(List<Sequence> sequences, Sequence sequence) {
+	def static checkUniqueURL(List<Sequence> sequences, Sequence sequence) {
 		val result = new Result()
 		sequences.takeWhile[seq2 | !seq2.equals(sequence)]
 			.forEach[seq2 |
@@ -64,7 +64,7 @@ public class VideoGenValidatorHelper {
 		result
 	}
 	
-	def static checkUniqueIdentifiersError(List<Sequence> sequences, Sequence sequence) {
+	def static checkUniqueIdentifiers(List<Sequence> sequences, Sequence sequence) {
 		val result = new Result()
 		sequences.takeWhile[seq2 | !seq2.equals(sequence)]
 			.forEach[seq2 |
@@ -75,7 +75,7 @@ public class VideoGenValidatorHelper {
 		result
 	}
 	
-	def static checkOptionalProbabilityError(Optional optional) {
+	def static checkOptionalProbability(Optional optional) {
 		val result = new Result()
 		if (optional.probability > 100) {
 			result.set('Optional probability should not be higher than 100%')
@@ -86,7 +86,7 @@ public class VideoGenValidatorHelper {
 		result
 	}
 	
-	def static checkAlternativesProbabilityError(Alternatives alternatives) {
+	def static checkAlternativesProbability(Alternatives alternatives) {
 		val result = new Result()
 		var total = 0
 		var Optional lastOption
@@ -109,19 +109,19 @@ public class VideoGenValidatorHelper {
 		val sequences = videoGen.eResource.allContents.filter(typeof(Sequence)).toList as List<Sequence>
 		
 		VideoGenHelper.allSequences(videoGen).forEach[sequence |
-			var ret = checkIsUrlExistsError(sequences, sequence)
+			var ret = checkIsUrlExists(sequences, sequence)
 			if (ret.isSet) {
 				result.get("error").add(ret.get)	
 			}
-			ret = checkUniqueDescriptionWarning(sequences, sequence)
+			ret = checkUniqueDescription(sequences, sequence)
 			if (ret.isSet) {
 				result.get("warning").add(ret.get)	
 			}
-			ret = checkUniqueURLWarning(sequences, sequence)
+			ret = checkUniqueURL(sequences, sequence)
 			if (ret.isSet) {
 				result.get("warning").add(ret.get)	
 			}
-			ret = checkUniqueIdentifiersError(sequences, sequence)
+			ret = checkUniqueIdentifiers(sequences, sequence)
 			if (ret.isSet) {
 				result.get("error").add(ret.get)	
 			}
@@ -129,12 +129,12 @@ public class VideoGenValidatorHelper {
 		]
 		videoGen.statements.forEach[statement |
 			if (statement instanceof Optional) {
-				var ret = checkOptionalProbabilityError(statement)
+				var ret = checkOptionalProbability(statement)
 				if (ret.isSet) {
 					result.get("error").add(ret.get)	
 				}
 			} else if (statement instanceof Alternatives) {
-				var ret = checkAlternativesProbabilityError(statement)
+				var ret = checkAlternativesProbability(statement)
 				if (ret.isSet) {
 					result.get("error").add(ret.get)	
 				}
