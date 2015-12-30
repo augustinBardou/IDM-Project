@@ -3,12 +3,12 @@
  */
 package org.istic.idm.xtext.validation
 
+import java.util.List
 import org.eclipse.xtext.validation.Check
-import org.istic.idm.xtext.videoGen.VideoGenPackage.Literals
 import org.istic.idm.xtext.videoGen.Alternatives
-import org.istic.idm.xtext.videoGen.Sequence
 import org.istic.idm.xtext.videoGen.Optional
-import java.io.File
+import org.istic.idm.xtext.videoGen.Sequence
+import org.istic.idm.xtext.videoGen.VideoGenPackage.Literals
 
 /**
  * This class contains custom validation rules. 
@@ -25,82 +25,68 @@ class VideoGenValidator extends AbstractVideoGenValidator {
 
 	@Check
 	def checkIsUrlExists(Sequence sequence) {
-		if (!new File(sequence.url).exists) {
-			error('File not found', 
-					Literals.SEQUENCE__URL,
-					INVALID_URL)
+		val sequences = sequence.eResource.allContents.filter(typeof(Sequence)) as List<Sequence>
+		var result = VideoGenValidatorHelper.checkIsUrlExistsError(sequences, sequence)
+		if (result.isSet) {
+			error(result.get, 
+				Literals.SEQUENCE__URL,
+				INVALID_URL)
 		}
 	}
 	
 
 	@Check
 	def checkUniqueDescription(Sequence sequence) {
-		sequence.eResource.allContents
-			.filter(typeof(Sequence))
-			.takeWhile[seq2 | !seq2.equals(sequence)]
-			.forEach[seq2 |
-				if (seq2.description.equals(sequence.description)) {
-					info('Duplicated description', 
-							Literals.SEQUENCE__DESCRIPTION,
-							DUPLICATED_DESCRIPTION)
-				}
-			]
+		val sequences = sequence.eResource.allContents.filter(typeof(Sequence)) as List<Sequence>
+		var result = VideoGenValidatorHelper.checkUniqueDescriptionWarning(sequences, sequence)
+		if (result.isSet) {
+			info(result.get, 
+				Literals.SEQUENCE__DESCRIPTION,
+				DUPLICATED_DESCRIPTION)
+		}
 	}
 	
 	@Check
 	def checkUniqueURL(Sequence sequence) {
-		sequence.eResource.allContents
-			.filter(typeof(Sequence))
-			.takeWhile[seq2 | !seq2.equals(sequence)]
-			.forEach[seq2 |
-				if (seq2.url.equals(sequence.url)) {
-					info('Duplicated url', 
-							Literals.SEQUENCE__URL,
-							DUPLICATED_URL)
-				}
-			]
+		val sequences = sequence.eResource.allContents.filter(typeof(Sequence)) as List<Sequence>
+		var result = VideoGenValidatorHelper.checkUniqueURLWarning(sequences, sequence)
+		if (result.isSet) {
+			info(result.get, 
+				Literals.SEQUENCE__URL,
+				DUPLICATED_URL)
+		}
 	}
 	
 	@Check
 	def checkUniqueIdentifiers(Sequence sequence) {
-		sequence.eResource.allContents
+		val sequences = sequence.eResource.allContents
 			.filter(typeof(Sequence))
-			.takeWhile[seq2 | !seq2.equals(sequence)]
-			.forEach[seq2 |
-				if (seq2.name.equals(sequence.name)) {
-					error('Sequence name should be unique.', 
-							Literals.SEQUENCE__NAME,
-							INVALID_NAME)
-				}
-			]
+			.takeWhile[seq2 | !seq2.equals(sequence)] as List<Sequence>
+		var result = VideoGenValidatorHelper.checkUniqueIdentifiersError(sequences, sequence)
+		if (result.isSet) {
+			error(result.get, 
+				Literals.SEQUENCE__NAME,
+				INVALID_NAME)
+		}
 	}
 	
 	@Check
 	def checkOptionalProbability(Optional optional) {
-		if (optional.probability > 100) {
-			error('Optional probability should not be higher than 100%', 
-					Literals.OPTIONAL__PROBABILITY,
-					INVALID_PROBABILITY)
-		}
-		else if (optional.probability == 100) {
-			warning('Optional probability should not equal 100%, otherwize create a Mandatory sequence instead ;)', 
-					Literals.OPTIONAL__PROBABILITY,
-					INVALID_PROBABILITY)
+		var result = VideoGenValidatorHelper.checkOptionalProbabilityError(optional)
+		if (result.isSet) {
+			warning(result.get, 
+				Literals.OPTIONAL__PROBABILITY,
+				INVALID_PROBABILITY)
 		}
 	}
 	
 	@Check
 	def checkAlternativesProbability(Alternatives alternatives) {
-		var total = 0
-		var Optional lastOption
-		for (option: alternatives.options) {
-			total += option.probability
-			lastOption = option
-		}	
-		if (total > 100) {
-			error('Probabilities sum inside an Alternatives should not exceed 100%', 
-					Literals.ALTERNATIVES__OPTIONS,
-					INVALID_PROBABILITY)
+		var result = VideoGenValidatorHelper.checkAlternativesProbabilityError(alternatives)
+		if (result.isSet) {
+			error(result.get, 
+				Literals.ALTERNATIVES__OPTIONS,
+				INVALID_PROBABILITY)
 		}
 	}
 	

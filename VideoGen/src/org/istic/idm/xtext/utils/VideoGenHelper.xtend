@@ -13,6 +13,13 @@ import org.apache.commons.exec.ExecuteException
 import org.apache.commons.exec.LogOutputStream
 import org.apache.commons.exec.PumpStreamHandler
 import org.istic.idm.xtext.videoGen.Mimetypes_Enum
+import java.util.Collection
+import org.istic.idm.xtext.videoGen.Sequence
+import org.istic.idm.xtext.videoGen.VideoGen
+import java.util.ArrayList
+import org.istic.idm.xtext.videoGen.Alternatives
+import org.istic.idm.xtext.videoGen.Mandatory
+import org.istic.idm.xtext.videoGen.Optional
 
 /** 
  * Execute helper using apache commons exed
@@ -196,5 +203,27 @@ public class VideoGenHelper {
 			LOGGER.finest(line)
 		}
 	}
+    
+ 	/**
+ 	 * Return all sequences contained in a VideoGen instance
+ 	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ 	 */ 
+    def static Collection<Sequence> allSequences(VideoGen videoGen) {
+		val Collection<Sequence> sequences = new ArrayList<Sequence>
+			
+        videoGen.statements.forEach[statement |
+			if (statement instanceof Alternatives) {
+				statement.options.forEach[option |
+					sequences += option.sequence
+				]
+			} else if(statement instanceof Mandatory) {
+				sequences += statement.sequence
+			} else if(statement instanceof Optional) {
+				sequences += statement.sequence
+			}
+		]
+		sequences
+    }
 
 }

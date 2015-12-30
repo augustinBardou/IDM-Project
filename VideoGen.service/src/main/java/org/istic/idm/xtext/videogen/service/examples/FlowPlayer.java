@@ -12,9 +12,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 import org.apache.commons.exec.CommandLine;
@@ -29,6 +32,7 @@ import org.istic.idm.ecore.PlayList.util.PlayListTransform;
 import org.istic.idm.xtext.VideoGenStandaloneSetup;
 import org.istic.idm.xtext.utils.VideoCodec;
 import org.istic.idm.xtext.utils.VideoGenTransform;
+import org.istic.idm.xtext.validation.VideoGenValidatorHelper;
 import org.istic.idm.xtext.videoGen.VideoGen;
 
 /**
@@ -36,6 +40,11 @@ import org.istic.idm.xtext.videoGen.VideoGen;
  *
  */
 public class FlowPlayer {
+
+	/**
+	 * Local logger
+	 */	
+	protected static Logger LOGGER = Logger.getLogger("flowplayer");
 
 	private static VideoGen videoGen = null;
 	private static PlayListImpl playlist = null;
@@ -107,8 +116,26 @@ public class FlowPlayer {
 		return generatedIndexPath;
 	}
 
-	public PlayList generatePlayList() throws IOException {
+	public PlayList generatePlayList() throws Exception {
 		videoGen = VideoGenStandaloneSetup.loadVideoGen(videoGenPath.toString());
+		Map<String, List<String>> checks = VideoGenValidatorHelper.checkAll(videoGen);
+		if (!checks.get("error").isEmpty()) {
+			StringBuilder exceptions = new StringBuilder();
+			for (String error: checks.get("error")) {
+				exceptions.append(error + "\n");
+			}
+			throw new Exception(exceptions.toString());
+		}
+		if (!checks.get("warning").isEmpty()) {
+			for (String warning: checks.get("warning")) {
+				LOGGER.warning(warning);
+			}
+		}
+		if (!checks.get("info").isEmpty()) {
+			for (String info: checks.get("info")) {
+				LOGGER.info(info);
+			}
+		}
 		VideoGenTransform.ConvertTo(VideoCodec.MPEGTS, videoGen);
 		System.out.println(videoGen);
 		VideoGenTransform.addMetadata(videoGen);
@@ -135,10 +162,9 @@ public class FlowPlayer {
 
 	/**
 	 * @param args
-	 * @throws IOException 
-	 * @throws ExecuteException 
+	 * @throws Exception 
 	 */
-	public static void main(String[] args) throws ExecuteException, IOException {
+	public static void main(String[] args) throws Exception {
 		FlowPlayer flowplayer = new FlowPlayer();
 		if (args.length > 0) {
 			flowplayer.setVideoGen(args[0]);

@@ -1,6 +1,5 @@
 package org.istic.idm.xtext.videogen.service;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.function.Consumer;
 
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Converters {
 
 	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String getFlowplayer() throws FileNotFoundException {
+	public String getFlowplayer() throws Exception {
 		FlowPlayer flowplayer = new FlowPlayer();
 		FlowPlayer.setConfigurator(true);
 		try {

@@ -127,30 +127,6 @@ import com.google.common.collect.Lists
         
         return videoGen as VideoGen
     }
-    
- 	/**
- 	 * Return all sequences contained in a VideoGen instance
- 	 * 
-	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
-	 * 
- 	 * TODO: should it be public ? 
- 	 */ 
-    def static private Collection<Sequence> allSequences(VideoGen videoGen) {
-		val Collection<Sequence> sequences = new ArrayList<Sequence>
-			
-        videoGen.statements.forEach[statement |
-			if (statement instanceof Alternatives) {
-				statement.options.forEach[option |
-					sequences += option.sequence
-				]
-			} else if(statement instanceof Mandatory) {
-				sequences += statement.sequence
-			} else if(statement instanceof Optional) {
-				sequences += statement.sequence
-			}
-		]
-		sequences
-    }
      
  	/**
  	 * Return the file extention of the given file pathname
@@ -202,7 +178,7 @@ import com.google.common.collect.Lists
 		val pathes = Lists.newArrayList
 		val dir = Paths.get(tmp + "/" + "converted" + "/" + type.name + "/")
 		VideoGenHelper.mkDirs(dir)
-        allSequences(videogen).forEach[sequence |
+        VideoGenHelper.allSequences(videogen).forEach[sequence |
 			
 			val fullPath = Paths.get(sequence.url)
 			val extention = getFileExtension(fullPath.fileName.toString)
@@ -228,7 +204,7 @@ import com.google.common.collect.Lists
  	 */ 
     def static addMetadata(VideoGen videogen){
         
-        allSequences(videogen).forEach[sequence |
+        VideoGenHelper.allSequences(videogen).forEach[sequence |
         	val url = Paths.get(sequence.url)
 			sequence.length = VideoGenHelper.getDuration(url)
 			sequence.mimetype = VideoGenHelper.getMimeType(url)
@@ -280,7 +256,7 @@ import com.google.common.collect.Lists
  	 */ 
     def static toConfigurator(VideoGen videogen){
     	val thumbnails = new HashMap
-    	for (sequence: videogen.allSequences) {
+    	for (sequence: VideoGenHelper.allSequences(videogen)) {
     		thumbnails.put(sequence.name, createThumbnails(sequence))
     	}
 	    '''
