@@ -109,7 +109,7 @@ public class FlowPlayer {
 
 	public PlayList generatePlayList() throws IOException {
 		videoGen = VideoGenStandaloneSetup.loadVideoGen(videoGenPath.toString());
-		VideoGenTransform.ConvertTo(VideoCodec.FLV, videoGen);
+		VideoGenTransform.ConvertTo(VideoCodec.MPEGTS, videoGen);
 		System.out.println(videoGen);
 		VideoGenTransform.addMetadata(videoGen);
 		System.out.println("Playlist written...");

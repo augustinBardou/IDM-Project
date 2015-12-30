@@ -2,7 +2,7 @@ VideoGen {
 	Alternatives intro {
 		Sequence intro1 {
 			url="/tmp/VideoGen/intro/Mass.mp4"
-			description="The mass is sayed, Amen !"
+			description="The mass is said, Amen !"
 		}
 		Sequence intro2 {
 			url="/tmp/VideoGen/intro/TimsSuicide.mp4"
@@ -30,7 +30,7 @@ VideoGen {
 	@Probability(10)
 	Sequence haha2 { 
 		url="/tmp/VideoGen/haha/EddyWally-Wow.mp4"
-		description="Ah ah ah"
+		description="Addy Wally - Wow"
 	}
 	Sequence tv1 {
 		url="/tmp/VideoGen/tv/PublicAccessTV.mp4"

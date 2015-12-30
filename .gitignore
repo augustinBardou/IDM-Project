@@ -187,4 +187,4 @@ xtend-gen/
 *.ffmpeg
 *.pls
 *.m3u
-*generated*
+generated/
