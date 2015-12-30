@@ -20,6 +20,7 @@ import org.istic.idm.xtext.videoGen.VideoGen
 import org.istic.idm.xtext.videoGen.VideoGenFactory
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
+import com.google.common.collect.Lists
 
 /**
  * Define some VideoGen transformation's specifications
@@ -174,7 +175,7 @@ import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
  	 * @see VideoGenHelper#mkDirs(Path)
  	 * @see VideoGenHelper#createThumbnails(Path, Path)
  	 */ 
-    def static Path createThumbnails(Sequence sequence){
+    def static createThumbnails(Sequence sequence){
 	
 		val dir = Paths.get(tmp + "/" + "thumbnails/")
 		println("Thumbnails Temporary folder: " + dir)
@@ -198,7 +199,7 @@ import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
  	 * TODO: somethings should be done better... But what ?
  	 */ 
     def static ConvertTo(VideoCodec type, VideoGen videogen){
-		
+		val pathes = Lists.newArrayList
 		val dir = Paths.get(tmp + "/" + "converted" + "/" + type.name + "/")
 		VideoGenHelper.mkDirs(dir)
         allSequences(videogen).forEach[sequence |
@@ -206,10 +207,12 @@ import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
 			val fullPath = Paths.get(sequence.url)
 			val extention = getFileExtension(fullPath.fileName.toString)
 			val newFullPathName = Paths.get(dir + "/" + fullPath.fileName.toString.replaceAll("." + extention, "." + type.extention))
+			pathes.add(newFullPathName)
 			VideoGenHelper.convert(fullPath, newFullPathName, type.format)
 			sequence.url = newFullPathName.toAbsolutePath.toString
 			sequence.mimetype = Mimetypes_Enum.getByName(type.name)
         ]
+        pathes
     }
     
  	/**

@@ -61,7 +61,7 @@ class PlayListTransform{
 	 * TODO: normalize option usability for each M3U methods
 	 */
     def static toM3U(PlayList playlist){
-    	return toM3U(playlist, false, false, new HashMap)
+    	toM3U(playlist, false, false, new HashMap)
     }
 
 	/**
@@ -75,7 +75,7 @@ class PlayListTransform{
 	 * TODO: normalize option usability for each M3U methods
 	 */
     def static toM3U(PlayList playlist, Boolean extended){
-    	return toM3U(playlist, extended, false, new HashMap)
+    	toM3U(playlist, extended, false, new HashMap)
     }
 
 	/**
@@ -89,14 +89,14 @@ class PlayListTransform{
 	 * TODO: normalize option usability for each M3U methods
 	 */
     def static toM3U(PlayList playlist, Boolean extended, Boolean discontinued){
-    	return toM3U(playlist, extended, false, new HashMap)
+    	toM3U(playlist, extended, false, new HashMap)
     }
 
 	/**
 	 * Return a textual representation of a M3U model to text convertion with extended, discontinuited and stream facility
 	 * 
 	 * Example : 
-	 * 		result => 
+	 * 		result => http://schworak.com/blog/e41/extended-pls-plsv2/
 	 * 		options => {
 	 * 						"CODECS": "avc1.66.30,mp4a.40.2",
 	 * 						"RESOLUTION": "640x360",
