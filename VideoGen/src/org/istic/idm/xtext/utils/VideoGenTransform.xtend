@@ -154,7 +154,6 @@ import com.google.common.collect.Lists
     def static createThumbnails(Sequence sequence){
 	
 		val dir = Paths.get(tmp + "/" + "thumbnails/")
-		println("Thumbnails Temporary folder: " + dir)
 		VideoGenHelper.mkDirs(dir)
 		val fullPath = Paths.get(sequence.url)
 		val extention = getFileExtension(fullPath.fileName.toString)
