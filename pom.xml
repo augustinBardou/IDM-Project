@@ -11,7 +11,12 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.0.2.RELEASE</version>
 	</parent>
-
+  <modules>
+    <module>PlayList</module>
+    <module>VideoGen</module>
+    <module>VideoGen.tests</module>
+    <module>VideoGen.service</module>
+  </modules>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <resources>
