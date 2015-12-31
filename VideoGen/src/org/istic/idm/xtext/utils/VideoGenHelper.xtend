@@ -123,7 +123,7 @@ public class VideoGenHelper {
 	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
 	 */
 	def static void createThumbnails(Path fullPath, Path thumbFileName) {
-		val cmd = '''avconv -i "«fullPath»" -r 1 -t 00:00:01 -ss 00:00:02 -f image2 "«thumbFileName»"'''
+		val cmd = '''avconv -i "«fullPath»" -r 1 -t 00:00:01 -ss 00:00:02 -f image2 "«thumbFileName»" 2>&1'''
 		var ExecResult result = execCmd(cmd, 1)
 		for (String line : result.getLines()) {
 			LOGGER.finest(line)
@@ -137,7 +137,7 @@ public class VideoGenHelper {
 	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
 	 */
 	def static void convert(Path fullPath, Path newFullPathName, String format) {
-		var cmd = '''avconv -i "«fullPath»" -strict -2 -vcodec h264 -acodec aac -f «format» "«newFullPathName»"'''
+		var cmd = '''avconv -i "«fullPath»" -strict -2 -vcodec h264 -acodec aac -f «format» "«newFullPathName»" 2>&1'''
 		var ExecResult result = execCmd(cmd, 1)
 		for (String line : result.getLines()) {
 			LOGGER.finest(line)
@@ -197,8 +197,8 @@ public class VideoGenHelper {
 	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
 	 */
 	def static void mkDirs(Path path) {
-		var cmd = '''mkdir -p «path.toAbsolutePath()»'''
-		var result = execCmd(cmd, 1)
+		var cmd = '''mkdir -p «path.toAbsolutePath()» 2>&1'''
+		var result = execCmd(cmd, 0)
 		for (String line : result.getLines()) {
 			LOGGER.finest(line)
 		}
