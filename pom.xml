@@ -15,7 +15,7 @@
     <module>PlayList</module>
     <module>VideoGen</module>
     <module>VideoGen.tests</module>
-    <module>VideoGen.service</module>
+    <!--module>VideoGen.service</module-->
   </modules>
   <build>
     <sourceDirectory>src</sourceDirectory>
