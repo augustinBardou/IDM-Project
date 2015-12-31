@@ -1,4 +1,4 @@
-package org.istic.idm.xtext.validation;
+package org.istic.idm.xtext.utils;
 
 import java.io.File
 import java.util.HashMap

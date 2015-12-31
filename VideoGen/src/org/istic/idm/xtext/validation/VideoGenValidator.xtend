@@ -15,7 +15,7 @@ import java.io.File
  *
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
-abstract class VideoGenValidator extends AbstractVideoGenValidator {
+class VideoGenValidator extends AbstractVideoGenValidator {
 
   public static val DUPLICATED_DESCRIPTION = 'duplicatedDescription'
   public static val DUPLICATED_URL = 'duplicatedURL'

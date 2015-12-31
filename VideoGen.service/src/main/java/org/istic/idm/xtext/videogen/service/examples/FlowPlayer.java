@@ -12,7 +12,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +21,6 @@ import java.util.stream.Stream;
 
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
-import org.apache.commons.exec.ExecuteException;
 import org.istic.idm.ecore.PlayList.PlayList;
 import org.istic.idm.ecore.PlayList.PlayListFactory;
 import org.istic.idm.ecore.PlayList.Video;
@@ -32,7 +30,7 @@ import org.istic.idm.ecore.PlayList.util.PlayListTransform;
 import org.istic.idm.xtext.VideoGenStandaloneSetup;
 import org.istic.idm.xtext.utils.VideoCodec;
 import org.istic.idm.xtext.utils.VideoGenTransform;
-import org.istic.idm.xtext.validation.VideoGenValidatorHelper;
+import org.istic.idm.xtext.utils.VideoGenValidatorHelper;
 import org.istic.idm.xtext.videoGen.VideoGen;
 
 /**
