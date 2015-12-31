@@ -343,6 +343,16 @@
             <artifactId>metrics-spark-reporter</artifactId>
             <version>${metrics-spark-reporter.version}</version>
         </dependency>
+        <dependency>
+        	<groupId>org.istic.idm.xtext.VideoGen</groupId>
+        	<artifactId>org.istic.idm.xtext.VideoGen</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.istic.idm.ecore.PlayList</groupId>
+        	<artifactId>org.istic.idm.ecore.PlayList</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
