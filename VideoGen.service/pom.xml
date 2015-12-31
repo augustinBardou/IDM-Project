@@ -3,15 +3,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<!-- Your own application should inherit from spring-boot-starter-parent -->
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.0.2.RELEASE</version>
+		<groupId>IDM-Project</groupId>
+		<artifactId>IDM-Project</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../</relativePath>
 	</parent>
 	<artifactId>org.istic.idm.xtext.VideoGen.service</artifactId>
 	<groupId>org.istic.idm.xtext.VideoGen</groupId>
 	<name>Spring Boot Data REST Sample</name>
 	<description>Spring Boot Data REST Sample</description>
-	<version>0.0.1-SNAPSHOT</version>
 	<url>http://projects.spring.io/spring-boot/</url>
 	<organization>
 		<name>Pivotal Software, Inc.</name>

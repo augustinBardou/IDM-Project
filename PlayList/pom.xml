@@ -2,7 +2,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.istic.idm.ecore.PlayList</groupId>
   <artifactId>org.istic.idm.ecore.PlayList</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <parent>
+  	<groupId>IDM-Project</groupId>
+  	<artifactId>IDM-Project</artifactId>
+  	<relativePath>../</relativePath>
+  	<version>0.0.1-SNAPSHOT</version>
+  </parent>
   <build>
     <sourceDirectory>xtend-gen</sourceDirectory>
     <resources>
