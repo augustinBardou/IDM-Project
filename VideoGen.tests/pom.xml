@@ -38,6 +38,7 @@
   	<dependency>
   		<groupId>org.istic.idm.xtext.VideoGen</groupId>
   		<artifactId>org.istic.idm.xtext.VideoGen</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   	<dependency>
   		<groupId>org.istic.idm.ecore.PlayList</groupId>
