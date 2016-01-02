@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.istic.idm.xtext.VideoGen.tests</groupId>
-	<artifactId>org.istic.idm.xtext.VideoGen.tests</artifactId>
+	<groupId>org.istic.idm.xtext</groupId>
+	<artifactId>VideoGen.tests</artifactId>
 	<build>
 		<testSourceDirectory>xtend-gen</testSourceDirectory>
 		<plugins>
@@ -24,14 +24,10 @@
 	</parent>
 	<dependencies>
 		<dependency>
-			<groupId>org.istic.idm.xtext.VideoGen</groupId>
-			<artifactId>org.istic.idm.xtext.VideoGen</artifactId>
+			<groupId>org.istic.idm.xtext</groupId>
+			<artifactId>VideoGen</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.istic.idm.ecore.PlayList</groupId>
-			<artifactId>org.istic.idm.ecore.PlayList</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
     <groupId>junit</groupId>
@@ -39,5 +35,11 @@
     <version>4.12</version>
 			<scope>test</scope>
 </dependency>
+		<dependency>
+			<groupId>org.istic.idm.ecore</groupId>
+			<artifactId>PlayList</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>

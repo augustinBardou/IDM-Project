@@ -9,8 +9,8 @@
         <relativePath/>
     </parent>
 
-    <groupId>org.istic.idm.xtext.webservice</groupId>
-    <artifactId>videogen</artifactId>
+    <groupId>org.istic.idm.xtext</groupId>
+    <artifactId>WebService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -344,13 +344,13 @@
             <version>${metrics-spark-reporter.version}</version>
         </dependency>
         <dependency>
-        	<groupId>org.istic.idm.xtext.VideoGen</groupId>
-        	<artifactId>org.istic.idm.xtext.VideoGen</artifactId>
+        	<groupId>org.istic.idm.ecore</groupId>
+        	<artifactId>PlayList</artifactId>
         	<version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-        	<groupId>org.istic.idm.ecore.PlayList</groupId>
-        	<artifactId>org.istic.idm.ecore.PlayList</artifactId>
+        	<groupId>org.istic.idm.xtext</groupId>
+        	<artifactId>VideoGen</artifactId>
         	<version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

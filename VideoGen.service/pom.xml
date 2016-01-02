@@ -8,8 +8,8 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
-	<artifactId>org.istic.idm.xtext.VideoGen.service</artifactId>
-	<groupId>org.istic.idm.xtext.VideoGen</groupId>
+	<artifactId>VideoGen.service</artifactId>
+	<groupId>org.istic.idm.xtext</groupId>
 	<name>Spring Boot Data REST Sample</name>
 	<description>Spring Boot Data REST Sample</description>
 	<url>http://projects.spring.io/spring-boot/</url>
@@ -22,13 +22,13 @@
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>org.istic.idm.ecore.PlayList</groupId>
-			<artifactId>org.istic.idm.ecore.PlayList</artifactId>
+			<groupId>org.istic.idm.ecore</groupId>
+			<artifactId>PlayList</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>org.istic.idm.xtext.VideoGen</groupId>
-			<artifactId>org.istic.idm.xtext.VideoGen</artifactId>
+			<groupId>org.istic.idm.xtext</groupId>
+			<artifactId>VideoGen</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
