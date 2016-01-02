@@ -4,6 +4,7 @@
 package org.istic.idm.xtext;
 
 import org.eclipse.xtext.junit4.IInjectorProvider;
+import org.istic.idm.xtext.ui.internal.VideoGenActivator;
 
 import com.google.inject.Injector;
 
@@ -11,7 +12,7 @@ public class VideoGenUiInjectorProvider implements IInjectorProvider {
 	
 	@Override
 	public Injector getInjector() {
-		return org.istic.idm.xtext.ui.internal.VideoGenActivator.getInstance().getInjector("org.istic.idm.xtext.VideoGen");
+		return VideoGenActivator.getInstance().getInjector("org.istic.idm.xtext.VideoGen");
 	}
 	
 }
