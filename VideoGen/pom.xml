@@ -9,33 +9,7 @@
   	<version>0.0.1-SNAPSHOT</version>
   </parent>
   <build>
-		<sourceDirectory>xtend-gen</sourceDirectory>
-		<resources>
-			<resource>
-				<directory>src</directory>
-				<includes>
-					<include> **/*.java </include>
-					<include> **/*.properties </include>
-					<include> **/*.xml </include>
-				</includes>
-			</resource>
-			<resource>
-				<directory>src-gen</directory>
-				<includes>
-					<include> **/*.java </include>
-					<include> **/*.properties </include>
-					<include> **/*.xml </include>
-				</includes>
-			</resource>
-			<resource>
-				<directory>xtend-gen</directory>
-				<includes>
-					<include> **/*.java </include>
-					<include> **/*.properties </include>
-					<include> **/*.xml </include>
-				</includes>
-			</resource>
-		</resources>
+		<sourceDirectory>.</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
