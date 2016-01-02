@@ -17,7 +17,7 @@ import org.istic.idm.xtext.videoGen.Mandatory
 import org.istic.idm.xtext.utils.VideoGenTransform
 import java.nio.file.Paths
 
-class VideoGenTest {
+class VideoGenTests {
 
 	
 	def loadVideoGen(URI uri) {

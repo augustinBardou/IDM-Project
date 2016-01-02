@@ -18,7 +18,7 @@ import org.junit.Test
 import static java.nio.file.StandardCopyOption.*
 import static org.junit.Assert.*
 
-class VideoGenHelperTest {
+class VideoGenHelperTests {
 
 	var VideoGen videoGen;
 	val oracle_file_list = Lists.newArrayList(
