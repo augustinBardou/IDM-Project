@@ -89,8 +89,10 @@ public abstract class Executor {
 		executor.setStreamHandler(new PumpStreamHandler(result))
 		try {
 			result.setExitCode(executor.execute(commandLine))
-		} catch (Exception e) {
-			//
+		} catch (ExecuteException e) {
+			e.printStackTrace()
+		} catch (IOException e) {
+			e.printStackTrace()
 		}
 		return result
 	}

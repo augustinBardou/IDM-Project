@@ -17,7 +17,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 @SuppressWarnings("all")
-@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-03T17:11+0100")
+@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-03T17:56+0100")
 public class VideosTest {
   private final String root = new Function0<String>() {
     public String apply() {
@@ -78,16 +78,18 @@ public class VideosTest {
   
   @Test
   public void convertTest() {
+    final VideoCodec codec = VideoCodec.FLV;
     for (final String fileName : this.oracle_file_list) {
       {
-        String _replace = fileName.replace(".mp4", ".flv");
-        String _plus = ((this.root + "converted/") + _replace);
-        Path newFile = Paths.get(_plus);
+        String _extention = codec.extention();
+        String _plus = ("." + _extention);
+        String _replace = fileName.replace(".mp4", _plus);
+        String _plus_1 = ((this.root + "converted/") + _replace);
+        Path newFile = Paths.get(_plus_1);
         Path _parent = newFile.getParent();
         fr.nemomen.utils.System.mkDirs(_parent);
         Path _get = Paths.get((this.root + fileName));
-        Videos.convert(_get, newFile, 
-          "flv");
+        Videos.convert(_get, newFile, codec);
         File _file = newFile.toFile();
         File _absoluteFile = _file.getAbsoluteFile();
         boolean _exists = _absoluteFile.exists();

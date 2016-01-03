@@ -1,5 +1,7 @@
 package fr.nemomen.utils;
 
+import fr.nemomen.utils.VideoCodec;
+
 /**
  * Enum to bind different mime types format to HTML and fffmpeg parameters
  * 
@@ -26,20 +28,21 @@ public enum VideoCodec {
         this.mimeType = mimeType;
         this.format = format;
     }
-    String extention() { return extention; }
-    String mimeType() { return mimeType; }
-    String format() { return format; }
     
-    public VideoCodec getByName(String name) {
+    public String extention() { return extention; }
+    public String mimeType() { return mimeType; }
+    public String format() { return format; }
+    
+    public static VideoCodec getByExtention(String ext) {
     	for (VideoCodec codec: VideoCodec.values()) {
-    		if (codec.name().equals(name)) {
+    		if (codec.extention().equals(ext)) {
     			return codec;
     		}
     	}
     	return VideoCodec.NONE;
     }
     
-    public VideoCodec getByFormat(String format) {
+    public static VideoCodec getByFormat(String format) {
     	for (VideoCodec codec: VideoCodec.values()) {
     		if (codec.format().equals(format)) {
     			return codec;
@@ -48,7 +51,7 @@ public enum VideoCodec {
     	return VideoCodec.NONE;
     }
     
-    public VideoCodec getByMimeType(String mimeType) {
+    public static VideoCodec getByMimeType(String mimeType) {
     	for (VideoCodec codec: VideoCodec.values()) {
     		if (codec.mimeType().equals(mimeType)) {
     			return codec;
@@ -56,4 +59,5 @@ public enum VideoCodec {
     	}
     	return VideoCodec.NONE;
     }
+
 }

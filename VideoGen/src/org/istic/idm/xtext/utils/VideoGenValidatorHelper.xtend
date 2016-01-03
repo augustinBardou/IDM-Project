@@ -3,7 +3,6 @@ package org.istic.idm.xtext.utils;
 import java.io.File
 import java.util.HashMap
 import java.util.List
-import org.istic.idm.xtext.utils.VideoGenHelper
 import org.istic.idm.xtext.videoGen.Alternatives
 import org.istic.idm.xtext.videoGen.Optional
 import org.istic.idm.xtext.videoGen.Sequence

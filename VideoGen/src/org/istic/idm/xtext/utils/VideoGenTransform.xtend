@@ -1,9 +1,12 @@
 package org.istic.idm.xtext.utils
 
+import com.google.common.collect.Lists
+import fr.nemomen.utils.VideoCodec
+import fr.nemomen.utils.Videos
+import fr.nemomen.utils.System
+import fr.nemomen.utils.randomizers.DistributedRandomNumberGenerator
 import java.nio.file.Path
 import java.nio.file.Paths
-import java.util.ArrayList
-import java.util.Collection
 import java.util.HashMap
 import java.util.logging.Logger
 import org.istic.idm.ecore.PlayList.PlayList
@@ -20,7 +23,6 @@ import org.istic.idm.xtext.videoGen.VideoGen
 import org.istic.idm.xtext.videoGen.VideoGenFactory
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
-import com.google.common.collect.Lists
 
 /**
  * Define some VideoGen transformation's specifications
@@ -46,7 +48,7 @@ import com.google.common.collect.Lists
 	 * 
 	 * TODO: could it be better to instanciate the class and allow the setting of a temporary path (local or remote) ?
  	 */
-  	static Path tmp = Paths.get(System.getProperty("java.io.tmpdir") + "/VideoGenGenerated");
+  	static Path tmp = Paths.get(java.lang.System.getProperty("java.io.tmpdir") + "/VideoGenGenerated");
   
  	/**
  	 * Transfers (some) metadatas from a VideoGen Sequence instance to a PlayList Video instance (description, length, mime type and url)
@@ -154,11 +156,11 @@ import com.google.common.collect.Lists
     def static createThumbnails(Sequence sequence){
 	
 		val dir = Paths.get(tmp + "/" + "thumbnails/")
-		VideoGenHelper.mkDirs(dir)
+		System.mkDirs(dir)
 		val fullPath = Paths.get(sequence.url)
 		val extention = getFileExtension(fullPath.fileName.toString)
 		val thumbFileName = Paths.get(dir + "/" + fullPath.fileName.toString.replaceAll("." + extention, ".png"))
-		VideoGenHelper.createThumbnails(fullPath, thumbFileName)
+		Videos.createThumbnails(fullPath, thumbFileName)
 
 		thumbFileName
     }
@@ -173,19 +175,20 @@ import com.google.common.collect.Lists
 	 * 
  	 * TODO: somethings should be done better... But what ?
  	 */ 
-    def static ConvertTo(VideoCodec type, VideoGen videogen){
+    def static ConvertTo(Mimetypes_Enum type, VideoGen videogen){
+    	val codec = VideoCodec.getByFormat(type.getName)
 		val pathes = Lists.newArrayList
-		val dir = Paths.get(tmp + "/" + "converted" + "/" + type.name + "/")
-		VideoGenHelper.mkDirs(dir)
+		val dir = Paths.get(tmp + "/" + "converted" + "/" + type.getName + "/")
+		System.mkDirs(dir)
         VideoGenHelper.allSequences(videogen).forEach[sequence |
 			
 			val fullPath = Paths.get(sequence.url)
 			val extention = getFileExtension(fullPath.fileName.toString)
-			val newFullPathName = Paths.get(dir + "/" + fullPath.fileName.toString.replaceAll("." + extention, "." + type.extention))
+			val newFullPathName = Paths.get(dir + "/" + fullPath.fileName.toString.replaceAll("." + extention, "." + codec.extention))
 			pathes.add(newFullPathName)
-			VideoGenHelper.convert(fullPath, newFullPathName, type.format)
+			Videos.convert(fullPath, newFullPathName, codec)
 			sequence.url = newFullPathName.toAbsolutePath.toString
-			sequence.mimetype = Mimetypes_Enum.getByName(type.name)
+			sequence.mimetype = type
         ]
         pathes
     }
@@ -205,8 +208,10 @@ import com.google.common.collect.Lists
         
         VideoGenHelper.allSequences(videogen).forEach[sequence |
         	val url = Paths.get(sequence.url)
-			sequence.length = VideoGenHelper.getDuration(url)
-			sequence.mimetype = VideoGenHelper.getMimeType(url)
+			sequence.length = Videos.getDuration(url)
+			println(url)
+			println(Videos.getMimeType(url))
+			sequence.mimetype = Mimetypes_Enum.getByName(Videos.getMimeType(url).name)
         ]
         videogen
     }

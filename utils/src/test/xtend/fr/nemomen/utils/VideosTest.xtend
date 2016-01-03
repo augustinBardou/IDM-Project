@@ -42,13 +42,14 @@ class VideosTest {
 
 	@Test
 	def void convertTest() {
+		val codec = VideoCodec.FLV
 		for (fileName: oracle_file_list) {
-			var newFile = Paths.get(root + "converted/" + fileName.replace('.mp4', '.flv'))
+			var newFile = Paths.get(root + "converted/" + fileName.replace('.mp4', '.' + codec.extention))
 			System.mkDirs(newFile.parent)
 			Videos.convert(
 				Paths.get(root + fileName),
 				newFile,
-				'flv'
+				codec
 			)
 			assertTrue(newFile.toFile.absoluteFile.exists)
 			assertTrue(newFile.toFile.absoluteFile.canRead)

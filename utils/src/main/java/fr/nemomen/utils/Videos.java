@@ -16,7 +16,7 @@ import org.eclipse.xtext.xbase.lib.ListExtensions;
  * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
  */
 @SuppressWarnings("all")
-@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-03T17:10+0100")
+@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-03T18:00+0100")
 public class Videos extends Executor {
   /**
    * Create a thumbnail from the given video to the given path
@@ -42,12 +42,13 @@ public class Videos extends Executor {
    * TODO: add a mimeType instead of a string format parameter
    * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
    */
-  public static void convert(final Path fullPath, final Path newFullPathName, final String format) {
+  public static void convert(final Path fullPath, final Path newFullPathName, final VideoCodec codec) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("avconv -i \"");
     _builder.append(fullPath, "");
     _builder.append("\" -strict -2 -vcodec h264 -acodec aac -f ");
-    _builder.append(format, "");
+    String _format = codec.format();
+    _builder.append(_format, "");
     _builder.append(" \"");
     _builder.append(newFullPathName, "");
     _builder.append("\"");
@@ -96,8 +97,8 @@ public class Videos extends Executor {
           List<String> _map = ListExtensions.<VideoCodec, String>map(((List<VideoCodec>)Conversions.doWrapArray(_values)), _function_1);
           boolean _contains = _map.contains(mt);
           if (_contains) {
-            VideoCodec _valueOf = VideoCodec.valueOf(mt);
-            mimeType = _valueOf;
+            VideoCodec _byFormat = VideoCodec.getByFormat(mt);
+            mimeType = _byFormat;
           }
         }
       }
@@ -119,7 +120,7 @@ public class Videos extends Executor {
       _builder.append(fullPath, "");
       _builder.append("\"");
       String cmd = _builder.toString();
-      Executor.ExecResult result = Executor.execCmd(cmd, 0);
+      Executor.ExecResult result = Executor.execCmd(cmd, 1);
       Executor.processResult(result);
       List<String> _lines = result.getLines();
       final Function1<String, Boolean> _function = new Function1<String, Boolean>() {

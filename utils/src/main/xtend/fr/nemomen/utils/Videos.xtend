@@ -29,8 +29,8 @@ public class Videos extends Executor {
 	 * TODO: add a mimeType instead of a string format parameter
 	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
 	 */
-	def static void convert(Path fullPath, Path newFullPathName, String format) {
-		var cmd = '''avconv -i "«fullPath»" -strict -2 -vcodec h264 -acodec aac -f «format» "«newFullPathName»"'''
+	def static void convert(Path fullPath, Path newFullPathName, VideoCodec codec) {
+		var cmd = '''avconv -i "«fullPath»" -strict -2 -vcodec h264 -acodec aac -f «codec.format» "«newFullPathName»"'''
 		var ExecResult result = execCmd(cmd, 0)
 		processResult(result)
 	}
@@ -51,7 +51,7 @@ public class Videos extends Executor {
 			var tmpResult = durationPattern.get(0).split(" ").get(2).split(",")
 			for (mt: tmpResult) {
 				if (VideoCodec.values.map[mte | mte.name].contains(mt)) {
-					mimeType = VideoCodec.valueOf(mt)
+					mimeType = VideoCodec.getByFormat(mt)
 				}
 			}
 		}
@@ -66,7 +66,7 @@ public class Videos extends Executor {
 	def static int getDuration(Path fullPath) {
 		//var cmd = '''avconv -i "«fullPath»" 2>&1 | grep "Duration"| cut -d ' ' -f 4 | sed s/,// | sed 's@\..*@@g' | awk '{ split($1, A, ":"); split(A[3], B, "."); print 3600*A[1] + 60*A[2] + B[1] }' '''
 		var cmd = '''avconv -i "«fullPath»"'''
-		var result = execCmd(cmd, 0)
+		var result = execCmd(cmd, 1)
 		processResult(result)
 		val durationPattern = result.lines.filter[contains("Duration")]
 		var duration = 0

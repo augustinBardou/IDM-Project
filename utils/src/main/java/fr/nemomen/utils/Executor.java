@@ -1,11 +1,13 @@
 package fr.nemomen.utils;
 
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.annotation.Generated;
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
+import org.apache.commons.exec.ExecuteException;
 import org.apache.commons.exec.LogOutputStream;
 import org.apache.commons.exec.PumpStreamHandler;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -26,7 +28,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
  * TODO: should be abstract from creating files inside the system path... Which could lead to mkDirs method removal
  */
 @SuppressWarnings("all")
-@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-03T17:10+0100")
+@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-03T17:17+0100")
 public abstract class Executor {
   /**
    * LogOutputStream
@@ -95,8 +97,12 @@ public abstract class Executor {
       int _execute = executor.execute(commandLine);
       result.setExitCode(_execute);
     } catch (final Throwable _t) {
-      if (_t instanceof Exception) {
-        final Exception e = (Exception)_t;
+      if (_t instanceof ExecuteException) {
+        final ExecuteException e = (ExecuteException)_t;
+        e.printStackTrace();
+      } else if (_t instanceof IOException) {
+        final IOException e_1 = (IOException)_t;
+        e_1.printStackTrace();
       } else {
         throw Exceptions.sneakyThrow(_t);
       }
