@@ -59,7 +59,7 @@
 	</dependency>
 	<dependency>
 		<groupId>fr.nemomen</groupId>
-		<artifactId>utils</artifactId>
+		<artifactId>Utils</artifactId>
 		<version>0.1</version>
 	</dependency>
   </dependencies>

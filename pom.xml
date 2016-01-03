@@ -17,7 +17,6 @@
     <module>VideoGen</module>
     <module>VideoGen.tests</module>
     <!--module>VideoGen.service</module-->
-    <module>utils</module>
   </modules>
   <packaging>pom</packaging>
   <dependencies>

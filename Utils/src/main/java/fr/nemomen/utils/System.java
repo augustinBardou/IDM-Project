@@ -10,7 +10,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
  * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
  */
 @java.lang.SuppressWarnings("all")
-@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-03T18:12+0100")
+@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-03T18:18+0100")
 public class System extends Executor {
   /**
    * Create dirs contained in the given url
