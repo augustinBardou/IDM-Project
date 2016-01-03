@@ -7,6 +7,12 @@
 	<groupId>fr.nemomen</groupId>
 	<artifactId>utils</artifactId>
 	<version>0.1</version>
+	<parent>
+		<groupId>IDM-Project</groupId>
+		<artifactId>IDM-Project</artifactId>
+		<relativePath>../</relativePath>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
