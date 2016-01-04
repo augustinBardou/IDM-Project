@@ -1,0 +1,71 @@
+<html>
+
+<head>
+   <meta charset="utf-8">
+
+   <title>VideoGen · Flowplayer</title>
+
+   <!-- optimize mobile versions -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- The "minimalist" skin, "minimalist.css", "functional.css" and "playful.css" are available -->
+   <link rel="stylesheet" href="skin/playful.css">
+   <link rel="stylesheet" href="skin/minimal.css">
+   <link rel="stylesheet" href="skin/configurator.css">
+
+   <!-- Flowplayer depends on jquery -->
+   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+   <!-- Flowplayer-->
+   <script src="flowplayer.js"></script>
+
+   <script type="text/javascript">
+flowplayer.conf = {
+  live: true,
+  swf: "flowplayerhls.swf",
+  // blacktrash.org, flowplayer.dev, localhost
+  key: "$234140469777507, $238892071193566, $158769847315888, $173588832526605",
+  debug: true,
+  rtmpt: false,
+  setup: {"techOrder": ["flash", "html5"]},
+  ratio: 0.5625
+};
+   
+// listen to playlist events
+function log() {
+
+   $("#event-info").append("<p>" + [].slice.call(arguments).join(", ") + "</p>");
+}
+flowplayer(function(api, root) {
+	api.bind("load", function(e, api, video) {
+		log(api.engine.engineName + " engine playing " + video.type);
+		log("clip " + video.index, "is_last: " + video.is_last);
+	}).bind("cuepoint", function(e, api, cuepoint) {
+		log("clip " + api.video.index, "cuepoint " + cuepoint.time);
+	});
+});
+</script>
+
+</head>
+
+<body>
+<div id="content">
+   <h1>VideoGen · Flowplayer</h1>
+
+<div id="basic-playlist" class="flowplayer is-splash is-closeable">
+	<video autoplay preload="metadata">
+		<source type="%playlistType%" src="%playlistSource%">
+	</video>
+	
+
+</div>
+
+%configurator%
+
+<div id="event-info"></div>
+
+
+</div><!--/end content -->
+</body>
+
+</html>

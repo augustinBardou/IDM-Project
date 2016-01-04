@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 import org.istic.idm.ecore.PlayList.impl.PlayListImpl;
 import org.istic.idm.ecore.PlayList.util.PlayListTransform;
 import org.istic.idm.xtext.VideoGenStandaloneSetup;
-import org.istic.idm.xtext.utils.VideoGenHelper;
 import org.istic.idm.xtext.videoGen.VideoGen;
 
 import org.istic.idm.xtext.utils.VideoGenTransform;
@@ -25,7 +24,7 @@ public class PlayList {
 	
 	public static File writeToFile(String filename, String content) {
 		if (!path.toFile().exists()) {
-			VideoGenHelper.mkDirs(path);
+			fr.nemomen.utils.System.mkDirs(path);
 		}
 		FileWriter writer;
 		File file = new File(path  + "/" + filename);

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 angular.module('videogenApp', ['LocalStorageModule', 
                'ui.bootstrap', // for modal dialogs

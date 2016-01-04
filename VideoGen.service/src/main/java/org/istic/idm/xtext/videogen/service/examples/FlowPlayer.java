@@ -21,17 +21,18 @@ import java.util.stream.Stream;
 
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
-import org.istic.idm.ecore.PlayList.PlayList;
 import org.istic.idm.ecore.PlayList.PlayListFactory;
 import org.istic.idm.ecore.PlayList.Video;
 import org.istic.idm.ecore.PlayList.impl.PlayListFactoryImpl;
 import org.istic.idm.ecore.PlayList.impl.PlayListImpl;
 import org.istic.idm.ecore.PlayList.util.PlayListTransform;
 import org.istic.idm.xtext.VideoGenStandaloneSetup;
-import org.istic.idm.xtext.utils.VideoCodec;
 import org.istic.idm.xtext.utils.VideoGenTransform;
 import org.istic.idm.xtext.utils.VideoGenValidatorHelper;
+import org.istic.idm.xtext.videoGen.Mimetypes_Enum;
 import org.istic.idm.xtext.videoGen.VideoGen;
+
+import fr.nemomen.utils.VideoCodec;
 
 /**
  * @author blacknight
@@ -82,7 +83,7 @@ public class FlowPlayer {
 					StringBuffer subcontent = new StringBuffer();
 					subcontent.append("<a class=\"fp-prev\"></a><a class=\"fp-next\"></a>" +
 							"<div class=\"fp-playlist\">");
-					for (Video video : playlist.getVideo()) {
+					for (Video video : ((org.istic.idm.ecore.PlayList.PlayList) playlist).getVideo()) {
 						subcontent.append("<a href=\"blob:file://" + video.getPath() + "\" style=\"background-image:url(" + video.getThumbnail() + ")\"></a>");
 					}
 					subcontent.append("</div>");
@@ -114,7 +115,7 @@ public class FlowPlayer {
 		return generatedIndexPath;
 	}
 
-	public PlayList generatePlayList() throws Exception {
+	public PlayListImpl generatePlayList() throws Exception {
 		videoGen = VideoGenStandaloneSetup.loadVideoGen(videoGenPath.toString());
 		Map<String, List<String>> checks = VideoGenValidatorHelper.checkAll(videoGen);
 		if (!checks.get("error").isEmpty()) {
@@ -134,7 +135,7 @@ public class FlowPlayer {
 				LOGGER.info(info);
 			}
 		}
-		VideoGenTransform.ConvertTo(VideoCodec.MPEGTS, videoGen);
+		VideoGenTransform.ConvertTo(Mimetypes_Enum.MPEGTS, videoGen);
 		System.out.println(videoGen);
 		VideoGenTransform.addMetadata(videoGen);
 		System.out.println("Playlist written...");
@@ -145,10 +146,10 @@ public class FlowPlayer {
 		options.put("RESOLUTION", "640x360");
 		childPL = org.istic.idm.xtext.videogen.service.examples.PlayList.writeToFile(childPL, PlayListTransform.toM3U(playlist, true, true)).getAbsolutePath();
 		PlayListFactory factory = new PlayListFactoryImpl();
-		PlayList masterPlayList = factory.createPlayList();
+		PlayList masterPlayList = (PlayList) factory.createPlayList();
 		Video masterVideo = factory.createVideo();
 		masterVideo.setPath(childPL);
-		masterPlayList.getVideo().add(masterVideo);
+		((org.istic.idm.ecore.PlayList.PlayList) masterPlayList).getVideo().add(masterVideo);
 		masterPL = org.istic.idm.xtext.videogen.service.examples.PlayList.writeToFile(masterPL, PlayListTransform.toM3U(playlist, true, false, options)).getAbsolutePath();
 		return playlist;
 
