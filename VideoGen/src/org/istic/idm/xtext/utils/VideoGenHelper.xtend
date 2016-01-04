@@ -7,6 +7,8 @@ import org.istic.idm.xtext.videoGen.Mandatory
 import org.istic.idm.xtext.videoGen.Optional
 import org.istic.idm.xtext.videoGen.Sequence
 import org.istic.idm.xtext.videoGen.VideoGen
+import java.util.Map
+import java.util.HashMap
 
 /** 
  * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
@@ -34,6 +36,30 @@ public class VideoGenHelper {
 			}
 		]
 		sequences
+    }
+    
+ 	/**
+ 	 * Return a hashmap with corrected probabilities for an Alternatives instance
+ 	 * 
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+ 	 */ 
+    def static Map<String, Integer> checkProbabilities(Alternatives alternatives) {
+		val result = new HashMap<String, Integer>
+        var totalProb = 0
+        var totalOptions = 0
+        for (option: alternatives.options) {
+        	if (option.probability == 0) {
+        		totalOptions++
+        	}
+        	totalProb += option.probability
+        	result.put(option.sequence.name, option.probability)
+        }
+        for (name: result.keySet) {
+        	if (result.get(name) == 0) {
+        		result.put(name, (100 - totalProb) / totalOptions)
+        	}
+        }
+        result
     }
 
 }

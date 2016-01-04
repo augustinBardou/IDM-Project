@@ -100,18 +100,9 @@ import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
     def private static selectSequence(Alternatives alternatives) {
         
         val DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator()
-        val nbAlternatives = alternatives.options.length
-       	
-        alternatives.options.forEach[option |
-            var int count = 0
-            var double proba
-            if(option.probability != 0){
-                proba = option.probability
-            } else {
-                proba = 100 / nbAlternatives
-            }
-            drng.addNumber(count, proba)
-            count++
+        val proba = VideoGenHelper.checkProbabilities(alternatives)
+        alternatives.options.map[sequence.name].forEach[name |
+            drng.addNumber(proba.keySet.toList.indexOf(name), proba.get(name))
         ]
             
         var int index = drng.getDistributedRandomNumber()
