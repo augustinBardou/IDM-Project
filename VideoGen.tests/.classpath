@@ -2,14 +2,7 @@
 <classpath>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/PlayList"/>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/VideoGen"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/VideoGen.ui"/>
 	<classpathentry kind="src" output="target/classes" path="src">
-		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="src" output="target/classes" path="java">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -33,5 +26,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/VideoGen/target/org.istic.idm.xtext.VideoGen-0.0.1-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

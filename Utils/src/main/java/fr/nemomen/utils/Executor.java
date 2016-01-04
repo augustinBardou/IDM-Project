@@ -28,7 +28,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
  * TODO: should be abstract from creating files inside the system path... Which could lead to mkDirs method removal
  */
 @SuppressWarnings("all")
-@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-03T18:18+0100")
+@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-04T16:03+0100")
 public abstract class Executor {
   /**
    * LogOutputStream
@@ -59,6 +59,7 @@ public abstract class Executor {
     
     private final List<String> lines = new LinkedList<String>();
     
+    @Override
     protected void processLine(final String line, final int level) {
       this.lines.add(line);
     }

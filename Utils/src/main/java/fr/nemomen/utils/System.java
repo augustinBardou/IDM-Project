@@ -9,8 +9,8 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 /**
  * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
  */
-@java.lang.SuppressWarnings("all")
-@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-03T18:18+0100")
+@SuppressWarnings("all")
+@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-04T16:03+0100")
 public class System extends Executor {
   /**
    * Create dirs contained in the given url
@@ -22,10 +22,10 @@ public class System extends Executor {
     _builder.append("mkdir -p ");
     Path _absolutePath = path.toAbsolutePath();
     _builder.append(_absolutePath, "");
-    java.lang.String cmd = _builder.toString();
+    String cmd = _builder.toString();
     Executor.ExecResult result = Executor.execCmd(cmd, 0);
-    List<java.lang.String> _lines = result.getLines();
-    for (final java.lang.String line : _lines) {
+    List<String> _lines = result.getLines();
+    for (final String line : _lines) {
       Executor.LOGGER.finest(line);
     }
   }

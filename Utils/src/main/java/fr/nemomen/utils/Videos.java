@@ -16,7 +16,7 @@ import org.eclipse.xtext.xbase.lib.ListExtensions;
  * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
  */
 @SuppressWarnings("all")
-@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-03T18:18+0100")
+@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-04T16:03+0100")
 public class Videos extends Executor {
   /**
    * Create a thumbnail from the given video to the given path
@@ -73,10 +73,8 @@ public class Videos extends Executor {
       Executor.ExecResult result = Executor.execCmd(cmd, 0);
       Executor.processResult(result);
       List<String> _lines = result.getLines();
-      final Function1<String, Boolean> _function = new Function1<String, Boolean>() {
-        public Boolean apply(final String it) {
-          return Boolean.valueOf(it.contains((("\'" + fullPath) + "\'")));
-        }
+      final Function1<String, Boolean> _function = (String it) -> {
+        return Boolean.valueOf(it.contains((("\'" + fullPath) + "\'")));
       };
       final Iterable<String> durationPattern = IterableExtensions.<String>filter(_lines, _function);
       VideoCodec mimeType = VideoCodec.NONE;
@@ -89,10 +87,8 @@ public class Videos extends Executor {
         String[] tmpResult = _get_1.split(",");
         for (final String mt : tmpResult) {
           VideoCodec[] _values = VideoCodec.values();
-          final Function1<VideoCodec, String> _function_1 = new Function1<VideoCodec, String>() {
-            public String apply(final VideoCodec mte) {
-              return mte.name();
-            }
+          final Function1<VideoCodec, String> _function_1 = (VideoCodec mte) -> {
+            return mte.name();
           };
           List<String> _map = ListExtensions.<VideoCodec, String>map(((List<VideoCodec>)Conversions.doWrapArray(_values)), _function_1);
           boolean _contains = _map.contains(mt);
@@ -123,10 +119,8 @@ public class Videos extends Executor {
       Executor.ExecResult result = Executor.execCmd(cmd, 1);
       Executor.processResult(result);
       List<String> _lines = result.getLines();
-      final Function1<String, Boolean> _function = new Function1<String, Boolean>() {
-        public Boolean apply(final String it) {
-          return Boolean.valueOf(it.contains("Duration"));
-        }
+      final Function1<String, Boolean> _function = (String it) -> {
+        return Boolean.valueOf(it.contains("Duration"));
       };
       final Iterable<String> durationPattern = IterableExtensions.<String>filter(_lines, _function);
       int duration = 0;
