@@ -188,3 +188,6 @@ xtend-gen/
 *.pls
 *.m3u
 generated/
+*.java._trace
+*.xtendbin
+
