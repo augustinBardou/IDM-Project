@@ -22,5 +22,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.istic.idm.xtext.ui.quickfix,
  org.istic.idm.xtext.ui.contentassist,
  org.istic.idm.xtext.ui.internal,
- org.istic.idm.xtext.ui.contentassist.antlr
+ org.istic.idm.xtext.ui.contentassist.antlr,
+ org.istic.idm.xtext.ui.contentassist.antlr.internal
 Bundle-Activator: org.istic.idm.xtext.ui.internal.VideoGenActivator

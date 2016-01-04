@@ -32,9 +32,9 @@ public class VideoGenSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getLEFT_BRACKETRule())
+		if (ruleCall.getRule() == grammarAccess.getLEFT_BRACKETRule())
 			return getLEFT_BRACKETToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getRIGHT_BRACKETRule())
+		else if (ruleCall.getRule() == grammarAccess.getRIGHT_BRACKETRule())
 			return getRIGHT_BRACKETToken(semanticObject, ruleCall, node);
 		return "";
 	}
@@ -63,9 +63,9 @@ public class VideoGenSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Sequence_UrlKeyword_3_0_0_0_q.equals(syntax))
+			if (match_Sequence_UrlKeyword_3_0_0_0_q.equals(syntax))
 				emit_Sequence_UrlKeyword_3_0_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Statement_MandatoryKeyword_1_0_q.equals(syntax))
+			else if (match_Statement_MandatoryKeyword_1_0_q.equals(syntax))
 				emit_Statement_MandatoryKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}

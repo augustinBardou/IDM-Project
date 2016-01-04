@@ -19,7 +19,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class VideoGenElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VideoGen");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.istic.idm.xtext.VideoGen.VideoGen");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cVideoGenKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final RuleCall cLEFT_BRACKETTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
@@ -28,7 +28,9 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRIGHT_BRACKETTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//VideoGen:
-		//	"VideoGen" LEFT_BRACKET statements+=Statement+ RIGHT_BRACKET;
+		//	"VideoGen" LEFT_BRACKET
+		//	statements+=Statement+
+		//	RIGHT_BRACKET;
 		@Override public ParserRule getRule() { return rule; }
 
 		//"VideoGen" LEFT_BRACKET statements+=Statement+ RIGHT_BRACKET
@@ -51,7 +53,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class StatementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Statement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.istic.idm.xtext.VideoGen.Statement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cOptionalKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
@@ -91,7 +93,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AlternativesElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Alternatives");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.istic.idm.xtext.VideoGen.Alternatives");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAlternativesKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -102,7 +104,9 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRIGHT_BRACKETTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//Alternatives:
-		//	"Alternatives" name=ID LEFT_BRACKET options+=Optional+ RIGHT_BRACKET;
+		//	"Alternatives" name=ID LEFT_BRACKET
+		//	options+=Optional+
+		//	RIGHT_BRACKET;
 		@Override public ParserRule getRule() { return rule; }
 
 		//"Alternatives" name=ID LEFT_BRACKET options+=Optional+ RIGHT_BRACKET
@@ -131,7 +135,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class MandatoryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Mandatory");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.istic.idm.xtext.VideoGen.Mandatory");
 		private final Assignment cSequenceAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cSequenceSequenceParserRuleCall_0 = (RuleCall)cSequenceAssignment.eContents().get(0);
 		
@@ -147,7 +151,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class OptionalElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Optional");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.istic.idm.xtext.VideoGen.Optional");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
 		private final Keyword cProbabilityKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
@@ -158,7 +162,8 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSequenceSequenceParserRuleCall_1_0 = (RuleCall)cSequenceAssignment_1.eContents().get(0);
 		
 		//Optional:
-		//	("@Probability(" probability=INT ")")? sequence=Sequence;
+		//	("@Probability(" probability=INT ")")?
+		//	sequence=Sequence;
 		@Override public ParserRule getRule() { return rule; }
 
 		//("@Probability(" probability=INT ")")? sequence=Sequence
@@ -187,7 +192,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class SequenceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Sequence");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.istic.idm.xtext.VideoGen.Sequence");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSequenceKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -214,8 +219,9 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRIGHT_BRACKETTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//Sequence:
-		//	"Sequence" name=ID LEFT_BRACKET (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? &
-		//	("mimetype=" mimetype=Mimetypes_Enum)?) RIGHT_BRACKET;
+		//	"Sequence" name=ID
+		//	LEFT_BRACKET (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? & ("mimetype="
+		//	mimetype=Mimetypes_Enum)?) RIGHT_BRACKET;
 		@Override public ParserRule getRule() { return rule; }
 
 		//"Sequence" name=ID LEFT_BRACKET (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? &
@@ -234,14 +240,14 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		//LEFT_BRACKET
 		public RuleCall getLEFT_BRACKETTerminalRuleCall_2() { return cLEFT_BRACKETTerminalRuleCall_2; }
 
-		//("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? & ("mimetype="
-		//mimetype=Mimetypes_Enum)?
+		//(("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? & ("mimetype="
+		//mimetype=Mimetypes_Enum)?)
 		public UnorderedGroup getUnorderedGroup_3() { return cUnorderedGroup_3; }
 
 		//("url="? url=STRING) ("description=" description=STRING)?
 		public Group getGroup_3_0() { return cGroup_3_0; }
 
-		//"url="? url=STRING
+		//("url="? url=STRING)
 		public Group getGroup_3_0_0() { return cGroup_3_0_0; }
 
 		//"url="?
@@ -295,7 +301,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class Mimetypes_EnumElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Mimetypes_Enum");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.istic.idm.xtext.VideoGen.Mimetypes_Enum");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cNoneEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cNoneNONEKeyword_0_0 = (Keyword)cNoneEnumLiteralDeclaration_0.eContents().get(0);
@@ -315,58 +321,65 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAviAVIKeyword_7_0 = (Keyword)cAviEnumLiteralDeclaration_7.eContents().get(0);
 		
 		//enum Mimetypes_Enum:
-		//	none="NONE" | mp4="MP4" | flv="FLV" | mpegts="MPEGTS" | mpeg="MPEG" | webm="WEBM" | wmv="WMV" | avi="AVI";
+		//	none='NONE' |
+		//	mp4='MP4' |
+		//	flv='FLV' |
+		//	mpegts='MPEGTS' |
+		//	mpeg='MPEG' |
+		//	webm='WEBM' |
+		//	wmv='WMV' |
+		//	avi='AVI';
 		public EnumRule getRule() { return rule; }
 
-		//none="NONE" | mp4="MP4" | flv="FLV" | mpegts="MPEGTS" | mpeg="MPEG" | webm="WEBM" | wmv="WMV" | avi="AVI"
+		//none='NONE' | mp4='MP4' | flv='FLV' | mpegts='MPEGTS' | mpeg='MPEG' | webm='WEBM' | wmv='WMV' | avi='AVI'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//none="NONE"
+		//none='NONE'
 		public EnumLiteralDeclaration getNoneEnumLiteralDeclaration_0() { return cNoneEnumLiteralDeclaration_0; }
 
-		//"NONE"
+		//'NONE'
 		public Keyword getNoneNONEKeyword_0_0() { return cNoneNONEKeyword_0_0; }
 
-		//mp4="MP4"
+		//mp4='MP4'
 		public EnumLiteralDeclaration getMp4EnumLiteralDeclaration_1() { return cMp4EnumLiteralDeclaration_1; }
 
-		//"MP4"
+		//'MP4'
 		public Keyword getMp4MP4Keyword_1_0() { return cMp4MP4Keyword_1_0; }
 
-		//flv="FLV"
+		//flv='FLV'
 		public EnumLiteralDeclaration getFlvEnumLiteralDeclaration_2() { return cFlvEnumLiteralDeclaration_2; }
 
-		//"FLV"
+		//'FLV'
 		public Keyword getFlvFLVKeyword_2_0() { return cFlvFLVKeyword_2_0; }
 
-		//mpegts="MPEGTS"
+		//mpegts='MPEGTS'
 		public EnumLiteralDeclaration getMpegtsEnumLiteralDeclaration_3() { return cMpegtsEnumLiteralDeclaration_3; }
 
-		//"MPEGTS"
+		//'MPEGTS'
 		public Keyword getMpegtsMPEGTSKeyword_3_0() { return cMpegtsMPEGTSKeyword_3_0; }
 
-		//mpeg="MPEG"
+		//mpeg='MPEG'
 		public EnumLiteralDeclaration getMpegEnumLiteralDeclaration_4() { return cMpegEnumLiteralDeclaration_4; }
 
-		//"MPEG"
+		//'MPEG'
 		public Keyword getMpegMPEGKeyword_4_0() { return cMpegMPEGKeyword_4_0; }
 
-		//webm="WEBM"
+		//webm='WEBM'
 		public EnumLiteralDeclaration getWebmEnumLiteralDeclaration_5() { return cWebmEnumLiteralDeclaration_5; }
 
-		//"WEBM"
+		//'WEBM'
 		public Keyword getWebmWEBMKeyword_5_0() { return cWebmWEBMKeyword_5_0; }
 
-		//wmv="WMV"
+		//wmv='WMV'
 		public EnumLiteralDeclaration getWmvEnumLiteralDeclaration_6() { return cWmvEnumLiteralDeclaration_6; }
 
-		//"WMV"
+		//'WMV'
 		public Keyword getWmvWMVKeyword_6_0() { return cWmvWMVKeyword_6_0; }
 
-		//avi="AVI"
+		//avi='AVI'
 		public EnumLiteralDeclaration getAviEnumLiteralDeclaration_7() { return cAviEnumLiteralDeclaration_7; }
 
-		//"AVI"
+		//'AVI'
 		public Keyword getAviAVIKeyword_7_0() { return cAviAVIKeyword_7_0; }
 	}
 	
@@ -376,7 +389,7 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	private final MandatoryElements pMandatory;
 	private final OptionalElements pOptional;
 	private final SequenceElements pSequence;
-	private final Mimetypes_EnumElements unknownRuleMimetypes_Enum;
+	private final Mimetypes_EnumElements eMimetypes_Enum;
 	private final TerminalRule tLEFT_BRACKET;
 	private final TerminalRule tRIGHT_BRACKET;
 	
@@ -395,9 +408,9 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMandatory = new MandatoryElements();
 		this.pOptional = new OptionalElements();
 		this.pSequence = new SequenceElements();
-		this.unknownRuleMimetypes_Enum = new Mimetypes_EnumElements();
-		this.tLEFT_BRACKET = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LEFT_BRACKET");
-		this.tRIGHT_BRACKET = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "RIGHT_BRACKET");
+		this.eMimetypes_Enum = new Mimetypes_EnumElements();
+		this.tLEFT_BRACKET = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.istic.idm.xtext.VideoGen.LEFT_BRACKET");
+		this.tRIGHT_BRACKET = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.istic.idm.xtext.VideoGen.RIGHT_BRACKET");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -428,7 +441,9 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//VideoGen:
-	//	"VideoGen" LEFT_BRACKET statements+=Statement+ RIGHT_BRACKET;
+	//	"VideoGen" LEFT_BRACKET
+	//	statements+=Statement+
+	//	RIGHT_BRACKET;
 	public VideoGenElements getVideoGenAccess() {
 		return pVideoGen;
 	}
@@ -448,7 +463,9 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Alternatives:
-	//	"Alternatives" name=ID LEFT_BRACKET options+=Optional+ RIGHT_BRACKET;
+	//	"Alternatives" name=ID LEFT_BRACKET
+	//	options+=Optional+
+	//	RIGHT_BRACKET;
 	public AlternativesElements getAlternativesAccess() {
 		return pAlternatives;
 	}
@@ -468,7 +485,8 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Optional:
-	//	("@Probability(" probability=INT ")")? sequence=Sequence;
+	//	("@Probability(" probability=INT ")")?
+	//	sequence=Sequence;
 	public OptionalElements getOptionalAccess() {
 		return pOptional;
 	}
@@ -478,8 +496,9 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Sequence:
-	//	"Sequence" name=ID LEFT_BRACKET (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? &
-	//	("mimetype=" mimetype=Mimetypes_Enum)?) RIGHT_BRACKET;
+	//	"Sequence" name=ID
+	//	LEFT_BRACKET (("url="? url=STRING) ("description=" description=STRING)? & ("length=" length=INT)? & ("mimetype="
+	//	mimetype=Mimetypes_Enum)?) RIGHT_BRACKET;
 	public SequenceElements getSequenceAccess() {
 		return pSequence;
 	}
@@ -489,9 +508,16 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum Mimetypes_Enum:
-	//	none="NONE" | mp4="MP4" | flv="FLV" | mpegts="MPEGTS" | mpeg="MPEG" | webm="WEBM" | wmv="WMV" | avi="AVI";
+	//	none='NONE' |
+	//	mp4='MP4' |
+	//	flv='FLV' |
+	//	mpegts='MPEGTS' |
+	//	mpeg='MPEG' |
+	//	webm='WEBM' |
+	//	wmv='WMV' |
+	//	avi='AVI';
 	public Mimetypes_EnumElements getMimetypes_EnumAccess() {
-		return unknownRuleMimetypes_Enum;
+		return eMimetypes_Enum;
 	}
 	
 	public EnumRule getMimetypes_EnumRule() {
@@ -499,50 +525,50 @@ public class VideoGenGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal LEFT_BRACKET:
-	//	"{";
+	//	'{';
 	public TerminalRule getLEFT_BRACKETRule() {
 		return tLEFT_BRACKET;
 	} 
 
 	//terminal RIGHT_BRACKET:
-	//	"}";
+	//	'}';
 	public TerminalRule getRIGHT_BRACKETRule() {
 		return tRIGHT_BRACKET;
 	} 
 
 	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	} 
 
 	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
+	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
-	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' |
+	//	"'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
+	//	'/ *'->'* /';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
+	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	} 

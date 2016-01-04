@@ -4,17 +4,15 @@
 package org.istic.idm.xtext.serializer;
 
 import com.google.inject.Inject;
-import com.google.inject.Provider;
+import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Parameter;
+import org.eclipse.xtext.ParserRule;
+import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.istic.idm.xtext.services.VideoGenGrammarAccess;
 import org.istic.idm.xtext.videoGen.Alternatives;
@@ -31,8 +29,13 @@ public class VideoGenSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	private VideoGenGrammarAccess grammarAccess;
 	
 	@Override
-	public void createSequence(EObject context, EObject semanticObject) {
-		if(semanticObject.eClass().getEPackage() == VideoGenPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+	public void sequence(ISerializationContext context, EObject semanticObject) {
+		EPackage epackage = semanticObject.eClass().getEPackage();
+		ParserRule rule = context.getParserRule();
+		Action action = context.getAssignedAction();
+		Set<Parameter> parameters = context.getEnabledBooleanParameters();
+		if (epackage == VideoGenPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
 			case VideoGenPackage.ALTERNATIVES:
 				sequence_Alternatives(context, (Alternatives) semanticObject); 
 				return; 
@@ -49,57 +52,77 @@ public class VideoGenSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				sequence_VideoGen(context, (VideoGen) semanticObject); 
 				return; 
 			}
-		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
+		if (errorAcceptor != null)
+			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
 	/**
+	 * Contexts:
+	 *     Statement returns Alternatives
+	 *     Alternatives returns Alternatives
+	 *
 	 * Constraint:
 	 *     (name=ID options+=Optional+)
 	 */
-	protected void sequence_Alternatives(EObject context, Alternatives semanticObject) {
+	protected void sequence_Alternatives(ISerializationContext context, Alternatives semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Statement returns Mandatory
+	 *     Mandatory returns Mandatory
+	 *
 	 * Constraint:
 	 *     sequence=Sequence
 	 */
-	protected void sequence_Mandatory(EObject context, Mandatory semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, VideoGenPackage.Literals.MANDATORY__SEQUENCE) == ValueTransient.YES)
+	protected void sequence_Mandatory(ISerializationContext context, Mandatory semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, VideoGenPackage.Literals.MANDATORY__SEQUENCE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VideoGenPackage.Literals.MANDATORY__SEQUENCE));
 		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getMandatoryAccess().getSequenceSequenceParserRuleCall_0(), semanticObject.getSequence());
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Statement returns Optional
+	 *     Optional returns Optional
+	 *
 	 * Constraint:
 	 *     (probability=INT? sequence=Sequence)
 	 */
-	protected void sequence_Optional(EObject context, Optional semanticObject) {
+	protected void sequence_Optional(ISerializationContext context, Optional semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Sequence returns Sequence
+	 *
 	 * Constraint:
-	 *     (name=ID url=STRING description=STRING? length=INT? mimetype=Mimetypes_Enum?)
+	 *     (name=ID ((length=INT | mimetype=Mimetypes_Enum)? (url=STRING description=STRING?)?)+)
 	 */
-	protected void sequence_Sequence(EObject context, Sequence semanticObject) {
+	protected void sequence_Sequence(ISerializationContext context, Sequence semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     VideoGen returns VideoGen
+	 *
 	 * Constraint:
 	 *     statements+=Statement+
 	 */
-	protected void sequence_VideoGen(EObject context, VideoGen semanticObject) {
+	protected void sequence_VideoGen(ISerializationContext context, VideoGen semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
+	
+	
 }

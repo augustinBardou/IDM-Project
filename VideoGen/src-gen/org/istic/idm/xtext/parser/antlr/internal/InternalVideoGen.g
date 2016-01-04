@@ -99,7 +99,7 @@ this_LEFT_BRACKET_1=RULE_LEFT_BRACKET
        			$current, 
        			"statements",
         		lv_statements_2_0, 
-        		"Statement");
+        		"org.istic.idm.xtext.VideoGen.Statement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -205,7 +205,7 @@ ruleAlternatives returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -226,7 +226,7 @@ ruleAlternatives returns [EObject current=null]
        			$current, 
        			"options",
         		lv_options_3_0, 
-        		"Optional");
+        		"org.istic.idm.xtext.VideoGen.Optional");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -269,7 +269,7 @@ ruleMandatory returns [EObject current=null]
        			$current, 
        			"sequence",
         		lv_sequence_0_0, 
-        		"Sequence");
+        		"org.istic.idm.xtext.VideoGen.Sequence");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -313,7 +313,7 @@ ruleOptional returns [EObject current=null]
        			$current, 
        			"probability",
         		lv_probability_1_0, 
-        		"INT");
+        		"org.eclipse.xtext.common.Terminals.INT");
 	    }
 
 )
@@ -334,7 +334,7 @@ ruleOptional returns [EObject current=null]
        			$current, 
        			"sequence",
         		lv_sequence_3_0, 
-        		"Sequence");
+        		"org.istic.idm.xtext.VideoGen.Sequence");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -378,7 +378,7 @@ ruleSequence returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -418,7 +418,7 @@ ruleSequence returns [EObject current=null]
        			$current, 
        			"url",
         		lv_url_5_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -440,7 +440,7 @@ ruleSequence returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_7_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -474,7 +474,7 @@ ruleSequence returns [EObject current=null]
        			$current, 
        			"length",
         		lv_length_9_0, 
-        		"INT");
+        		"org.eclipse.xtext.common.Terminals.INT");
 	    }
 
 )
@@ -507,7 +507,7 @@ ruleSequence returns [EObject current=null]
        			$current, 
        			"mimetype",
         		lv_mimetype_11_0, 
-        		"Mimetypes_Enum");
+        		"org.istic.idm.xtext.VideoGen.Mimetypes_Enum");
 	        afterParserOrEnumRuleCall();
 	    }
 

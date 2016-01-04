@@ -53,15 +53,15 @@ public class InternalVideoGenLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g"; }
+    public String getGrammarFileName() { return "InternalVideoGen.g"; }
 
     // $ANTLR start "T__13"
     public final void mT__13() throws RecognitionException {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:11:7: ( 'VideoGen' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:11:9: 'VideoGen'
+            // InternalVideoGen.g:11:7: ( 'VideoGen' )
+            // InternalVideoGen.g:11:9: 'VideoGen'
             {
             match("VideoGen"); 
 
@@ -81,8 +81,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:12:7: ( '@Optional' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:12:9: '@Optional'
+            // InternalVideoGen.g:12:7: ( '@Optional' )
+            // InternalVideoGen.g:12:9: '@Optional'
             {
             match("@Optional"); 
 
@@ -102,8 +102,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:13:7: ( '@Mandatory' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:13:9: '@Mandatory'
+            // InternalVideoGen.g:13:7: ( '@Mandatory' )
+            // InternalVideoGen.g:13:9: '@Mandatory'
             {
             match("@Mandatory"); 
 
@@ -123,8 +123,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:14:7: ( 'Alternatives' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:14:9: 'Alternatives'
+            // InternalVideoGen.g:14:7: ( 'Alternatives' )
+            // InternalVideoGen.g:14:9: 'Alternatives'
             {
             match("Alternatives"); 
 
@@ -144,8 +144,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:15:7: ( '@Probability(' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:15:9: '@Probability('
+            // InternalVideoGen.g:15:7: ( '@Probability(' )
+            // InternalVideoGen.g:15:9: '@Probability('
             {
             match("@Probability("); 
 
@@ -165,8 +165,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:16:7: ( ')' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:16:9: ')'
+            // InternalVideoGen.g:16:7: ( ')' )
+            // InternalVideoGen.g:16:9: ')'
             {
             match(')'); 
 
@@ -185,8 +185,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:17:7: ( 'Sequence' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:17:9: 'Sequence'
+            // InternalVideoGen.g:17:7: ( 'Sequence' )
+            // InternalVideoGen.g:17:9: 'Sequence'
             {
             match("Sequence"); 
 
@@ -206,8 +206,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:18:7: ( 'url=' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:18:9: 'url='
+            // InternalVideoGen.g:18:7: ( 'url=' )
+            // InternalVideoGen.g:18:9: 'url='
             {
             match("url="); 
 
@@ -227,8 +227,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:19:7: ( 'description=' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:19:9: 'description='
+            // InternalVideoGen.g:19:7: ( 'description=' )
+            // InternalVideoGen.g:19:9: 'description='
             {
             match("description="); 
 
@@ -248,8 +248,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:20:7: ( 'length=' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:20:9: 'length='
+            // InternalVideoGen.g:20:7: ( 'length=' )
+            // InternalVideoGen.g:20:9: 'length='
             {
             match("length="); 
 
@@ -269,8 +269,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:21:7: ( 'mimetype=' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:21:9: 'mimetype='
+            // InternalVideoGen.g:21:7: ( 'mimetype=' )
+            // InternalVideoGen.g:21:9: 'mimetype='
             {
             match("mimetype="); 
 
@@ -290,8 +290,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:22:7: ( 'NONE' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:22:9: 'NONE'
+            // InternalVideoGen.g:22:7: ( 'NONE' )
+            // InternalVideoGen.g:22:9: 'NONE'
             {
             match("NONE"); 
 
@@ -311,8 +311,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:23:7: ( 'MP4' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:23:9: 'MP4'
+            // InternalVideoGen.g:23:7: ( 'MP4' )
+            // InternalVideoGen.g:23:9: 'MP4'
             {
             match("MP4"); 
 
@@ -332,8 +332,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:24:7: ( 'FLV' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:24:9: 'FLV'
+            // InternalVideoGen.g:24:7: ( 'FLV' )
+            // InternalVideoGen.g:24:9: 'FLV'
             {
             match("FLV"); 
 
@@ -353,8 +353,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:25:7: ( 'MPEGTS' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:25:9: 'MPEGTS'
+            // InternalVideoGen.g:25:7: ( 'MPEGTS' )
+            // InternalVideoGen.g:25:9: 'MPEGTS'
             {
             match("MPEGTS"); 
 
@@ -374,8 +374,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:26:7: ( 'MPEG' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:26:9: 'MPEG'
+            // InternalVideoGen.g:26:7: ( 'MPEG' )
+            // InternalVideoGen.g:26:9: 'MPEG'
             {
             match("MPEG"); 
 
@@ -395,8 +395,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:27:7: ( 'WEBM' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:27:9: 'WEBM'
+            // InternalVideoGen.g:27:7: ( 'WEBM' )
+            // InternalVideoGen.g:27:9: 'WEBM'
             {
             match("WEBM"); 
 
@@ -416,8 +416,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:28:7: ( 'WMV' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:28:9: 'WMV'
+            // InternalVideoGen.g:28:7: ( 'WMV' )
+            // InternalVideoGen.g:28:9: 'WMV'
             {
             match("WMV"); 
 
@@ -437,8 +437,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:29:7: ( 'AVI' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:29:9: 'AVI'
+            // InternalVideoGen.g:29:7: ( 'AVI' )
+            // InternalVideoGen.g:29:9: 'AVI'
             {
             match("AVI"); 
 
@@ -458,8 +458,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = RULE_LEFT_BRACKET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:596:19: ( '{' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:596:21: '{'
+            // InternalVideoGen.g:596:19: ( '{' )
+            // InternalVideoGen.g:596:21: '{'
             {
             match('{'); 
 
@@ -478,8 +478,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = RULE_RIGHT_BRACKET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:598:20: ( '}' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:598:22: '}'
+            // InternalVideoGen.g:598:20: ( '}' )
+            // InternalVideoGen.g:598:22: '}'
             {
             match('}'); 
 
@@ -498,10 +498,10 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:600:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:600:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalVideoGen.g:600:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalVideoGen.g:600:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:600:11: ( '^' )?
+            // InternalVideoGen.g:600:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -510,7 +510,7 @@ public class InternalVideoGenLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:600:11: '^'
+                    // InternalVideoGen.g:600:11: '^'
                     {
                     match('^'); 
 
@@ -528,7 +528,7 @@ public class InternalVideoGenLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:600:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalVideoGen.g:600:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -541,7 +541,7 @@ public class InternalVideoGenLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:
+            	    // InternalVideoGen.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -577,10 +577,10 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:602:10: ( ( '0' .. '9' )+ )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:602:12: ( '0' .. '9' )+
+            // InternalVideoGen.g:602:10: ( ( '0' .. '9' )+ )
+            // InternalVideoGen.g:602:12: ( '0' .. '9' )+
             {
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:602:12: ( '0' .. '9' )+
+            // InternalVideoGen.g:602:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -594,7 +594,7 @@ public class InternalVideoGenLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:602:13: '0' .. '9'
+            	    // InternalVideoGen.g:602:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -626,10 +626,10 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:604:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:604:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalVideoGen.g:604:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalVideoGen.g:604:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:604:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalVideoGen.g:604:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -647,10 +647,10 @@ public class InternalVideoGenLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:604:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalVideoGen.g:604:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:604:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalVideoGen.g:604:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -666,7 +666,7 @@ public class InternalVideoGenLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:604:21: '\\\\' .
+                    	    // InternalVideoGen.g:604:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -674,7 +674,7 @@ public class InternalVideoGenLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:604:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalVideoGen.g:604:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -699,10 +699,10 @@ public class InternalVideoGenLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:604:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalVideoGen.g:604:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:604:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalVideoGen.g:604:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -718,7 +718,7 @@ public class InternalVideoGenLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:604:54: '\\\\' .
+                    	    // InternalVideoGen.g:604:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -726,7 +726,7 @@ public class InternalVideoGenLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:604:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalVideoGen.g:604:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -769,12 +769,12 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:606:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:606:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalVideoGen.g:606:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalVideoGen.g:606:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:606:24: ( options {greedy=false; } : . )*
+            // InternalVideoGen.g:606:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -799,7 +799,7 @@ public class InternalVideoGenLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:606:52: .
+            	    // InternalVideoGen.g:606:52: .
             	    {
             	    matchAny(); 
 
@@ -829,12 +829,12 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:608:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:608:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalVideoGen.g:608:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalVideoGen.g:608:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:608:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalVideoGen.g:608:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -847,7 +847,7 @@ public class InternalVideoGenLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:608:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalVideoGen.g:608:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -867,7 +867,7 @@ public class InternalVideoGenLexer extends Lexer {
                 }
             } while (true);
 
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:608:40: ( ( '\\r' )? '\\n' )?
+            // InternalVideoGen.g:608:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -876,9 +876,9 @@ public class InternalVideoGenLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:608:41: ( '\\r' )? '\\n'
+                    // InternalVideoGen.g:608:41: ( '\\r' )? '\\n'
                     {
-                    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:608:41: ( '\\r' )?
+                    // InternalVideoGen.g:608:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -887,7 +887,7 @@ public class InternalVideoGenLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:608:41: '\\r'
+                            // InternalVideoGen.g:608:41: '\\r'
                             {
                             match('\r'); 
 
@@ -919,10 +919,10 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:610:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:610:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalVideoGen.g:610:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalVideoGen.g:610:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:610:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalVideoGen.g:610:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -936,7 +936,7 @@ public class InternalVideoGenLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:
+            	    // InternalVideoGen.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -976,8 +976,8 @@ public class InternalVideoGenLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:612:16: ( . )
-            // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:612:18: .
+            // InternalVideoGen.g:612:16: ( . )
+            // InternalVideoGen.g:612:18: .
             {
             matchAny(); 
 
@@ -992,201 +992,201 @@ public class InternalVideoGenLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_LEFT_BRACKET | RULE_RIGHT_BRACKET | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // InternalVideoGen.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_LEFT_BRACKET | RULE_RIGHT_BRACKET | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=28;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:10: T__13
+                // InternalVideoGen.g:1:10: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 2 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:16: T__14
+                // InternalVideoGen.g:1:16: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 3 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:22: T__15
+                // InternalVideoGen.g:1:22: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 4 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:28: T__16
+                // InternalVideoGen.g:1:28: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 5 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:34: T__17
+                // InternalVideoGen.g:1:34: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 6 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:40: T__18
+                // InternalVideoGen.g:1:40: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 7 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:46: T__19
+                // InternalVideoGen.g:1:46: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 8 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:52: T__20
+                // InternalVideoGen.g:1:52: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 9 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:58: T__21
+                // InternalVideoGen.g:1:58: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 10 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:64: T__22
+                // InternalVideoGen.g:1:64: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 11 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:70: T__23
+                // InternalVideoGen.g:1:70: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 12 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:76: T__24
+                // InternalVideoGen.g:1:76: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 13 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:82: T__25
+                // InternalVideoGen.g:1:82: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 14 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:88: T__26
+                // InternalVideoGen.g:1:88: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 15 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:94: T__27
+                // InternalVideoGen.g:1:94: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 16 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:100: T__28
+                // InternalVideoGen.g:1:100: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 17 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:106: T__29
+                // InternalVideoGen.g:1:106: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
             case 18 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:112: T__30
+                // InternalVideoGen.g:1:112: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
             case 19 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:118: T__31
+                // InternalVideoGen.g:1:118: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
             case 20 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:124: RULE_LEFT_BRACKET
+                // InternalVideoGen.g:1:124: RULE_LEFT_BRACKET
                 {
                 mRULE_LEFT_BRACKET(); 
 
                 }
                 break;
             case 21 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:142: RULE_RIGHT_BRACKET
+                // InternalVideoGen.g:1:142: RULE_RIGHT_BRACKET
                 {
                 mRULE_RIGHT_BRACKET(); 
 
                 }
                 break;
             case 22 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:161: RULE_ID
+                // InternalVideoGen.g:1:161: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 23 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:169: RULE_INT
+                // InternalVideoGen.g:1:169: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 24 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:178: RULE_STRING
+                // InternalVideoGen.g:1:178: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 25 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:190: RULE_ML_COMMENT
+                // InternalVideoGen.g:1:190: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 26 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:206: RULE_SL_COMMENT
+                // InternalVideoGen.g:1:206: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 27 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:222: RULE_WS
+                // InternalVideoGen.g:1:222: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 28 :
-                // ../VideoGen/src-gen/org/istic/idm/xtext/parser/antlr/internal/InternalVideoGen.g:1:230: RULE_ANY_OTHER
+                // InternalVideoGen.g:1:230: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
