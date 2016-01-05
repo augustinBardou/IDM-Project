@@ -1,4 +1,4 @@
-package org.istic.idm.xtext.utils;
+package org.istic.idm.xtext.validation;
 
 import java.io.File
 import java.util.HashMap
@@ -8,25 +8,42 @@ import org.istic.idm.xtext.videoGen.Optional
 import org.istic.idm.xtext.videoGen.Sequence
 import org.istic.idm.xtext.videoGen.VideoGen
 import java.util.ArrayList
+import org.istic.idm.xtext.utils.VideoGenHelper
 
+/**
+ * Independant VideoGen validator
+ * 
+ * FIXME: could it be possible to join both UI validator and this one ?
+ */
 public class VideoGenValidatorHelper {
 	
 	/**
 	 * Helper class to manage null, like java Optional but simpler
+	 * It is used in forEach functions that need an immutable object to create result
 	 * 
 	 */	
 	public static class Result {
 
-		var String result = null;
+		private var String result = null;
 		
+		/**
+		 * Set the container's value
+		 */
 		public def set(String value) {
 			result = value
 		}
 		
+		/**
+		 * Get the value from the container
+		 */
 		public def get() {
 			result
 		}
 		
+		/**
+		 * Indicates if there is a value inside the container
+		 * 
+		 */
 		public def isSet() {
 			result != null
 		}
@@ -110,21 +127,20 @@ public class VideoGenValidatorHelper {
 		VideoGenHelper.allSequences(videoGen).forEach[sequence |
 			var ret = checkIsUrlExists(sequences, sequence)
 			if (ret.isSet) {
-				result.get("error").add(ret.get)	
+				result.get("error").add(ret.get)
 			}
 			ret = checkUniqueDescription(sequences, sequence)
 			if (ret.isSet) {
-				result.get("warning").add(ret.get)	
+				result.get("warning").add(ret.get)
 			}
 			ret = checkUniqueURL(sequences, sequence)
 			if (ret.isSet) {
-				result.get("warning").add(ret.get)	
+				result.get("warning").add(ret.get)
 			}
 			ret = checkUniqueIdentifiers(sequences, sequence)
 			if (ret.isSet) {
-				result.get("error").add(ret.get)	
+				result.get("error").add(ret.get)
 			}
-			
 		]
 		videoGen.statements.forEach[statement |
 			if (statement instanceof Optional) {
