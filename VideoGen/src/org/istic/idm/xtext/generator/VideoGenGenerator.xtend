@@ -8,8 +8,10 @@ import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IFileSystemAccessExtension2
 import org.eclipse.xtext.generator.IGenerator
 import org.istic.idm.xtext.utils.VideoGenHelper
+import org.istic.idm.xtext.utils.VideoGenTransform
 import org.istic.idm.xtext.videoGen.Alternatives
 import org.istic.idm.xtext.videoGen.Mandatory
 import org.istic.idm.xtext.videoGen.Optional
@@ -23,97 +25,100 @@ import org.istic.idm.xtext.videoGen.VideoGen
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class VideoGenGenerator implements IGenerator {
+	
+	def dispatch void compile(VideoGen v, IFileSystemAccess fsa) {
+		val str = new StringBuilder()
+		str.append('''VideoGen {''' + "\n")
+		for (e : v.statements) {
+			e.compile(str, "\t")
+		}
+		str.append('''}''')
+		fsa.generateFile("corrected/test.vg", str)
+	}
 
-    def dispatch void compile(VideoGen v, IFileSystemAccess fsa) {
-    	val str = new StringBuilder()
-    	str.append('''VideoGen {''' + "\n")
-        for (e : v.statements) {
-            e.compile(str, "\t")
-        }
-    	str.append('''}''')
-        fsa.generateFile("corrected/test.vg", str)
-    }
- 
-    def compile(Statement s, StringBuilder str, String tab) {
-    		if (s instanceof Mandatory) {
-				s.compile(str, tab)
-			}
-			if (s instanceof Optional) {
-				s.compile(str, tab)
-			}
-			if (s instanceof Alternatives) {
-				s.compile(str, tab)
-			}
-        
-    }
-    def compile(Mandatory m, StringBuilder str, String tab) {
-    	str.append(tab + '''@Mandatory''' + "\n")
-    	m.sequence.compile(str, tab)
-    }
-    def compile(Optional o, StringBuilder str, String tab) {
-    	var proba = 50
-    	if(o.probability != 0){
-            proba = o.probability
-        }
-    	str.append(tab + '''@Optional''' + "\n")
-    	str.append(tab + '''@Probability(«proba»)''' + "\n")
-    	o.sequence.compile(str, tab)
-    }
-   
-    def compile(Alternatives a, StringBuilder str, String tab) {
-    	val probas = VideoGenHelper.checkProbabilities(a)
-    	str.append(tab + '''Alternatives «a.name» {''' + "\n")
-        a.options.forEach[o |
-    		str.append(tab + "\t" + '''@Probability(«probas.get(o.sequence.name)»)''' + "\n")
-    		o.sequence.compile(str, tab + "\t")
-    	]
-    	str.append(tab + '''}''' + "\n")
-    }
-    
-    def compile(Sequence s, StringBuilder str, String tab) {
-    	str.append(tab + '''Sequence «s.name» {''' + "\n")
-    	str.append(tab + '''    url="«s.url»"''' + "\n")
-    	str.append(tab + '''    description="«s.description»"''' + "\n")
-    	str.append(tab + '''    length=«s.length»''' + "\n")
-    	str.append(tab + '''    mimetype=«s.mimetype.literal»''' + "\n")
-    	str.append(tab + '''}''' + "\n")
-    }
-     
+	def compile(Statement s, StringBuilder str, String tab) {
+		if (s instanceof Mandatory) {
+			s.compile(str, tab)
+		}
+		if (s instanceof Optional) {
+			s.compile(str, tab)
+		}
+		if (s instanceof Alternatives) {
+			s.compile(str, tab)
+		}
+
+	}
+
+	def compile(Mandatory m, StringBuilder str, String tab) {
+		str.append(tab + '''@Mandatory''' + "\n")
+		m.sequence.compile(str, tab)
+	}
+
+	def compile(Optional o, StringBuilder str, String tab) {
+		var proba = 50
+		if (o.probability != 0) {
+			proba = o.probability
+		}
+		str.append(tab + '''@Optional''' + "\n")
+		str.append(tab + '''@Probability(«proba»)''' + "\n")
+		o.sequence.compile(str, tab)
+	}
+
+	def compile(Alternatives a, StringBuilder str, String tab) {
+		val probas = VideoGenHelper.checkProbabilities(a)
+		str.append(tab + '''Alternatives «a.name» {''' + "\n")
+		a.options.forEach [ o |
+			str.append(tab + "\t" + '''@Probability(«probas.get(o.sequence.name)»)''' + "\n")
+			o.sequence.compile(str, tab + "\t")
+		]
+		str.append(tab + '''}''' + "\n")
+	}
+
+	def compile(Sequence s, StringBuilder str, String tab) {
+		str.append(tab + '''Sequence «s.name» {''' + "\n")
+		str.append(tab + '''    url="«s.url»"''' + "\n")
+		str.append(tab + '''    description="«s.description»"''' + "\n")
+		str.append(tab + '''    length=«s.length»''' + "\n")
+		str.append(tab + '''    mimetype=«s.mimetype.literal»''' + "\n")
+		str.append(tab + '''}''' + "\n")
+	}
+
 	def saveVideoGen(URI uri, VideoGen videoGen) {
-		var Resource rs = new ResourceSetImpl().createResource(uri); 
-		rs.getContents.add(videoGen); 
+		var Resource rs = new ResourceSetImpl().createResource(uri);
+		rs.getContents.add(videoGen);
 		rs.save(new HashMap());
 	}
 
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
+		val videoGen = resource.allContents.filter(typeof(VideoGen)).head as VideoGen
+		VideoGenTransform.addMetadata(videoGen)
 		// Videos list control
-		fsa.generateFile('controls/videos-list.txt', 
-			resource.allContents
-				.filter(typeof(Sequence))
-				.map[url]
-				.join('\n'))
+		fsa.generateFile('controls/videos-list.txt', resource.allContents.filter(typeof(Sequence)).map[url].join('\n'))
 		// Structure control
 		val content = new StringBuffer
-		resource.allContents
-			.filter(typeof(VideoGen))
-			.forEach[videoGen | 
-				videoGen.statements.forEach[statement | 
-					if (statement instanceof Mandatory) {
-						content.append("Mandatory " + statement.sequence.name + "\n")
-					} else if (statement instanceof  Optional) {
-						content.append("Optional " + statement.sequence.name + "\n")
-					} else if (statement instanceof Alternatives) {
-						content.append("Alternatives " + statement.name + "\n")
-						statement.options.forEach[option |
-							content.append("\t Option " + option.sequence.name + "\n")
-						]	
-					}
+		videoGen.statements.forEach [ statement |
+			if (statement instanceof Mandatory) {
+				content.append("Mandatory " + statement.sequence.name + "\n")
+			} else if (statement instanceof Optional) {
+				content.append("Optional " + statement.sequence.name + "\n")
+			} else if (statement instanceof Alternatives) {
+				content.append("Alternatives " + statement.name + "\n")
+				statement.options.forEach [ option |
+					content.append("\t Option " + option.sequence.name + "\n")
 				]
-			]
+			}
+		]
+		// Structure  control
 		fsa.generateFile('controls/structure.txt', content.toString)
+
+		// Generate corrected VideoGen instance grammar
 		for (VideoGen v : resource.contents.filter(typeof(VideoGen))) {
-            v.compile(fsa)
-        }
-    }
-				
+			v.compile(fsa)
+		}
+		// Save the exported xmi
+		val baseUri = (fsa as IFileSystemAccessExtension2).getURI(".")
+		val tmpFile = URI.createURI(baseUri + "/" + "export.xmi")
+		saveVideoGen(tmpFile, videoGen)
+	}
+
 }
