@@ -10,15 +10,18 @@
         <!-- build:css assets/styles/vendor.css -->
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="libs/flowplayer/skin/all-skins.css" />
+        <link rel="stylesheet" href="libs/flowplayer-6.0.4/skin/all-skins.css" />
+		<link rel="stylesheet" href="libs/flowplayer-6.0.4/skin/configurator.css">
         
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css assets/styles/main.css -->
         <link rel="stylesheet" href="assets/styles/main.css">
-        <!-- endbuild --><link rel="stylesheet" href="libs/flowplayer/skin/playful.css">
-		<link rel="stylesheet" href="libs/flowplayer/skin/minimal.css">
-		<link rel="stylesheet" href="libs/flowplayer/skin/configurator.css">
+        <!-- endbuild -->
+		
+		
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="libs/flowplayer-6.0.4/flowplayer.js"></script>
 
     </head>
     <body ng-app="videogenApp">
@@ -48,7 +51,6 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
-        <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-aria/angular-aria.js"></script>
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -142,7 +144,6 @@
     <script src="scripts/app/account/sessions/sessions.controller.js"></script>
     <script src="scripts/app/flowplayer/flowplayer.js"></script>
     <script src="scripts/app/flowplayer/flowplayer.controller.js"></script>
-    <script src="libs/flowplayer/flowplayer.min.js"></script>
     <!-- endbuild -->
 </body>
 </html>
