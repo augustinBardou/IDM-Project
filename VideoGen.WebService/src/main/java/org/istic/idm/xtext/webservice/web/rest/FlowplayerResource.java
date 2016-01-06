@@ -36,23 +36,23 @@ import org.springframework.web.bind.annotation.*;
 public class FlowplayerResource {
 
     @RequestMapping(
-    		value = "/playlist.m3u8",
-    		method = RequestMethod.GET,
+    		value = "/custom_playlist.m3u8",
+    		method = RequestMethod.POST,
     		produces = MediaType.TEXT_PLAIN_VALUE
     )
-    public @ResponseBody ResponseEntity<?> getCustomPlayList(@RequestBody PlayList playlist) {
+    public @ResponseBody ResponseEntity<?> getCustomPlayList(@RequestBody Map<String, Boolean> options) {
     	VideoGenStandaloneSetup.doSetup();
 		VideoGen videogen = (VideoGen) new ResourceSetImpl().getResource(
 			URI.createURI(this.getClass().getResource("/test.vg").toString()), true).getContents().get(0);
 		VideoGenTransform.addMetadata(videogen);
 		VideoGenTransform.ConvertTo(Mimetypes_Enum.MPEGTS, videogen);
-		PlayList playList = VideoGenTransform.toPlayList(videogen, true, playList);
+		PlayList playList = VideoGenTransform.toCustomPlayList(videogen, true, options);
 		return new ResponseEntity<String>(PlayListTransform.toM3U(playList, true, true), HttpStatus.OK);
     }
     
     @RequestMapping(
     		value = "/playlist.m3u8",
-    		method = RequestMethod.POST,
+    		method = RequestMethod.GET,
     		produces = MediaType.TEXT_PLAIN_VALUE
     )
     public @ResponseBody ResponseEntity<?> getPlayList() {

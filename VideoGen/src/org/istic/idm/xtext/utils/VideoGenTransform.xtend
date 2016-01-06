@@ -23,6 +23,7 @@ import org.istic.idm.xtext.videoGen.VideoGen
 import org.istic.idm.xtext.videoGen.VideoGenFactory
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
 import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
+import java.util.Map
 
 /**
  * Define some VideoGen transformation's specifications
@@ -206,7 +207,7 @@ import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
         ]
         videogen
     }
-    
+        
  	/**
  	 * Tranformation from VideoGen instance to Playlist instance
  	 *  
@@ -227,6 +228,56 @@ import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
 				}
 			} else if (statement instanceof Alternatives) {
 				sequence = selectSequence(statement)
+			}
+			if (sequence != null) {
+				var Object obj = new PlayListFactoryImpl().createVideo()
+				var p_video = obj as Video
+				transferData(p_video, sequence)
+				var video = p_video as VideoImpl
+				if (withThumbnail) {
+					video.thumbnail = createThumbnails(sequence).toAbsolutePath.toString
+				}
+				playlist.video.add(p_video as VideoImpl)
+			}
+        ]
+        playlist
+    }
+    
+ 	/**
+ 	 * Tranformation from VideoGen instance to custom Playlist instance
+ 	 * 
+ 	 * Information on options:
+ 	 * 	Map<String, Boolean> options = {
+ 	 * 		"sequence_name1": false, // A Optional to remove (included by default)
+ 	 * 		"sequence_name2": true // A alternatives option to force (the first encountered one takes priority)
+ 	 * 	}
+ 	 *  
+	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
+	 * @Param videogen VideoGen
+	 * @Param withThumbnail Boolean - Include thumbnails
+	 * @Param options Map<String, Boolean> - A Map of sequences name associated to a boolean
+ 	 */ 
+    def static toCustomPlayList(VideoGen videogen, Boolean withThumbnail, Map<String, Boolean> options){
+        var PlayListFactoryImpl playlistFactory = PlayListFactoryImpl.init() as PlayListFactoryImpl
+        val PlayListImpl playlist = playlistFactory.createPlayList() as PlayListImpl
+        
+        videogen.statements.forEach[statement |
+			var Sequence sequence = null
+			
+			if(statement instanceof Mandatory) {
+				sequence = statement.sequence
+			} else if(statement instanceof Optional) {
+				var name = statement.sequence.name
+				if(!options.containsKey(name) || !options.get(name) as Boolean){
+					sequence = statement.sequence
+				}
+			} else if (statement instanceof Alternatives) {
+				for (option: statement.options) {
+					var name = option.sequence.name
+					if(options.containsKey(name) && options.get(name) as Boolean){
+						sequence = option.sequence
+					}
+				}
 			}
 			if (sequence != null) {
 				var Object obj = new PlayListFactoryImpl().createVideo()
