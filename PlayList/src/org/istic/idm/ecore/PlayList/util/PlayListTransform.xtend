@@ -38,12 +38,12 @@ class PlayListTransform{
     def static toPLS(PlayList playlist){
     	val content = new StringBuffer
         content.append("[playlist]\n")
-       	var indice = 0
+       	var indice = 1
        	for (video: playlist.video) {
-       		indice++
 			content.append("File" + indice + "=" + video.path + "\n")
         	content.append("Title" + indice + "=" + video.description + "\n")
         	content.append("Length" + indice + "=" + video.duration + "\n")
+       		indice++
 		}
 		content.append("NumberOfEntries=" + indice + "\n")
 		content.append("Version=2\n")
