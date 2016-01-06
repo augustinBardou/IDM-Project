@@ -40,7 +40,7 @@ import java.util.Map
 	 * @author <stephane.mangin@freesbee.fr>
 	 * 
 	 */	
-	protected static Logger LOGGER = Logger.getLogger("videoGen.transformations")
+	private static Logger LOGGER = Logger.getLogger("videoGen.transformations")
 	
  	/**
  	 * Add a temporay system path
@@ -49,7 +49,7 @@ import java.util.Map
 	 * 
 	 * TODO: could it be better to instanciate the class and allow the setting of a temporary path (local or remote) ?
  	 */
-  	static Path tmp = Paths.get(java.lang.System.getProperty("java.io.tmpdir") + "/VideoGenGenerated");
+  	private static Path tmp = Paths.get(java.lang.System.getProperty("java.io.tmpdir") + "/VideoGenGenerated");
   
  	/**
  	 * Transfers (some) metadatas from a VideoGen Sequence instance to a PlayList Video instance (description, length, mime type and url)
@@ -59,9 +59,8 @@ import java.util.Map
    	def private static transferData(Video p_video, Sequence videoseq) {
 		p_video.duration = videoseq.length
 		p_video.path = videoseq.url
-		if (videoseq.description == null) {
-			p_video.description = ""
-		} else {
+		p_video.description = ""
+		if (videoseq.description != null) {
 			p_video.description = videoseq.description
 		}
 		p_video.mimetype = videoseq.mimetype.getName
@@ -74,23 +73,19 @@ import java.util.Map
  	 */ 
     def private static isSelected(Optional video) {
         
-        var DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator()
+        var drng = new DistributedRandomNumberGenerator()
         
         var float proba
         
+        proba = 50
         if(video.probability != 0){
             proba = video.probability
-        } else {
-            proba = 50
         }
         
         drng.addNumber(1, proba)
         drng.addNumber(0, 100-proba)
         
-        if(drng.getDistributedRandomNumber() > 0){
-            return true
-        }
-        return false
+        drng.getDistributedRandomNumber() > 0
     }
     
  	/**
@@ -100,14 +95,12 @@ import java.util.Map
  	 */ 
     def private static selectSequence(Alternatives alternatives) {
         
-        val DistributedRandomNumberGenerator drng = new DistributedRandomNumberGenerator()
+        val drng = new DistributedRandomNumberGenerator()
         val proba = VideoGenHelper.checkProbabilities(alternatives)
         alternatives.options.map[sequence.name].forEach[name |
             drng.addNumber(proba.keySet.toList.indexOf(name), proba.get(name))
         ]
-            
-        var int index = drng.getDistributedRandomNumber()
-        return alternatives.options.get(index).sequence
+        alternatives.options.get(drng.getDistributedRandomNumber()).sequence
     }
     
  	/**
@@ -116,10 +109,9 @@ import java.util.Map
 	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
  	 */ 
     def static toVideoGen(PlayList playList){
-        var VideoGenFactory videoGenFactory = VideoGenFactoryImpl.init()
-        val VideoGenImpl videoGen = videoGenFactory.createVideoGen() as VideoGenImpl
-        
-        return videoGen as VideoGen
+        var videoGenFactory = VideoGenFactoryImpl.init()
+        val videoGen = videoGenFactory.createVideoGen()
+        videoGen
     }
      
  	/**
@@ -201,8 +193,6 @@ import java.util.Map
         VideoGenHelper.allSequences(videogen).forEach[sequence |
         	val url = Paths.get(sequence.url)
 			sequence.length = Videos.getDuration(url)
-			println(url)
-			println(Videos.getMimeType(url))
 			sequence.mimetype = Mimetypes_Enum.getByName(Videos.getMimeType(url).name)
         ]
         videogen
@@ -214,11 +204,11 @@ import java.util.Map
 	 * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
  	 */ 
     def static toPlayList(VideoGen videogen, Boolean withThumbnail){
-        var PlayListFactoryImpl playlistFactory = PlayListFactoryImpl.init() as PlayListFactoryImpl
-        val PlayListImpl playlist = playlistFactory.createPlayList() as PlayListImpl
+        val playlistFactory = PlayListFactoryImpl.init()
+        val playlist = playlistFactory.createPlayList()
         
         videogen.statements.forEach[statement |
-			var Sequence sequence = null
+			var Sequence sequence
 			
 			if(statement instanceof Mandatory) {
 				sequence = statement.sequence
@@ -230,14 +220,12 @@ import java.util.Map
 				sequence = selectSequence(statement)
 			}
 			if (sequence != null) {
-				var Object obj = new PlayListFactoryImpl().createVideo()
-				var p_video = obj as Video
+				val p_video = playlistFactory.createVideo()
 				transferData(p_video, sequence)
-				var video = p_video as VideoImpl
 				if (withThumbnail) {
-					video.thumbnail = createThumbnails(sequence).toAbsolutePath.toString
+					p_video.thumbnail = createThumbnails(sequence).toAbsolutePath.toString
 				}
-				playlist.video.add(p_video as VideoImpl)
+				playlist.video.add(p_video)
 			}
         ]
         playlist
@@ -258,36 +246,34 @@ import java.util.Map
 	 * @Param options Map<String, Boolean> - A Map of sequences name associated to a boolean
  	 */ 
     def static toCustomPlayList(VideoGen videogen, Boolean withThumbnail, Map<String, Boolean> options){
-        var PlayListFactoryImpl playlistFactory = PlayListFactoryImpl.init() as PlayListFactoryImpl
-        val PlayListImpl playlist = playlistFactory.createPlayList() as PlayListImpl
+        val playlistFactory = PlayListFactoryImpl.init()
+        val playlist = playlistFactory.createPlayList()
         
         videogen.statements.forEach[statement |
-			var Sequence sequence = null
+			var Sequence sequence
 			
 			if(statement instanceof Mandatory) {
 				sequence = statement.sequence
 			} else if(statement instanceof Optional) {
-				var name = statement.sequence.name
+				val name = statement.sequence.name
 				if(!options.containsKey(name) || !options.get(name) as Boolean){
 					sequence = statement.sequence
 				}
 			} else if (statement instanceof Alternatives) {
 				for (option: statement.options) {
-					var name = option.sequence.name
+					val name = option.sequence.name
 					if(options.containsKey(name) && options.get(name) as Boolean){
 						sequence = option.sequence
 					}
 				}
 			}
 			if (sequence != null) {
-				var Object obj = new PlayListFactoryImpl().createVideo()
-				var p_video = obj as Video
+				val p_video = playlistFactory.createVideo()
 				transferData(p_video, sequence)
-				var video = p_video as VideoImpl
 				if (withThumbnail) {
-					video.thumbnail = createThumbnails(sequence).toAbsolutePath.toString
+					p_video.thumbnail = createThumbnails(sequence).toAbsolutePath.toString
 				}
-				playlist.video.add(p_video as VideoImpl)
+				playlist.video.add(p_video)
 			}
         ]
         playlist
