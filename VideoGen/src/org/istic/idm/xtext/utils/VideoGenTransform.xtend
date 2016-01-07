@@ -1,29 +1,25 @@
 package org.istic.idm.xtext.utils
 
 import com.google.common.collect.Lists
+import fr.nemomen.utils.System
 import fr.nemomen.utils.VideoCodec
 import fr.nemomen.utils.Videos
-import fr.nemomen.utils.System
 import fr.nemomen.utils.randomizers.DistributedRandomNumberGenerator
 import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.HashMap
+import java.util.Map
 import java.util.logging.Logger
 import org.istic.idm.ecore.PlayList.PlayList
 import org.istic.idm.ecore.PlayList.Video
 import org.istic.idm.ecore.PlayList.impl.PlayListFactoryImpl
-import org.istic.idm.ecore.PlayList.impl.PlayListImpl
-import org.istic.idm.ecore.PlayList.impl.VideoImpl
 import org.istic.idm.xtext.videoGen.Alternatives
 import org.istic.idm.xtext.videoGen.Mandatory
 import org.istic.idm.xtext.videoGen.Mimetypes_Enum
 import org.istic.idm.xtext.videoGen.Optional
 import org.istic.idm.xtext.videoGen.Sequence
 import org.istic.idm.xtext.videoGen.VideoGen
-import org.istic.idm.xtext.videoGen.VideoGenFactory
 import org.istic.idm.xtext.videoGen.impl.VideoGenFactoryImpl
-import org.istic.idm.xtext.videoGen.impl.VideoGenImpl
-import java.util.Map
 
 /**
  * Define some VideoGen transformation's specifications

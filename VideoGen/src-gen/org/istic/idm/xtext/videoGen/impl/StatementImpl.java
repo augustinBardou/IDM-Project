@@ -16,27 +16,24 @@ import org.istic.idm.xtext.videoGen.VideoGenPackage;
  *
  * @generated
  */
-public class StatementImpl extends MinimalEObjectImpl.Container implements Statement
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected StatementImpl()
-  {
-    super();
-  }
+public class StatementImpl extends MinimalEObjectImpl.Container implements Statement {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StatementImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return VideoGenPackage.Literals.STATEMENT;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return VideoGenPackage.Literals.STATEMENT;
+	}
 
 } //StatementImpl
