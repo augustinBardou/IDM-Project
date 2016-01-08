@@ -46,16 +46,15 @@ public class Videos extends Executor {
 		var ExecResult result = execCmd(cmd, 0)
 		processResult(result)
 		val durationPattern = result.lines.filter[contains("'" + fullPath + "'")]
-		var mimeType = VideoCodec.NONE
 		if (durationPattern.size > 0) {
 			var tmpResult = durationPattern.get(0).split(" ").get(2).split(",")
 			for (mt: tmpResult) {
-				if (VideoCodec.values.map[mte | mte.name].contains(mt)) {
-					mimeType = VideoCodec.getByFormat(mt)
+				if (VideoCodec.values.map[mte | mte.format].contains(mt)) {
+					return VideoCodec.getByFormat(mt)
 				}
 			}
 		}
-		mimeType
+		VideoCodec.NONE
 	}
 	
 	/**
