@@ -13,7 +13,7 @@ class VideosTest {
 	val root = new File(VideosTest.classLoader.getResource("videos").toURI).absolutePath + "/"
 	val List<String> oracle_file_list = Lists.newArrayList(
 		"Mass.mp4",
-		"TimesSuicide.mp4",
+		"TimsSuicide.mp4",
 		"EddyWally-Wow.mp4",
 		"haha.mp4"
 	)
