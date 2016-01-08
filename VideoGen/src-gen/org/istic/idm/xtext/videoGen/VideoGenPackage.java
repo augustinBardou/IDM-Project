@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see org.istic.idm.xtext.videoGen.VideoGenFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/GenModel fileExtensions='vg' editDirectory='/VideoGen.edit/src' editorDirectory='/VideoGen.editor/src' forceOverwrite='true' updateClasspath='false' complianceLevel='6.0' editorPluginID='VideoGen.editor' basePackage='org.istic.idm.xtext'"
  * @generated
  */
 public interface VideoGenPackage extends EPackage {
@@ -87,15 +86,6 @@ public interface VideoGenPackage extends EPackage {
 	int VIDEO_GEN_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Video Gen</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIDEO_GEN_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.StatementImpl <em>Statement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,15 +103,6 @@ public interface VideoGenPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATEMENT_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.AlternativesImpl <em>Alternatives</em>}' class.
@@ -161,15 +142,6 @@ public interface VideoGenPackage extends EPackage {
 	int ALTERNATIVES_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Alternatives</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALTERNATIVES_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.MandatoryImpl <em>Mandatory</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,15 +168,6 @@ public interface VideoGenPackage extends EPackage {
 	 * @ordered
 	 */
 	int MANDATORY_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Mandatory</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANDATORY_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.OptionalImpl <em>Optional</em>}' class.
@@ -242,15 +205,6 @@ public interface VideoGenPackage extends EPackage {
 	 * @ordered
 	 */
 	int OPTIONAL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Optional</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTIONAL_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.istic.idm.xtext.videoGen.impl.SequenceImpl <em>Sequence</em>}' class.
@@ -315,15 +269,6 @@ public interface VideoGenPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEQUENCE_FEATURE_COUNT = 5;
-
-	/**
-	 * The number of operations of the '<em>Sequence</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENCE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.istic.idm.xtext.videoGen.Mimetypes_Enum <em>Mimetypes Enum</em>}' enum.

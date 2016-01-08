@@ -32,7 +32,7 @@ public interface Optional extends Statement {
 	 * @return the value of the '<em>Probability</em>' attribute.
 	 * @see #setProbability(int)
 	 * @see org.istic.idm.xtext.videoGen.VideoGenPackage#getOptional_Probability()
-	 * @model unique="false"
+	 * @model
 	 * @generated
 	 */
 	int getProbability();

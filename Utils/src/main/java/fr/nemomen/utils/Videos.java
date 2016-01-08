@@ -10,12 +10,13 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ListExtensions;
 
 /**
  * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
  */
 @SuppressWarnings("all")
-@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-08T12:51+0100")
+@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-08T13:43+0100")
 public class Videos extends Executor {
   /**
    * Create a thumbnail from the given video to the given path
@@ -62,25 +63,42 @@ public class Videos extends Executor {
    * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
    */
   public static VideoCodec getMimeType(final Path fullPath) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nno viable alternative at input \'<\'"
-      + "\nno viable alternative at input \'<\'"
-      + "\nno viable alternative at input \'===\'"
-      + "\nno viable alternative at input \'=\'"
-      + "\nno viable alternative at input \'>\'"
-      + "\nno viable alternative at input \'>\'"
-      + "\nno viable alternative at input \'5302b2\'"
-      + "\nInvalid token 7ed"
-      + "\nThe method or field < is undefined"
-      + "\nThe method or field < is undefined"
-      + "\nThe method or field HEAD is undefined"
-      + "\n>>> cannot be resolved."
-      + "\nThe method or field af803a9392dabff921f317efa0ef2f is undefined"
-      + "\nUnreachable expression."
-      + "\nThis expression is not allowed in this context, since it doesn\'t cause any side effects."
-      + "\n<<< cannot be resolved"
-      + "\n>>> cannot be resolved"
-      + "\n> cannot be resolved");
+    VideoCodec _xblockexpression = null;
+    {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("avconv -i \"");
+      _builder.append(fullPath, "");
+      _builder.append("\"");
+      String cmd = _builder.toString();
+      Executor.ExecResult result = Executor.execCmd(cmd, 0);
+      Executor.processResult(result);
+      List<String> _lines = result.getLines();
+      final Function1<String, Boolean> _function = (String it) -> {
+        return Boolean.valueOf(it.contains((("\'" + fullPath) + "\'")));
+      };
+      final Iterable<String> durationPattern = IterableExtensions.<String>filter(_lines, _function);
+      int _size = IterableExtensions.size(durationPattern);
+      boolean _greaterThan = (_size > 0);
+      if (_greaterThan) {
+        String _get = ((String[])Conversions.unwrapArray(durationPattern, String.class))[0];
+        String[] _split = _get.split(" ");
+        String _get_1 = _split[2];
+        String[] tmpResult = _get_1.split(",");
+        for (final String mt : tmpResult) {
+          VideoCodec[] _values = VideoCodec.values();
+          final Function1<VideoCodec, String> _function_1 = (VideoCodec mte) -> {
+            return mte.format();
+          };
+          List<String> _map = ListExtensions.<VideoCodec, String>map(((List<VideoCodec>)Conversions.doWrapArray(_values)), _function_1);
+          boolean _contains = _map.contains(mt);
+          if (_contains) {
+            return VideoCodec.getByFormat(mt);
+          }
+        }
+      }
+      _xblockexpression = VideoCodec.NONE;
+    }
+    return _xblockexpression;
   }
   
   /**

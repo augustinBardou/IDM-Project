@@ -36,7 +36,7 @@ public interface Sequence extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.istic.idm.xtext.videoGen.VideoGenPackage#getSequence_Name()
-	 * @model unique="false"
+	 * @model
 	 * @generated
 	 */
 	String getName();
@@ -62,7 +62,7 @@ public interface Sequence extends EObject {
 	 * @return the value of the '<em>Url</em>' attribute.
 	 * @see #setUrl(String)
 	 * @see org.istic.idm.xtext.videoGen.VideoGenPackage#getSequence_Url()
-	 * @model unique="false"
+	 * @model
 	 * @generated
 	 */
 	String getUrl();
@@ -88,7 +88,7 @@ public interface Sequence extends EObject {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.istic.idm.xtext.videoGen.VideoGenPackage#getSequence_Description()
-	 * @model unique="false"
+	 * @model
 	 * @generated
 	 */
 	String getDescription();
@@ -114,7 +114,7 @@ public interface Sequence extends EObject {
 	 * @return the value of the '<em>Length</em>' attribute.
 	 * @see #setLength(int)
 	 * @see org.istic.idm.xtext.videoGen.VideoGenPackage#getSequence_Length()
-	 * @model unique="false"
+	 * @model
 	 * @generated
 	 */
 	int getLength();
@@ -142,7 +142,7 @@ public interface Sequence extends EObject {
 	 * @see org.istic.idm.xtext.videoGen.Mimetypes_Enum
 	 * @see #setMimetype(Mimetypes_Enum)
 	 * @see org.istic.idm.xtext.videoGen.VideoGenPackage#getSequence_Mimetype()
-	 * @model unique="false"
+	 * @model
 	 * @generated
 	 */
 	Mimetypes_Enum getMimetype();

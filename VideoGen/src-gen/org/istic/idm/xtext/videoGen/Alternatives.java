@@ -33,7 +33,7 @@ public interface Alternatives extends Statement {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.istic.idm.xtext.videoGen.VideoGenPackage#getAlternatives_Name()
-	 * @model unique="false"
+	 * @model
 	 * @generated
 	 */
 	String getName();
