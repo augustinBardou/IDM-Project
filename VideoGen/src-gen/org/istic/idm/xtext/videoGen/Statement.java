@@ -14,6 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Statement extends EObject
-{
+public interface Statement extends EObject {
 } // Statement
