@@ -17,7 +17,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 @SuppressWarnings("all")
-@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-06T19:56+0100")
+@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-08T12:20+0100")
 public class VideosTest {
   private final String root = new Function0<String>() {
     public String apply() {
@@ -37,7 +37,7 @@ public class VideosTest {
   
   private final List<String> oracle_file_list = Lists.<String>newArrayList(
     "Mass.mp4", 
-    "TimesSuicide.mp4", 
+    "TimsSuicide.mp4", 
     "EddyWally-Wow.mp4", 
     "haha.mp4");
   

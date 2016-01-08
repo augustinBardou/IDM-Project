@@ -189,7 +189,6 @@ import java.util.Map
  	 * FIXME: should create a new VideoGen instance to not modify the given one.
  	 */ 
     def static addMetadata(VideoGen videogen){
-        
         VideoGenHelper.allSequences(videogen).forEach[sequence |
         	val url = Paths.get(sequence.url)
 			sequence.length = Videos.getDuration(url)

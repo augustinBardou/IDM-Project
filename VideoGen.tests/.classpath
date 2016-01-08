@@ -26,6 +26,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/VideoGen/target/org.istic.idm.xtext.VideoGen-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry exported="true" kind="lib" path="/VideoGen/target/org.istic.idm.xtext.VideoGen-0.0.1-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

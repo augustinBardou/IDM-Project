@@ -16,7 +16,7 @@ import org.eclipse.xtext.xbase.lib.ListExtensions;
  * @author Stéphane Mangin <stephane.mangin@freesbee.fr>
  */
 @SuppressWarnings("all")
-@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-06T19:56+0100")
+@Generated(value = "org.eclipse.xtend.core.compiler.XtendGenerator", date = "2016-01-08T12:34+0100")
 public class Videos extends Executor {
   /**
    * Create a thumbnail from the given video to the given path
@@ -88,13 +88,12 @@ public class Videos extends Executor {
         for (final String mt : tmpResult) {
           VideoCodec[] _values = VideoCodec.values();
           final Function1<VideoCodec, String> _function_1 = (VideoCodec mte) -> {
-            return mte.name();
+            return mte.format();
           };
           List<String> _map = ListExtensions.<VideoCodec, String>map(((List<VideoCodec>)Conversions.doWrapArray(_values)), _function_1);
           boolean _contains = _map.contains(mt);
           if (_contains) {
-            VideoCodec _byFormat = VideoCodec.getByFormat(mt);
-            mimeType = _byFormat;
+            VideoCodec.getByFormat(mt);
           }
         }
       }

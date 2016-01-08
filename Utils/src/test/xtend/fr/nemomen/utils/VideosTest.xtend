@@ -13,10 +13,10 @@ class VideosTest {
 	val root = new File(VideosTest.classLoader.getResource("videos").toURI).absolutePath + "/"
 	val List<String> oracle_file_list = Lists.newArrayList(
 		"Mass.mp4",
-		"TimesSuicide.mp4",
+		"TimsSuicide.mp4",
 		"EddyWally-Wow.mp4",
 		"haha.mp4"
-	)
+	)//TimesSuicide.mp4 => TimsSuicide.mp4
 	val oracle_duration_list = Lists.newArrayList(
 		30,
 		30,
@@ -56,6 +56,8 @@ class VideosTest {
 			assertNotEquals(0, newFile.toFile.absoluteFile.length)
 		}
 	}
+
+	//Error on the cmd "avconv -i inputFileName" missing an argument
 
 	@Test
 	def void getMimeTypeTest() {

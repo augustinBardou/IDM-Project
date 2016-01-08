@@ -9,9 +9,9 @@
   <modules>
     <module>Utils</module>
     <module>PlayList</module>
-    <module>PlayList.tests</module>
+<!--    <module>PlayList.tests</module>-->
     <module>VideoGen</module>
-    <module>VideoGen.tests</module>
+<!--    <module>VideoGen.tests</module> -->
     <!--module>VideoGen.service</module-->
   </modules>
   <packaging>pom</packaging>

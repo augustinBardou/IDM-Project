@@ -15,8 +15,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="src-gen"/>
 	<classpathentry kind="src" path="xtend-gen"/>
-	<classpathentry kind="lib" path="/PlayList/target/org.istic.idm.ecore.PlayList-0.0.1-SNAPSHOT.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Utils"/>
-	<classpathentry kind="lib" path="/Utils/target/fr.nemomen.Utils-0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/PlayList/target/org.istic.idm.ecore.PlayList-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Utils"/>
+	<classpathentry exported="true" kind="lib" path="/Utils/target/fr.nemomen.Utils-0.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
