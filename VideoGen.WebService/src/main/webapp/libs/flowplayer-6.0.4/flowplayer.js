@@ -3095,7 +3095,7 @@ extend(flowplayer, {
       errorUrls: ['','','','','','','','','','',
          'http://get.adobe.com/flashplayer/'
       ],
-      playlist: [],
+      playlist: ['http://stream.flowplayer.org/KimAronson-TwentySeconds58192.flv'],
 
       hlsFix: isSafari && safariVersion < 8
 
