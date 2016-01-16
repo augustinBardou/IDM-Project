@@ -3095,7 +3095,7 @@ extend(flowplayer, {
       errorUrls: ['','','','','','','','','','',
          'http://get.adobe.com/flashplayer/'
       ],
-      playlist: ['http://stream.flowplayer.org/KimAronson-TwentySeconds58192.flv'],
+      playlist: ["assets/videos/cats/Acroscatics.mp4"],
 
       hlsFix: isSafari && safariVersion < 8
 

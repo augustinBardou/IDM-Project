@@ -3,11 +3,11 @@
 angular.module('videogenApp')
     .controller('FlowPlayerController', function ($scope) {
     	
-    	flowplayer("#hlsjs", "http://localhost:8080/libs/flowplayer-6.0.4/flowplayer.swf", {
     		   wmode: 'direct',
+    	flowplayer("fl", "libs/flowplayer-6.0.4/flowplayer.swf", {
     		   plugins: {
     		       httpstreaming: {
-    		           url: 'http://localhost:8080/libs/flowplayer-6.0.4/flowplayerhls.swf',
+    		           url: 'libs/flowplayer-6.0.4/flowplayerhls.swf',
     		           hls_debug : false,
     		           hls_debug2 : false,
     		           hls_lowbufferlength : 3,
@@ -25,7 +25,8 @@ angular.module('videogenApp')
     		   },
     		   clip: {
     		       accelerated: true,
-    		       url: "http://localhost:8080/api/playlist.m3u8",
+    		       url: "http://localhost:8080/videos/video1.m3u8",
+    		       //url: "http://localhost:8080/api/playlist.m3u8",
     		       urlResolvers: "httpstreaming",
     		       lang: "fr",
     		       provider: "httpstreaming",
@@ -36,5 +37,7 @@ angular.module('videogenApp')
     		       level: 'none',
     		       filter: 'org.flowplayer.controller.*'
     		   }
+    		$scope.alea = function(){window.location = "www.google.fr";}
+    		
     		});
     });
